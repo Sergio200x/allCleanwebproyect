@@ -3,3 +3,6 @@ Nuestra Web ofrece productos de limpieza de primera calidad, desde los mejores d
 ### Diego Marco
 
 32 Años, Estudiante de desarrollo Full Stack en Digital House.
+
+### Sergio Fernandez
+30 Años, Estudiante de desarrollo Full Stack en Digital House y Profesorado de Matematica
