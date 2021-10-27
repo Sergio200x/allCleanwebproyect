@@ -10,3 +10,6 @@ Tengo 24 años, soy estudiante de Lic. en sistemas en la UNLP y complemento mis 
 
 ### Sergio Fernandez
 30 Años, Estudiante de desarrollo Full Stack en Digital House y Profesorado de Matematica
+
+### Daniel Ferraioli
+46 años , estudiante de  developer in progress y estudiante de Licenciatura en Historia.
