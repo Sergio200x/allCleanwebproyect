@@ -13,3 +13,13 @@ Tengo 24 años, soy estudiante de Lic. en sistemas en la UNLP y complemento mis 
 
 ### Daniel Ferraioli
 46 años , estudiante de  developer in progress y estudiante de Licenciatura en Historia.
+
+***
+
+- https://www.mercadolibre.com.ar/ - Referente de como hacer un carro sencillo y práctico.
+- https://www.jumbo.com.ar/ - Referente de diseño.
+- https://www.aliexpress.com/ - Referente de Sing in y Sing out dinámico.
+- https://webdesign.tutsplus.com/ - Referente de como hacer un buen wireframe.
+- https://developer.mozilla.org/ - Referente principal de programación BackEnd
+
+***
