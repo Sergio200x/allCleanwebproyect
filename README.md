@@ -14,7 +14,7 @@ Tengo 24 años, soy estudiante de Lic. en sistemas en la UNLP y complemento mis 
 ### Daniel Ferraioli
 46 años , estudiante de  developer in progress y estudiante de Licenciatura en Historia.
 
-### javier Marillan
+### Javier Marillan
 40 años Estudiante de desarrollo Full Stack en Digital House.
 
 ***
