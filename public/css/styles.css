@@ -70,6 +70,69 @@ html
     margin: auto;
 }
 
+.index-slaider-container
+{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.index-slider
+{
+    display: flex;
+    width: 400%;
+    height: 200px;
+    margin-left: -100%;
+}
+
+.index-slider-section
+{
+    width: 100%;
+}
+
+.index-slider-img
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.index-slider-btn
+{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background: rgba(255,255,255,0.7);
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.index-slider-btn:hover
+{
+    background: #fcfeff;
+}
+
+.index-slider-btn-right
+{
+    right: 1rem;
+}
+
+.index-slider-btn-left
+{
+    left: 1rem;
+}
+
+
+
 
 @media (min-width: 761px)
 {
