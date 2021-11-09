@@ -1,3 +1,82 @@
-body{
-    background-color: salmon;
+*
+{
+    box-sizing: border-box;
+}
+
+html
+{
+    font-size: 10px;
+}
+
+.index-body
+{
+    background-color: #fcfeff;
+}
+
+.index-header
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1200px;
+    border: solid 1px black;
+}
+
+.index-logo img
+{
+    display: block;
+    width: 3rem;
+    margin: 0.5rem;
+}
+
+.index-searchbar{
+    margin: auto;
+}
+
+.index-searchbar input
+{
+    margin: auto;
+    max-width: 900px;
+    width: 70vw;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.index-rightmenu
+{
+   display: none;
+   margin: auto;
+}
+
+.index-rightmenu i
+{
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.index-hamburgermenu
+{
+    color: #ebebeb;
+    background-color: #1259c3;
+    border-radius: 7px;
+    padding: 10px 10px 10px 10px; 	
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+}
+
+
+@media (min-width: 761px)
+{
+
+    .index-hamburgermenu
+    {
+        display: none;
+    }
+
+    .index-rightmenu
+    {
+        display: flex;
+    }
 }
