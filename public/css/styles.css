@@ -1,6 +1,9 @@
 *
 {
     box-sizing: border-box;
+    font-family: 'Fruktur', cursive;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 html
@@ -53,12 +56,13 @@ html
 {
     margin: 1rem;
     font-size: 2rem;
+    color: #286698;
 }
 
 .index-hamburgermenu
 {
     color: #ebebeb;
-    background-color: #1259c3;
+    background-color: #286698;
     border-radius: 7px;
     padding: 10px 10px 10px 10px; 	
     height: fit-content;
