@@ -2,6 +2,7 @@ const slider = document.querySelector("#index-slider");
 let sliderSection = document.querySelectorAll(".index-slider-section");
 let sliderSectionLast = sliderSection[sliderSection.length -1];
 
+
 const btnLeft = document.querySelector("#index-btn-left");
 const btnRight = document.querySelector("#index-btn-right");
 
@@ -46,3 +47,7 @@ btnLeft.addEventListener('click', function(){
 const intervalo = setInterval(() => {
     next();
 }, 5000);
+
+
+
+
