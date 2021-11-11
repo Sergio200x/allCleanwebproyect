@@ -22,7 +22,6 @@ html
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto;
-    max-width: 1200px;
     height: fit-content;
     border: solid 1px brgba(180, 161, 161, 0.7);
     box-shadow: 0px 0px 10px rgb(100,100,100);
@@ -44,8 +43,9 @@ html
     margin: auto;
     max-width: 900px;
     width: 70vw;
-    height: 2vh;
+    height: 30px;
     text-align: center;
+    font-size: 16px;
     border-radius: 0.2rem;
     box-shadow: 0px 0px 5px rgb(100,100,100);
 }
@@ -53,7 +53,8 @@ html
 .index-rightmenu
 {
    display: none;
-   margin: auto;
+   margin-top: 1rem;
+   
 }
 
 .index-rightmenu i
@@ -156,7 +157,7 @@ html
     margin: auto;
 }
 
-.index-h2-categories
+.index-h2-categories,.index-h2-offers
 {
     font-size: 3vh;
     color: rgba(20, 19, 19, 0.863) ;
@@ -182,6 +183,48 @@ html
     margin: 1rem;
     font-size: 40px;
     color: #286698 ;
+}
+
+.index-offers
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+.index-div-container
+{
+    width: 200px;
+    height: 250px;
+    border: solid 1px rgba(180, 161, 161, 0.7);
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    margin: 1rem;
+    border-radius: .5rem;
+}
+
+.index-div-img
+{
+    width: 100% ;
+    height: 70%;
+    border: solid 1px rgba(180, 161, 161, 0.2);
+}
+
+.index-img-offers
+{
+    margin-top: 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.index-h2-offers
+{
+    text-align: center;
 }
 
 
