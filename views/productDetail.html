@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Detalle de producto</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Mulish&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
-<body>
-    HOLA ESTOY FUNCIONANDO EN EL PRODUCT DETAIL
-    <i class="fas fa-address-card"></i>
+<body class="body-productDetail">
+    <header class="productDetail-header">
+        <section class="productDetail-maxwidth-body"> 
+            <div class="productDetail-logo">
+                <img src="images/logo-gota.svg" alt="logo de allclean" class="productDetail-imglogo">
+                <h1>All Clean</h1>
+            </div>
+
+            <section class="productDetail-searchbar">
+                <input type="search" name="busqueda" placeholder="¿Qué producto buscas?">     
+            </section>
+
+            <section class="productDetail-rightmenu">
+                <i class="fas fa-user"></i>
+                <i class="far fa-heart"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </section>
+
+            <section class="productDetail-hamburgermenu">
+                <i class="fas fa-bars"></i>
+            </section>
+        </section>        
+    </header>
+    <main class="productDetail-main">
+        <div class="productDetail-slider-container">
+            <div class="productDetail-slider">
+                <div class="productDetail-slider-section">
+                    <img src="images/CIF_pruct.jpg" alt="limpiador Cif blanco" class="productDetail-img">
+                </div>
+                <div class="productDetail-slider-section">
+                    <img src="images/mr_musculo_pruct.jpg" alt="desengrasante mr musculo" class="productDetail-img">
+                </div>
+                <div class="productDetail-slider-section"> 
+                    <img src="images/Zorro_pruct.jpg" alt="jabon zorro" class="productDetail-img">
+                </div>
+                <div class="productDetail-slider-section">
+                    <img src="images/ayudin_pruct.jpg" alt="ayudin ropa blanca" class="productDetail-img">
+                </div>
+            </div>
+            <div class="productDetail-btn-prev">&#60;</div>
+            <div class="productDetail-btn-next">&#62;</div>
+        </div>
+    </main>
+    <footer class="productDetail-footer"></footer>
+    <script src="js\productDetail-slider.js"></script>
 </body>
 </html>
