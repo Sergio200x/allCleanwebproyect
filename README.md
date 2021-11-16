@@ -27,4 +27,4 @@ Tengo 24 años, soy estudiante de Lic. en sistemas en la UNLP y complemento mis 
 
 ***
 ### Link público del tablero de trabajo:
-https://trello.com/b/67poQvRW/all-clean
+- https://trello.com/b/67poQvRW/all-clean
