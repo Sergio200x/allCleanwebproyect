@@ -417,7 +417,6 @@ html
     .index-div-container
     {
         flex: 25%;
-        height: fit-content;
     }
 
     .index-offers
@@ -434,7 +433,7 @@ html
 
     .index-description-offers
     {
-        padding: 20px;
+        padding: 2rem;
         font-size: 2rem;
         display: none;
     }

@@ -26,3 +26,5 @@ Tengo 24 años, soy estudiante de Lic. en sistemas en la UNLP y complemento mis 
 - https://developer.mozilla.org/ - Referente principal de programación BackEnd
 
 ***
+### Link público del tablero de trabajo:
+https://trello.com/b/67poQvRW/all-clean
