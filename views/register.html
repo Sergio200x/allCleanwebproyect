@@ -9,11 +9,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Mulish&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Document</title>
 </head>
 <body>
-    HOLA ESTOY FUNCIONANDO EN EL REGISTER
-    <i class="fas fa-address-card"></i>
+    <form action="/register" method="post" class="register-create-form">
+        <h2>Registro</h2>
+        <div class="register-actividad-container">
+            <label class="prueba"><input type="radio" name="tipoActividad" value="persona"> Persona</label>  
+            <label class="prueba"><input type="radio" name="tipoActividad" value="empresa"> Empresa</label>
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input type="text" name="nombreCompleto" placeholder="Nombre y Apellido" minlength="5" required class="register-control">
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input type="text" name="usuario" placeholder="Nombre de Usuario" class="register-control" required minlength="5">
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-envelope"></i>
+            </div>
+            <input type="email" name="email" placeholder="Ingrese su mail" class="register-control">
+        </div>
+        <div class="register-control-formulario">
+            <label class="register-label-nacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="fecha" class="register-control">
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-eye"></i>
+            </div>
+            <input type="password" name="password" placeholder="Password (Min 6 caracteres)" pattern=".{6,}" required class="register-control">
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-eye"></i>
+            </div>
+            <input type="password" name="validarPassword" placeholder="Reingrese su Password" pattern=".{6,}" required class="register-control">
+        </div>
+        <button type="submit" class="register-submit">Registrarse</button>
+    </form>
 </body>
 </html>
