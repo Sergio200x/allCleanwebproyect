@@ -26,7 +26,7 @@ app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/register.html'))
   })
 
-app.post('/register', (req, res) => {
+app.post('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/index.html'))
 })
 

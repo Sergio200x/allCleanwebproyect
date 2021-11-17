@@ -21,15 +21,14 @@ html
     
 }
 
-.index-main
+/* .index-main
 {
+    background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url("/images/imgGota.jpg");
     background-image: url(../images/imgGota.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-
+} */
 
 .index-maxwidth-body
 {
