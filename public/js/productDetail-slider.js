@@ -47,3 +47,15 @@ btnLeft.addEventListener('click', function(){
 const intervalo = setInterval(() => {
     next();
 }, 5000);
+
+
+
+function increment()
+{
+    document.getElementById('demoInput').stepUp();
+}    
+function decrement() 
+{
+    document.getElementById('demoInput').stepDown();
+}
+    

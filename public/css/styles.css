@@ -619,8 +619,9 @@ html
     position: relative;
     overflow: hidden;
     margin-top: 30px;
-    box-shadow:0 0 0 10px #286698,
+    box-shadow:0 0 0 8px #286698,
                 0 15px 50px ;
+    border-radius: 5px;
 }
 
 .productDetail-slider-section
