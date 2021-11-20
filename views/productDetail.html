@@ -36,6 +36,7 @@
             </section>
         </section>        
     </header>
+    <div class="productDetail-sliderdatosybotones">
     <main class="productDetail-main">
         <div class="productDetail-slider-container">
             <div class="productDetail-slider" id="productDetail-slider">
@@ -58,29 +59,47 @@
     </main>
     <section class="productDetail-datos">
         <div class="productDetail-titulo"> <h2>Set de productos de limpieza</h2> </div>
-        <div class="productDetail-descripcionbreve"> <p>El mejor ser del limpieza que podras encontrar, cuenta con 4 productos de las mejores marcas.</p></div>
+        <div class="productDetail-descripcionbreve"> <p>El mejor set del limpieza que podras encontrar, cuenta con 4 productos de las mejores marcas.</p></div>
         <div class="productDetail-precio"> <p>$3500</p></div>
         <div class="productDetail-pago"><i class="far fa-credit-card index-icons-footer"></i><p> Medios de pago disponibles</p></div>
         <div class="productDetail-envio"><i class="fas fa-gift index-icons-footer"></i><p>Verifica el costo de tu envio</p></div>
         <div class="productDetail-stock"><p>Stock Disponible</p></div>
-        <button onclick="decrement()">-</button>
-        <input type=number id=demoInput min=0 max=110>
-        <button onclick="increment()">+</button>
+        <div class="contador-productDetail-botones">
+        <button onclick="decrement()" class="btn-min-productDetail" >-</button>
+        <input type=number id=demoInput min=0 max=110 class="contador-productDetail">
+        <button onclick="increment()" class="btn-max-productDetail">+</button>
+        </div>
     
     
-        <div class="productDetail-btn-comprar"><button >Comprar</button></div>
-        <div class="productDetail-btn-agregarcarrito"><button >Agregar al Carrito</button></div>
-        
-        
-    </section>
+        <div class="producDetail-botones">
+            <div>
+                 <input type="submit" name="btn-comprar" class="btn-comprar-productdetail" value="Comprar">
+            </div>
+            <div>
+                 <input type="submit" name="btn-carrito" class="btn-addcarrito-productdetail" value="Agregar al carrito">
+            </div>
+        </div>       
+        </section>
+    </div>
 
-
-
-
-    <footer class="productDetail-footer">
-        <div><p>sdasd</p></div>
-    </footer>
+    <footer class="index-footer">
+        <div class="index-div-footer-container">
+            <i class="far fa-credit-card index-icons-footer"></i>
+            <h2>Elegí como pagar</h2>
+            <h3>Tenemos los medios de pago mas populares del mercado</h3>
+        </div>
+        <div class="index-div-footer-container">
+            <i class="far fa-check-square index-icons-footer"></i>
+            <h2>Compra asegurada</h2>
+            <h3>Vendedores Garantizados por Safety Pay</h3>
+        </div>
+        <div class="index-div-footer-container">
+            <i class="fas fa-gift index-icons-footer"></i>
+            <h2>Envíos a todo el país</h2>
+            <h3>Enviá a tu domicilio o retira en nuestros puntos Pickit!</h3>
+        </div>
+</footer>
     <script src="/js/productDetail-slider.js"></script>
-    <div><p>dasd</p></div>
+    
 </body>
 </html>
