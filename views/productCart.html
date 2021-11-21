@@ -10,10 +10,106 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Mulish&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <title>Carrito</title>
 </head>
 <body>
-    HOLA ESTOY FUNCIONANDO EN EL PRODUCT CART
-    <i class="fas fa-address-card"></i>
+    <header class="index-header">
+        <section class="index-maxwidth-body"> 
+            <div class="index-logo">
+                <img src="images/logo-gota.svg" alt="logo de allclean" class="index-imglogo">
+                <h1>All Clean</h1>
+            </div>
+
+            <section class="index-searchbar">
+                <input type="search" name="busqueda" placeholder="¿Qué producto buscas?">     
+            </section>
+
+            <section class="index-rightmenu">
+                <i class="fas fa-user"></i>
+                <i class="far fa-heart"></i>
+                 <i class="fas fa-shopping-cart" ></i> 
+            </section>
+
+            <section class="index-hamburgermenu">
+                <i class="fas fa-bars"></i>
+            </section>
+        </section>        
+    </header>
+    
+    <main class="productCart-main">
+        <div class="productCartCarrito">Carrito</div>
+        <section class="productCart-producto1"> 
+            <div class="productCart-imagenytitulo">
+                <div class="productCart-imagen"><img src="/images/mr_musculo_pruct.jpg" alt="" ></div>
+                <div class="productCart-tituloproducto1"> <h2 >Titulo de producto</h2> </div>
+            </div> 
+            <div class="productCart-contador-icono-precio">
+                    <div class="contador-productCart-botones">
+                            <button onclick="decrement()" class="btn-min-productCart" >-</button>
+                            <input type=number id=demoInput min=0 max=110 class="contador-productCart">
+                            <button onclick="increment()" class="btn-max-productCart">+</button>
+                    </div>
+                    <div class="productCar-iconoyprecio">                   
+                        <div class="productCart-icontrash"><i class="fas fa-trash-alt"></i> </div>
+                        <div class="productCart-precio">$3.999</div> 
+                    </div>                   
+            </div>   
+        </section>
+        <section class="productCart-producto1"> 
+            <div class="productCart-imagenytitulo">
+                <div class="productCart-imagen"><img src="/images/Zorro_pruct.jpg" alt="" ></div>
+                <div class="productCart-tituloproducto1"> <h2 >Titulo de producto</h2> </div>
+            </div> 
+            <div class="productCart-contador-icono-precio">
+                    <div class="contador-productCart-botones">
+                            <button onclick="decrement1()" class="btn-min-productCart" >-</button>
+                            <input type=number id=demoInput1 min=0 max=110 class="contador-productCart">
+                            <button onclick="increment1()" class="btn-max-productCart">+</button>
+                    </div>
+                    <div class="productCar-iconoyprecio">                   
+                        <div class="productCart-icontrash"><i class="fas fa-trash-alt"></i> </div>
+                        <div class="productCart-precio">$3.999</div> 
+                    </div>                   
+            </div>   
+        </section>
+        <section class="productCart-producto1"> 
+            <div class="productCart-imagenytitulo">
+                <div class="productCart-imagen"><img src="/images/ayudin_pruct.jpg" alt="" ></div>
+                <div class="productCart-tituloproducto1"> <h2 >Titulo de producto</h2> </div>
+            </div> 
+            <div class="productCart-contador-icono-precio">
+                    <div class="contador-productCart-botones">
+                            <button onclick="decrement2()" class="btn-min-productCart" >-</button>
+                            <input type=number id=demoInput2 min=0 max=110 class="contador-productCart">
+                            <button onclick="increment2()" class="btn-max-productCart">+</button>
+                    </div>
+                    <div class="productCar-iconoyprecio">                   
+                        <div class="productCart-icontrash"><i class="fas fa-trash-alt"></i> </div>
+                        <div class="productCart-precio">$3.999</div> 
+                    </div>                   
+            </div>   
+        </section>
+
+    </main>
+
+    <footer class="index-footer">
+        <div class="index-div-footer-container">
+            <i class="far fa-credit-card index-icons-footer"></i>
+            <h2>Elegí como pagar</h2>
+            <h3>Tenemos los medios de pago mas populares del mercado</h3>
+        </div>
+        <div class="index-div-footer-container">
+            <i class="far fa-check-square index-icons-footer"></i>
+            <h2>Compra asegurada</h2>
+            <h3>Vendedores Garantizados por Safety Pay</h3>
+        </div>
+        <div class="index-div-footer-container">
+            <i class="fas fa-gift index-icons-footer"></i>
+            <h2>Envíos a todo el país</h2>
+            <h3>Enviá a tu domicilio o retira en nuestros puntos Pickit!</h3>
+        </div>
+</footer>
+<script src="/js/productDetail-slider.js"></script>
 </body>
 </html>

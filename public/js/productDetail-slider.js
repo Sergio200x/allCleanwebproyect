@@ -60,3 +60,21 @@ function decrement()
     document.getElementById('demoInput').stepDown();
 }
     
+function increment1()
+{
+    document.getElementById('demoInput1').stepUp();
+}    
+function decrement1() 
+{
+    document.getElementById('demoInput1').stepDown();
+
+}
+
+function increment2()
+{
+    document.getElementById('demoInput2').stepUp();
+}    
+function decrement2() 
+{
+    document.getElementById('demoInput2').stepDown();
+}
