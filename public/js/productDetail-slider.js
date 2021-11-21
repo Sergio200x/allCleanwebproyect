@@ -3,6 +3,7 @@ let sliderSection = document.querySelectorAll(".productDetail-slider-section");
 let sliderSectionLast = sliderSection[sliderSection.length -1];
 
 
+
 const btnLeft = document.querySelector("#productDetail-btn-left");
 const btnRight = document.querySelector("#productDetail-btn-right");
 

@@ -752,7 +752,7 @@ input[type=date] {
         position: relative;
         overflow: hidden;
         margin-top: 30px;
-        box-shadow:0 0 0 5px #286698,
+        box-shadow:0 0 0 3px #286698,
                     0 15px 50px ;
         border-radius: 5px;
     }
@@ -993,7 +993,10 @@ input[type=date] {
     .productDetail-sliderdatosybotones
     {
         display: flex;
-        margin-top: 5%;
+        
+        max-width: 1024px;
+        margin: auto;
+        padding-top: 4%;
     }
     .productDetail-datos
     {
@@ -1014,6 +1017,7 @@ input[type=date] {
     .productDetail-main
     {
         width: 60%;
+        
     }
     .productDetail-slider-container
     {
@@ -1026,6 +1030,67 @@ input[type=date] {
     .productDetail-img
     {    
         max-width: 900px;
+        display:block;
+        width: 35%;
+        height: 30%;
+        font-size: small;
+        margin-left: 20%;
+    
+    }
+
+    /*.productDetail-titulo
+    {
+        position: absolute;
+        margin-left: -88%;
+        margin-top: -5%;
+    }*/
+    
+
+
+}
+@media (min-width: 760px)
+
+{
+    .productDetail-sliderdatosybotones
+    {
+        display: flex;
+        
+        max-width: 1024px;
+        margin: auto;
+        padding-top: 4%;
+    }
+    .productDetail-datos
+    {
+        
+        margin-top: 0px;
+        width: 40%;
+        max-width: 550px;
+        height: 500px;
+        margin-right: 8%;
+        padding: 0;
+        border: solid 0px #666 ;
+        border-radius: 7%       ;
+        box-shadow:0 0 0 0px #286698,
+        0 10px 15px ;
+        
+
+    }
+    .productDetail-main
+    {
+        width: 60%;
+        
+    }
+    .productDetail-slider-container
+    {
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        box-shadow:0 0 0 0px #286698,
+        0 0px 0px ;
+    }
+    .productDetail-img
+    {    
+        max-width: 600px;
         display:block;
         width: 35%;
         height: 30%;
