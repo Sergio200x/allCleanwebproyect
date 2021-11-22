@@ -6,16 +6,13 @@ All Clean ofrece en forma de tienda online productos de limpieza y de organizaci
 
 ### Martina Agüero
 
-Tengo 24 años, soy estudiante de Lic. en sistemas en la UNLP y complemento mis herramientas de aprendizaje con el curso de desarrollo Full Stack de Digital House
+24 años, Estudiante de Lic. en sistemas en la UNLP y complemento mis herramientas de aprendizaje con el curso de desarrollo Full Stack de Digital House
 
 ### Sergio Fernandez
 30 Años, Estudiante de desarrollo Full Stack en Digital House y Profesorado de Matematica
 
-### Daniel Ferraioli
-46 años , estudiante de  developer in progress y estudiante de Licenciatura en Historia.
-
 ### Javier Marillan
-40 años Estudiante de desarrollo Full Stack en Digital House.
+40 años, Estudiante de desarrollo Full Stack en Digital House.
 
 ***
 
