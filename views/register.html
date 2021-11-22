@@ -13,9 +13,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <title>Registro</title>
 </head>
-<body>
+<body class="body">
+    <header class="index-header">
+        <section class="index-maxwidth-body"> 
+            <div class="index-logo">
+                <img src="images/logo-gota.svg" alt="logo de allclean" class="index-imglogo">
+                <h1>All Clean</h1>
+            </div>
+
+            <section class="index-searchbar">
+                <input type="search" name="busqueda" placeholder="¿Qué producto buscas?">     
+            </section>
+
+            <section class="index-rightmenu">
+                <i class="fas fa-user"></i>
+                <i class="far fa-heart"></i>
+                 <i class="fas fa-shopping-cart" ></i> 
+            </section>
+
+            <section class="index-hamburgermenu">
+                <i class="fas fa-bars"></i>
+            </section>
+        </section>        
+    </header>
+
     <form action="/" method="post" class="register-create-form">
         <h2>Registro</h2>
         <div class="register-actividad-container">
@@ -58,6 +81,25 @@
         </div>
         <button type="submit" class="register-submit">Registrarse</button>
     </form>
+
+    <footer class="footer">
+        <div class="index-div-footer-container">
+            <i class="far fa-credit-card index-icons-footer"></i>
+            <h2>Elegí como pagar</h2>
+            <h3>Tenemos los medios de pago mas populares del mercado</h3>
+        </div>
+        <div class="index-div-footer-container">
+            <i class="far fa-check-square index-icons-footer"></i>
+            <h2>Compra asegurada</h2>
+            <h3>Vendedores Garantizados por Safety Pay</h3>
+        </div>
+        <div class="index-div-footer-container">
+            <i class="fas fa-gift index-icons-footer"></i>
+            <h2>Envíos a todo el país</h2>
+            <h3>Enviá a tu domicilio o retira en nuestros puntos Pickit!</h3>
+        </div>
+    </footer>
+
     <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
 </body>

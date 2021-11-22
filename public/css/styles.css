@@ -13,12 +13,32 @@ html
     font-size: 10px;
 }
 
-/* ------------------COMIENZO DEL INDEX----------------------------*/
-
-.index-body
+.body
 {
     background-color: #fcfeff;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 364px;
 }
+
+.footer
+{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    border: solid 1px rgba(180, 161, 161, 0.7);
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+    width: 100%;
+}
+
+
+/* ------------------COMIENZO DEL INDEX----------------------------*/
 
 /* .index-main
 {
@@ -364,19 +384,6 @@ html
     color: #fcfeff;
 }
 
-.index-footer
-{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    margin-top: 50px;
-    border: solid 1px rgba(180, 161, 161, 0.7);
-    box-shadow: 0px 0px 10px rgb(100,100,100);
-}
-
 .index-div-footer-container h2
 {
     font-size: 2vh;
@@ -399,18 +406,37 @@ html
 /* ------------------FIN DEL INDEX----------------------------*/
 
 /* ------------------COMIENZO DEL REGISTER------------------------*/
-.register-create-form
+.register-create-form, .login-create-form
 {
     padding: 20px 20px;
     max-width: 800px;
     margin: auto;
 }
 
-.register-create-form h2
+.register-create-form h2, .login-create-form h2
 {
     font-size: 30px;
     text-align: center;
     color: #666;
+}
+
+.login-create-form h2
+{
+    font-size: 40px;
+}
+
+.login-create-form h3
+{
+    text-align: center;
+    font-size: 25px;
+    color: #b4b7b9;
+}
+
+.login-forgot-pass a
+{
+    color: #2094FE;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .register-control-formulario
@@ -444,7 +470,7 @@ html
     display: block;
 }
 
-.register-submit
+.register-submit,.login-submit
 {
     background-color: #2094FE;
     border: none;
@@ -455,6 +481,13 @@ html
     width: 100%;
     max-width: 800px;
     height: 4.5rem;
+}
+
+.login-submit
+{
+    width: 70%;
+    max-width: 800px;
+    transform: translateX(25%);
 }
 
 .register-actividad-container
@@ -528,6 +561,10 @@ input[type=date] {
 
 @media (min-width: 768px)
 {
+    .body
+    {
+        padding-bottom: 215px;
+    }
 
     .index-hamburgermenu
     {
@@ -569,7 +606,7 @@ input[type=date] {
         margin-right: 30px;
     }
 
-    .index-footer
+    .footer
     {
         flex-direction: row;
     }
@@ -633,7 +670,7 @@ input[type=date] {
         font-size: 2rem;
     }
 
-    .register-create-form
+    .register-create-form, .login-create-form
     {
         border: 1px solid #666;
         border-radius: 5px;
@@ -1351,5 +1388,11 @@ input[type=date] {
 
 }
 
+/* ------------------FIN DEL PRODUCT CART----------------------------*/
 
+/* ------------------COMIENZO DEL LOGIN----------------------------*/
+
+
+
+/* ------------------FIN DEL LOGIN----------------------------*/
 
