@@ -30,6 +30,7 @@ app.post('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/index.html'))
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000
+  , () => {
   console.log(`listening at http://localhost:${port}`)
 })
