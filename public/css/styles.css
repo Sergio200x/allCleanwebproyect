@@ -62,7 +62,6 @@ html
 
 .index-header
 {
-    border: solid 1px red;
     border: solid 1px rgba(180, 161, 161, 0.7);
     box-shadow: 0px 0px 10px rgb(100,100,100);
 }
@@ -75,20 +74,16 @@ html
     justify-content: center;
     align-items: center;
     margin: 5px;
-    
-    
-    
 }
 
 .index-logo img
 {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     animation: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-name: logoimg;
-    
 }
 
 
@@ -109,7 +104,7 @@ html
 
 .index-logo h1
 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     padding: 0;
     font-family: 'Syncopate', sans-serif;
     color: #286698;
@@ -281,6 +276,12 @@ html
     margin: auto;
     margin-top: 2rem;
     text-align: center;
+}
+
+.index-offers a
+{
+    color: #666;
+    text-decoration: none;
 }
 
 .index-div-container
@@ -555,12 +556,21 @@ input[type=date] {
 
 
 
-
-
 /* ------------------MEDIA QUERIES----------------------------*/
 
 @media (min-width: 768px)
 {
+    .index-logo img
+    {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .index-logo h1
+    {
+        font-size: 1rem;
+    }
+
     .body
     {
         padding-bottom: 215px;
@@ -781,15 +791,12 @@ input[type=date] {
     {
         display: flex;
         width: 400%;
-        
-    
     }
     
     .productDetail-main
     {    
         display: flex; 
         justify-content: space-between;      
-        
     }
     
     .productDetail-img
@@ -800,7 +807,6 @@ input[type=date] {
         height: 50%;
         font-size: small;
         margin-left: 15%;
-    
     }
     
     .productDetail-slider-container
@@ -844,7 +850,8 @@ input[type=date] {
     
     .productDetail-btn-prev:hover , .productDetail-btn-next:hover
     {
-        background: rgba(255, 255, 255, 1)
+        background: #286698;
+        color: #fcfeff;
     }
     .productDetail-btn-prev
     {
@@ -869,6 +876,7 @@ input[type=date] {
         width: 95%;
         text-align: center;
         margin: auto;
+        color: #b4b7b9;
     }
     
     .productDetail-descripcionbreve
@@ -987,6 +995,8 @@ input[type=date] {
     
     .productDetail-stock p
     {
+        color: green;
+        font-weight: bold;
         font-size: 150%;
         margin-bottom: 3px;
     }
@@ -1046,6 +1056,7 @@ input[type=date] {
         margin:auto;
         margin-top: 10px;
     }
+
     
     @media (min-width: 1024px)
 
@@ -1276,6 +1287,7 @@ input[type=date] {
 
 .productCartCarrito
 {
+    color: #666;
     font-size: 25px;
     font-weight: bold;
 }
@@ -1309,6 +1321,7 @@ input[type=date] {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width: 1200px;
     height: 120px;
     margin: auto;
     border-top: solid 1px #666;
@@ -1373,6 +1386,7 @@ input[type=date] {
 
 .productCartCarrito
 {
+    color: #666;
     font-size: 25px;
     font-weight: bold;
 }
@@ -1395,8 +1409,9 @@ input[type=date] {
 
 .productCart-total div
 {
-    margin-left: 40px;
-    margin-top: 30px;
+    /* margin-left: 40px;
+    margin-top: 30px; */
+    margin: auto;
     font-weight: bolder;
     font-size: 25px;
 }
@@ -1407,12 +1422,12 @@ input[type=date] {
     justify-content: flex-end;
     width: 100%;
     height: 120px;
-    margin: auto;
     border-top: solid 1px #666;  
-     
 }
+
 .productCart-continuarcompraboton
 {
+    margin: auto;
     height: 30px;
     width: 180px;
     margin-top: 35px;
@@ -1420,10 +1435,11 @@ input[type=date] {
     font-size: 16px;
     background-color:#2094FE ;
     color: whitesmoke;
+    border-radius: 5px;
     border: none;
-    
-    
 }
+
+
 
 /* ------------------FIN DEL PRODUCT CART----------------------------*/
 
