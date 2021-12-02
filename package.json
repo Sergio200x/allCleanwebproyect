@@ -1,25 +1,25 @@
 {
-  "name": "proyectofinal",
-  "version": "1.0.0",
-  "description": "All Clean ofrece en forma de tienda online productos de limpieza y de organización para el hogar de primera calidad, teniendo una amplia gama de productos: desde los mejores desinfectantes hasta los mas ricos aromatizantes, siempre pensando en las alternativas mas económicas y accesibles para los usuarios. Esta orientado al consumidor final que quiere unificar sus compras, adquiriendo marca, calidad y bajos precios.",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "app.js",
-    "dev": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/diego856/grupo_1_allclean.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/diego856/grupo_1_allclean/issues"
-  },
-  "homepage": "https://github.com/diego856/grupo_1_allclean#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "proyectofinal",
+    "version": "1.0.0",
+    "description": "All Clean ofrece en forma de tienda online productos de limpieza y de organización para el hogar de primera calidad, teniendo una amplia gama de productos: desde los mejores desinfectantes hasta los mas ricos aromatizantes, siempre pensando en las alternativas mas económicas y accesibles para los usuarios. Esta orientado al consumidor final que quiere unificar sus compras, adquiriendo marca, calidad y bajos precios.",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/diego856/grupo_1_allclean.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/diego856/grupo_1_allclean/issues"
+    },
+    "homepage": "https://github.com/diego856/grupo_1_allclean#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
