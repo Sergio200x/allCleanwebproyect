@@ -24,7 +24,7 @@
 
 ### Less of:
 
-- Necesitamos enfocarnos mas en hacer funcionar lo simple antes de querer complejizar en demasía el sitio. A veces, menos es mas y todo cambio puede venir en etapas, no es necesario implementarlo todo junto.
+- Necesitamos enfocarnos mas en hacer funcionar lo simple antes de querer complejizar en demasíado el sitio. A veces, menos es mas y todo cambio puede venir en etapas, no es necesario implementarlo todo junto.
 
 ***
 
