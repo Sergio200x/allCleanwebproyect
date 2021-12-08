@@ -5,6 +5,8 @@
 
 ***
 
+
+
 ### More of:
 
 - Necesitamos más participación activa del equipo y reducir los tiempos de respuesta de los mismos.
@@ -14,6 +16,8 @@
 
 ***
 
+- Aumentar la cantidad de reuniones para poder mejorar el dinamismo y poder así colabora
+
 ### Keep Doing:
 
 - Seguir consultando las dudas con los profesores y seguir investigando y creciendo por cuenta propia para dar un valor agregado mas allá de la consigna del desafío.
@@ -21,7 +25,7 @@
 - Seguir realizando entregas de calidad en tiempo y forma.
 
 ***
-
+- 
 ### Less of:
 
 - Necesitamos enfocarnos mas en hacer funcionar lo simple antes de querer complejizar en demasíado el sitio. A veces, menos es mas y todo cambio puede venir en etapas, no es necesario implementarlo todo junto.
