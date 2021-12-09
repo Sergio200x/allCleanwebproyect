@@ -2,7 +2,7 @@
 
 All Clean ofrece en forma de tienda online productos de limpieza y de organización para el hogar de primera calidad, teniendo una amplia gama de productos: desde los mejores desinfectantes hasta los mas ricos aromatizantes, siempre pensando en las alternativas mas económicas y accesibles para los usuarios. Esta orientado al consumidor final que quiere unificar sus compras, adquiriendo marca, calidad y bajos precios.
 
-https://allclean-unity.herokuapp.com/
+- https://allclean-unity.herokuapp.com/
 
 # Link público del tablero de trabajo:
 - https://trello.com/b/67poQvRW/all-clean
