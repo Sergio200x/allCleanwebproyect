@@ -2,35 +2,22 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const port = 3000
+const rutasIndex = require('./routes/indexRoutes')
+const rutasLogin = require('./routes/loginRoutes')
+const rutasProductDetail = require('./routes/productDetailRoutes')
+const rutasProductCart = require('./routes/productCartRoutes')
+const rutasRegister = require('./routes/registerRoutes')
 
-const publicPath = path.join(__dirname, "/public")
-app.use(express.static(publicPath))
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/index.html'))
-})
+app.set('view engine', 'ejs')
 
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/login.html'))
-  })
+app.use('/', rutasIndex)
+app.use('/login', rutasLogin)
+app.use('/productDetail', rutasProductDetail)
+app.use('/productCart', rutasProductCart)
+app.use('/register', rutasRegister)
 
-app.get('/productCart', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/productCart.html'))
-  })
-
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/productDetail.html'))
-  })
-
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/register.html'))
-  })
-
-app.post('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/index.html'))
-})
-
-app.listen(process.env.PORT || 3000
-  , () => {
-  console.log(`listening at http://localhost:${port}`)
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`listening at http://localhost:${port}`)
 })

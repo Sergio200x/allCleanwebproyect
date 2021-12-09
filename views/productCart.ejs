@@ -1,41 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/707b293baa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Mulish&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<%- include('partials/doctype.ejs') %>
+
     <title>Carrito</title>
 </head>
 <body class="body">
-    <header class="index-header">
-        <section class="index-maxwidth-body"> 
-            <div class="index-logo">
-                <img src="images/logo-gota.svg" alt="logo de allclean" class="index-imglogo">
-                <h1>All Clean</h1>
-            </div>
-
-            <section class="index-searchbar">
-                <input type="search" name="busqueda" placeholder="¿Qué producto buscas?">     
-            </section>
-
-            <section class="index-rightmenu">
-                <i class="fas fa-user"></i>
-                <i class="far fa-heart"></i>
-                 <i class="fas fa-shopping-cart" ></i> 
-            </section>
-
-            <section class="index-hamburgermenu">
-                <i class="fas fa-bars"></i>
-            </section>
-        </section>        
-    </header>
+    <%- include('partials/header.ejs') %>
     
     <main class="productCart-main">
         <div class="productCartCarrito">Carrito</div>
@@ -102,23 +70,7 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="index-div-footer-container">
-            <i class="far fa-credit-card index-icons-footer"></i>
-            <h2>Elegí como pagar</h2>
-            <h3>Tenemos los medios de pago mas populares del mercado</h3>
-        </div>
-        <div class="index-div-footer-container">
-            <i class="far fa-check-square index-icons-footer"></i>
-            <h2>Compra asegurada</h2>
-            <h3>Vendedores Garantizados por Safety Pay</h3>
-        </div>
-        <div class="index-div-footer-container">
-            <i class="fas fa-gift index-icons-footer"></i>
-            <h2>Envíos a todo el país</h2>
-            <h3>Enviá a tu domicilio o retira en nuestros puntos Pickit!</h3>
-        </div>
-</footer>
+    <%- include('partials/footer.ejs') %>
 <script src="/js/productDetail-slider.js"></script>
 </body>
 </html>
