@@ -54,6 +54,9 @@ html{
 .index-header{
     height: 100%;
     background-color: #f1f1f1;
+    position: fixed;
+    width: 100%;
+    height: fit-content;
 }
 
 .index-searchbar{
