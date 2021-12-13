@@ -29,6 +29,7 @@
 - Empezar a utilizar distintas ramas para poder lograr un mejor desarrollo en simultaneo
 - Acostumbrarnos a descargar el repositorio cada vez que se comienza a modificar el proyecto, para asi evitar generar conflictos
 - Organizar el codigo en las hojas de estilos para que todos podamos entender mejor el codigo, que sea mas claro y dinamico, y no tan extenso y confuso
+- Implementar weekly standups con su respectivo archivo de registro para poder notar los avances y tareas que realizamos, y notar que impedimentos tenemos
 ### More of:
 - Aumentar la cantidad de reuniones para poder mejorar el dinamismo 
 - Tener una mayor comunicación en lo que respecta a la división de tareas durante cada sprint
