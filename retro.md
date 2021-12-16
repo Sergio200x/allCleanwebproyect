@@ -39,3 +39,20 @@
 - Tener tantas etiquetas y clases en la hoja de estilos, que por ahi se pueden implementar reutilizando codigo, o por ahi no es esencial su implementación
 ### Stop Doing:
 - Trabajar todos sobre la misma rama
+
+***
+
+# Retrospective - Sprint 4:
+### Start Doing:
+- Realizar mejoras visuales en la pagina
+- Subdividir de antemano las tareas de cada sprint para no modificar la misma parte del codigo y asi evitar conflictos
+### More of:
+- Aumentar la cantidad de reuniones para poder mejorar el dinamismo 
+- Tener una mayor comunicación en lo que respecta a la división de tareas durante cada sprint
+### Keep Doing:
+- Realizar refuerzos de contenido previo a cada clase en conjunto, cualquiera de lops miembros del equipo que este disponible se conecta
+### Less of:
+- Subestimar el tiempo que tardamos en realizar una actividad 
+### Stop Doing:
+- Dejar de comunicar al resto del equipo el progreso e inconvenientes que van ocurriendo sobre la marcha
+
