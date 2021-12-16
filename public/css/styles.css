@@ -153,6 +153,7 @@ html{
     max-width: 5.5rem;
     right: 0%;
     cursor: pointer;
+    border-left: #808080ad solid 1px;
 }
 
 .index-rightmenu{
