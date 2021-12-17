@@ -9,6 +9,7 @@ const rutasProductCart = require('./routes/productCartRoutes')
 const rutasRegister = require('./routes/registerRoutes')
 
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs')
 

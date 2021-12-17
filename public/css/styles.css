@@ -83,7 +83,7 @@ html{
 }
 
 .index-searchbar:hover{
-    border: rgb(139, 135, 135) solid 1px;
+    border: rgb(139, 135, 135) solid 10px;
     font-weight: bolder;
 }
 

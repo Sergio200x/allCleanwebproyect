@@ -111,6 +111,12 @@
 {
     position: relative;
 }
+.register-text-danger{
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
 input[type=date] {
     border-radius: 3px;
     padding: 0 13px 0 8px;
