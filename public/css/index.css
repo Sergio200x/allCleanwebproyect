@@ -4,6 +4,10 @@
     margin: auto;
     overflow: hidden;
     position: relative;
+    
+    border: springgreen 1px solid;
+
+
 }
 
 .index-slider{
