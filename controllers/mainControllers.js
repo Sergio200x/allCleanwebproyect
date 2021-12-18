@@ -17,7 +17,7 @@ const controllers = {
         return res.send('Pasaste las Validaciones, Falta que Sergio arme la Vista!!!')
     },
     productDetail:(req, res) => {res.render('products/productDetail')},
-    productCart:(req, res) => {res.render('productCart')},
+    productCart:(req, res) => {res.render('products/productCart')},
 }
 
 module.exports= controllers

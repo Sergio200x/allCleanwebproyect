@@ -3,6 +3,7 @@ const { body } = require('express-validator')
 const multer = require('multer')
 const router = express.Router()
 const controllers = require('../controllers/mainControllers')
+const path = require('path');
 
 
 const storage = multer.diskStorage({
@@ -10,8 +11,8 @@ const storage = multer.diskStorage({
       cb(null, './public/images/avatars')
     },
     filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, file.fieldname + '-' + uniqueSuffix)
+      let fileName = `Avatar-${Date.now()}${path.extname(file.originalname)}`;
+      cb(null, fileName);
     }
   })
   
@@ -24,7 +25,7 @@ const validations =[
         .notEmpty().withMessage('Debes ingresar un Email').bail()
         .isEmail().withMessage('Debes ingresar un Email Valido'),
     body('password').notEmpty().withMessage('Debes ingresar un Password'),
-    body('validarPassword').notEmpty().withMessage('Debes reingresar tu Password'),
+    body('validarPassword').notEmpty().withMessage('Debes ingresar un Password'),
 ]
 
 router.get('/', controllers.register)

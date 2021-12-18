@@ -1,4 +1,24 @@
-
+.register-info
+{
+    margin-top: 1rem;
+}
+.register-file
+{
+    margin-top: 2rem;
+}
+.subir
+{
+    margin:auto;
+    padding: 10px 50px;
+    background: #f55d3e;
+    color:#fff;
+    border:0px solid #fff;
+}
+.subir:hover
+{
+    color:#fff;
+    background: #f7cb15;
+}
 .register-create-form, .login-create-form
 {
     padding: 20px 20px;
@@ -65,6 +85,10 @@
     width: 100%;
     max-width: 800px;
     height: 4.5rem;
+}
+.register-submit
+{
+    margin-top: 1.5rem;
 }
 .login-submit
 {
@@ -133,15 +157,17 @@ input[type=date] {
   /*------------------------------------------------MEDIA QUERIES------------------------------*/
 @media (min-width: 1024px)
 {
-  .register-control
-  {
-      font-size: 2rem;
-  }
-  .register-create-form, .login-create-form
-  {
-      border: 1px solid #666;
-      border-radius: 5px;
-  }
+    .register-control
+    {
+        font-size: 2rem;
+    }
+
+    .register-create-form, .login-create-form
+    {
+        border: 1px solid #666;
+        border-radius: 5px;
+        margin-top: 2rem;
+    }
 }
   /*------------------------------------------------MEDIA QUERIES------------------------------*/
   

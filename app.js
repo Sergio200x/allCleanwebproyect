@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3030
 
 const indexRoutes = require('./routes/indexRoutes')
 const loginRoutes = require('./routes/loginRoutes')
@@ -19,6 +19,6 @@ app.use('/productDetail', productDetailRoutes)
 app.use('/productCart', productCartRoutes)
 app.use('/register', registerRoutes)
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)
 })

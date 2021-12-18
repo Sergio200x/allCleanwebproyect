@@ -7,8 +7,8 @@
     <form action="/register" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Registro</h2>
         <div class="register-actividad-container">
-            <label class="prueba"><input type="radio" name="tipoActividad" value="persona"> Persona</label>  
-            <label class="prueba"><input type="radio" name="tipoActividad" value="empresa"> Empresa</label>
+            <label class="tipoActividad"><input type="radio" name="tipoActividad" value="persona"> Persona</label>  
+            <label class="tipoActividad"><input type="radio" name="tipoActividad" value="empresa"> Empresa</label>
         </div>
 
         <div class="register-control-formulario">
@@ -96,9 +96,21 @@
             <% } %>
         </div>
 
-        <div class="register-control-formulario">
-            <input type="file" name="avatar" id="file" class="register-control">
-        </div>
+        <div class="register-file">
+            <label for="file" class="subir">
+                <i class="fas fa-cloud-upload-alt"></i> Subir Imagen
+            </label>
+            <input id="file" name="avatar" onchange='cambiar()' type="file" style='display: none;'/>
+        </div>    
+        <div id="info" class="register-info"></div>
+        
+        <script>
+            function cambiar(){
+            var nombreArchivo = document.getElementById('file').files[0].name;
+            document.getElementById('info').innerHTML = nombreArchivo;
+            }
+        </script>
+
         <button type="submit" class="register-submit">Registrarse</button>
     </form>
 
