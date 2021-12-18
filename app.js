@@ -1,23 +1,23 @@
 const express = require('express')
-const path = require('path')
 const app = express()
 const port = 3000
-const rutasIndex = require('./routes/indexRoutes')
-const rutasLogin = require('./routes/loginRoutes')
-const rutasProductDetail = require('./routes/productDetailRoutes')
-const rutasProductCart = require('./routes/productCartRoutes')
-const rutasRegister = require('./routes/registerRoutes')
+
+const indexRoutes = require('./routes/indexRoutes')
+const loginRoutes = require('./routes/loginRoutes')
+const productDetailRoutes = require('./routes/productDetailRoutes')
+const productCartRoutes = require('./routes/productCartRoutes')
+const registerRoutes = require('./routes/registerRoutes')
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs')
 
-app.use('/', rutasIndex)
-app.use('/login', rutasLogin)
-app.use('/productDetail', rutasProductDetail)
-app.use('/productCart', rutasProductCart)
-app.use('/register', rutasRegister)
+app.use('/', indexRoutes)
+app.use('/login', loginRoutes)
+app.use('/productDetail', productDetailRoutes)
+app.use('/productCart', productCartRoutes)
+app.use('/register', registerRoutes)
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`listening at http://localhost:${port}`)

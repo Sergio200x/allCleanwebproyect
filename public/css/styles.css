@@ -14,7 +14,7 @@ html{
     background-color: white;
     position: relative;
     min-height: 100vh;
-    padding-bottom: 500px;
+    padding-bottom: 400px;
 }
 
 .footer{
@@ -47,16 +47,15 @@ html{
     color: #286698 ;
 }
 
-.index-div-footer-container{
+.index-div-footer-container
+{
     max-width: 30%;
 }
 
-.index-header{
+.index-header
+{
     background-color: #f1f1f1;
-    position: fixed;
     width: 100%;
-    z-index: 10;
-    border: brown 1px solid;
 }
 
 .index-searchbar{
@@ -64,9 +63,6 @@ html{
     margin-left: 0px;
     margin-right: 0px;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     position: relative;
     width: 70%;
 }
@@ -84,7 +80,7 @@ html{
 }
 
 .index-searchbar:hover{
-    border: rgb(139, 135, 135) solid 10px;
+    border: rgb(139, 135, 135) solid 1px;
     font-weight: bolder;
 }
 
@@ -99,12 +95,13 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 5px;
 }
 
 .index-logo img{
-    width: 6rem;
-    height: 6rem;
+    width: 3rem;
+    height: 3rem;
     animation: 7s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -139,7 +136,6 @@ html{
 .lupa i{
     color: #808080ad;
     position: relative;
-    z-index: 10;
     font-size: 14px;
     cursor: pointer;
 }
@@ -148,11 +144,13 @@ html{
     border: none;
     background-color: white;
     position: absolute;
-    height: 99%;
+    height: 80%;
     width: 17%;
     max-width: 5.5rem;
     right: 0%;
     cursor: pointer;
+    top: 5px;;
+    margin-right: 5px;
     border-left: #808080ad solid 1px;
 }
 
@@ -173,7 +171,7 @@ html{
     padding: 10px 10px 10px 10px;
     height: fit-content;
     width: fit-content;
-    margin-left: 5px;
+    margin: 0 7px;
 }
 
 /*------------------------------------------------MEDIA QUERIES------------------------------*/
@@ -240,6 +238,11 @@ html{
     .index-searchbar{
         height: 100%;
         width: 75%;
+    }
+
+    .index-logo img{
+        width: 6rem;
+        height: 6rem;
     }
 }
 
