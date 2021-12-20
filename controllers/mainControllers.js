@@ -26,6 +26,9 @@ const controllers = {
 
     productCart:(req, res) => {res.render('products/productCart')},
 
+    productCreate:(req, res) => {res.render('products/productCreate')},
+
+
     products: (req, res) => {
 
         let productList = products.all()

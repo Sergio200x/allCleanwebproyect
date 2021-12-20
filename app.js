@@ -6,6 +6,7 @@ const indexRoutes = require('./routes/indexRoutes')
 const loginRoutes = require('./routes/loginRoutes')
 const productDetailRoutes = require('./routes/productDetailRoutes')
 const productCartRoutes = require('./routes/productCartRoutes')
+const productCreateRoutes = require('./routes/productCreateRoutes')
 const registerRoutes = require('./routes/registerRoutes')
 const productsRoutes = require('./routes/productsRoutes')
 
@@ -20,6 +21,7 @@ app.use('/productDetail', productDetailRoutes)
 app.use('/productCart', productCartRoutes)
 app.use('/register', registerRoutes)
 app.use('/products', productsRoutes)
+app.use('/create', productCreateRoutes)
 
 app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)
