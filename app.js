@@ -19,9 +19,9 @@ app.use('/', indexRoutes)
 app.use('/login', loginRoutes)
 app.use('/productDetail', productDetailRoutes)
 app.use('/productCart', productCartRoutes)
+app.use('/productCreate', productCreateRoutes)
 app.use('/register', registerRoutes)
 app.use('/products', productsRoutes)
-app.use('/create', productCreateRoutes)
 
 app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)
