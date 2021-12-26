@@ -1,24 +1,37 @@
-<%- include('../partials/doctype.ejs') %>
+<!-- Include Head -->
+<%- include('../partials/doctype.ejs', {title: 'Productos'}) %>
 
-    <title>Productos</title>
-</head>
+<!-- Include Head -->
+<%- include('../partials/doctype.ejs', {title: 'Productos'}) %>
+
 <body class="body">
     
     <%- include('../partials/header.ejs') %>
 
+    <!-- All Products -->
     <section class="index-offers">
-            <% productList.forEach(product => { %>
+        <% for( let producto of productList ) { %>
                 <article class="index-div-container">
-                    <div class="index-div-img">
-                        <img src=<%= product.image %>  alt="<%= product.description %>" class="index-img-offers">
-                    </div>
-                    <div class="index-info-offers">
-                        <p class="index-price-offers">$<%= product.price %></p>
-                        <p class="index-description-offers"><%= product.description %></p>
-                    </div>   
+                    <a href="/products/detail/<%=producto.id%>">
+                        <div class="index-div-img">
+                            <img src="images/products/<%= producto.image %>" alt="<%= producto.name %>" class="index-img-offers">
+                        </div>
+                        <div class="index-info-offers">
+                            <p class="index-price-offers">$<%= producto.price %></p>
+                            <% if (producto.discount > 0) { %>
+                                <p class="index-discount-offers"><%= producto.discount %>% off</p>
+                            <% } %>
+                            <p class="index-description-offers"><%= producto.name %></p>
+                        </div>    
+                    </a>
                 </article>
-            <% }) %> 
+        <% } %>
     </section>
+    <!-- All Products -->
+
+    <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
 </body>
 </html>

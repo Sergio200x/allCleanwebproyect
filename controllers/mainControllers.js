@@ -1,10 +1,14 @@
 const { validationResult } = require("express-validator")
 const jsonTable = require('../database/jsonTable');
 
-const products = jsonTable('products_json');
+const products = jsonTable('products');
 
 const controllers = {
-    index:(req, res) => {res.render('index')},
+    index:(req, res) => {
+        const productList = products.all()
+
+        res.render('index', {productList : productList})
+    },
 
     login:(req, res) => {res.render('login')},
 
@@ -31,10 +35,26 @@ const controllers = {
 
     products: (req, res) => {
 
-        let productList = products.all()
+        const productList = products.all()
 
         res.render('products/products',  { productList });
     },
+
+    search: (req, res) => {
+		const busqueda = req.query.search
+        const productList = products.all()
+		let productsFilter = productList
+
+		if(busqueda){
+			productsFilter = productList.filter(producto =>  
+				producto.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(busqueda.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
+				if(!productsFilter.length){
+					productsFilter = undefined;
+				}
+		}
+	
+		res.render('products/productResults', {productsFilter: productsFilter, busqueda})
+	},
 }
 
 module.exports= controllers

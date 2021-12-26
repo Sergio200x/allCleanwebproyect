@@ -1,6 +1,5 @@
-    <%- include('partials/doctype.ejs') %>
-    <title>All Clean</title>
-</head>
+<!-- Include Head -->
+<%- include('partials/doctype.ejs', {title: 'Inicio'}) %>
 
 <body class="body">
     <%- include('partials/header.ejs') %>
@@ -58,72 +57,25 @@
 
         
         <section class="index-offers">
-            <h2 class="index-h2-offers"> <a href="/productDetail">Super Ofertas</a> </h2>    
-            <article class="index-div-container">
-                <div class="index-div-img">
-                    <img src="/images/oferta-1.png" alt="Ayudin" class="index-img-offers">
-                </div>
-                 <div class="index-info-offers">
-                    <p class="index-price-offers">$121</p>
-                    <p class="index-discount-offers">10% off</p>
-                    <p class="index-description-offers">Quitamanchas Ropa Ayudín Blanco Supremo 400 Ml</p>
-                </div>    
-            </article>
-
-            <article class="index-div-container">
-                <div class="index-div-img">
-                    <img src="/images/oferta-2.webp" alt="Magistral" class="index-img-offers">
-                </div>
-                <div class="index-info-offers">
-                    <p class="index-price-offers">$410</p>
-                    <p class="index-discount-offers">15% off</p>
-                    <p class="index-description-offers">Detergente Magistral Ultra Limón sintético en botella 500 ml</p>
-                </div>   
-            </article>
-
-            <article class="index-div-container">
-                <div class="index-div-img">
-                    <img src="/images/oferta-3.webp" alt="Lisoform" class="index-img-offers">
-                </div>
-                <div class="index-info-offers">
-                    <p class="index-price-offers">$159.99</p>
-                    <p class="index-discount-offers">17% off</p>
-                    <p class="index-description-offers">Limpiador Lysoform Original en aerosol 360ml</p>
-                </div>   
-            </article>
-
-            <article class="index-div-container">
-                <div class="index-div-img">
-                    <img src="/images/oferta-4.webp" alt="Vivere" class="index-img-offers">
-                </div>
-                <div class="index-info-offers">
-                    <p class="index-price-offers">$195</p>
-                    <p class="index-discount-offers">20% off</p>
-                    <p class="index-description-offers">Suavizante Vivere Clásico repuesto 900 ml</p>
-                </div>   
-            </article>
-
-            <article class="index-div-container">
-                <div class="index-div-img">
-                    <img src="/images/oferta-5.png" alt="Espadol" class="index-img-offers">
-                </div>
-                <div class="index-info-offers">
-                    <p class="index-price-offers">$255</p>
-                    <p class="index-discount-offers">10% off</p>
-                    <p class="index-description-offers">Jabón líquido Espadol Antibacterial Original con dosificador 250 ml</p>
-                </div>   
-            </article>
-            
-            <article class="index-div-container">
-                <div class="index-div-img">
-                    <img src="/images/oferta-6.webp" alt="Jabon Ala" class="index-img-offers">
-                </div>
-                <div class="index-info-offers">
-                    <p class="index-price-offers">$243</p>
-                    <p class="index-discount-offers">12% off</p>
-                    <p class="index-description-offers">Jabon En Polvo Ala Matic Baja Espuma 800gr</p>
-                </div>   
-            </article>
+            <h2 class="index-h2-offers"> <a href="/productDetail">Super Ofertas</a> </h2>
+            <% for( let producto of productList ) { %>
+                <% if (producto.isOffer) { %>
+                    <article class="index-div-container">
+                        <a href="/products/detail/<%=producto.id%>">
+                            <div class="index-div-img">
+                                <img src="images/products/<%= producto.image %>" alt="<%= producto.name %>" class="index-img-offers">
+                            </div>
+                            <div class="index-info-offers">
+                                <p class="index-price-offers">$<%= producto.price %></p>
+                                <% if (producto.discount > 0) { %>
+                                    <p class="index-discount-offers"><%= producto.discount %>% off</p>
+                                <% } %>
+                                <p class="index-description-offers"><%= producto.name %></p>
+                            </div>    
+                        </a>
+                    </article>
+                <% } %>
+            <% } %>
         </section>
 
         <section class="index-popular-categories">

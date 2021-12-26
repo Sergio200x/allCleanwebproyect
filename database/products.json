@@ -1,0 +1,451 @@
+[{
+  "id": 1,
+  "name": "Quitamanchas 500 ml",
+  "description": "Disp fx of neck of oth metacarpal bone, init for opn fx",
+  "category": "Limpiadores Hogar",
+  "image": "Sun-2.webp",
+  "price": 98952,
+  "isOffer": true,
+  "discount": 1
+}, {
+  "id": 2,
+  "name": "Jabon Líquido 3 kg",
+  "description": "Huntington's disease",
+  "category": "Limpiadores de Cocina",
+  "image": "oferta-3.webp",
+  "price": 36737,
+  "isOffer": false,
+  "discount": 50
+}, {
+  "id": 3,
+  "name": "Suavizante 3 litros",
+  "description": "Chronic obstructive pulmonary disease w (acute) exacerbation",
+  "category": "Limpiadores Hogar",
+  "image": "oferta-3.webp",
+  "price": 79693,
+  "isOffer": false,
+  "discount": 44
+}, {
+  "id": 4,
+  "name": "Detergente 1 litro",
+  "description": "Occ of rail trn/veh injured in derail w/o antecedent clsn",
+  "category": "Otros",
+  "image": "Ala-1.webp",
+  "price": 23704,
+  "isOffer": false,
+  "discount": 39
+}, {
+  "id": 5,
+  "name": "Suavizante 1 litro",
+  "description": "Other burn on board fishing boat, sequela",
+  "category": "Desinfectantes",
+  "image": "ElColoso-3.webp",
+  "price": 48284,
+  "isOffer": true,
+  "discount": 46
+}, {
+  "id": 6,
+  "name": "Alcohol en Gel 250 ml",
+  "description": "Edema of right eye, unspecified eyelid",
+  "category": "Limpiadores de Baño",
+  "image": "oferta-2.webp",
+  "price": 94830,
+  "isOffer": false,
+  "discount": 16
+}, {
+  "id": 7,
+  "name": "Lavandina 3 litros",
+  "description": "Smith's fracture of unsp radius, init for clos fx",
+  "category": "Limpiadores de Cocina",
+  "image": "oferta-3.webp",
+  "price": 58095,
+  "isOffer": true,
+  "discount": 30
+}, {
+  "id": 8,
+  "name": "Alcohol en Spray 250 ml",
+  "description": "Salter-Harris Type IV physeal fracture of lower end of femur",
+  "category": "Limpiadores de Cocina",
+  "image": "Finish-1.webp",
+  "price": 23071,
+  "isOffer": false,
+  "discount": 44
+}, {
+  "id": 9,
+  "name": "Alcohol Liquido 3 litros",
+  "description": "Transient synovitis, right hand",
+  "category": "Limpiadores de Baño",
+  "image": "Sun-2.webp",
+  "price": 19737,
+  "isOffer": true,
+  "discount": 10
+}, {
+  "id": 10,
+  "name": "Aerosol 5 litros",
+  "description": "Displ commnt fx shaft of rad, r arm, 7thG",
+  "category": "Limpiadores de Cocina",
+  "image": "Sun-2.webp",
+  "price": 83461,
+  "isOffer": true,
+  "discount": 3
+}, {
+  "id": 11,
+  "name": "Jabon Líquido 1 kg",
+  "description": "Burn of first degree of right foot",
+  "category": "Limpiadores de Baño",
+  "image": "Finish-2.webp",
+  "price": 72629,
+  "isOffer": false,
+  "discount": 3
+}, {
+  "id": 12,
+  "name": "Suavizante 250 ml",
+  "description": "Superficial foreign body of unspecified wrist, init encntr",
+  "category": "Desinfectantes",
+  "image": "Finish-2.webp",
+  "price": 85933,
+  "isOffer": false,
+  "discount": 26
+}, {
+  "id": 13,
+  "name": "Quitamanchas 5 litros",
+  "description": "Sltr-haris Type I physl fx lower end humer, left arm, init",
+  "category": "Sanitizantes",
+  "image": "Odex-1.webp",
+  "price": 54418,
+  "isOffer": false,
+  "discount": 33
+}, {
+  "id": 14,
+  "name": "Detergente 3 litros",
+  "description": "Age-rel osteopor w current path fx, l shoulder, sequela",
+  "category": "Desinfectantes",
+  "image": "Lysol-1.webp",
+  "price": 7996,
+  "isOffer": true,
+  "discount": 0
+}, {
+  "id": 15,
+  "name": "Aerosol 5 litros",
+  "description": "Displaced fracture of second metatarsal bone, right foot",
+  "category": "Limpiadores Hogar",
+  "image": "Ayudin-Quitamanchas.jpg",
+  "price": 61469,
+  "isOffer": true,
+  "discount": 43
+}, {
+  "id": 16,
+  "name": "Suavizante 5 litros",
+  "description": "Unspecified injury of left thigh, subsequent encounter",
+  "category": "Limpiadores Hogar",
+  "image": "Ala-1.webp",
+  "price": 1961,
+  "isOffer": false,
+  "discount": 23
+}, {
+  "id": 17,
+  "name": "Alcohol en Gel 5 litros",
+  "description": "Driver injured in collision w oth mv nontraf, subs",
+  "category": "Otros",
+  "image": "ElColoso-3.webp",
+  "price": 46471,
+  "isOffer": true,
+  "discount": 42
+}, {
+  "id": 18,
+  "name": "Detergente 500 ml",
+  "description": "Other specified fracture of unspecified ischium",
+  "category": "Limpiadores Hogar",
+  "image": "oferta-1.png",
+  "price": 43897,
+  "isOffer": false,
+  "discount": 46
+}, {
+  "id": 19,
+  "name": "Alcohol en Gel 1 litro",
+  "description": "Laceration w/o foreign body of finger w damage to nail, subs",
+  "category": "Limpiadores Hogar",
+  "image": "oferta-3.webp",
+  "price": 13882,
+  "isOffer": true,
+  "discount": 12
+}, {
+  "id": 20,
+  "name": "Alcohol Liquido 3 litros",
+  "description": "Non-pressure chronic ulcer of unsp part of left lower leg",
+  "category": "Sanitizantes",
+  "image": "Sun-2.webp",
+  "price": 25259,
+  "isOffer": false,
+  "discount": 38
+}, {
+  "id": 21,
+  "name": "Alcohol en Gel 500 ml",
+  "description": "Nondisp commnt fx shaft of rad, r arm, 7thH",
+  "category": "Otros",
+  "image": "Poet-2.webp",
+  "price": 45995,
+  "isOffer": false,
+  "discount": 43
+}, {
+  "id": 22,
+  "name": "Lavandina 3 litros",
+  "description": "Laceration without foreign body of larynx, initial encounter",
+  "category": "Limpiadores Hogar",
+  "image": "oferta-2.webp",
+  "price": 30578,
+  "isOffer": false,
+  "discount": 6
+}, {
+  "id": 23,
+  "name": "Alcohol Liquido 5 litros",
+  "description": "Inadequate housing",
+  "category": "Limpiadores de Cocina",
+  "image": "Lysol-1.webp",
+  "price": 23617,
+  "isOffer": false,
+  "discount": 22
+}, {
+  "id": 24,
+  "name": "Alcohol en Gel 5 litros",
+  "description": "Displ midcervical fx unsp femur, subs for clos fx w malunion",
+  "category": "Limpiadores de Baño",
+  "image": "Poet-2.webp",
+  "price": 94067,
+  "isOffer": true,
+  "discount": 47
+}, {
+  "id": 25,
+  "name": "Alcohol en Spray 250 ml",
+  "description": "Sltr-haris Type III physl fx low end r femr, 7thP",
+  "category": "Limpiadores Hogar",
+  "image": "Cif-Ultra-Brillo.jpg",
+  "price": 44046,
+  "isOffer": false,
+  "discount": 20
+}, {
+  "id": 26,
+  "name": "Quitamanchas 500 ml",
+  "description": "Terrorism w dest arcrft, publ sfty offcl injured, sequela",
+  "category": "Limpiadores de Baño",
+  "image": "ElColoso-3.webp",
+  "price": 9624,
+  "isOffer": false,
+  "discount": 19
+}, {
+  "id": 27,
+  "name": "Aerosol 3 litros",
+  "description": "Disp fx of 1st metatarsal bone, r ft, 7thG",
+  "category": "Limpiadores de Baño",
+  "image": "Finish-1.webp",
+  "price": 12369,
+  "isOffer": false,
+  "discount": 41
+}, {
+  "id": 28,
+  "name": "Alcohol Liquido 250 ml",
+  "description": "Person outside 3-whl mv inj in clsn w rail trn/veh nontraf",
+  "category": "Limpiadores de Baño",
+  "image": "oferta-2.webp",
+  "price": 46276,
+  "isOffer": false,
+  "discount": 14
+}, {
+  "id": 29,
+  "name": "Aerosol 250 ml",
+  "description": "Hematoma of pinna",
+  "category": "Limpiadores de Cocina",
+  "image": "oferta-6.webp",
+  "price": 15828,
+  "isOffer": true,
+  "discount": 47
+}, {
+  "id": 30,
+  "name": "Jabon en Polvo 1 kg",
+  "description": "Unsp fx shaft of left radius, subs for clos fx w delay heal",
+  "category": "Limpiadores de Cocina",
+  "image": "oferta-4.webp",
+  "price": 42885,
+  "isOffer": false,
+  "discount": 42
+}, {
+  "id": 31,
+  "name": "Lavandina 250 ml",
+  "description": "Displaced comminuted fracture of shaft of unspecified tibia",
+  "category": "Sanitizantes",
+  "image": "Zorro-Ultra.jpg",
+  "price": 70205,
+  "isOffer": true,
+  "discount": 28
+}, {
+  "id": 32,
+  "name": "Alcohol en Spray 1 litro",
+  "description": "Toxic effect of ketones, assault",
+  "category": "Desinfectantes",
+  "image": "oferta-1.png",
+  "price": 71293,
+  "isOffer": true,
+  "discount": 33
+}, {
+  "id": 33,
+  "name": "Alcohol Liquido 3 litros",
+  "description": "Struck by other bat, racquet or club, subsequent encounter",
+  "category": "Limpiadores de Baño",
+  "image": "Mr-Musculo.jpg",
+  "price": 63825,
+  "isOffer": false,
+  "discount": 44
+}, {
+  "id": 34,
+  "name": "Jabon Líquido 5 kg",
+  "description": "Congenital absence, atresia and stenosis of anus w/o fistula",
+  "category": "Sanitizantes",
+  "image": "oferta-4.webp",
+  "price": 90241,
+  "isOffer": true,
+  "discount": 49
+}, {
+  "id": 35,
+  "name": "Jabon en Polvo 5 kg",
+  "description": "Personal history of diseases of male genital organs",
+  "category": "Limpiadores Hogar",
+  "image": "oferta-2.webp",
+  "price": 28763,
+  "isOffer": false,
+  "discount": 42
+}, {
+  "id": 36,
+  "name": "Alcohol en Gel 500 ml",
+  "description": "Major laceration of right pulmonary blood vessels, subs",
+  "category": "Desinfectantes",
+  "image": "ElColoso-3.webp",
+  "price": 98340,
+  "isOffer": false,
+  "discount": 12
+}, {
+  "id": 37,
+  "name": "Alcohol en Gel 3 litros",
+  "description": "Other superficial bite of hand of unsp hand, subs encntr",
+  "category": "Limpiadores de Baño",
+  "image": "Lysol-1.webp",
+  "price": 91358,
+  "isOffer": true,
+  "discount": 4
+}, {
+  "id": 38,
+  "name": "Jabon en Polvo 1 kg",
+  "description": "Prsn brd/alit a car injured in nonclsn transport accident",
+  "category": "Limpiadores de Cocina",
+  "image": "Poet-1.webp",
+  "price": 50302,
+  "isOffer": true,
+  "discount": 39
+}, {
+  "id": 39,
+  "name": "Jabon en Polvo 500 gr",
+  "description": "Nondisp fx of base of 5th MC bone. l hand, 7thD",
+  "category": "Otros",
+  "image": "Vivere-1.webp",
+  "price": 49449,
+  "isOffer": true,
+  "discount": 20
+}, {
+  "id": 40,
+  "name": "Lavandina 5 litros",
+  "description": "Nondisp spiral fx shaft of unsp tibia, 7thK",
+  "category": "Limpiadores Hogar",
+  "image": "Poet-2.webp",
+  "price": 94840,
+  "isOffer": false,
+  "discount": 30
+}, {
+  "id": 41,
+  "name": "Jabon Líquido 1 kg",
+  "description": "Hyperplasia of appendix",
+  "category": "Limpiadores Hogar",
+  "image": "Odex-1.webp",
+  "price": 12913,
+  "isOffer": false,
+  "discount": 20
+}, {
+  "id": 42,
+  "name": "Suavizante 250 ml",
+  "description": "Osteitis condensans, left hand",
+  "category": "Limpiadores de Baño",
+  "image": "oferta-4.webp",
+  "price": 96093,
+  "isOffer": false,
+  "discount": 36
+}, {
+  "id": 43,
+  "name": "Suavizante 3 litros",
+  "description": "Unsp physl fx lower end of r femur, subs for fx w delay heal",
+  "category": "Limpiadores de Baño",
+  "image": "Mr-Musculo.jpg",
+  "price": 13520,
+  "isOffer": false,
+  "discount": 35
+}, {
+  "id": 44,
+  "name": "Lavandina 1 litro",
+  "description": "Person injured in oth nonclsn transport acc w mtr veh, subs",
+  "category": "Limpiadores de Baño",
+  "image": "oferta-5.png",
+  "price": 43907,
+  "isOffer": false,
+  "discount": 29
+}, {
+  "id": 45,
+  "name": "Alcohol en Gel 3 litros",
+  "description": "Partial traumatic amp of unsp lower leg, level unsp, sequela",
+  "category": "Limpiadores de Baño",
+  "image": "Cif-1.webp",
+  "price": 93656,
+  "isOffer": false,
+  "discount": 5
+}, {
+  "id": 46,
+  "name": "Quitamanchas 1 litro",
+  "description": "Perineal laceration during delivery, unspecified",
+  "category": "Sanitizantes",
+  "image": "Zorro-Ultra.jpg",
+  "price": 44456,
+  "isOffer": false,
+  "discount": 30
+}, {
+  "id": 47,
+  "name": "Alcohol en Spray 3 litros",
+  "description": "Salmonella enteritis",
+  "category": "Desinfectantes",
+  "image": "Cif-Ultra-Brillo.jpg",
+  "price": 71386,
+  "isOffer": true,
+  "discount": 12
+}, {
+  "id": 48,
+  "name": "Suavizante 3 litros",
+  "description": "Oth fx of lower end of r radius, subs for clos fx w malunion",
+  "category": "Limpiadores Hogar",
+  "image": "Sun-2.webp",
+  "price": 92047,
+  "isOffer": false,
+  "discount": 45
+}, {
+  "id": 49,
+  "name": "Detergente 1 litro",
+  "description": "Preterm labor second tri w preterm delivery third trimester",
+  "category": "Desinfectantes",
+  "image": "ElColoso-1.webp",
+  "price": 41272,
+  "isOffer": false,
+  "discount": 36
+}, {
+  "id": 50,
+  "name": "Jabon en Polvo 1 kg",
+  "description": "Poisoning by methadone, accidental (unintentional), init",
+  "category": "Sanitizantes",
+  "image": "oferta-2.webp",
+  "price": 57662,
+  "isOffer": false,
+  "discount": 12
+}]

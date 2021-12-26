@@ -1,0 +1,35 @@
+<!-- Include Head -->
+<%- include('../partials/doctype.ejs', {title: 'Resultados de tu búsqueda'}) %>
+
+<body class="body">
+    <!-- Include Header With Banner-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header With Banner-->
+
+    <!-- Products Results -->
+    <section class="index-offers">
+        <% productsFilter.forEach(product => { %>
+            <article class="index-div-container">
+                <a href="/products/detail/<%=product.id%>">
+                    <div class="index-div-img">
+                        <img src="images/products/<%= product.image %>"  alt="<%= product.description %>" class="index-img-offers">
+                    </div>
+                    <div class="index-info-offers">
+                        <p class="index-price-offers">$<%= product.price %></p>
+                        <% if (product.discount > 0) { %>
+                            <p class="index-discount-offers"><%= product.discount %>% off</p>
+                        <% } %>
+                        <p class="index-description-offers"><%= product.name %></p>
+                    </div> 
+                 </a>   
+            </article>
+        <% }) %> 
+    </section>
+    <!-- Products Results -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+</body>
+</html>
