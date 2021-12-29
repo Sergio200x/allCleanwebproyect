@@ -3,11 +3,7 @@ const app = express()
 const port = 3030
 
 const indexRoutes = require('./routes/indexRoutes')
-const loginRoutes = require('./routes/loginRoutes')
-const productDetailRoutes = require('./routes/productDetailRoutes')
-const productCartRoutes = require('./routes/productCartRoutes')
-const productCreateRoutes = require('./routes/productCreateRoutes')
-const registerRoutes = require('./routes/registerRoutes')
+const userRoutes = require('./routes/userRoutes')
 const productsRoutes = require('./routes/productsRoutes')
 
 app.use(express.static('public'));
@@ -16,11 +12,7 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs')
 
 app.use('/', indexRoutes)
-app.use('/login', loginRoutes)
-app.use('/productDetail', productDetailRoutes)
-app.use('/productCart', productCartRoutes)
-app.use('/productCreate', productCreateRoutes)
-app.use('/register', registerRoutes)
+app.use('/user', userRoutes)
 app.use('/products', productsRoutes)
 
 app.listen(process.env.PORT || port, () => {

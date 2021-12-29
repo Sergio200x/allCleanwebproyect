@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- Include Head -->
-<%- include('partials/doctype.ejs', {title: 'Login'}) %>
+<%- include('../partials/head.ejs', {title: 'Login'}) %>
 
 <body class="body">
-    <%- include('partials/header.ejs') %>
+    <!-- Include Header With Banner-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header With Banner-->
 
+    <!-- User Login -->
     <form action="/" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form">
         <h2>Bienvenido</h2>
         <h3>Ingrese sus credenciales</h3>
@@ -22,11 +28,16 @@
         <h3 class="login-forgot-pass"><a href="#">¿Olvidaste tu contraseña?</a></h3>
         <button type="submit" class="login-submit">Iniciar Sesión</button>
     </form>
+    <!-- User Login -->
 
-    <%- include('partials/footer.ejs') %>
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
 
+    <!-- Scripts -->
     <script src="/js/login-pass.js"></script>
     <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
+    <!-- Scripts -->
 </body>
 </html>

@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- Include Head -->
-<%- include('../partials/doctype.ejs', {title: 'Carrito'}) %>
+<%- include('../partials/head.ejs', {title: 'Carrito'}) %>
 
 <body class="body">
+    <!-- Include Header With Banner-->
     <%- include('../partials/header.ejs') %>
+    <!-- Include Header With Banner-->
     
+    <!-- Product Cart -->
     <main class="productCart-main">
         <div class="productCartCarrito">Carrito</div>
         <section class="productCart-producto1"> 
@@ -66,10 +72,15 @@
                 Continuar Compra
             </button>
         </section>
-
     </main>
+    <!-- Product Cart -->
 
+    <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
-<script src="/js/productDetail-slider.js"></script>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/productDetail-slider.js"></script>
+    <!-- Scripts -->
 </body>
 </html>

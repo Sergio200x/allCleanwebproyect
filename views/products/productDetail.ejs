@@ -1,24 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- Include Head -->
-<%- include('../partials/doctype.ejs', {title: 'Detalle de Producto'}) %>
+<%- include('../partials/head.ejs', {title: 'Detalle de Producto'}) %>
 
 <body class="body">
+    <!-- Include Header With Banner-->
     <%- include('../partials/header.ejs') %>
+    <!-- Include Header With Banner-->
     
+    <!-- Product Detail -->
     <div class="productDetail-sliderdatosybotones">
     <main class="productDetail-main">
         <div class="productDetail-slider-container">
             <div class="productDetail-slider" id="productDetail-slider">
                 <div class="productDetail-slider-section">
-                    <img src="images/products/CIF-1.webp" alt="limpiador Cif blanco" class="productDetail-img">
+                    <img src="/images/products/CIF-1.webp" alt="limpiador Cif blanco" class="productDetail-img">
                 </div>
                 <div class="productDetail-slider-section">
-                    <img src="images/products/Zorro-Ultra.jpg" alt="Zorro Ultra" class="productDetail-img">
+                    <img src="/images/products/Zorro-Ultra.jpg" alt="Zorro Ultra" class="productDetail-img">
                 </div>
                 <div class="productDetail-slider-section"> 
-                    <img src="images/products/Vivere-1.webp" alt="Jabon Vivere" class="productDetail-img">
+                    <img src="/images/products/Vivere-1.webp" alt="Jabon Vivere" class="productDetail-img">
                 </div>
                 <div class="productDetail-slider-section">
-                    <img src="images/products/Ayudin-Quitamanchas.jpg" alt="ayudin ropa blanca" class="productDetail-img">
+                    <img src="/images/products/Ayudin-Quitamanchas.jpg" alt="ayudin ropa blanca" class="productDetail-img">
                 </div>
             </div>
             <div class="productDetail-btn-prev" id="productDetail-btn-left">&#60;</div>
@@ -49,10 +55,14 @@
         </div>       
         </section>
     </div>
+    <!-- Product Detail -->
 
+    <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
 
+    <!-- Scripts -->
     <script src="/js/productDetail-slider.js"></script>
-    
+    <!-- Scripts -->
 </body>
 </html>

@@ -1,12 +1,13 @@
-<!-- Include Head -->
-<%- include('../partials/doctype.ejs', {title: 'Productos'}) %>
+<!DOCTYPE html>
+<html lang="en">
 
 <!-- Include Head -->
-<%- include('../partials/doctype.ejs', {title: 'Productos'}) %>
+<%- include('../partials/head.ejs', {title: 'Productos'}) %>
 
 <body class="body">
-    
+    <!-- Include Header With Banner-->
     <%- include('../partials/header.ejs') %>
+    <!-- Include Header With Banner-->
 
     <!-- All Products -->
     <section class="index-offers">
@@ -14,7 +15,7 @@
                 <article class="index-div-container">
                     <a href="/products/detail/<%=producto.id%>">
                         <div class="index-div-img">
-                            <img src="images/products/<%= producto.image %>" alt="<%= producto.name %>" class="index-img-offers">
+                            <img src="/images/products/<%= producto.image %>" alt="<%= producto.name %>" class="index-img-offers">
                         </div>
                         <div class="index-info-offers">
                             <p class="index-price-offers">$<%= producto.price %></p>

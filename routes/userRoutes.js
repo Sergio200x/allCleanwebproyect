@@ -2,7 +2,7 @@ const express = require('express')
 const { body } = require('express-validator')
 const multer = require('multer')
 const router = express.Router()
-const controllers = require('../controllers/mainControllers')
+const usersControllers = require('../controllers/usersController')
 const path = require('path');
 
 
@@ -28,9 +28,14 @@ const validations =[
     body('validarPassword').notEmpty().withMessage('Debes ingresar un Password'),
 ]
 
-router.get('/', controllers.register)
+//GET LOGIN PAGE 
+router.get('/login/', usersControllers.login)
 
-router.post('/', upload.single('avatar'), validations, controllers.processRegister)
+//GET REGISTER PAGE 
+router.get('/register/', usersControllers.register)
+
+//PROCESS REGISTER
+router.post('/register/', upload.single('avatar'), validations, usersControllers.processRegister)
 
 
 module.exports = router;

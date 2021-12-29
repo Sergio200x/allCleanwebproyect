@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- Include Head -->
-<%- include('partials/doctype.ejs', {title: 'Inicio'}) %>
+<%- include('partials/head.ejs', {title: 'Inicio'}) %>
 
 <body class="body">
+    <!-- Include Header With Banner-->
     <%- include('partials/header.ejs') %>
+    <!-- Include Header With Banner-->
     
+    <!-- Index Page -->
     <main class="index-main">
         <section class="index-cat-ban-container">
             <section class="index-slaider-container">
@@ -54,8 +60,7 @@
                 </div>
             </nav>   
         </section>
-
-        
+ 
         <section class="index-offers">
             <h2 class="index-h2-offers"> <a href="/productDetail">Super Ofertas</a> </h2>
             <% for( let producto of productList ) { %>
@@ -94,10 +99,15 @@
             </div>
         </section>
     </main>
+    <!-- Index Page -->
 
+    <!-- Include Footer-->
     <%- include('partials/footer.ejs') %>
+    <!-- Include Footer-->
 
+    <!-- Scripts -->
     <script src="/js/index-slider.js"></script>
     <script src="/app.js"></script>
+    <!-- Scripts -->
 </body>
 </html>

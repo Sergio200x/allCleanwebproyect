@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const controllers = require('../controllers/mainControllers')
+const mainControllers = require('../controllers/mainController')
 
-router.get('/', controllers.index)
-router.get('/search', controllers.search)
+router.get('/', mainControllers.index)
+router.get('/search', mainControllers.search)
 
 
 module.exports = router;

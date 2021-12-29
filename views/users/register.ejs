@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <!-- Include Head -->
-<%- include('../partials/doctype.ejs', {title: 'Registro'}) %>
+<%- include('../partials/head.ejs', {title: 'Registro'}) %>
 
 <body class="body">
+    <!-- Include Header With Banner-->
     <%- include('../partials/header.ejs') %>
+    <!-- Include Header With Banner-->
 
+    <!-- User Register -->
     <form action="/register" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Registro</h2>
         <div class="register-actividad-container">
@@ -113,10 +119,15 @@
 
         <button type="submit" class="register-submit">Registrarse</button>
     </form>
+    <!-- User Register -->
 
+    <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
 
+    <!-- Scripts -->
     <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
+    <!-- Scripts -->
 </body>
 </html>
