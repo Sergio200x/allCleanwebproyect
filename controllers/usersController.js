@@ -1,7 +1,9 @@
 const { validationResult } = require("express-validator")
-
+const path = require ('path')
+const fs = require ('fs')
 const jsonTable = require('../database/jsonTable');
-const products = jsonTable('products');
+const users = jsonTable('users');
+const usersFilePath = path.join(__dirname, '../database/users.json');
 
 const usersControllers = {
     login:(req, res) => {res.render('users/login')},
@@ -10,14 +12,45 @@ const usersControllers = {
 
     processRegister: (req, res) => {
         const resultvalidations = validationResult(req);
-        if(!resultvalidations.isEmpty()){
+        const userList = users.all()
+        const {userType, name, user, email, date, password} = req.body;
+		const newUser = {}
+		
+        newUser.id = userList[userList.length - 1].id + 1;
+		newUser.name = name;
+		newUser.user = user;
+		newUser.email = email;
+		newUser.date = date;
+		newUser.password = password;
+		newUser.userType = userType;
+
+
+		userList.push(newUser);
+
+        // userList.create(newUser)
+
+       
+
+
+        if(!resultvalidations.isEmpty())
+        {
             res.render('users/register',{
                 errors: resultvalidations.mapped(),
                 oldData: req.body
-            })
+            })}
+        else
+        {
+            const fileContents = JSON.stringify(userList, null, " ")
+            fs.writeFileSync(usersFilePath, fileContents)
         }
 
-        return res.send('Pasaste las Validaciones, Falta que Sergio arme la Vista!!!')
+            
+
+        
+        
+       
+
+        return res.redirect('../')
     }
 }
 

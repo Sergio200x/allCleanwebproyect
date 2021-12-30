@@ -36,7 +36,7 @@ let model = function(tableName) {
         },
         create(row) {
             let rows = this.readFile();
-            row.id = this.nextId();
+            // row.id = this.nextId();
             rows.push(row);
 
             this.writeFile(rows);

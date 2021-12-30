@@ -19,11 +19,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 const validations =[
-    body('nombreCompleto').notEmpty().withMessage('Debes ingresar un Nombre y Apellido'),
-    body('usuario').notEmpty().withMessage('Debes ingresar un Nombre de Usuario'),
+    body('userType').notEmpty().withMessage('Debes ingresar un tipo de usuario'),
+    body('name').notEmpty().withMessage('Debes ingresar un Nombre y Apellido'),
+    body('user').notEmpty().withMessage('Debes ingresar un Nombre de Usuario'),
     body('email')
         .notEmpty().withMessage('Debes ingresar un Email').bail()
-        .isEmail().withMessage('Debes ingresar un Email Valido'),
+        .isEmail().withMessage('Debes ingresar un Email valido'),
     body('password').notEmpty().withMessage('Debes ingresar un Password'),
     body('validarPassword').notEmpty().withMessage('Debes ingresar un Password'),
 ]
