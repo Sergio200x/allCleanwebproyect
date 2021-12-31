@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator")
 const path = require ('path')
 const fs = require ('fs')
+const bcrypt = require ('bcrypt')
 const jsonTable = require('../database/jsonTable');
 const users = jsonTable('users');
 const usersFilePath = path.join(__dirname, '../database/users.json');
@@ -21,7 +22,7 @@ const usersControllers = {
 		newUser.user = user;
 		newUser.email = email;
 		newUser.date = date;
-		newUser.password = password;
+		newUser.password = bcrypt.hashSync(password,10);
 		newUser.userType = userType;
         newUser.avatar = req.file ? req.file.filename : 'sr-x.jpg'
 

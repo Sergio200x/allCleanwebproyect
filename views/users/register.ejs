@@ -110,6 +110,11 @@
                 <i class="fas fa-cloud-upload-alt"></i> Subir Imagen
             </label>
             <input id="file" name="avatar" onchange='cambiar()' type="file" style='display: none;'/>
+            <% if (locals.errors && errors.avatar) { %>
+                <div class="register-text-danger">
+                     <%= errors.avatar.msg %> 
+                </div>
+            <% } %>
         </div>    
         <div id="info" class="register-info"></div>
         

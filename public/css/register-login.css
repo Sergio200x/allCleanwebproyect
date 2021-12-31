@@ -2,6 +2,16 @@
 {
     margin-top: 1rem;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] 
+{
+    -moz-appearance: textfield;
+}
 .register-file
 {
     margin-top: 2rem;
@@ -100,14 +110,19 @@
     max-width: 800px;
     transform: translateX(25%);
 }
-.register-actividad-container
+.login-offer-container
 {
     display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    justify-content:left;
+}
+.login-offer-container > label
+{
+    margin-right: 2rem;
+    font-size: 2rem;
+}
+.login-offer-container > label > input
+{
+    margin-right: 1rem;
 }
 .register-actividad-container
 {
@@ -162,18 +177,22 @@
     font-size: 1.2rem;
     margin-top: 3px;
 }
-input[type=date] {
+input[type=date] 
+{
     border-radius: 3px;
     padding: 0 13px 0 8px;
     color: #666;
-  }
-  
-  input[type="date"]::-webkit-calendar-picker-indicator 
-  {
-    cursor: pointer;
-    opacity: 1;
-    filter: invert(0.4);
-  }
+}
+input[type="date"]::-webkit-calendar-picker-indicator 
+{
+cursor: pointer;
+opacity: 1;
+filter: invert(0.4);
+}
+
+.others {
+    color: #666;
+}
 
   /*------------------------------------------------MEDIA QUERIES------------------------------*/
 @media (min-width: 1024px)
