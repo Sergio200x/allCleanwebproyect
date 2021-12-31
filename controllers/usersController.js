@@ -23,14 +23,9 @@ const usersControllers = {
 		newUser.date = date;
 		newUser.password = password;
 		newUser.userType = userType;
-
+        newUser.avatar = req.file ? req.file.filename : 'sr-x.jpg'
 
 		userList.push(newUser);
-
-        // userList.create(newUser)
-
-       
-
 
         if(!resultvalidations.isEmpty())
         {
@@ -42,15 +37,8 @@ const usersControllers = {
         {
             const fileContents = JSON.stringify(userList, null, " ")
             fs.writeFileSync(usersFilePath, fileContents)
+            res.redirect('../')
         }
-
-            
-
-        
-        
-       
-
-        return res.redirect('../')
     }
 }
 

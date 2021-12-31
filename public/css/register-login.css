@@ -6,6 +6,10 @@
 {
     margin-top: 2rem;
 }
+.register-file div
+{
+    margin-top: 2rem;
+}
 .subir
 {
     margin:auto;
@@ -105,9 +109,26 @@
     padding: 1rem;
     margin-bottom: 1rem;
 }
+.register-actividad-container
+{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
 .register-actividad-container label
 {
+    padding: 2rem;
     font-size: 20px;
+}
+.register-actividad-container > div
+{   
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .register-icon-container
 {
