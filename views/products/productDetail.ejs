@@ -10,31 +10,34 @@
     <!-- Include Header With Banner-->
     
     <!-- Product Detail -->
-    <div class="productDetail-sliderdatosybotones">
+ 
     <main class="productDetail-main">
-        <div class="productDetail-slider-container">
-            <div class="productDetail-slider" id="productDetail-slider">
-                <div class="productDetail-slider-section">
-                    <img src="/images/products/CIF-1.webp" alt="limpiador Cif blanco" class="productDetail-img">
-                </div>
-                <div class="productDetail-slider-section">
-                    <img src="/images/products/Zorro-Ultra.jpg" alt="Zorro Ultra" class="productDetail-img">
-                </div>
-                <div class="productDetail-slider-section"> 
-                    <img src="/images/products/Vivere-1.webp" alt="Jabon Vivere" class="productDetail-img">
-                </div>
-                <div class="productDetail-slider-section">
-                    <img src="/images/products/Ayudin-Quitamanchas.jpg" alt="ayudin ropa blanca" class="productDetail-img">
-                </div>
-            </div>
-            <div class="productDetail-btn-prev" id="productDetail-btn-left">&#60;</div>
-            <div class="productDetail-btn-next" id="productDetail-btn-right">&#62;</div>
-        </div>
-    </main>
+        <section class="img">     
+        <img src="/images/products/<%= productfound.image %> " alt="Imagen de producto de limpieza" class="img-product">   
+        </section>
+    
     <section class="productDetail-datos">
-        <div class="productDetail-titulo"> <h2>Set de productos de limpieza</h2> </div>
-        <div class="productDetail-descripcionbreve"> <p>El mejor set del limpieza que podras encontrar, cuenta con 4 productos de las mejores marcas.</p></div>
-        <div class="productDetail-precio"> <p>$3500</p></div>
+        <div class="productDetail-titulo"> <h2><%= productfound.name %></h2> </div>
+        <div class="productDetail-descripcionbreve"> <p><%= productfound.description %></p></div>
+        <div class="productDetail-precio"> 
+            <p>
+            <% if (productfound.discount!=0) {  %>
+
+
+                <% const precioccondescuento= (productfound.price-productfound.price*(productfound.discount/100)) %> 
+                <% const precio= productfound.price %> 
+                <p class="normalPrice">$<%= precio %></p>
+                
+                <div class="priceDiscountContainer">
+                    <p class="priceDiscount">$<%= precioccondescuento %> </p>               
+                    <p class="discount"><%= productfound.discount %>% OFF</p> 
+                 </div>
+            
+            <% } else {%>
+                <p class="normalPriceElse">$<%= productfound.price %></p> 
+            <%} %>               
+               
+            </p></div>
         <div class="productDetail-pago"><i class="far fa-credit-card index-icons-footer"></i><p> Medios de pago disponibles</p></div>
         <div class="productDetail-envio"><i class="fas fa-gift index-icons-footer"></i><p>Verifica el costo de tu envio</p></div>
         <div class="productDetail-stock"><p>Stock Disponible</p></div>
@@ -55,6 +58,7 @@
         </div>       
         </section>
     </div>
+</main>
     <!-- Product Detail -->
 
     <!-- Include Footer-->
