@@ -10,7 +10,7 @@
     <!-- Include Header With Banner-->
     
     <!-- Product Create -->
-    <form action="/user/register" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form action="/products/create" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Creación de Producto</h2>
 
         <div class="register-control-formulario">
@@ -56,13 +56,13 @@
             </div>
 
             <select name="category" class="register-control select" style="color:gray">
-                <option hidden selected>Elegí una Categoría</option>
+                <option hidden selected value="">Elegí una Categoría</option>
                 <% 
                     let category = ['Limpiadores de Cocina', 'Limpiadores de Baño', 'Desinfectantes', 'Sanitizantes', 'Limpiadores de Hogar', 'Otros'];
                 %>
                 <% for( let oneCategory of category ) { %>
                     <option value="<%= oneCategory %>"
-                        <%= locals.oldata && (oneCategory == oldata.oneCategory) ? 'selected' : null %> 
+                        <%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
                     ><%= oneCategory %></option>
                 <% } %> 
             </select>
@@ -99,13 +99,20 @@
                 <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()" <%= locals.oldData && (oldData.userType == "ofertado") ? 'checked' : "" %>>Si</label>  
                 <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()" <%= locals.oldData && (oldData.userType == "noOfertado") ? 'checked' : "" %>>No</label> 
             </div>
-            <div id="ifYes">
-                <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
-                <input type='number' id='yes' name='yes'class="register-control" disabled="disabled"/>
             </div> 
             <% if (locals.errors && errors.isOffer) { %>
                 <div class="register-text-danger">
                     <%= errors.isOffer.msg %> 
+                </div>
+            <% } %>
+            </div>
+            <div id="ifYes">
+                <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
+                <input type="number" id='yes' name='discount'class="register-control" disabled="disabled"/>
+            </div> 
+            <% if (locals.errors && errors.discount) { %>
+                <div class="register-text-danger">
+                    <%= errors.discount.msg %> 
                 </div>
             <% } %>
         </div>
@@ -114,10 +121,10 @@
             <label for="file" class="subir">
                 <i class="fas fa-cloud-upload-alt"></i> Subir Imagen
             </label>
-            <input id="file" name="avatar" onchange='cambiar()' type="file" style='display: none;'/>
-            <% if (locals.errors && errors.avatar) { %>
+            <input id="file" name="photo" onchange='cambiar()' type="file" style='display: none;'/>
+            <% if (locals.errors && errors.photo) { %>
                 <div class="register-text-danger">
-                     <%= errors.avatar.msg %> 
+                     <%= errors.photo.msg %> 
                 </div>
             <% } %>
         </div>    

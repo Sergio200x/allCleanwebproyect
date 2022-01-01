@@ -13,31 +13,10 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
       let fileName = `Avatar-${Date.now()}${path.extname(file.originalname)}`;
       cb(null, fileName);
-    },
-    onFileUploadStart: function(file) {
-      console.log("Inside uploads");
-      if (file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/png') {
-          return true;
-      }
-      else
-      {
-          return false;
-      }
     }
   })
   
-//const upload = multer({ storage: storage })
-
-var upload = multer({ //multer settings
-  storage: storage,
-  // fileFilter: function (req, file, callback) {
-  //     var ext = path.extname(file.originalname);
-  //     if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
-  //         return callback(null,false);
-  //     }
-  //     callback(null, true)
-  // }
-}).single('avatar');
+var upload = multer({storage: storage}).single('avatar');
 
 const validations =[
     body('userType').notEmpty().withMessage('Debes ingresar un tipo de usuario'),
@@ -67,17 +46,15 @@ const validations =[
       }
       return true
     })
-
-    
 ]
 
 //GET LOGIN PAGE 
-router.get('/login/', usersControllers.login)
+router.get('/login/', usersControllers.userLogin)
 
-//GET REGISTER PAGE 
-router.get('/register/', usersControllers.register)
+//GET USER REGISTER PAGE 
+router.get('/register/', usersControllers.userRegister)
 
-//PROCESS REGISTER
+//PROCESS USER REGISTER
 router.post('/register/', upload, validations, usersControllers.processRegister)
 
 

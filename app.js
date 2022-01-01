@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs')
 
 app.use('/', indexRoutes)
-app.use('/user', userRoutes)
+app.use('/users', userRoutes)
 app.use('/products', productsRoutes)
 
 app.listen(process.env.PORT || port, () => {

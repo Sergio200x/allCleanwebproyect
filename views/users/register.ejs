@@ -10,7 +10,7 @@
     <!-- Include Header With Banner-->
 
     <!-- User Register -->
-    <form action="/user/register" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form action="/users/register" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Registro</h2>
         <div class="register-actividad-container">
             <label class="tipoActividad"><input type="radio" name="userType" value= "client" <%= locals.oldData && (oldData.userType == "client") ? 'checked' : "" %>> Cliente</label>  

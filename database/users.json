@@ -498,5 +498,15 @@
   "date": "01/07/2021",
   "password": "Pwc3ECsw",
   "avatar": "https://robohash.org/doloremqueaperiamnon.png?size=250x250&set=set1"
+ },
+ {
+  "id": 51,
+  "name": "Diego Marco",
+  "user": "diego856",
+  "email": "diegomarco@hotmail.com.ar",
+  "date": "1989-06-17",
+  "password": "$2b$10$PKUN56is7xxr0zfghTRyD.A.dodeL7iSwPTHRhbj3MEgLuVPDbELu",
+  "userType": "admin",
+  "avatar": "Avatar-1641047415169.png"
  }
 ]
