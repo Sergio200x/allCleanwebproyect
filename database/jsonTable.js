@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require ('bcrypt')
 
 let model = function(tableName) {
     return {
@@ -34,14 +35,36 @@ let model = function(tableName) {
             let rows = this.readFile();
             return rows.find(row => row.id == id)
         },
-        create(row) {
+        createUser(row, req) {
             let rows = this.readFile();
             row.id = this.nextId();
+            row.validarPassword = this.ignore();
+            row.avatar =req.file ? req.file.filename : 'sr-x.jpg';
+            row.password = this.encrypt(row.password);
             rows.push(row);
 
             this.writeFile(rows);
 
             return row.id;
+        },
+        createProduct(row, req) {
+            let rows = this.readFile();
+            row.id = this.nextId();
+            row.image = req.file ? req.file.filename : 'img-rick-morty.jpg';
+            row.isOffer = req.body.isOffer? req.body.isOffer == 'ofertado' ? true : false : false;
+            row.discount = req.body.discount ? req.body.discount : 0;
+
+            rows.push(row);
+
+            this.writeFile(rows);
+
+            return row.id;
+        },
+        encrypt(password){
+            return bcrypt.hashSync(password,10);
+        },
+        ignore(){
+            //ignore one row
         },
         update(row) {
             let rows = this.readFile();

@@ -10,11 +10,16 @@
     <!-- Include Header With Banner-->
 
     <!-- User Register -->
-    <form action="/register" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form action="/users/register" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Registro</h2>
         <div class="register-actividad-container">
-            <label class="tipoActividad"><input type="radio" name="tipoActividad" value="persona"> Persona</label>  
-            <label class="tipoActividad"><input type="radio" name="tipoActividad" value="empresa"> Empresa</label>
+            <label class="tipoActividad"><input type="radio" name="userType" value= "client" <%= locals.oldData && (oldData.userType == "client") ? 'checked' : "" %>> Cliente</label>  
+            <label class="tipoActividad"><input type="radio" name="userType" value="admin" <%= locals.oldData && (oldData.userType == "admin") ? 'checked' : "" %>> Admin</label>  
+            <% if (locals.errors && errors.userType) { %>
+                <div class="register-text-danger">
+                    <%= errors.userType.msg %> 
+                </div>
+            <% } %>
         </div>
 
         <div class="register-control-formulario">
@@ -23,15 +28,14 @@
             </div>
             <input 
                 type="text" 
-                name="nombreCompleto" 
+                name="name" 
                 placeholder="Nombre y Apellido" 
-                minlength="5" 
                 class="register-control"
-                value="<%= locals.oldData ? oldData.nombreCompleto : "" %>"
+                value="<%= locals.oldData ? oldData.name : "" %>"
             >
-            <% if (locals.errors && errors.nombreCompleto) { %>
+            <% if (locals.errors && errors.name) { %>
             <div class="register-text-danger">
-                 <%= errors.nombreCompleto.msg %> 
+                 <%= errors.name.msg %> 
             </div>
             <% } %>
         </div>
@@ -42,15 +46,14 @@
             </div>
             <input 
                 type="text" 
-                name="usuario" 
+                name="user" 
                 placeholder="Nombre de Usuario" 
                 class="register-control" 
-                minlength="5"
-                value="<%= locals.oldData ? oldData.usuario : "" %>"
+                value="<%= locals.oldData ? oldData.user : "" %>"
             >
-            <% if (locals.errors && errors.usuario) { %>
+            <% if (locals.errors && errors.user) { %>
                 <div class="register-text-danger">
-                     <%= errors.usuario.msg %> 
+                     <%= errors.user.msg %> 
                 </div>
             <% } %>
         </div>
@@ -60,7 +63,7 @@
                 <i class="far fa-envelope"></i>
             </div>
             <input 
-                type="email" 
+                type="text" 
                 name="email" 
                 placeholder="Ingrese su mail" 
                 class="register-control"
@@ -75,11 +78,11 @@
 
         <div class="register-control-formulario">
             <label class="register-label-nacimiento">Fecha de Nacimiento</label>
-            <input type="date" name="fecha"  class="register-control register-date">
+            <input type="date" name="date"  class="register-control register-date">
         </div>
 
         <div class="register-control-formulario">
-            <input type="password" name="password" id="password" placeholder="Password (Min 6 caracteres)" pattern=".{6,}" class="register-control">
+            <input type="password" name="password" id="password" placeholder="Password (Min 6 caracteres)"  class="register-control">
             <div class="register-eye-container">
                 <i id="visibilityBtn" class="register-eye"><span id="icon" class="material-icons-outlined">visibility</span></i>
             </div>
@@ -91,7 +94,7 @@
         </div>
 
         <div class="register-control-formulario">
-            <input type="password" name="validarPassword" id="confirm_password" placeholder="Reingrese su Password" pattern=".{6,}" class="register-control">
+            <input type="password" name="validarPassword" id="confirm_password" placeholder="Reingrese su Password" class="register-control">
             <div class="register-eye-container">
                 <i id="visibilityBtn2" class="register-eye"><span id="icon2" class="material-icons-outlined">visibility</span></i>
             </div>
@@ -107,6 +110,11 @@
                 <i class="fas fa-cloud-upload-alt"></i> Subir Imagen
             </label>
             <input id="file" name="avatar" onchange='cambiar()' type="file" style='display: none;'/>
+            <% if (locals.errors && errors.avatar) { %>
+                <div class="register-text-danger">
+                     <%= errors.avatar.msg %> 
+                </div>
+            <% } %>
         </div>    
         <div id="info" class="register-info"></div>
         

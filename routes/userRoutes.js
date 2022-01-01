@@ -16,26 +16,46 @@ const storage = multer.diskStorage({
     }
   })
   
-const upload = multer({ storage: storage })
+var upload = multer({storage: storage}).single('avatar');
 
 const validations =[
-    body('nombreCompleto').notEmpty().withMessage('Debes ingresar un Nombre y Apellido'),
-    body('usuario').notEmpty().withMessage('Debes ingresar un Nombre de Usuario'),
+    body('userType').notEmpty().withMessage('Debes ingresar un tipo de usuario'),
+    body('name')
+      .notEmpty().withMessage('Debes ingresar un Nombre y Apellido').bail()
+      .isLength({ min: 6 }).withMessage('El nombre debe tener un mínimo de 6 caracteres'),
+    body('user')
+      .notEmpty().withMessage('Debes ingresar un Nombre de Usuario').bail()
+      .isLength({ min: 5 }).withMessage('El usuario debe tener un mínimo de 5 caracteres'),
     body('email')
-        .notEmpty().withMessage('Debes ingresar un Email').bail()
-        .isEmail().withMessage('Debes ingresar un Email Valido'),
-    body('password').notEmpty().withMessage('Debes ingresar un Password'),
-    body('validarPassword').notEmpty().withMessage('Debes ingresar un Password'),
+      .notEmpty().withMessage('Debes ingresar un Email').bail()
+      .isEmail().withMessage('Debes ingresar un Email valido'),
+    body('password')
+      .notEmpty().withMessage('Debes ingresar un Password').bail()
+      .isLength({ min: 6 }).withMessage('El password debe tener un mínimo de 6 caracteres'),
+    body('validarPassword')
+      .notEmpty().withMessage('Debes ingresar un Password').bail()
+      .isLength({ min: 6 }).withMessage('El password debe tener un mínimo de 5 caracteres'),
+    body('avatar').custom((value, {req})=>{
+      const file = req.file;
+      const acceptedExtensions = ['.jpg', '.jpeg', '.gif', '.png'];
+      if(file){
+        const fileExtension = path.extname(file.originalname)
+        if(!acceptedExtensions.includes(fileExtension)){
+          throw new Error(`Las extensiones válidas son ${acceptedExtensions.join(', ')}`);
+        }
+      }
+      return true
+    })
 ]
 
 //GET LOGIN PAGE 
-router.get('/login/', usersControllers.login)
+router.get('/login/', usersControllers.userLogin)
 
-//GET REGISTER PAGE 
-router.get('/register/', usersControllers.register)
+//GET USER REGISTER PAGE 
+router.get('/register/', usersControllers.userRegister)
 
-//PROCESS REGISTER
-router.post('/register/', upload.single('avatar'), validations, usersControllers.processRegister)
+//PROCESS USER REGISTER
+router.post('/register/', upload, validations, usersControllers.processRegister)
 
 
 module.exports = router;

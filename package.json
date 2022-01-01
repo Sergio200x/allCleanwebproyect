@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/diego856/grupo_1_allclean#readme",
     "dependencies": {
+        "bcrypt": "^5.0.1",
         "ejs": "^3.1.6",
         "express": "^4.17.1",
         "express-validator": "^6.14.0",

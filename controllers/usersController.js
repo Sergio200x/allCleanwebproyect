@@ -1,23 +1,29 @@
 const { validationResult } = require("express-validator")
-
 const jsonTable = require('../database/jsonTable');
-const products = jsonTable('products');
+const users = jsonTable('users');
+
 
 const usersControllers = {
-    login:(req, res) => {res.render('users/login')},
+    userLogin:(req, res) => {res.render('users/login')},
 
-    register:(req, res) => {res.render('users/register')},
+    userRegister:(req, res) => {res.render('users/register')},
 
     processRegister: (req, res) => {
         const resultvalidations = validationResult(req);
-        if(!resultvalidations.isEmpty()){
-            res.render('users/register',{
+        
+		let newUser = req.body
+
+        if(!resultvalidations.isEmpty())
+        {
+            res.render('users/productCreate',{
                 errors: resultvalidations.mapped(),
                 oldData: req.body
-            })
+            })}
+        else
+        {
+            users.createUser(newUser, req)
+            res.redirect('/')
         }
-
-        return res.send('Pasaste las Validaciones, Falta que Sergio arme la Vista!!!')
     }
 }
 
