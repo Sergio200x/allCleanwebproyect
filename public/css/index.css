@@ -29,10 +29,7 @@
     width: 4rem;
     height: 4rem;
     top:50%;
-    transform: translateY(-50%);
     font-size: 3rem;
-    font-weight: bold;
-    font-family: monospace;
     text-align: center; 
     border-radius: 50%;
     cursor: pointer;
@@ -49,6 +46,13 @@
 
 .index-slider-btn-left{
     left: 1rem;
+}
+
+.index-btn-p{
+    position: relative;
+    transform: translateY(-80%);
+    font-weight: bold;
+    font-family: monospace;
 }
 
 .index-cat-ban-container{
