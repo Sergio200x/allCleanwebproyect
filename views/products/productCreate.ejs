@@ -102,7 +102,10 @@
             
             <div id="ifYes">
                 <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
-                <input type="text" id='yes' name='discount'class="register-control" disabled="disabled"/>
+                <div class="register-icon-container">
+                    <i class="fas fa-percent"></i>
+                </div>
+                <input type="number" id='yes' name='discount'class="register-control" disabled="disabled"/>
             </div> 
             <% if (locals.errors && errors.discount) { %>
                 <div class="register-text-danger">

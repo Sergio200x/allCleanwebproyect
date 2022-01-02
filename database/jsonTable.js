@@ -52,7 +52,7 @@ let model = function(tableName) {
             row.id = this.nextId();
             row.image = req.file ? req.file.filename : 'img-rick-morty.jpg';
             row.isOffer = req.body.isOffer? req.body.isOffer == 'ofertado' ? true : false : false;
-            row.discount = req.body.discount ? req.body.discount : 0;
+            row.discount = req.body.discount ? parseInt(req.body.discount) : 0;
 
             rows.push(row);
 
@@ -71,7 +71,7 @@ let model = function(tableName) {
             row.id = IdProduct;
             row.image = req.file ? req.file.filename : `${keepImage}`;
             row.isOffer = req.body.isOffer? req.body.isOffer == 'ofertado' ? true : false : false;
-            row.discount = req.body.discount ? req.body.discount : 0;
+            row.discount = req.body.discount ? parseInt(req.body.discount) : 0;
 
             let updatedRows = rows.map(oneRow => {
                 if (oneRow.id == row.id) {
