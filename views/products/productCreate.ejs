@@ -5,9 +5,9 @@
 <%- include('../partials/head.ejs', {title: 'Creación Producto'}) %>
 
 <body class="body">
-    <!-- Include Header With Banner-->
+    <!-- Include Header-->
     <%- include('../partials/header.ejs') %>
-    <!-- Include Header With Banner-->
+    <!-- Include Header-->
     
     <!-- Product Create -->
     <form action="/products/create" method="post" class="register-create-form" enctype="multipart/form-data">
@@ -102,7 +102,7 @@
             
             <div id="ifYes">
                 <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
-                <input type="number" id='yes' name='discount'class="register-control" disabled="disabled"/>
+                <input type="text" id='yes' name='discount'class="register-control" disabled="disabled"/>
             </div> 
             <% if (locals.errors && errors.discount) { %>
                 <div class="register-text-danger">

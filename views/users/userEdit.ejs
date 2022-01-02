@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Edición del Producto'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
+
+    <!-- User Register -->
+    <form action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="post" class="register-create-form" enctype="multipart/form-data">
+        <h2>Edición de Usuario</h2>
+        <div class="register-actividad-container">
+            <label class="tipoActividad"><input type="radio" name="userType" value= "client" <%= userToEdit.userType == "client" ? 'checked' : "" %>> Cliente</label>  
+            <label class="tipoActividad"><input type="radio" name="userType" value="admin" <%= userToEdit.userType == "admin" ? 'checked' : "" %>> Admin</label>  
+            <% if (locals.errors && errors.userType) { %>
+                <div class="register-text-danger">
+                    <%= errors.userType.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Nombre y Apellido" 
+                class="register-control"
+                value="<%= userToEdit.name %>"
+            >
+            <% if (locals.errors && errors.name) { %>
+            <div class="register-text-danger">
+                 <%= errors.name.msg %> 
+            </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="user" 
+                placeholder="Nombre de Usuario" 
+                class="register-control" 
+                value="<%= userToEdit.user %>"
+            >
+            <% if (locals.errors && errors.user) { %>
+                <div class="register-text-danger">
+                     <%= errors.user.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-envelope"></i>
+            </div>
+            <input 
+                type="text" 
+                name="email" 
+                placeholder="Ingrese su mail" 
+                class="register-control"
+                value="<%= userToEdit.email %>"
+            >
+            <% if (locals.errors && errors.email) { %>
+                <div class="register-text-danger">
+                     <%= errors.email.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <label class="register-label-nacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="date"  class="register-control register-date" value="<%= userToEdit.date %>">
+        </div>
+
+        <div class="register-control-formulario">
+            <input type="password" name="password" id="password" placeholder="Password (Min 6 caracteres)"  class="register-control">
+            <div class="register-eye-container">
+                <i id="visibilityBtn" class="register-eye"><span id="icon" class="material-icons-outlined">visibility</span></i>
+            </div>
+            <% if (locals.errors && errors.validarPassword) { %>
+                <div class="register-text-danger">
+                     <%= errors.validarPassword.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <input type="password" name="validarPassword" id="confirm_password" placeholder="Reingrese su Password" class="register-control">
+            <div class="register-eye-container">
+                <i id="visibilityBtn2" class="register-eye"><span id="icon2" class="material-icons-outlined">visibility</span></i>
+            </div>
+            <% if (locals.errors && errors.validarPassword) { %>
+                <div class="register-text-danger">
+                     <%= errors.validarPassword.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-file">
+            <label for="file" class="subir">
+                <i class="fas fa-cloud-upload-alt"></i> Imagen: (Sólo si se modifica)
+            </label>
+            <input id="file" name="avatar" onchange='cambiar()' type="file" style='display: none;'/>
+            <% if (locals.errors && errors.avatar) { %>
+                <div class="register-text-danger">
+                     <%= errors.avatar.msg %> 
+                </div>
+            <% } %>
+        </div>    
+        <div id="info" class="register-info"></div>
+        
+        <script>
+            function cambiar(){
+            var nombreArchivo = document.getElementById('file').files[0].name;
+            document.getElementById('info').innerHTML = nombreArchivo;
+            }
+        </script>
+
+        <button type="submit" class="register-submit">Editar Usuario</button>
+    </form>
+    <!-- User Register -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/register-confirmPass.js"></script>
+    <script src="/js/register-eye.js"></script>
+    <!-- Scripts -->
+</body>
+</html>

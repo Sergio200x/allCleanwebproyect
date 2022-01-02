@@ -55,5 +55,11 @@ router.get('/login/', usersControllers.userLogin)
 router.get('/register/', usersControllers.userRegister)
 router.post('/register/', upload, validations, usersControllers.processRegister)
 
+//EDIT ONE USER
+router.get('/edit/:id/', usersControllers.userEdit);
+router.put('/edit/:id/', upload , validations, usersControllers.processEdit);
+
+//DELETE ONE USER 
+router.delete('/delete/:id', usersControllers.userDestroy); 
 
 module.exports = router;

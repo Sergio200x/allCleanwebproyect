@@ -1,4 +1,4 @@
-const { validationResult } = require("express-validator")
+const constants = require('../database/constants')
 
 const jsonTable = require('../database/jsonTable');
 const products = jsonTable('products');
@@ -6,20 +6,21 @@ const products = jsonTable('products');
 const mainControllers = {
     index:(req, res) => {
         const productList = products.all()
-
-        res.render('index', {productList : productList})
+		const category = constants
+		console.log(constants);
+        res.render('index', {productList : productList, constants})
     },
 
     search: (req, res) => {
 		const busqueda = req.query.search
-        const productList = products.all()
-		let productsFilter = productList
+
+		productsFilter = products.all();
 
 		if(busqueda){
-			productsFilter = productList.filter(producto =>  
+			productsFilter = productsFilter.filter(producto =>  
 				producto.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(busqueda.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
 				if(!productsFilter.length){
-					productsFilter = productList;
+					productsFilter = undefined;
 				}
 		}
 	

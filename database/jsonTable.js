@@ -66,12 +66,31 @@ let model = function(tableName) {
         ignore(){
             //ignore one row
         },
-        updateProduct(row, req, keepImage, IdProducto) {
+        updateProduct(row, req, keepImage, IdProduct) {
             let rows = this.readFile();
-            row.id = IdProducto;
+            row.id = IdProduct;
             row.image = req.file ? req.file.filename : `${keepImage}`;
             row.isOffer = req.body.isOffer? req.body.isOffer == 'ofertado' ? true : false : false;
             row.discount = req.body.discount ? req.body.discount : 0;
+
+            let updatedRows = rows.map(oneRow => {
+                if (oneRow.id == row.id) {
+                    return row;
+                }
+
+                return oneRow;
+            }); 
+
+            this.writeFile(updatedRows);
+
+            return row.id;
+        },
+        updateUser(row, req, keepImage, Iduser) {
+            let rows = this.readFile();
+            row.id = Iduser;
+            row.validarPassword = this.ignore();
+            row.avatar =req.file ? req.file.filename : `${keepImage}`;
+            row.password = this.encrypt(row.password);
 
             let updatedRows = rows.map(oneRow => {
                 if (oneRow.id == row.id) {

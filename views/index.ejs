@@ -5,27 +5,20 @@
 <%- include('partials/head.ejs', {title: 'Inicio'}) %>
 
 <body class="body">
-    <!-- Include Header With Banner-->
+    <!-- Include Header-->
     <%- include('partials/header.ejs') %>
-    <!-- Include Header With Banner-->
+    <!-- Include Header-->
     
     <!-- Index Page -->
     <main class="index-main">
         <section class="index-cat-ban-container">
             <section class="index-slaider-container">
                 <div class="index-slider" id="index-slider">
-                    <div class="index-slider-section">
-                        <img src="images/banner-1.jpg" alt="Banner Ayudin" class="index-slider-img">
-                    </div>
-                    <div class="index-slider-section">
-                        <img src="images/banner-2.png" alt="Banner Skip" class="index-slider-img">
-                    </div>
-                    <div class="index-slider-section">
-                        <img src="images/banner-3.png" alt="Banner Vivere" class="index-slider-img">
-                    </div>
-                    <div class="index-slider-section">
-                        <img src="images/banner-4.jpg" alt="Banner Espadol" class="index-slider-img">
-                    </div> 
+                    <% for( let image of constants.bannerImages ) { %>
+                        <div class="index-slider-section">
+                            <img src="<%= image.image %>" alt="<%= image.name %>" class="index-slider-img">
+                        </div>
+                    <% } %>
                     
                     <div class="index-slider-btn index-slider-btn-right" id="index-btn-right">&#62;</div>
                     <div class="index-slider-btn index-slider-btn-left" id="index-btn-left">&#60;</div>
@@ -34,30 +27,14 @@
 
             <h2 class="index-h2-categories">Categorias</h2>  
             <nav class="index-categories">
-                <div class="index-main-categories">
-                    <i class="fas fa-sink index-categories-icons"></i>
-                    <h2>Limpiadores de Cocina</h2>
-                </div>
-                <div class="index-main-categories">
-                    <i class="fas fa-toilet index-categories-icons"></i>
-                    <h2>Limpiadores de Baño</h2>
-                </div>
-                <div class="index-main-categories">
-                    <i class="fas fa-pump-medical index-categories-icons"></i>
-                    <h2>Desinfectantes</h2>
-                </div>
-                <div class="index-main-categories">
-                    <i class="fas fa-pump-soap index-categories-icons"></i>
-                    <h2>Sanitizantes</h2>
-                </div>
-                <div class="index-main-categories">
-                    <i class="fas fa-broom index-categories-icons"></i>
-                    <h2>Limpiadores Hogar</h2>
-                </div>
-                <div class="index-main-categories">
-                    <i class="fas fa-vial index-categories-icons"></i>
-                    <h2>Otros</h2>
-                </div>
+                <% for( let categoria of constants.generalCategory ) { %>
+                    <a href="/products/category/<%= categoria.name %>">
+                        <div class="index-main-categories">
+                            <i class="<%= categoria.icon %> "></i>
+                            <h2><%= categoria.name %> </h2>
+                        </div>
+                    </a>
+                <% } %>
             </nav>   
         </section>
  
@@ -85,18 +62,14 @@
 
         <section class="index-popular-categories">
             <h2 class="index-h2-popular">Categorias Populares</h2>
-            <div class="index-popularicons-container">
-                <i class="fas fa-sink index-categories-icons"></i>
-                <h2>Limpiadores de Cocina</h2>
-            </div>
-            <div class="index-popularicons-container">
-                <i class="fas fa-toilet index-categories-icons"></i>
-                <h2>Limpiadores de Baño</h2>
-            </div>
-            <div class="index-popularicons-container">
-                <i class="fas fa-pump-medical index-categories-icons"></i>
-                <h2>Desinfectantes</h2>
-            </div>
+            <% for( let categoria of constants.popularCategory ) { %>
+                <a href="/products/category/<%= categoria.name %>">
+                    <div class="index-popularicons-container">
+                            <i class="<%= categoria.icon %>"></i>
+                            <h2><%= categoria.name %></h2>
+                    </div>
+                </a>
+            <% } %>
         </section>
     </main>
     <!-- Index Page -->

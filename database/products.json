@@ -1,12 +1,12 @@
 [
  {
-  "id": 1,
   "name": "Quitamanchas 500 ml",
   "description": "Disp fx of neck of oth metacarpal bone, init for opn fx",
   "category": "Limpiadores de Hogar",
+  "price": "0",
+  "isOffer": false,
+  "id": "1",
   "image": "Sun-2.webp",
-  "price": 98952,
-  "isOffer": true,
   "discount": 0
  },
  {

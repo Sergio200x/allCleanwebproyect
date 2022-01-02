@@ -70,6 +70,18 @@
     margin: auto;
 }
 
+.index-categories-icons{
+    margin: 1rem;
+    font-size: 40px;
+    color: #286698 ;
+    border-radius: 50%;
+}
+
+.index-categories > a{
+    text-decoration: none;
+    color: #286698;
+}
+
 .index-h2-categories,.index-h2-offers{
     font-size: 3vh;
     color: #666;
@@ -86,13 +98,6 @@
     display: block;
     background: #286698;
     color: #fcfeff;
-}
-
-.index-categories-icons{
-    margin: 1rem;
-    font-size: 40px;
-    color: #286698 ;
-    border-radius: 50%;
 }
 
 .index-offers{
@@ -171,6 +176,11 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+}
+
+.index-popular-categories >a{
+    text-decoration: none;
+    color: black;
 }
 
 .index-popularicons-container{
