@@ -1,13 +1,10 @@
 const constants = require('../database/constants')
-
 const jsonTable = require('../database/jsonTable');
 const products = jsonTable('products');
 
 const mainControllers = {
     index:(req, res) => {
         const productList = products.all()
-		const category = constants
-		console.log(constants);
         res.render('index', {productList : productList, constants})
     },
 
