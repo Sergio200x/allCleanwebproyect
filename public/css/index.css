@@ -37,10 +37,6 @@
     transition: all 1s ease-in-out;
 }
 
-.index-slider-btn:hover{
-    background: #fcfeff;
-}
-
 .index-slider-btn-right{
     right: 1rem;
 }
@@ -54,6 +50,7 @@
     transform: translateY(-80%);
     font-weight: bold;
     font-family: monospace;
+    color: #666;
 }
 
 .index-cat-ban-container{
@@ -253,6 +250,14 @@
         height: fit-content;
         margin-left: 30px;
         margin-right: 30px;
+    }
+
+    .index-btn-p{
+        color: black;
+    }
+
+    .index-slider-btn:hover{
+        background: #fcfeff;
     }
 }
 
