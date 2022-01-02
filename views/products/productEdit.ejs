@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Include Head -->
-<%- include('../partials/head.ejs', {title: 'Creación Producto'}) %>
+<%- include('../partials/head.ejs', {title: 'Edición de Producto'}) %>
 
 <body class="body">
     <!-- Include Header With Banner-->
@@ -10,8 +10,8 @@
     <!-- Include Header With Banner-->
     
     <!-- Product Create -->
-    <form action="/products/create" method="post" class="register-create-form" enctype="multipart/form-data">
-        <h2>Creación de Producto</h2>
+    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="post" class="register-create-form" enctype="multipart/form-data">
+        <h2>Edición de Producto</h2>
 
         <div class="register-control-formulario">
             <div class="register-icon-container">
@@ -22,7 +22,7 @@
                 name="name" 
                 placeholder="Nombre del Producto" 
                 class="register-control"
-                value="<%= locals.oldData ? oldData.name : "" %>"
+                value="<%= productToEdit.name %>"
             >
             <% if (locals.errors && errors.name) { %>
             <div class="register-text-danger">
@@ -40,7 +40,7 @@
                 name="description" 
                 placeholder="Descripción del producto" 
                 class="register-control" 
-                value="<%= locals.oldData ? oldData.description : "" %>"
+                value="<%= productToEdit.description %>"
             >
             <% if (locals.errors && errors.description) { %>
                 <div class="register-text-danger">
@@ -62,7 +62,7 @@
                 %>
                 <% for( let oneCategory of category ) { %>
                     <option value="<%= oneCategory %>"
-                        <%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
+                        <%= (oneCategory == productToEdit.category) ? 'selected' : null %> 
                     ><%= oneCategory %></option>
                 <% } %> 
             </select>
@@ -84,7 +84,7 @@
                 name="price"
                 placeholder="Número sin símbolos" 
                 class="register-control"
-                value="<%= locals.oldData ? oldData.price : "" %>"
+                value="<%= productToEdit.price %>"
             >
             <% if (locals.errors && errors.price) { %>
                 <div class="register-text-danger">
@@ -96,13 +96,13 @@
         <div class="register-control-formulario">
             <label class="register-label-nacimiento">¿Está en Oferta?</label>
             <div class="login-offer-container">
-                <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()">Si</label>  
-                <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()">No</label> 
+                <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()" <%= productToEdit.isOffer == true ? 'checked' : "" %>>Si</label>  
+                <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()" <%= productToEdit.isOffer == false ? 'checked' : "" %>>No</label> 
             </div>
             
             <div id="ifYes">
                 <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
-                <input type="number" id='yes' name='discount'class="register-control" disabled="disabled"/>
+                <input type="number" id='yes' name='discount'class="register-control" <%= productToEdit.discount == 0 ? 'disabled' : ""%> value="<%= productToEdit.discount %>"/>
             </div> 
             <% if (locals.errors && errors.discount) { %>
                 <div class="register-text-danger">
@@ -113,7 +113,7 @@
 
         <div class="register-file">
             <label for="file" class="subir">
-                <i class="fas fa-cloud-upload-alt"></i> Subir Imagen
+                <i class="fas fa-cloud-upload-alt"></i> Imagen: (Sólo si se modifica)
             </label>
             <input id="file" name="photo" onchange='cambiar()' type="file" style='display: none;'/>
             <% if (locals.errors && errors.photo) { %>
@@ -131,7 +131,7 @@
             }
         </script>
 
-        <button type="submit" class="register-submit">Crear Producto</button>
+        <button type="submit" class="register-submit">Editar Producto</button>
     </form>
     <!-- User Register -->
 

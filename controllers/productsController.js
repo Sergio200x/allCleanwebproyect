@@ -6,12 +6,7 @@ const productList = products.all()
 
 const productsControllers = {
     products: (req, res) => {
-<<<<<<< HEAD
-
-        
-=======
         const productList = products.all()
->>>>>>> 8f7c5ba8f835f4f62170c39c4b8692aa8e315b31
 
         res.render('products/products',  { productList });
     },
@@ -48,6 +43,34 @@ const productsControllers = {
         {
             idProduct = products.createProduct(newproduct, req)
             res.redirect('/products/detail/' + idProduct)
+        }
+    },
+
+    productEdit:(req, res) => {
+        const IdProducto = req.params.id;
+		const productToEdit = products.find(IdProducto);
+
+		res.render('products/productEdit', {productToEdit: productToEdit})
+    },
+
+    processEdit: (req, res)=> {
+        const resultvalidations = validationResult(req);
+        const IdProducto = req.params.id;
+        const productToEdit = products.find(IdProducto);
+		const keepImage = productToEdit.image
+        
+		let productEdit = req.body
+        
+        if(!resultvalidations.isEmpty())
+        {
+            res.render('products/productEdit',{
+                errors: resultvalidations.mapped(),
+                oldData: req.body
+            })}
+        else
+        {
+            idProduct = products.updateProduct(productEdit, req, keepImage, IdProducto)
+            res.redirect('/products/')
         }
     }
 }

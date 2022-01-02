@@ -40,8 +40,6 @@ const validations =[
         if(!acceptedExtensions.includes(fileExtension)){
           throw new Error(`Las extensiones válidas son ${acceptedExtensions.join(', ')}`);
         }
-      }else{
-          throw new Error('Debes subir una imagen para el producto');
       }
       return true
     }),
@@ -54,13 +52,11 @@ const validations =[
                 throw new Error('Descuento inválido');
             }
         }
-    
         return true
-        
       })
 ]
 
-// GET ALL PRODUCTS
+//GET ALL PRODUCTS
 router.get('/', productsControllers.products)
 
 //GET ONE PRODUCT
@@ -69,11 +65,13 @@ router.get('/detail/:id/', productsControllers.productDetail)
 //GET CART PRODUCTS
 router.get('/cart/', productsControllers.productCart)
 
-//GET USER REGISTER PAGE
+//CREATE ONE PRODUCT
 router.get('/create/', productsControllers.productCreate)
-
-//PROCESS USER REGISTER
 router.post('/create/', upload, validations, productsControllers.processCreate)
+
+//EDIT ONE PRODUCT
+router.get('/edit/:id/', productsControllers.productEdit);
+router.put('/edit/:id/', upload , validations, productsControllers.processEdit);  
 
 
 module.exports = router;

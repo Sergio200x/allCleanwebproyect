@@ -66,8 +66,13 @@ let model = function(tableName) {
         ignore(){
             //ignore one row
         },
-        update(row) {
+        updateProduct(row, req, keepImage, IdProducto) {
             let rows = this.readFile();
+            row.id = IdProducto;
+            row.image = req.file ? req.file.filename : `${keepImage}`;
+            row.isOffer = req.body.isOffer? req.body.isOffer == 'ofertado' ? true : false : false;
+            row.discount = req.body.discount ? req.body.discount : 0;
+
             let updatedRows = rows.map(oneRow => {
                 if (oneRow.id == row.id) {
                     return row;

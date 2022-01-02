@@ -51,10 +51,8 @@ const validations =[
 //GET LOGIN PAGE 
 router.get('/login/', usersControllers.userLogin)
 
-//GET USER REGISTER PAGE 
+//CREATE ONE USER
 router.get('/register/', usersControllers.userRegister)
-
-//PROCESS USER REGISTER
 router.post('/register/', upload, validations, usersControllers.processRegister)
 
 
