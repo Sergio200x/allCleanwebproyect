@@ -59,13 +59,15 @@
         </section>
     </div>
 
+    <div>
+        <button><a href="/products/edit/<%= productfound.id %>" class="btn-Editar">EDITAR PRODUCTO</a></button>
+        
+        <form action="/products/delete/<%= productfound.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+            <button type="submit" class="btn-Eliminar">ELIMINAR</button>
+        </form>
+    </div>
+
 </main>
-
-<form action="products/productCreate" method="post" class="register-productCreate-form">
-    <div class="btn-Edit"><button >Editar</button></div>
-    <div class="btn-delete"><button >Eliminar</button></div>
-
-</form>
 
     <!-- Product Detail -->
 

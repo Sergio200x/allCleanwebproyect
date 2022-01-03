@@ -7,13 +7,7 @@
   "isOffer": false,
   "id": "1",
   "image": "Sun-2.webp",
-<<<<<<< HEAD
-  "price": 98952,
-  "isOffer": true,
-  "discount": 1
-=======
   "discount": 0
->>>>>>> eaefb894376bd2cccd7cb0125c32073c14778d8a
  },
  {
   "id": 2,
