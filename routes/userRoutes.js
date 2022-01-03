@@ -51,11 +51,15 @@ const validations =[
 //GET LOGIN PAGE 
 router.get('/login/', usersControllers.userLogin)
 
-//GET USER REGISTER PAGE 
+//CREATE ONE USER
 router.get('/register/', usersControllers.userRegister)
-
-//PROCESS USER REGISTER
 router.post('/register/', upload, validations, usersControllers.processRegister)
 
+//EDIT ONE USER
+router.get('/edit/:id/', usersControllers.userEdit);
+router.put('/edit/:id/', upload , validations, usersControllers.processEdit);
+
+//DELETE ONE USER 
+router.delete('/delete/:id', usersControllers.userDestroy); 
 
 module.exports = router;

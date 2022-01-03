@@ -31,7 +31,7 @@ const validations =[
     body('price')
       .notEmpty().withMessage('Debes ingresar un precio para el producto').bail()
       .isNumeric().withMessage('Solo se admiten números').bail()
-      .isInt({ min:0}).withMessage('El precio debe ser mayor a cero'),
+      .isInt({ min:1}).withMessage('El precio debe ser mayor a cero'),
     body('photo').custom((value, {req})=>{
       const file = req.file;
       const acceptedExtensions = ['.jpg', '.jpeg', '.gif', '.png'];
@@ -40,40 +40,47 @@ const validations =[
         if(!acceptedExtensions.includes(fileExtension)){
           throw new Error(`Las extensiones válidas son ${acceptedExtensions.join(', ')}`);
         }
-      }else{
-          throw new Error('Debes subir una imagen para el producto');
       }
       return true
     }),
     body('discount').custom((value, { req }) => {
         const isOffer = req.body.isOffer
         if(isOffer == 'ofertado'){
-            //console.log(typeof value)
             
             if(value <= 0){
                 throw new Error('Descuento inválido');
             }
+
+            if(!parseInt(value)){
+              throw new Error('Sólo se admiten números');
+            }
         }
-    
         return true
-        
       })
 ]
 
-// GET ALL PRODUCTS
+//GET ALL PRODUCTS
 router.get('/', productsControllers.products)
 
 //GET ONE PRODUCT
 router.get('/detail/:id/', productsControllers.productDetail)
 
+//GET PRODUCTS FOR CATEGORY
+router.get('/category/:category/', productsControllers.productCategory)
+
 //GET CART PRODUCTS
 router.get('/cart/', productsControllers.productCart)
 
-//GET USER REGISTER PAGE
+//CREATE ONE PRODUCT
 router.get('/create/', productsControllers.productCreate)
-
-//PROCESS USER REGISTER
 router.post('/create/', upload, validations, productsControllers.processCreate)
+
+//EDIT ONE PRODUCT
+router.get('/edit/:id/', productsControllers.productEdit);
+router.put('/edit/:id/', upload , validations, productsControllers.processEdit);
+
+//DELETE ONE PRODUCT 
+router.delete('/delete/:id', productsControllers.productDestroy); 
 
 
 module.exports = router;
