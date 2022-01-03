@@ -270,15 +270,25 @@
     margin: auto;
     text-align: center;
     font-size: 250%;
-    margin-top: 10%;
+    margin-top: 5%;
     max-width: 400px;
+
 }
 
-.register-productCreate-form button
+
+.btn-Editar , .btn-Eliminar
 {
-    width:150px;
-    
+    width:180px;
+    background-color: #2289dd;
+    color: whitesmoke; 
+        
 }
+
+.btn-Eliminar
+{
+    background-color: rgb(214, 12, 12);
+}
+
 
 
 /*------------------------------------------------MEDIA QUERIES------------------------------*/
@@ -323,6 +333,13 @@
 
 @media (min-width: 1024px)
 {
+ 
+    .productDetail-mai
+   { margin: auto;
+       max-width: 1440px;
+    
+    }
+
     .productDetail-datos
     {
         height: 460px; 
@@ -335,7 +352,7 @@
     display: block;
     margin: auto;
     width: 85%;
-    max-width: 900px;
+    max-width: 300px;
 
     }
 }

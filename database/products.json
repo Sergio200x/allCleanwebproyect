@@ -60,16 +60,6 @@
   "discount": 16
  },
  {
-  "id": 7,
-  "name": "Lavandina 3 litros",
-  "description": "Smith's fracture of unsp radius, init for clos fx",
-  "category": "Limpiadores de Cocina",
-  "image": "oferta-3.webp",
-  "price": 58095,
-  "isOffer": true,
-  "discount": 30
- },
- {
   "id": 8,
   "name": "Alcohol en Spray 250 ml",
   "description": "Salter-Harris Type IV physeal fracture of lower end of femur",
