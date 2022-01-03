@@ -7,14 +7,9 @@
   "image": "Sun-2.webp",
   "price": 98952,
   "isOffer": true,
-<<<<<<< HEAD
-  "discount": 0
-}, {
-=======
   "discount": 1
  },
  {
->>>>>>> 8f7c5ba8f835f4f62170c39c4b8692aa8e315b31
   "id": 2,
   "name": "Jabon Líquido 3 kg",
   "description": "Huntington's disease",

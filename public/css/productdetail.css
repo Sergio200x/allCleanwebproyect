@@ -260,7 +260,27 @@
     margin:auto;
     margin-top: 10px;
 }
+
+
+.register-productCreate-form
+{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 250%;
+    margin-top: 10%;
+    max-width: 400px;
+}
+
+.register-productCreate-form button
+{
+    width:150px;
     
+}
+
+
 /*------------------------------------------------MEDIA QUERIES------------------------------*/
 
 @media (min-width: 768px)

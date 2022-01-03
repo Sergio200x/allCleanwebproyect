@@ -6,12 +6,7 @@ const productList = products.all()
 
 const productsControllers = {
     products: (req, res) => {
-<<<<<<< HEAD
-
-        
-=======
         const productList = products.all()
->>>>>>> 8f7c5ba8f835f4f62170c39c4b8692aa8e315b31
 
         res.render('products/products',  { productList });
     },
