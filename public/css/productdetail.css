@@ -278,9 +278,12 @@
 
 .btn-Editar , .btn-Eliminar
 {
-    width:180px;
+    width:150px;
+    height: 50px;
+    margin: auto;
     background-color: #2289dd;
     color: whitesmoke; 
+    
         
 }
 
