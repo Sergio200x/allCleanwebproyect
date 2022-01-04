@@ -155,7 +155,7 @@ html{
 }
 
 .index-rightmenu{
-    display: none;
+    display: inline-block;
 }
 
 .index-rightmenu i{
@@ -178,17 +178,67 @@ html{
 
 @media (min-width: 768px)
 {
-    .body{
-        padding-bottom: 300px;
-    }
+.body{
+    padding-bottom: 300px;
+}
 
-    .index-searchbar{
-        width: 65%;
-    }
+.index-searchbar{
+    width: 65%;
+}
+.menu-area{
+    width:100%;
+     
+}
+.menu-area ul{
+        
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+       
+.menu-area li ul {
+    
+    position: absolute;
+    width:0%;
+    overflow: hidden;
+}
+.menu-area li li {
+    
+    display: block;
+     width: 100%;
+}
+.menu-area li:hover li a,
+.menu-area li:focus li a {
+    text-decoration: none;
+    width:20%;
+    padding:2%;
+    border: 1% ;
+    display:inline-block;
+    font-family:inherit; 
+    font-size: 2rem;
+    line-height: 1.7rem;
+    background: lightcyan;
+}
+.menu-area li li a:hover,
+.menu-area li li a:focus {        
 
-    .search-form{
+    background:#8AA9B8;
+}
+        
+.menu-area li:hover ul,
+.menu-area li:focus ul {
+
+    display:block;
+    width: 50%;
+    z-index: 5;
+    margin: 0rem -4rem -4rem -4rem;
+    padding: 0rem 4rem 4rem 4rem;
+    background: transparent;
+}
+
+.search-form{
         width: 100%;
-    }
+}
 }
 
 @media (min-width: 1024px)
