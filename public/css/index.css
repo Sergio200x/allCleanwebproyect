@@ -218,13 +218,9 @@
 
 @media (min-width: 768px)
 {
-    .index-hamburgermenu{
-        display: none;
-    }
+   
 
-    .index-rightmenu{
-        display: flex;
-    }
+    
 
     .index-categories{
         border: solid 1px rgba(180, 161, 161, 0.7);

@@ -1,21 +1,36 @@
-<header class="index-header">
-    <section class="index-maxwidth-body"> 
+<header class="header">
+    <section class="header-maxwidth-body"> 
         <div class="index-logo">
             <a href="/"><img src="/images/logo-gota.svg" alt="logo de allclean" class="index-imglogo"></a>
             <a href="/">All Clean</a>
         </div>
 
-        <section class="index-searchbar">
-            <form action="/search" method="GET" class="index-searchbar search-form">
+        <section class="header-searchbar">
+            <form action="/search" method="GET" class="header-searchbar search-form">
                 <input type="text" name="search" placeholder="¿Qué producto buscas?">      
                 <button type="submit" class="lupa" ><i class="fas fa-search"></i></button>
             </form>
         </section>
        
-        <section class="index-rightmenu">
-            <nav class="menu-area">
+        <section class="header-rightmenu">
+            <div class="menu-area">
+                <i class="fas fa-user"></i>
+                <div class="menu-opc">                   
+                    <li><a href="/users/Register">Registro</a></li>
+                    <li><a href="/users/Login">Login</a></li>
+                </div>   
+            </div>  
+            
+            <div>
+                <a href=""><i class="far fa-heart"></i></a>
+            </div>
+            <div> 
+                <a href="/products/cart"><i class="fas fa-shopping-cart" ></i></a>
+            </div>            
+     <!-- <div class="menu-area">
                 <ul>      
-                    <li><i class="fas fa-user"></i>
+                    <li>
+                        <i class="fas fa-user"></i>
                         <ul>
                             <li><a href="/users/Register">Registro</a></li>
                             <li><a href="/users/Login">Login</a></li>
@@ -25,15 +40,15 @@
                     <div><a href=""><i class="far fa-heart"></i></a></div>
                     <div> <a href="/products/cart"><i class="fas fa-shopping-cart" ></i></a></div>
                 </ul> 
-            </nav>
+            </div> -->
         </section>
 
-        <section class="index-hamburgermenu">
+        <section class="hamburgermenu">
             <i class="fas fa-bars"></i>
         </section>
     </section>        
 </header>
-<!-- <section class="index-rightmenu">
+<!-- <section class="header-rightmenu">
     <i class="fas fa-user"></i>
     <i class="far fa-heart"></i>
      <a href="/products/cart"><i class="fas fa-shopping-cart" ></i></a>
