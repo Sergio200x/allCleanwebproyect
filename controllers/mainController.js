@@ -21,7 +21,7 @@ const mainControllers = {
 				}
 		}
 	
-		res.render('products/productResults', {productsFilter: productsFilter, busqueda})
+		res.render('products/productResults', {productsFilter: productsFilter, busqueda, constants})
 	},
 }
 

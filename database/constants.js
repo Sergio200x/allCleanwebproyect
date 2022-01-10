@@ -2,12 +2,12 @@ const generalCategory = [
 
         { 
             id : 1,
-            name: 'Limpiadores de Cocina',
+            name: 'Limpieza de Cocina',
             icon : 'fas fa-sink index-categories-icons'
         } , 
         { 
             id : 2,
-            name: 'Limpiadores de Baño',
+            name: 'Limpieza de Baño',
             icon : 'fas fa-toilet index-categories-icons'
         }, 
         { 
@@ -17,12 +17,12 @@ const generalCategory = [
         },
         { 
             id : 4,
-            name : 'Sanitizantes',
+            name : 'Accesorios limpieza',
             icon : 'fas fa-pump-soap index-categories-icons'
         },
         { 
             id : 5,
-            name : 'Limpiadores de Hogar',
+            name : 'Limpieza piso y muebles',
             icon : 'fas fa-broom index-categories-icons'
         },
         { 
@@ -37,12 +37,12 @@ const popularCategory = [
 
     { 
         id : 1,
-        name: 'Limpiadores de Cocina',
+        name: 'Limpieza de Cocina',
         icon : 'fas fa-sink index-categories-icons'
     } , 
     { 
         id : 2,
-        name: 'Limpiadores de Baño',
+        name: 'Limpieza de Baño',
         icon : 'fas fa-toilet index-categories-icons'
     }, 
     { 
@@ -62,18 +62,23 @@ const bannerImages = [
     { 
         id : 2,
         name: 'Banner Skip',
-        image : '/images/banner-2.png'
+        image : '/images/banner-2.jpg'
     } , 
     { 
         id : 3,
         name: 'Banner Vivere',
-        image : '/images/banner-3.png'
+        image : '/images/banner-3.jpg'
     },
     { 
         id : 4,
-        name: 'Banner Espadol',
+        name: 'Banner Esponja',
         image : '/images/banner-4.jpg'
-    }    
+    },
+    // { 
+    //     id : 5,
+    //     name: 'Banner',
+    //     image : '/images/banner-2.jpg'
+    // }     
 ]
 
 

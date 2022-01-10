@@ -1,13 +1,14 @@
 const { validationResult } = require("express-validator")
 const jsonTable = require('../database/jsonTable');
 const products = jsonTable('products');
+const constants = require('../database/constants')
 
 
 const productsControllers = {
     products: (req, res) => {
         const productList = products.all()
 
-        res.render('products/products',  { productList });
+        res.render('products/products',  { productList, constants });
     },
 
     productDetail:(req, res) => {
@@ -15,7 +16,7 @@ const productsControllers = {
         const productList = products.all()
         const productfound = productList.find(product => product.id == idproduct)
 
-        res.render('products/productDetail',{productfound: productfound});
+        res.render('products/productDetail',{productfound: productfound, constants});
     },
 
     productCategory:(req, res) => {
@@ -32,15 +33,15 @@ const productsControllers = {
             productsFilter = undefined;
         }
 	
-		res.render('products/productCategory', {productsFilter: productsFilter, selectedCategory})
+		res.render('products/productCategory', {productsFilter: productsFilter, selectedCategory, constants})
     },
 
     productCart:(req, res) => {
-        res.render('products/productCart')
+        res.render('products/productCart', {constants})
     },
 
     productCreate:(req, res) => {
-        res.render('products/productCreate')
+        res.render('products/productCreate', {constants})
     },
     
     processCreate:(req,res)=>{
@@ -52,7 +53,8 @@ const productsControllers = {
         {
             res.render('products/productCreate',{
                 errors: resultvalidations.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                constants
             })}
         else
         {
@@ -65,7 +67,7 @@ const productsControllers = {
         const IdProduct = req.params.id;
 		const productToEdit = products.find(IdProduct);
 
-		res.render('products/productEdit', {productToEdit: productToEdit})
+		res.render('products/productEdit', {productToEdit: productToEdit, constants})
     },
 
     processEdit: (req, res)=> {
@@ -81,7 +83,8 @@ const productsControllers = {
             res.render('products/productEdit',{
                 errors: resultvalidations.mapped(),
                 oldData: req.body,
-                productToEdit : productToEdit
+                productToEdit : productToEdit, 
+                constants
             })}
         else
         {

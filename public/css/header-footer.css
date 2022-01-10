@@ -1,7 +1,9 @@
 .header
 {
-    background-color: #f1f1f1;
+    background-color: #b0d4d2;
     width: 100%;
+    /* position: absolute; */
+    z-index:10;
 }
 
 .header-maxwidth-body{
@@ -57,17 +59,19 @@
 /* barra busqueda */
 
 .header-searchbar{
-    /* border: rgba(139, 135, 135,0.2) solid 0.5px; */
     margin-left: 0px;
     margin-right: 0px;
-    display: flex;
     position: relative;
-    width: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+   
 }
 
-.header-searchbar:hover{
-    border: rgb(139, 135, 135) solid 1px;
-    font-weight: bolder;
+.header-searchbar:hover input{
+    border: rgb(139, 135, 135) solid 0.5px;
+    font-weight: bold;
+    border-radius: 4.8px ;
 }
 
 .header-searchbar input{
@@ -76,12 +80,13 @@
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     border: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 5px;
     padding-left: 10px;
     padding-right: 25px;
+    /* border: rgba(241, 6, 6, 0.973) solid 1px; */
    
 }
+
 
 .lupa{
     border: none;
@@ -95,6 +100,8 @@
     top: 5px;;
     margin-right: 5px;
     border-left: #808080ad solid 1px;
+    /* border: rgba(102, 22, 230, 0.973) solid 1px; */
+    
 }
 
 .lupa i{
@@ -112,17 +119,97 @@
 }
 
 /* menu hamburguesa  */
+.header-rightmenu{
+    display: none;
+    
+}
 
-.hamburgermenu i{
+.hamburgermenu{
+    font-family: "Roboto", sans-serif;
+
+}
+  
+.hamburgermenu .barras{
+    float: right;
     color: #ebebeb;
     background-color: #286698;
     border-radius: 7px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     height: fit-content;
     width: fit-content;
     margin: 0 7px;
 }
 
+.hamburgermenu .flecha-down{
+    padding-left: 3px;
+}
+
+.hamburgermenu .opc /*ul*/{
+/*     display:block;  
+    z-index:10;
+    bottom: -14px;
+    right: -1px;
+    position:fixed;*/
+    margin-left:100px;
+    font-size: 13px;
+    position:absolute;
+    padding: 10px;
+    top: 58px;
+    width:50vw;
+    height:calc(100vh - 57px);   
+    background-color: #888;
+ /*   z-index:11;
+     border: blue 1px solid; */
+    overflow-y:scroll;
+    transition: all 1s ease-in-out;
+}
+.hamburgermenu .opc li /*ul li*/{
+    display:block;
+    list-style:none;
+    align-items: center;
+/*     text-align:center; */
+    padding: 16px;
+/*     margin: 10px 5px; */
+    width: 100%;
+    margin:1px 0px;
+/*     border:pink 1px solid; */
+}
+.hamburgermenu .opc li a{
+    display:block;
+    color: white;
+    text-decoration:none;
+    overflow-y:scroll;
+}
+
+.submenu-btn{
+    padding: 0px;
+    position:relative;
+   
+}
+
+.submenu-opc { 
+    transition: all 0.4s;
+    background-color: #5d5d5d;
+    height: 0;
+/*     border: white 1px solid; */
+    overflow: hidden;
+ 
+ }
+.submenu-opc a{
+/*     border: white 1px solid; */
+    padding-left: 30px;
+    
+}
+
+.hamburgermenu .show{
+    margin-left:-40%;
+}
+
+.submenu-opc .desplegar{
+    height: 10px;
+  /*  border: white 1px solid; */
+    overflow: visible;
+}
 /*---------------------------------------------FOOTER---------------------------------------------*/
 
 .footer{
@@ -164,9 +251,6 @@
 
 @media (min-width: 768px)
 {
-    header-searchbar{
-        width: 65%;
-    }
     
     .hamburgermenu{
         display: none;
@@ -183,72 +267,77 @@
         color: #286698;
     }
 
-    /* menu desplegable login */
-    .menu-area{
+    /* menu desplegable usuario */
+    .menu-area, 
+    .menu-area:focus{
         width:100%;
         display: flex;
         flex-direction: row;
-        list-style-type: none;       
+        list-style: none;   
+        padding-bottom: 10px;
     }
     
-    .menu-area .menu-opc {       
+    .menu-area .menu-opc{       
         position: absolute;
         width:0%;
         overflow: hidden;
+        list-style: none;    
+        border-radius: 3%; 
+    }
+
+    .menu-area .menu-opc ul{
+        margin: 0px;
+    }
+
+    .menu-area .menu-opc li{
+        border-radius: 3px; 
+        margin-top: 7px;
+        margin-right: 80px;
+        background-color: #777;    
+        width: 100px;    
+       
+        /* border: whitesmoke 1px solid; */
     }
     
-    .menu-area .menu-opc li {    
-/*         width: 100%; */
-/*         border:green 1px solid; */
-        border-radius: 3px;
-        background-color: #fef9f9;
-        position:relative;
-        top: 17px;
-        right: 10px;
-        margin: 8px 0 0 0;
+    .menu-area .menu-opc li a:hover,
+    .menu-area .menu-opc li a:focus{
+        background-color: #555;
+        position:relative;   
+        transition: all 0.3s ease-in-out;     
+        /* border: green 1px solid; */
     }
     
     .menu-area:hover .menu-opc a,
-    .menu-area:focus .menu-opc a {
+    .menu-area:focus .menu-opc a{
+        border-radius: 3px;
         text-decoration: none;
-        width:20%;
-        padding:2%;
-/*         border: 1% ; */
+        width:100%;
         display:inline-block;
         font-family: "Roboto", sans-serif;
         font-weight: 100;
         font-size: 2rem;
-/*         line-height: 1.7rem; */
+        padding: 5px;
         position: relative;
-        left: 10px;
-  /*       background: rgb(15, 212, 212);
-        border: tomato 1px solid; */
+        /* border: black 1px solid; */
+    }
 
+    .menu-area .menu-opc a{
+        color: whitesmoke;
     }
-    
-    .menu-area .menu-opc a:hover,
-    .menu-area .menu-opc a:focus {        
-    
-/*         background:#be14a8; */
-        border: gray 1px solid;
-    }
-    
+
+     
     .menu-area:hover .menu-opc,
-    .menu-area:focus .menu-opc {
+    .menu-area:focus .menu-opc{
     
-/*         display:block; */
-        width: 25%;
+        display:block;
+        width: 15%;
         z-index: 5;
-        margin: 0rem -4rem -4rem -4rem;
-        padding: 0rem 4rem 4rem 4rem;
-        background: #f1f1f1;
-        border: #d8d6d6fa 1px solid;
-        border-radius: 4%;
-        
+        background: transparent;
         position: absolute;
-        right: 110px;
-/*         left: -10px; */
-        top:70px;
+        right: 0px;
+        top: 75px;
+        transition: all 1s ease-in-out;
+        /* border: red 1px solid; */
      
         
     }
@@ -256,14 +345,12 @@
 
 @media (min-width: 1024px)
 {
-    .header-searchbar{
-        width: 75%;
-        border: orangered 1px;
-    }
     .index-logo img{
         width: 6rem;
         height: 6rem;
     }
+
+    
 }
 
 

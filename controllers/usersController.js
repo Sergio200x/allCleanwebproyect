@@ -1,12 +1,13 @@
 const { validationResult } = require("express-validator")
 const jsonTable = require('../database/jsonTable');
 const users = jsonTable('users');
+const constants = require('../database/constants');
 
 
 const usersControllers = {
-    userLogin:(req, res) => {res.render('users/userLogin')},
+    userLogin:(req, res) => {res.render('users/userLogin', {constants})},
 
-    userRegister:(req, res) => {res.render('users/userRegister')},
+    userRegister:(req, res) => {res.render('users/userRegister', {constants})},
 
     processRegister: (req, res) => {
         const resultvalidations = validationResult(req);
@@ -17,7 +18,8 @@ const usersControllers = {
         {
             res.render('users/userRegister',{
                 errors: resultvalidations.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                constants,
             })}
         else
         {
@@ -30,7 +32,7 @@ const usersControllers = {
         const IdUser = req.params.id;
 		const userToEdit = users.find(IdUser);
 
-		res.render('users/userEdit', {userToEdit: userToEdit})
+		res.render('users/userEdit', {userToEdit: userToEdit, constants})
     },
 
     processEdit: (req, res)=> {
@@ -46,7 +48,8 @@ const usersControllers = {
             res.render('users/userEdit',{
                 errors: resultvalidations.mapped(),
                 oldData: req.body,
-                userToEdit : userToEdit
+                userToEdit : userToEdit, 
+                constants
             })}
         else
         {
