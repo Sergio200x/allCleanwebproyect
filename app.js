@@ -3,15 +3,20 @@ const methodOverride =  require('method-override')
 const app = express()
 const port = 3030
 const session=require("express-session")
+const userLoggedMiddleware= require('./middlewares/userLoggedMiddleware');
 
 const indexRoutes = require('./routes/indexRoutes')
 const userRoutes = require('./routes/userRoutes')
 const productsRoutes = require('./routes/productsRoutes')
 
+
+
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'))
 app.use(session({secret:'its a secret',resave:false,saveUninitialized:false}));
+
+// app.use(userLoggedMiddleware)
 
 app.set('view engine', 'ejs')
 

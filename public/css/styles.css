@@ -4,6 +4,8 @@
     font-family: 'Fruktur', cursive;
     font-family: 'Mulish', sans-serif;
     font-family: 'Roboto', sans-serif;
+    padding-inline-start: 0px;
+    list-style: none;
 }
 
 html{
@@ -47,13 +49,6 @@ html{
         font-size: 25px;
         color: #286698 ;
     }
-
-    
-
-    /* .search-form{
-        width: 100%;
-    } */
-
     
 }
 

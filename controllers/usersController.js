@@ -3,9 +3,13 @@ const jsonTable = require('../database/jsonTable');
 const users = jsonTable('users');
 const bcryptjs=require("bcryptjs")
 
+const constants = require('../database/constants');
+
+
 const usersControllers = {
     userLogin:(req, res) => {
-        res.render('users/userLogin')},
+        res.render('users/userLogin',{constants})},
+        
 
     processLogin:(req, res) => {
         
@@ -28,10 +32,10 @@ const usersControllers = {
                         }
             });            
                 
-            // }
+           
         },
 
-    userRegister:(req, res) => {res.render('users/userRegister')},
+    userRegister:(req, res) => {res.render('users/userRegister', {constants})},
 
     processRegister: (req, res) => {
        
@@ -43,7 +47,8 @@ const usersControllers = {
         {
             res.render('users/userRegister',{
                 errors: resultvalidations.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                constants,
             })}
          else{
             
@@ -52,6 +57,7 @@ const usersControllers = {
                return res.render('users/userRegister',{
                     errors:{email:{msg:"Este mail esta registrado"}},
                     oldData: req.body,
+                    constants
                 
                 });
              }
@@ -65,7 +71,7 @@ const usersControllers = {
         const IdUser = req.params.id;
 		const userToEdit = users.find(IdUser);
 
-		res.render('users/userEdit', {userToEdit: userToEdit})
+		res.render('users/userEdit', {userToEdit: userToEdit, constants})
     },
 
     processEdit: (req, res)=> {
@@ -81,7 +87,8 @@ const usersControllers = {
             res.render('users/userEdit',{
                 errors: resultvalidations.mapped(),
                 oldData: req.body,
-                userToEdit : userToEdit
+                userToEdit : userToEdit, 
+                constants
             })}
         else
         {
@@ -98,12 +105,14 @@ const usersControllers = {
 		res.redirect('/')
 	},
     profile:(req,res)=>{
-        res.render('users/userProfile',{user:req.session.userLogged});
+        res.render('users/userProfile',{user:req.session.userLogged,constants});
     },
 
     logout:(req,res)=>{
         req.session.destroy();
+        console.log("salio de la session")
         return res.redirect('/')
     }
 } 
 module.exports= usersControllers
+

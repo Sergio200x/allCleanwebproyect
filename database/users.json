@@ -518,5 +518,15 @@
   "password": "$2b$10$LT2vvSr/dF93gSU4AaGVF.cOPSrB0QxvhDz2FUDBTxQfDXV1ANzOW",
   "id": 52,
   "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "client",
+  "name": "telete",
+  "user": "teletele",
+  "email": "tele@gmail.com",
+  "date": "",
+  "password": "$2b$10$9R6w7PekcB6PDWtBOAYdU.b7Rn58pz4IQRgOlSeFLzJgT0we20aka",
+  "id": 53,
+  "avatar": "sr-x.jpg"
  }
 ]

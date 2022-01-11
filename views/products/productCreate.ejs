@@ -58,7 +58,7 @@
             <select name="category" class="register-control select" style="color:gray">
                 <option hidden selected value="">Elegí una Categoría</option>
                 <% 
-                    let category = ['Limpiadores de Cocina', 'Limpiadores de Baño', 'Desinfectantes', 'Sanitizantes', 'Limpiadores de Hogar', 'Otros'];
+                    let category = ['Limpieza de Cocina', 'Limpieza de Baño', 'Desinfectantes', 'Limpieza piso y muebles', 'Accesorios limpieza', 'Otros'];
                 %>
                 <% for( let oneCategory of category ) { %>
                     <option value="<%= oneCategory %>"
@@ -160,6 +160,8 @@
         }
         
     </script>
+    
+    <script src="/js/index-slider.js"></script>
     <!-- Scripts -->
     <!-- Product Create -->
 
