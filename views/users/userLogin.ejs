@@ -10,7 +10,7 @@
     <!-- Include Header-->
 
     <!-- User Login -->
-    <form action="/" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form">
+    <form action="/users/login" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form">
         <h2>Bienvenido</h2>
         <h3>Ingrese sus credenciales</h3>
         <div class="register-control-formulario">
@@ -18,6 +18,11 @@
                 <i class="far fa-envelope"></i>
             </div>
             <input type="email" name="email" placeholder="Ingrese su mail" class="register-control">
+                <% if(locals.errors && errors.email) { %>
+                    <div class="register-text-danger">
+                       <%= errors.email.msg %>
+                    </div>        
+                <% } %>
         </div>
         <div class="register-control-formulario">
             <input type="password" name="password" id="password" placeholder="Ingrese su password" pattern=".{6,}" class="register-control">

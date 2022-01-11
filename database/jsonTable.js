@@ -35,6 +35,13 @@ let model = function(tableName) {
             let rows = this.readFile();
             return rows.find(row => row.id == id)
         },
+        findByField(field,text) {
+            let rows = this.readFile();
+            let hallados= rows.find(user => user[field]==text);
+            return hallados
+            console.log(hallados)
+        },
+
         createUser(row, req) {
             let rows = this.readFile();
             row.id = this.nextId();
@@ -62,6 +69,9 @@ let model = function(tableName) {
         },
         encrypt(password){
             return bcrypt.hashSync(password,10);
+        },
+        compareEncrypt(text,hash){
+                return bcrypt.compareSync(text,hash);
         },
         ignore(){
             //ignore one row

@@ -508,5 +508,15 @@
   "password": "$2b$10$jGG.DQTgOe3ohdMPSDw9Qelg7iKIE9LX4AaNsQA2YsYR8qe8dswOO",
   "id": "51",
   "avatar": "Avatar-1641047415169.png"
+ },
+ {
+  "userType": "client",
+  "name": "pepe12",
+  "user": "pepe1",
+  "email": "pepe@mail.com",
+  "date": "2022-01-09",
+  "password": "$2b$10$LT2vvSr/dF93gSU4AaGVF.cOPSrB0QxvhDz2FUDBTxQfDXV1ANzOW",
+  "id": 52,
+  "avatar": "sr-x.jpg"
  }
 ]
