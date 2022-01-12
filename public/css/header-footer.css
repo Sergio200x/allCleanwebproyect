@@ -158,8 +158,8 @@
     width:50vw;
     height:calc(100vh - 57px);   
     background-color: #888;
- /*   z-index:11;
-     border: blue 1px solid; */
+   z-index:11;
+   /*   border: blue 1px solid; */
     overflow-y:scroll;
     transition: all 1s ease-in-out;
 }
@@ -205,7 +205,7 @@
     margin-left:-40%;
 }
 
-.submenu-opc .desplegar{
+.submenu-btn .desplegar{
     height: 10px;
   /*  border: white 1px solid; */
     overflow: visible;
@@ -275,6 +275,8 @@
         flex-direction: row;
         list-style: none;   
         padding-bottom: 10px;
+        /* background-color: #777; */
+        border:tomato 1px solid;
     }
     
     .menu-area .menu-opc{       
@@ -283,6 +285,7 @@
         overflow: hidden;
         list-style: none;    
         border-radius: 3%; 
+       
     }
 
     .menu-area .menu-opc ul{
@@ -294,7 +297,7 @@
         margin-top: 7px;
         margin-right: 80px;
         background-color: #777;    
-        width: 100px;    
+        width: 190px;    
        
         /* border: whitesmoke 1px solid; */
     }
@@ -318,7 +321,7 @@
         font-size: 2rem;
         padding: 5px;
         position: relative;
-        /* border: black 1px solid; */
+        /* border: red 1px solid; */
     }
 
     .menu-area .menu-opc a{
@@ -337,7 +340,7 @@
         right: 0px;
         top: 75px;
         transition: all 1s ease-in-out;
-        /* border: red 1px solid; */
+        border: red 1px solid;
      
         
     }
