@@ -150,8 +150,7 @@
     border: solid 1px rgba(180, 161, 161, 0.3);
     margin: 1rem;
     height: min-content;
-    min-width: 298px;
-    max-width: 338px;
+    width: 338px;
     border-radius: .5rem;
 }
 

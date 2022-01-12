@@ -57,9 +57,10 @@
 
             <select name="category" class="register-control select" style="color:gray">
                 <option hidden selected value="">Elegí una Categoría</option>
-                <% 
-                    let category = ['Limpieza de Cocina', 'Limpieza de Baño', 'Desinfectantes', 'Limpieza piso y muebles', 'Accesorios limpieza', 'Otros'];
-                %>
+                <% let category = [] %>                    
+                <% for (let categoria of constants.generalCategory) { %>
+                    <% category.push(categoria.name)%>
+                <% } %>
                 <% for( let oneCategory of category ) { %>
                     <option value="<%= oneCategory %>"
                         <%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
