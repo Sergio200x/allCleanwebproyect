@@ -1,12 +1,27 @@
-// function userLoggedMiddleware(req,res,next){
-//     console.log("pase por el middleware de userLogged")
-    
-//     req.locals.isLogged=false
-//     // console.log("pase por el middleware de userLogged")
-//     // if (req.session.userLogged){
-//     //     return res.redirect('/users/Login');
-//     // }
-//     next();
+const jsonTable = require('../database/jsonTable');
+const users = jsonTable('users');
 
-// }
-// module.exports=userLoggedMiddleware
+
+function userLoggedMiddleware(req,res,next){
+    
+    res.locals.isLogged=false;
+    let emailInCookies=req.cookies.userEmail;
+    let userFromCookie=users.findByField("email",emailInCookies)
+    console.log("es este"+userFromCookie)
+    if (userFromCookie)
+    req.session.userLogged=userFromCookie
+    
+
+    if (req.session.userLogged){
+        
+        res.locals.isLogged=true;
+    
+       res.locals.userLogged=req.session.userLogged
+    
+    }
+        
+         
+    next();
+
+}
+module.exports=userLoggedMiddleware

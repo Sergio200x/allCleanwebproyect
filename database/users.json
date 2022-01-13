@@ -515,9 +515,9 @@
   "user": "pepe1",
   "email": "pepe@mail.com",
   "date": "2022-01-09",
-  "password": "$2b$10$LT2vvSr/dF93gSU4AaGVF.cOPSrB0QxvhDz2FUDBTxQfDXV1ANzOW",
-  "id": 52,
-  "avatar": "sr-x.jpg"
+  "password": "$2b$10$1vdo1h16K.QAt6RF.ctX.OtAxIKun/P4e.AAIJWfZmoPQf.y561Wq",
+  "id": "52",
+  "avatar": "Avatar-1641957436071.png"
  },
  {
   "userType": "client",
@@ -527,6 +527,16 @@
   "date": "",
   "password": "$2b$10$9R6w7PekcB6PDWtBOAYdU.b7Rn58pz4IQRgOlSeFLzJgT0we20aka",
   "id": 53,
+  "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "client",
+  "name": "guadalupe",
+  "user": "guadita",
+  "email": "guada@mail.com",
+  "date": "",
+  "password": "$2b$10$F9Gxeeajew70ooyAax0JueQxfkIGLi.uQStgh8/IjfyeAKxSUHzYO",
+  "id": 54,
   "avatar": "sr-x.jpg"
  }
 ]

@@ -3,6 +3,7 @@ const methodOverride =  require('method-override')
 const app = express()
 const port = 3030
 const session=require("express-session")
+const cookie=require('cookie-parser')
 const userLoggedMiddleware= require('./middlewares/userLoggedMiddleware');
 
 const indexRoutes = require('./routes/indexRoutes')
@@ -11,18 +12,21 @@ const productsRoutes = require('./routes/productsRoutes')
 
 
 
+
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'))
 app.use(session({secret:'its a secret',resave:false,saveUninitialized:false}));
+app.use(cookie());
+app.use(userLoggedMiddleware);
 
-// app.use(userLoggedMiddleware)
 
 app.set('view engine', 'ejs')
 
 app.use('/', indexRoutes)
 app.use('/users', userRoutes)
 app.use('/products', productsRoutes)
+
 
 app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)

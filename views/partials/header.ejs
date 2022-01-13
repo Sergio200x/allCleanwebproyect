@@ -15,13 +15,23 @@
         
         <section class="header-rightmenu">
             <div class="menu-area">
-                <i class="fas fa-user"></i>
+                <% if(locals.isLogged) { %>
+                  <a href="" class="menu-area-user">
+                    <img src='/images/avatars/<%= locals.userLogged.avatar %>' width=50 style="border-radius: 100%;">
+                        <%= locals.userLogged.name %>
+                  </a> 
                 <nav class="menu-opc">    
-                    <ul>               
-                        <li><a href="/users/Register">Registro</a></li>
-                        <li><a href="/users/Login">Login</a></li>
-                        <li><a href="/users/Logout">Logout</a></li>
-                        <li><a href=""> Mi cuenta</a></li>
+                        <ul> 
+                            <li><a href="/users/Logout">Logout</a></li>               
+                            <li><a href=""> Mi cuenta</a></li>
+                        </ul>
+                            <% } else { %>
+                            <i class="fas fa-user"></i>
+                        <nav class="menu-opc">    
+                        <ul> 
+                            <li><a href="/users/Register">Registro</a></li>
+                            <li><a href="/users/Login">Login</a></li>
+                        <% } %> 
                     </ul>
                 </nav>   
             </div>  
@@ -63,3 +73,18 @@
     </section>    
 
 </header>
+
+<!-- <div class="menu-area">
+    <i class="fas fa-user"></i>
+    <nav class="menu-opc">    
+        <ul> 
+            <% if(locals.isLogged) { %> 
+                <li><a href="/users/Logout">Logout</a></li>               
+                <li><a href=""> Mi cuenta</a></li>
+            <% } else { %> 
+                <li><a href="/users/Register">Registro</a></li>
+                <li><a href="/users/Login">Login</a></li>
+            <% } %> 
+        </ul>
+    </nav>   
+</div>  -->

@@ -2,7 +2,7 @@ const constants = require('../database/constants')
 const jsonTable = require('../database/jsonTable');
 const products = jsonTable('products');
 
-const mainControllers = {
+const mainControllers = 	{
     index:(req, res) => {
         const productList = products.all()
         res.render('index', {productList : productList, constants})
@@ -21,8 +21,10 @@ const mainControllers = {
 				}
 		}
 	
-		res.render('products/productResults', {productsFilter: productsFilter, busqueda, constants})
-	},
+		res.render('products/productResults', {productsFilter: productsFilter, busqueda, constants});
+
+		}
 }
+	
 
 module.exports= mainControllers

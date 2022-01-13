@@ -65,6 +65,9 @@
     width: 90%;
     display: flex;
     justify-content: center;
+    /* tocado por javier */ 
+    align-items: center;
+    
    
 }
 
@@ -273,8 +276,20 @@
         width:100%;
         display: flex;
         flex-direction: row;
-        list-style: none;   
-        padding-bottom: 10px;
+        list-style: none;
+        /* tocado por javier */
+        /* padding-bottom: 10px; */
+        padding:10px;
+    }
+    /* tocado por javier */
+    .menu-area-user{
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.6rem;
+        text-decoration:none;
+        /* tocado por javier */
+        
     }
     
     .menu-area .menu-opc{       

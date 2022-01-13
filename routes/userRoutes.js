@@ -69,6 +69,8 @@ router.get('/userProfile/',authMiddleware,usersControllers.profile)
 router.get('/logout/',authMiddleware,usersControllers.logout)
 
 //DELETE ONE USER 
-router.delete('/delete/:id', usersControllers.userDestroy); 
+router.delete('/delete/:id', usersControllers.userDestroy);
+
+
 
 module.exports = router;

@@ -8,6 +8,7 @@ const constants = require('../database/constants');
 
 const usersControllers = {
     userLogin:(req, res) => {
+       
         res.render('users/userLogin',{constants})},
         
 
@@ -20,7 +21,12 @@ const usersControllers = {
                 if (isOkThePassword){
                     delete userToLogin.password 
                     req.session.userLogged=userToLogin
-                    console.log(req.session)
+
+                    if (req.body.remember_user){
+                       
+                        res.cookie("userEmail",req.body.email,{maxAge:(1000*60)*1})
+                    }
+                    
                     return res.redirect('/users/userProfile')
                 }
             }
@@ -29,7 +35,7 @@ const usersControllers = {
                             email:{
                                 msg:"no se encuentra el mail en la base de datos"
                             }
-                        }
+                        },constants
             });            
                 
            
@@ -39,6 +45,7 @@ const usersControllers = {
 
     processRegister: (req, res) => {
        
+        
         const resultvalidations = validationResult(req);
         
         let newUser = req.body
@@ -50,7 +57,7 @@ const usersControllers = {
                 oldData: req.body,
                 constants,
             })}
-         else{
+        else{
             
             const porMail=users.findByField("email",req.body.email)
              if(porMail){
@@ -62,10 +69,11 @@ const usersControllers = {
                 });
              }
     
-            let userCreated=users.createUser(newUser, req)
-            res.redirect('/')
+        let userCreated=users.createUser(newUser, req)
+        res.redirect('/')
         }
     },
+
     
     userEdit:(req, res) => {
         const IdUser = req.params.id;
@@ -105,10 +113,12 @@ const usersControllers = {
 		res.redirect('/')
 	},
     profile:(req,res)=>{
-        res.render('users/userProfile',{user:req.session.userLogged,constants});
+        
+        return res.render('users/userProfile',{user:req.session.userLogged,constants});
     },
 
     logout:(req,res)=>{
+        res.clearCookie("userEmail")
         req.session.destroy();
         console.log("salio de la session")
         return res.redirect('/')
