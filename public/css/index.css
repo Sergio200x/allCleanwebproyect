@@ -150,8 +150,7 @@
     border: solid 1px rgba(180, 161, 161, 0.3);
     margin: 1rem;
     height: min-content;
-    min-width: 298px;
-    max-width: 338px;
+    width: 338px;
     border-radius: .5rem;
 }
 
@@ -290,11 +289,7 @@
 
 @media (min-width: 1024px)
 {
-    .index-cat-ban-container{
-        /* padding-top: 100px; */
-    }
-    
-
+ 
     .index-offers{
         border: none;
         box-shadow: none;

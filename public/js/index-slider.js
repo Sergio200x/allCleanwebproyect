@@ -60,10 +60,10 @@ btnMenu.addEventListener("click",function(){
     menu.classList.toggle("show")})
 
 
-btnSubmenu.addEventListener("click",function(){
-    submenu.classList.toggle("desplegar")})
+// btnSubmenu.addEventListener("click",function(){
+//     submenu.classList.toggle("desplegar")})
 
-/*for (let i=0; i < btnSubmenu.length; i++){
+for (let i=0; i < btnSubmenu.length; i++){
     console.log("hola")
     btnSubmenu[i].addEventListener("click", function(){
         if(window.innerWidth < 1024){
@@ -79,7 +79,7 @@ btnSubmenu.addEventListener("click",function(){
             }
         }
     })
-}*/
+}
 
 
 
