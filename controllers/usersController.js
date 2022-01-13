@@ -15,7 +15,6 @@ const usersControllers = {
     processLogin:(req, res) => {
         
       const userToLogin=users.findByField("email",req.body.email)
-       console.log(userToLogin)
             if (userToLogin){
                 let isOkThePassword=bcryptjs.compareSync(req.body.password,userToLogin.password)
                 if (isOkThePassword){
@@ -33,7 +32,7 @@ const usersControllers = {
             return res.render('users/userLogin',{
                             errors:{
                             email:{
-                                msg:"no se encuentra el mail en la base de datos"
+                                msg:"No se encuentra el mail en la base de datos"
                             }
                         },constants
             });            
@@ -45,7 +44,6 @@ const usersControllers = {
 
     processRegister: (req, res) => {
        
-        
         const resultvalidations = validationResult(req);
         
         let newUser = req.body
@@ -62,10 +60,9 @@ const usersControllers = {
             const porMail=users.findByField("email",req.body.email)
              if(porMail){
                return res.render('users/userRegister',{
-                    errors:{email:{msg:"Este mail esta registrado"}},
+                    errors:{email:{msg:"Este mail ya se encuentra registrado"}},
                     oldData: req.body,
                     constants
-                
                 });
              }
     
@@ -120,7 +117,6 @@ const usersControllers = {
     logout:(req,res)=>{
         res.clearCookie("userEmail")
         req.session.destroy();
-        console.log("salio de la session")
         return res.redirect('/')
     }
 } 

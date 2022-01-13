@@ -151,6 +151,7 @@
     margin: 1rem;
     height: min-content;
     width: 338px;
+    max-width: 338px;
     border-radius: .5rem;
 }
 

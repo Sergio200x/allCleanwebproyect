@@ -39,7 +39,6 @@ let model = function(tableName) {
             let rows = this.readFile();
             let hallados= rows.find(user => user[field]==text);
             return hallados
-            console.log(hallados)
         },
 
         createUser(row, req) {

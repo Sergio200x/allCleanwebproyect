@@ -498,45 +498,5 @@
   "date": "01/07/2021",
   "password": "Pwc3ECsw",
   "avatar": "https://robohash.org/doloremqueaperiamnon.png?size=250x250&set=set1"
- },
- {
-  "userType": "admin",
-  "name": "Diego Marco",
-  "user": "diego856",
-  "email": "diegomarco@hotmail.com.ar",
-  "date": "1989-06-17",
-  "password": "$2b$10$jGG.DQTgOe3ohdMPSDw9Qelg7iKIE9LX4AaNsQA2YsYR8qe8dswOO",
-  "id": "51",
-  "avatar": "Avatar-1641047415169.png"
- },
- {
-  "userType": "client",
-  "name": "pepe12",
-  "user": "pepe1",
-  "email": "pepe@mail.com",
-  "date": "2022-01-09",
-  "password": "$2b$10$1vdo1h16K.QAt6RF.ctX.OtAxIKun/P4e.AAIJWfZmoPQf.y561Wq",
-  "id": "52",
-  "avatar": "Avatar-1641957436071.png"
- },
- {
-  "userType": "client",
-  "name": "telete",
-  "user": "teletele",
-  "email": "tele@gmail.com",
-  "date": "",
-  "password": "$2b$10$9R6w7PekcB6PDWtBOAYdU.b7Rn58pz4IQRgOlSeFLzJgT0we20aka",
-  "id": 53,
-  "avatar": "sr-x.jpg"
- },
- {
-  "userType": "client",
-  "name": "guadalupe",
-  "user": "guadita",
-  "email": "guada@mail.com",
-  "date": "",
-  "password": "$2b$10$F9Gxeeajew70ooyAax0JueQxfkIGLi.uQStgh8/IjfyeAKxSUHzYO",
-  "id": 54,
-  "avatar": "sr-x.jpg"
  }
 ]
