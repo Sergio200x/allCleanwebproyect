@@ -27,14 +27,18 @@ const usersControllers = {
                     }
                     
                     return res.redirect('/users/userProfile')
+                }else{
+                    return res.render('users/userLogin',{
+                        errors:{
+                            email:{ msg:"El email o el password son incorrectos"}
+                        },constants
+                     });  
                 }
             }
             return res.render('users/userLogin',{
                             errors:{
-                            email:{
-                                msg:"No se encuentra el mail en la base de datos"
-                            }
-                        },constants
+                                email:{ msg:"El email o el password son incorrectos"}
+                            },constants
             });            
                 
            
