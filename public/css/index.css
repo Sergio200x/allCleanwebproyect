@@ -14,7 +14,7 @@
 .index-slaider-container{
 /*     width: 100%;
     max-width: 1000px; */
-    height: 83vh;
+    height: calc(100vh - 70px);
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -24,7 +24,7 @@
 .index-slider{
     display: flex;
     width: 400%;
-    height: 83vh;
+    height: calc(100vh - 70px);
     margin-left: -100%;
 /*     border: green 1px solid */
     }

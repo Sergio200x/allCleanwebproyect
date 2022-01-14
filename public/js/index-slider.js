@@ -53,15 +53,11 @@ const intervalo = setInterval(() => {
 /*--------------------------menu hamburguesa*/
 const btnMenu = document.querySelector(".hamburgermenu")
 const menu = document.querySelector(".opc")
-const btnSubmenu = document.querySelectorAll(".submenu-btn")
-const submenu = document.querySelector(".submenu-opc")
+
 
 btnMenu.addEventListener("click",function(){
     menu.classList.toggle("show")})
 
-
-// btnSubmenu.addEventListener("click",function(){
-//     submenu.classList.toggle("desplegar")})
 
 for (let i=0; i < btnSubmenu.length; i++){
     console.log("hola")

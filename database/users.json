@@ -508,5 +508,15 @@
   "password": "$2b$10$SI84H.9WtUceQKHhl/J4LODaw3QAjLH/EnYquigke3D03pCimRWqi",
   "id": 51,
   "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "client",
+  "name": "juannn",
+  "user": "juann",
+  "email": "11@mail.com",
+  "date": "2022-01-29",
+  "password": "$2b$10$PFAd8xul33IktAjuQO8yo.HGFfFbTXTmWNtzqSpkZzd8iQ3zCIV3S",
+  "id": 52,
+  "avatar": "sr-x.jpg"
  }
 ]
