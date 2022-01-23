@@ -14,8 +14,8 @@
 .index-slaider-container{
 /*     width: 100%;
     max-width: 1000px; */
-    /* height: calc(100vh - 70px); */
-    height: 100vh;
+    height: calc(100vh - 70px);
+    /* height: 100vh; */
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -294,7 +294,10 @@
 
 @media (min-width: 1024px)
 {
- 
+    .index-slaider-container{
+        height: 100vh;
+    }
+
     .index-offers{
         border: none;
         box-shadow: none;

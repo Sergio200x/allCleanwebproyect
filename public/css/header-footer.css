@@ -143,15 +143,11 @@
     margin: 0 7px;
 }
 
-.hamburgermenu .flecha-down{
-    padding-left: 3px;
-}
-
 .hamburgermenu .opc /*ul*/{
     z-index:10;
     position:fixed;
     margin-left:10%;
-    font-size: 13px;
+    font-size: 14px;
     overflow:hidden;  
     top: 58px;
     width:0px;
@@ -159,6 +155,7 @@
     background-color: #888;
     overflow-y:scroll;
     transition: all 1s ease-in-out;
+    
 }
 .hamburgermenu .opc li /*ul li*/{
     display:block;
@@ -170,12 +167,14 @@
     width: 100%;
     margin:1px 0px;
 /*     border:pink 1px solid; */
-}
-.hamburgermenu .opc li a{
-    display:block;
-    color: white;
+    color: whitesmoke;
     text-decoration:none;
     overflow-y:scroll;
+}
+.hamburgermenu .opc li i{
+    padding-right: 10px;
+    color: whitesmoke;
+    padding-left: 3px;
 }
 
 .submenu-btn{
@@ -203,7 +202,8 @@
     z-index:11;
     position:absolute;
     width:50vw;
-    height:calc(100vh - 57px);
+    /* height:calc(100vh - 57px); */
+    height: 100vh;
     transition: all 1s ease-in-out;
 }
 
