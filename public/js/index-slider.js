@@ -76,6 +76,3 @@ btnMenu.addEventListener("click",function(){
         }
     })
 }*/
-
-
-

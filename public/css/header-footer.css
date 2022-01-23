@@ -149,7 +149,7 @@
     margin-left:10%;
     font-size: 14px;
     overflow:hidden;  
-    top: 58px;
+    top: 56px;
     width:0px;
     height:0px;   
     background-color: #888;
@@ -157,12 +157,12 @@
     transition: all 1s ease-in-out;
     
 }
-.hamburgermenu .opc li /*ul li*/{
+.hamburgermenu .opc .option /*ul li*/{
     display:block;
     list-style:none;
     align-items: center;
 /*     text-align:center; */
-    padding: 16px;
+    padding: 15px;
 /*     margin: 10px 5px; */
     width: 100%;
     margin:1px 0px;
@@ -177,24 +177,33 @@
     padding-left: 3px;
 }
 
-.submenu-btn{
-    padding: 0px;
-    position:relative;
-   
-}
 
 .submenu-opc { 
-    transition: all 0.4s;
-    background-color: #5d5d5d;
-    height: 0;
-/*     border: white 1px solid; */
-    overflow: hidden;
+    transition: all 0.4s; 
+    overflow: hidden;   
+    /*para ocultar submenu invertir comentar/descomentar las opciones de abajo*/
+    /* height: 0; */   
+    padding: 10px;
+    margin-top: 10px;
  
  }
+.submenu-opc li{
+    padding: 5px;
+    color: whitesmoke;
+    text-decoration:none;
+    background-color: #5d5d5d;
+    border-radius: 3px;
+    margin:1.5px 0 1.5px 20px;
+    position: relative;
+/*     height:0px;
+    overflow:hidden; */
+}
+
 .submenu-opc a{
-/*     border: white 1px solid; */
-    padding-left: 30px;
-    
+    color: whitesmoke;
+    list-style: none;
+    text-decoration: none;
+
 }
 
 .hamburgermenu .show{
@@ -358,4 +367,4 @@
     
 }
 
-
+/*---------------------------------------------------*/

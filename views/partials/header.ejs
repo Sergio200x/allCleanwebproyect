@@ -47,11 +47,11 @@
         <section class="hamburgermenu"><i class="fas fa-bars barras" ></i>
             <nav>
                 <ul class="opc">                     
-                    <li><i class="fa-solid fa-droplet"></i>Inicio<a href="/"></a></li>
-                    <li><i class="fa-regular fa-spray-can-sparkles"></i>Productos<a href="/products"></a></li>
-                    <li><i class="fa-solid fa-broom-ball"></i>Quienes somos<a href=""></a></li>
-                    <li><i class="fa-regular fa-hand-holding-droplet"></i>Servicios<a href=""></a></li>                                                       
-                    <li class="submenu-btn"><i class="fas fa-user"></i>Mi cuenta<a href="#"><i class="fas fa-chevron-down flecha-down"></i></a>
+                    <li class="option"><i class="fa-solid fa-droplet"></i>Inicio<a href="/"></a></li>
+                    <li class="option"><i class="fa-regular fa-spray-can-sparkles"></i>Productos<a href="/products"></a></li>
+                    <li class="option"><i class="fa-solid fa-broom-ball"></i>Quienes somos<a href=""></a></li>
+                    <li class="option"><i class="fa-regular fa-hand-holding-droplet"></i>Servicios<a href=""></a></li>                                                        
+                    <li class="submenu-btn option"><i class="fas fa-user"></i>Mi cuenta<a href="#"><i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul class="submenu-opc">
                             <li><a href="/users/Register">Registro</a></li>
                             <li><a href="/users/Login">Login</a></li>
@@ -59,7 +59,7 @@
                             <li><a href="">Mi perfil</a></li>
                         </ul>
                     </li>                      
-                    <li class="submenu-btn"><i class="fas fa-bars"></i>Categorias<a href="#"><i class="fas fa-chevron-down flecha-down"></i></a>
+                     <li class="submenu-btn option"><i class="fas fa-bars"></i>Categorias<a href="#"><i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul  class="submenu-opc">
                             <% for( let categoria of constants.generalCategory ) { %>
                                 <li><a href="/products/category/<%= categoria.name %>">
@@ -67,11 +67,11 @@
                             <% } %>
                         </ul>
                     </li>   
-                    <li><i class="fas fa-shopping-cart" ></i>Carrito<a href="/products/cart"></a></li>                           
+                    <li class="option"><i class="fas fa-shopping-cart" ></i>Carrito<a href="/products/cart"></a></li>                           
                 </ul>
             </nav>
         </section>
-    </section>    
+    </section>
 
 </header>
 
@@ -90,6 +90,4 @@
     </nav>   
 </div>  -->
 
- <!-- Scripts -->
- <!-- <script src="/js/index-slider.js"></script> -->
- <!-- Scripts -->
+
