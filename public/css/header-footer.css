@@ -277,7 +277,7 @@
         list-style: none;   
         padding-bottom: 10px;
         /* background-color: #777; */
-        border:tomato 1px solid;
+        /* border:tomato 1px solid; */
     }
     
     .menu-area .menu-opc{       
@@ -340,8 +340,9 @@
         position: absolute;
         right: 0px;
         top: 75px;
-        transition: all 1s ease-in-out;
-        border: red 1px solid;
+        padding-top:18px;
+        transition: all 0.8s ease-in-out;
+        /* border: red 1px solid; */
      
         
     }

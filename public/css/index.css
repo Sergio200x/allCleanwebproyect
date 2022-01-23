@@ -14,19 +14,21 @@
 .index-slaider-container{
 /*     width: 100%;
     max-width: 1000px; */
-    height: calc(100vh - 70px);
+    /* height: calc(100vh - 70px); */
+    height: 100vh;
     margin: auto;
     overflow: hidden;
     position: relative;
-/*     border:red 1px solid; */
+    /* border:red 1px solid; */
 }
 
 .index-slider{
     display: flex;
     width: 400%;
-    height: calc(100vh - 70px);
+    /* height: calc(100vh - 70px); */
+    height: 100vh;
     margin-left: -100%;
-/*     border: green 1px solid */
+    /* border: green 1px solid */
     }
 
 .index-slider-section{
@@ -66,20 +68,22 @@
     flex-direction:row;  
     position:absolute;
     left: 50%;
-    top: 90%;
+    top: 95%;
 }
 
-.index-slider-circle i:hover{
+.active, .index-slider-circle i:hover{
     color:rgb(70, 70, 70);
     cursor: pointer;
 }
 
 .index-slider-circle i{
     color: black;
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-left: 1px;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
 }
-
 
 .index-btn-p{
     position: relative;
