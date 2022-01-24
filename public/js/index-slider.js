@@ -51,28 +51,54 @@ const intervalo = setInterval(() => {
 
 
 /*--------------------------menu hamburguesa*/
-const btnMenu = document.querySelector(".hamburgermenu")
-const menu = document.querySelector(".opc")
+(function(){
+    const listElements = document.querySelectorAll('.submenu-btn');
+    const menu = document.querySelector('.opc');
+    const btnMenu = document.querySelector('.hamburgermenu');
+
+    const addClick = ()=>{
+        listElements.forEach(Element =>{
+            Element.addEventListener('click', ()=>{
+                let subMenu = Element.children[1]
+                let height= 0;
+                Element.classList.toggle('submenu-btn-active')
+
+                if (subMenu.clientHeight === 0){
+                    height = subMenu.scrollHeight
+                }
+
+                subMenu.style.height = `${height}px`
 
 
-btnMenu.addEventListener("click",function(){
-    menu.classList.toggle("show")})
+            })
+        })
+    }
 
-
-/*for (let i=0; i < btnSubmenu.length; i++){
-    console.log("hola")
-    btnSubmenu[i].addEventListener("click", function(){
-        if(window.innerWidth < 1024){
-            const subMenu = this.nextElementSibling;
-            const height = subMenu.scrollHeight;
-
-            if (subMenu.classList.contains("desplegar")){
-                subMenu.classList.remove("desplegar");
-                subMenu.removeAttribute("style");
-            }else{
-                subMenu.classList.add("desplegar");
-                subMenu.style.height = height + "px";
+    const deleteStyleHeight = () =>{
+        listElements.forEach(Element =>{
+            if(Element.children[1].getAttribute('style')){
+                Element.children[1].removeAttribute('style')
+                Element.classList.remove('submenu-btn-active')
             }
+        })
+    }
+
+
+    window.addEventListener('resize',()=>{
+        if(window.innerWidth > 768){
+            deleteStyleHeight()
+        }else{
+            addClick();
         }
     })
-}*/
+
+    if(window.innerWidth <= 768){
+        addClick();
+    }
+
+    btnMenu.addEventListener('click', function(){
+        menu.classList.toggle("hamburgermenu-hide")})
+
+
+})()
+

@@ -5,8 +5,9 @@
     text-align: center;
     align-items: center;
     width: 100%;
-    /* max-width: 1200px; 
     position: relative;
+    /* z-index: -1; */
+    /* max-width: 1200px; 
     padding-top: 73px;*/
 /*     border: blue 1px solid; */
 }

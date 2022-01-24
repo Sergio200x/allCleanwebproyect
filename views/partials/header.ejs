@@ -44,22 +44,23 @@
             </div>            
         </section>
 
-        <section class="hamburgermenu"><i class="fas fa-bars barras" ></i>
+        <section class="hamburgermenu"><a href="#"><i class="fas fa-bars barras" ></i>
             <nav>
                 <ul class="opc">                     
-                    <li class="option"><i class="fa-solid fa-droplet"></i>Inicio<a href="/"></a></li>
-                    <li class="option"><i class="fa-regular fa-spray-can-sparkles"></i>Productos<a href="/products"></a></li>
-                    <li class="option"><i class="fa-solid fa-broom-ball"></i>Quienes somos<a href=""></a></li>
-                    <li class="option"><i class="fa-regular fa-hand-holding-droplet"></i>Servicios<a href=""></a></li>                                                        
-                    <li class="submenu-btn option"><i class="fas fa-user"></i>Mi cuenta<a href="#"><i class="fas fa-chevron-down flecha-down"></i></a>
+                    <li class="option"><a href="/"><i class="fa-solid fa-droplet"></i>Inicio</li></a>
+                    <li class="option"><a href="/products"><i class="fa-regular fa-spray-can-sparkles"></i>Productos</li></a>
+                    <li class="option"><a href=""><i class="fa-solid fa-broom-ball"></i>Quienes somos</li></a>
+                    <li class="option"><a href=""><i class="fa-regular fa-hand-holding-droplet"></i>Servicios</li></a> 
+                    <li class="option"><a href="/products/cart"><i class="fas fa-shopping-cart" ></i>Carrito</li></a>                                                           
+                    <li class="submenu-btn option"><a href="#"><i class="fas fa-user"></i>Mi cuenta<i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul class="submenu-opc">
-                            <li><a href="/users/Register">Registro</a></li>
-                            <li><a href="/users/Login">Login</a></li>
-                            <li><a href="">Log out</a></li>
-                            <li><a href="">Mi perfil</a></li>
+                            <li><a href="/users/Register">Registro</li></a>
+                            <li><a href="/users/Login">Login</li></a>
+                            <li><a href="">Log out</li></a>
+                            <li><a href="">Mi perfil</li></a>
                         </ul>
                     </li>                      
-                     <li class="submenu-btn option"><i class="fas fa-bars"></i>Categorias<a href="#"><i class="fas fa-chevron-down flecha-down"></i></a>
+                     <li class="submenu-btn option"><a href="#"><i class="fas fa-bars"></i>Categorias<i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul  class="submenu-opc">
                             <% for( let categoria of constants.generalCategory ) { %>
                                 <li><a href="/products/category/<%= categoria.name %>">
@@ -67,7 +68,7 @@
                             <% } %>
                         </ul>
                     </li>   
-                    <li class="option"><i class="fas fa-shopping-cart" ></i>Carrito<a href="/products/cart"></a></li>                           
+                                          
                 </ul>
             </nav>
         </section>

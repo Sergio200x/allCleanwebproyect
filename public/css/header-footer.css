@@ -65,7 +65,6 @@
     width: 90%;
     display: flex;
     justify-content: center;
-    /* tocado por javier */ 
     align-items: center;
     
    
@@ -85,9 +84,7 @@
     border: none;
     border-radius: 5px;
     padding-left: 10px;
-    padding-right: 25px;
-    /* border: rgba(241, 6, 6, 0.973) solid 1px; */
-   
+    padding-right: 25px; 
 }
 
 
@@ -103,8 +100,6 @@
     top: 5px;;
     margin-right: 5px;
     border-left: #808080ad solid 1px;
-    /* border: rgba(102, 22, 230, 0.973) solid 1px; */
-    
 }
 
 .lupa i{
@@ -122,16 +117,10 @@
 }
 
 /* menu hamburguesa  */
-.header-rightmenu{
-    display: none;
-    
-}
-
 .hamburgermenu{
     font-family: "Roboto", sans-serif;
-
 }
-  
+
 .hamburgermenu .barras{
     float: right;
     color: #ebebeb;
@@ -144,49 +133,64 @@
 }
 
 .hamburgermenu .opc /*ul*/{
-    z-index:10;
-    position:fixed;
-    margin-left:10%;
-    font-size: 14px;
-    overflow:hidden;  
-    top: 56px;
-    width:0px;
+    position:fixed;   
     height:0px;   
-    background-color: #888;
-    overflow-y:scroll;
+    font-size: 14px;
+    transition: all 1s ease-in-out; 
+    overflow:hidden;  
+    top: 40px;
+    width:50vw;
+}
+
+.hamburgermenu:hover .opc{
+    z-index:11;
+    transform: translateX(-50%);
+    transition: all 1s ease-in-out; 
+    overflow: visible;
+    /* overflow-y:scroll; */
+    /* position: absolute; */
+    /* height:calc(100vh - 57px); */  
+}
+
+hamburgermenu:hover .hamburgermenu-hide{
+    height:0px;   
+    overflow: hidden; 
+    z-index: -10;
     transition: all 1s ease-in-out;
-    
+}
+
+.hamburgermenu a{
+    color: whitesmoke;
+    list-style: none;
+    text-decoration: none;
+    margin-left: 10px;
+
 }
 .hamburgermenu .opc .option /*ul li*/{
     display:block;
     list-style:none;
     align-items: center;
-/*     text-align:center; */
     padding: 15px;
-/*     margin: 10px 5px; */
     width: 100%;
     margin:1px 0px;
-/*     border:pink 1px solid; */
     color: whitesmoke;
     text-decoration:none;
-    overflow-y:scroll;
+    background-color: #888;
 }
+
 .hamburgermenu .opc li i{
     padding-right: 10px;
     color: whitesmoke;
     padding-left: 3px;
 }
 
-
 .submenu-opc { 
     transition: all 0.4s; 
     overflow: hidden;   
-    /*para ocultar submenu invertir comentar/descomentar las opciones de abajo*/
-    /* height: 0; */   
-    padding: 10px;
+    height: 0;   
     margin-top: 10px;
- 
  }
+
 .submenu-opc li{
     padding: 5px;
     color: whitesmoke;
@@ -195,30 +199,7 @@
     border-radius: 3px;
     margin:1.5px 0 1.5px 20px;
     position: relative;
-/*     height:0px;
-    overflow:hidden; */
-}
-
-.submenu-opc a{
-    color: whitesmoke;
-    list-style: none;
-    text-decoration: none;
-
-}
-
-.hamburgermenu .show{
-    right:0%;
-    z-index:11;
-    position:absolute;
-    width:50vw;
-    /* height:calc(100vh - 57px); */
-    height: 100vh;
-    transition: all 1s ease-in-out;
-}
-
-.submenu-btn:hover{
-    height: 100%;
-
+    width: 56.5%;
 }
 /*---------------------------------------------FOOTER---------------------------------------------*/
 
