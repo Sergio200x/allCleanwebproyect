@@ -138,13 +138,13 @@
     font-size: 14px;
     transition: all 1s ease-in-out; 
     overflow:hidden;  
-    top: 40px;
+    top: 58px;
     width:50vw;
 }
 
 .hamburgermenu:hover .opc{
     z-index:11;
-    transform: translateX(-50%);
+    transform: translateX(-52%);
     transition: all 1s ease-in-out; 
     overflow: visible;
     /* overflow-y:scroll; */
@@ -165,6 +165,11 @@ hamburgermenu:hover .hamburgermenu-hide{
     text-decoration: none;
     margin-left: 10px;
 
+}
+
+.hamburgermenu .hide-btn{
+    margin-left: 0px;
+    background-color: tomato;
 }
 .hamburgermenu .opc .option /*ul li*/{
     display:block;
@@ -192,7 +197,7 @@ hamburgermenu:hover .hamburgermenu-hide{
  }
 
 .submenu-opc li{
-    padding: 5px;
+    padding: 3%;
     color: whitesmoke;
     text-decoration:none;
     background-color: #5d5d5d;

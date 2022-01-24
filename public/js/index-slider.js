@@ -55,6 +55,9 @@ const intervalo = setInterval(() => {
     const listElements = document.querySelectorAll('.submenu-btn');
     const menu = document.querySelector('.opc');
     const btnMenu = document.querySelector('.hamburgermenu');
+    
+    btnMenu.addEventListener('click', function(){
+        menu.classList.toggle("hamburgermenu-hide")})
 
     const addClick = ()=>{
         listElements.forEach(Element =>{
@@ -96,8 +99,7 @@ const intervalo = setInterval(() => {
         addClick();
     }
 
-    btnMenu.addEventListener('click', function(){
-        menu.classList.toggle("hamburgermenu-hide")})
+    
 
 
 })()
