@@ -16,10 +16,12 @@
         <section class="header-rightmenu">
             <div class="menu-area">
                 <% if(locals.isLogged) { %>
-                  <a href="" class="menu-area-user">
-                    <img src='/images/avatars/<%= locals.userLogged.avatar %>'>
-                    <p class="name-user"><%= locals.userLogged.name %></p>
-                  </a> 
+                    <div class="menu-area-user">
+                        <!-- <a href="" class="menu-area-user"> -->
+                            <img src='/images/avatars/<%= locals.userLogged.avatar %>'>
+                            <p class="name-user"><%= locals.userLogged.name %></p>
+                        <!-- </a>  -->
+                    </div>
                 <nav class="menu-opc">    
                     <ul> 
                         <li><a href="/users/Logout">Logout</a></li>               

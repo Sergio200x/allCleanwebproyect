@@ -265,6 +265,8 @@ hamburgermenu:hover .hamburgermenu-hide{
     .header-rightmenu{
         display: flex;
         flex-direction: row;
+        justify-content: flex-end;
+        width:10% ;
     }
 
     .header-rightmenu i{
@@ -276,7 +278,7 @@ hamburgermenu:hover .hamburgermenu-hide{
     /* menu desplegable usuario */
     .menu-area, 
     .menu-area:focus{
-        width:100%;
+        /* width:10%; */
         display: flex;
         flex-direction: row;
         list-style: none;   
@@ -346,17 +348,19 @@ hamburgermenu:hover .hamburgermenu-hide{
     
     .menu-area-user{
         border-radius: 100%;
-        width: 50%;
         color:whitesmoke;
         font-size: 12px;
     }
     
     .menu-area-user img{
         border-radius: 100%;    
-        width: 50%;           
+        width: 75%;      
+          
     }
 
-    
+    .name-user{
+        margin: 0px;
+    }
 }
 
 @media (min-width: 1024px)
