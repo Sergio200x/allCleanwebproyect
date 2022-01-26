@@ -4,6 +4,8 @@
     width: 100%;
     /* position: absolute; */
     z-index:10;
+    list-style: none;
+    text-decoration: none;
 }
 
 .header-maxwidth-body{
@@ -116,6 +118,7 @@
     
 }
 
+
 /* menu hamburguesa  */
 .hamburgermenu{
     font-family: "Roboto", sans-serif;
@@ -206,6 +209,13 @@ hamburgermenu:hover .hamburgermenu-hide{
     position: relative;
     width: 56.5%;
 }
+
+/* menu derecho session logged*/
+.pic-user{
+    width: 30px;
+    height: 30px ;
+    border-radius: 100%;
+}
 /*---------------------------------------------FOOTER---------------------------------------------*/
 
 .footer{
@@ -271,8 +281,6 @@ hamburgermenu:hover .hamburgermenu-hide{
         flex-direction: row;
         list-style: none;   
         padding-bottom: 10px;
-        /* background-color: #777; */
-        /* border:tomato 1px solid; */
     }
     
     .menu-area .menu-opc{       
@@ -280,8 +288,7 @@ hamburgermenu:hover .hamburgermenu-hide{
         width:0%;
         overflow: hidden;
         list-style: none;    
-        border-radius: 3%; 
-       
+        border-radius: 3%;       
     }
 
     .menu-area .menu-opc ul{
@@ -294,8 +301,6 @@ hamburgermenu:hover .hamburgermenu-hide{
         margin-right: 80px;
         background-color: #777;    
         width: 190px;    
-       
-        /* border: whitesmoke 1px solid; */
     }
     
     .menu-area .menu-opc li a:hover,
@@ -303,7 +308,6 @@ hamburgermenu:hover .hamburgermenu-hide{
         background-color: #555;
         position:relative;   
         transition: all 0.3s ease-in-out;     
-        /* border: green 1px solid; */
     }
     
     .menu-area:hover .menu-opc a,
@@ -317,7 +321,6 @@ hamburgermenu:hover .hamburgermenu-hide{
         font-size: 2rem;
         padding: 5px;
         position: relative;
-        /* border: red 1px solid; */
     }
 
     .menu-area .menu-opc a{
@@ -328,19 +331,32 @@ hamburgermenu:hover .hamburgermenu-hide{
     .menu-area:hover .menu-opc,
     .menu-area:focus .menu-opc{
     
-        display:block;
+        display:inline-block;
         width: 15%;
         z-index: 5;
         background: transparent;
         position: absolute;
         right: 0px;
-        top: 75px;
+        top: 2%;
         padding-top:18px;
-        transition: all 0.8s ease-in-out;
-        /* border: red 1px solid; */
-     
-        
+        transition: all 0.8s ease-in-out;  
     }
+
+    /* menu derecho session logged*/
+    
+    .menu-area-user{
+        border-radius: 100%;
+        width: 50%;
+        color:whitesmoke;
+        font-size: 12px;
+    }
+    
+    .menu-area-user img{
+        border-radius: 100%;    
+        width: 50%;           
+    }
+
+    
 }
 
 @media (min-width: 1024px)

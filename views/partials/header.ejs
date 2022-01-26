@@ -17,22 +17,23 @@
             <div class="menu-area">
                 <% if(locals.isLogged) { %>
                   <a href="" class="menu-area-user">
-                    <img src='/images/avatars/<%= locals.userLogged.avatar %>' width=50 style="border-radius: 100%;">
-                        <%= locals.userLogged.name %>
+                    <img src='/images/avatars/<%= locals.userLogged.avatar %>'>
+                    <p class="name-user"><%= locals.userLogged.name %></p>
                   </a> 
                 <nav class="menu-opc">    
-                        <ul> 
-                            <li><a href="/users/Logout">Logout</a></li>               
-                            <li><a href="/users/userProfile"> Mi cuenta</a></li>
-                        </ul>
-                            <% } else { %>
-                            <i class="fas fa-user"></i>
-                        <nav class="menu-opc">    
+                    <ul> 
+                        <li><a href="/users/Logout">Logout</a></li>               
+                        <li><a href="/users/userProfile"> Mi cuenta</a></li>
+                    </ul>
+                        <% } else { %>
+                        <i class="fas fa-user"></i>
+                    <nav class="menu-opc">    
                         <ul> 
                             <li><a href="/users/Register">Registro</a></li>
                             <li><a href="/users/Login">Login</a></li>
-                        <% } %> 
-                    </ul>
+                            <% } %> 
+                        </ul>
+                    </nav>
                 </nav>   
             </div>  
             
@@ -55,10 +56,13 @@
                     <li class="option"><a href="/products/cart"><i class="fas fa-shopping-cart" ></i>Carrito</li></a>                                                           
                     <li class="submenu-btn option"><a href="#"><i class="fas fa-user"></i>Mi cuenta<i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul class="submenu-opc">
-                            <li><a href="/users/Register">Registro</li></a>
-                            <li><a href="/users/Login">Login</li></a>
-                            <li><a href="">Log out</li></a>
-                            <li><a href="">Mi perfil</li></a>
+                            <% if(locals.isLogged != true) { %>
+                                <li><a href="/users/Register">Registro</li></a>
+                                <li><a href="/users/Login">Login</li></a>
+                            <% } else { %>
+                                <li><a href="/users/userProfile"><img class="pic-user" src='/images/avatars/<%= locals.userLogged.avatar %>'>Mi perfil</li></a>
+                                <li><a href="/users/Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</li></a>
+                            <% } %>
                         </ul>
                     </li>                      
                      <li class="submenu-btn option"><a href="#"><i class="fas fa-bars"></i>Categorias<i class="fas fa-chevron-down flecha-down"></i></a>
