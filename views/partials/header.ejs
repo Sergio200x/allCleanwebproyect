@@ -58,20 +58,19 @@
                     <li class="option"><a href="/products/cart"><i class="fas fa-shopping-cart" ></i>Carrito</li></a>                                                           
                     <li class="submenu-btn option"><a href="#"><i class="fas fa-user"></i>Mi cuenta<i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul class="submenu-opc">
-                            <% if(locals.isLogged != true) { %>
-                                <li><a href="/users/Register">Registro</li></a>
-                                <li><a href="/users/Login">Login</li></a>
-                            <% } else { %>
+                            <% if(locals.isLogged) { %>
                                 <li><a href="/users/userProfile"><img class="pic-user" src='/images/avatars/<%= locals.userLogged.avatar %>'>Mi perfil</li></a>
                                 <li><a href="/users/Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</li></a>
+                            <% } else { %>
+                                <li><a href="/users/Register">Registro</li></a>
+                                <li><a href="/users/Login">Login</li></a>                              
                             <% } %>
                         </ul>
                     </li>                      
                      <li class="submenu-btn option"><a href="#"><i class="fas fa-bars"></i>Categorias<i class="fas fa-chevron-down flecha-down"></i></a>
                         <ul  class="submenu-opc">
                             <% for( let categoria of constants.generalCategory ) { %>
-                                <li><a href="/products/category/<%= categoria.name %>">
-                                    <%= categoria.name %></a></li>
+                                <li><a href="/products/category/<%= categoria.name %>"><%= categoria.name %></a></li>
                             <% } %>
                         </ul>
                     </li>   

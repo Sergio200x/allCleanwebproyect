@@ -136,11 +136,11 @@
 }
 
 .hamburgermenu .opc /*ul*/{
-    position:fixed;   
+    position:absolute;   
     height:0px;   
     font-size: 14px;
     transition: all 1s ease-in-out; 
-    overflow:hidden;  
+    overflow:hidden; 
     top: 58px;
     width:50vw;
 }
@@ -365,7 +365,7 @@ hamburgermenu:hover .hamburgermenu-hide{
 
 @media (min-width: 1024px)
 {
-    .index-logo img{
+    index-logo img{
         width: 6rem;
         height: 6rem;
     }
