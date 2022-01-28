@@ -51,7 +51,7 @@ const intervalo = setInterval(() => {
 
 
 /*--------------------------menu hamburguesa*/
-(function(){
+/*(function(){
     const listElements = document.querySelectorAll('.submenu-btn');
     const menu = document.querySelector('.opc');
     const btnMenu = document.querySelector('.hamburgermenu');
@@ -102,5 +102,25 @@ const intervalo = setInterval(() => {
     
 
 
-})()
+})()*/
 
+(function(){
+    const menuIcon = document.getElementById("menu-icon");
+    
+
+    menuIcon.addEventListener("click", (event)=> {
+        const opc = document.getElementById("opc");
+
+        opc.classList.toggle("opc-show")
+        
+    })
+
+    const submenuBtns = document.getElementsByClassName("submenu-btn")
+
+    for (let index = 0; index < submenuBtns.length; index++) {
+        submenuBtns[index].addEventListener
+        
+    }
+
+
+})()

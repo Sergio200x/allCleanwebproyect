@@ -64,12 +64,17 @@
     margin-left: 0px;
     margin-right: 0px;
     position: relative;
-    width: 90%;
+    width: 100%;
+   
     display: flex;
     justify-content: center;
     align-items: center;
     
    
+}
+
+.header-searchbare{
+    width: 100%;
 }
 
 .header-searchbar:hover input{
@@ -139,27 +144,30 @@
     position:absolute;   
     height:0px;   
     font-size: 14px;
-    transition: all 1s ease-in-out; 
+    /* transition: opacity 1s ease-in-out; */
     overflow:hidden; 
     top: 58px;
     width:50vw;
+    opacity: 0;
 }
 
-.hamburgermenu:hover .opc{
+.opc-show{
     z-index:11;
     transform: translateX(-52%);
-    transition: all 1s ease-in-out; 
+    /* transition: opacity 1s ease-in-out !important; */
     overflow: visible;
     /* overflow-y:scroll; */
     /* position: absolute; */
-    /* height:calc(100vh - 57px); */  
+    height:calc(100vh - 57px)  !important;
+    opacity: 1 !important;
 }
 
-hamburgermenu:hover .hamburgermenu-hide{
+.hamburgermenu-hide{
     height:0px;   
     overflow: hidden; 
     z-index: -10;
     transition: all 1s ease-in-out;
+    opacity: 0;
 }
 
 .hamburgermenu a{
@@ -170,10 +178,7 @@ hamburgermenu:hover .hamburgermenu-hide{
 
 }
 
-.hamburgermenu .hide-btn{
-    margin-left: 0px;
-    background-color: tomato;
-}
+
 .hamburgermenu .opc .option /*ul li*/{
     display:block;
     list-style:none;
@@ -265,9 +270,10 @@ hamburgermenu:hover .hamburgermenu-hide{
     .header-rightmenu{
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
-        width:10% ;
+        justify-content: space-around;
+        width:30% ;
     }
+
 
     .header-rightmenu i{
         margin: 1rem;
@@ -283,6 +289,10 @@ hamburgermenu:hover .hamburgermenu-hide{
         flex-direction: row;
         list-style: none;   
         padding-bottom: 10px;
+    }
+
+    .menu-area{
+        width: 20px;
     }
     
     .menu-area .menu-opc{       
@@ -350,17 +360,15 @@ hamburgermenu:hover .hamburgermenu-hide{
         border-radius: 100%;
         color:whitesmoke;
         font-size: 12px;
+        text-align:center;
     }
     
     .menu-area-user img{
         border-radius: 100%;    
-        width: 75%;      
+        width: 45%;      
           
     }
 
-    .name-user{
-        margin: 0px;
-    }
 }
 
 @media (min-width: 1024px)

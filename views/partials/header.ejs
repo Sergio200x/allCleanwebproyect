@@ -5,7 +5,7 @@
             <a href="/">All Clean</a>
         </div>
         
-        <section class="header-searchbar">
+        <section class="header-searchbare">
             <form action="/search" method="GET" class="header-searchbar">
                 <input type="text" name="search" placeholder="¿Qué producto buscas?">      
                 <button type="submit" class="lupa" ><i class="fas fa-search"></i></button>
@@ -17,10 +17,9 @@
             <div class="menu-area">
                 <% if(locals.isLogged) { %>
                     <div class="menu-area-user">
-                        <!-- <a href="" class="menu-area-user"> -->
-                            <img src='/images/avatars/<%= locals.userLogged.avatar %>'>
-                            <p class="name-user"><%= locals.userLogged.name %></p>
-                        <!-- </a>  -->
+                        <a href="/users/userProfile">
+                            <img src='/images/avatars/<%= locals.userLogged.avatar %>'>                          
+                        </a> 
                     </div>
                 <nav class="menu-opc">    
                     <ul> 
@@ -28,7 +27,9 @@
                         <li><a href="/users/userProfile"> Mi cuenta</a></li>
                     </ul>
                         <% } else { %>
-                        <i class="fas fa-user"></i>
+                            <div>
+                                <i class="fas fa-user"></i>
+                            </div>
                     <nav class="menu-opc">    
                         <ul> 
                             <li><a href="/users/Register">Registro</a></li>
@@ -37,20 +38,20 @@
                         </ul>
                     </nav>
                 </nav>   
-            </div>  
+             
             
             <div>
                 <a href=""><i class="far fa-heart"></i></a>
             </div>
             <div> 
                 <a href="/products/cart"><i class="fas fa-shopping-cart" ></i></a>
-            </div>            
+            </div>     
+        </div>        
         </section>
 
-        <section class="hamburgermenu"><a class="hide-btn" href="#"><i class="fas fa-bars barras" ></i></a>
+        <section class="hamburgermenu"><i class="fas fa-bars barras" id="menu-icon" ></i>
             <nav>
-                <ul class="opc">
-
+                <ul class="opc" id="opc">
                     <li class="option"><a href="/"><i class="fa-solid fa-droplet"></i>Inicio</li></a>
                     <li class="option"><a href="/products"><i class="fa-regular fa-spray-can-sparkles"></i>Productos</li></a>
                     <li class="option"><a href=""><i class="fa-solid fa-broom-ball"></i>Quienes somos</li></a>
