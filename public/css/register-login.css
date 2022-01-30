@@ -211,7 +211,7 @@ filter: invert(0.4);
     {
         border: 1px solid #666;
         border-radius: 5px;
-        
+        margin-top: 30px;
     }
 }
   /*------------------------------------------------MEDIA QUERIES------------------------------*/

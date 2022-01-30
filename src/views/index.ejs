@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('partials/head.ejs', {title: 'Inicio'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('partials/header.ejs') %>
+    <!-- Include Header-->
+    
+    <!-- Index Page -->
+    <main class="index-main">
+        <section class="index-cat-ban-container">
+            <section class="index-slaider-container">
+                <div class="index-slider" id="index-slider">
+                    <% for( let image of constants.bannerImages ) { %>
+                        <div class="index-slider-section">
+                            <img src="<%= image.image %>" alt="<%= image.name %>" class="index-slider-img">
+                        </div>
+                    <% } %>
+                    
+                    <div class="index-slider-circle">
+                        <% for( let picInBanner of constants.bannerImages ) { %>                                                       
+                                <div>
+                                    <i class="fas fa-circle" onclick="currentDiv(1)"></i>                                      
+                                </div>
+                            </a>
+                        <% } %>
+                    </div>
+                    <div class="index-slider-btn index-slider-btn-right" id="index-btn-right"><p class="index-btn-p">&#62;</p></div>
+                    <div class="index-slider-btn index-slider-btn-left" id="index-btn-left"><p class="index-btn-p">&#60;</p></div> 
+                </div>
+            </section>
+
+            <h2 class="index-h2-categories">Categorias</h2>  
+            <nav class="index-categories">
+                <% for( let categoria of categories) { %> 
+                    <a href="/products/category/<%= categoria.Name %>">
+                        <div class="index-main-categories">
+                            <i class="<%= categoria.Icon %> "></i>
+                            <h2><%= categoria.Name %> </h2>
+                        </div>
+                    </a>
+                <% } %>
+            </nav>   
+        </section>
+ 
+        <section class="index-offers">
+            <h2 class="index-h2-offers">Super Ofertas</h2>
+            <% for( let producto of productList ) { %>
+                <% if (producto.IsOffer) { %>
+                    <article class="index-div-container">
+                        <a href="/products/detail/<%=producto.ProductID%>">
+                            <div class="index-div-img">
+                                <img src="images/products/<%= producto.Image[0].Name %>" alt="<%= producto.Name %>" class="index-img-offers">
+                            </div>
+                            <div class="index-info-offers">
+                                <p class="index-price-offers">$<%= producto.Price %></p>
+                                <% if (producto.Discount > 0) { %>
+                                    <p class="index-discount-offers"><%= producto.Discount %>% off</p>
+                                <% } %>
+                                <p class="index-description-offers"><%= producto.Name %></p>
+                            </div>    
+                        </a>
+                    </article>
+                <% } %>
+            <% } %>
+        </section>
+
+        <section class="index-popular-categories">
+            <h2 class="index-h2-popular">Categorias Populares</h2>
+            <% for( let categoria of categories) { %>
+                <% if (categoria.IsPopular) { %>
+                    <a href="/products/category/<%= categoria.Name %>">
+                        <div class="index-popularicons-container">
+                                <i class="<%= categoria.Icon %>"></i>
+                                <h2><%= categoria.Name %></h2>
+                        </div>
+                    </a>
+                <% } %>   
+            <% } %>
+        </section>
+    </main>
+    <!-- Index Page -->
+
+    <!-- Include Footer-->
+    <%- include('partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/index-slider.js"></script>
+    <!-- Scripts -->
+</body>
+</html>
