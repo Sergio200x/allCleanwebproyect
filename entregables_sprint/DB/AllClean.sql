@@ -32,16 +32,6 @@ CREATE TABLE `avatares` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `avatares`
---
-
-LOCK TABLES `avatares` WRITE;
-/*!40000 ALTER TABLE `avatares` DISABLE KEYS */;
-INSERT  IGNORE INTO `avatares` VALUES (1,'Avatar-1643233410498.png');
-/*!40000 ALTER TABLE `avatares` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `carritos`
 --
 
@@ -62,15 +52,6 @@ CREATE TABLE `carritos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carritos`
---
-
-LOCK TABLES `carritos` WRITE;
-/*!40000 ALTER TABLE `carritos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carritos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `categorias`
 --
 
@@ -85,16 +66,6 @@ CREATE TABLE `categorias` (
   PRIMARY KEY (`CategoryID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `categorias`
---
-
-LOCK TABLES `categorias` WRITE;
-/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT  IGNORE INTO `categorias` VALUES (3,'Limpieza de Cocina','fas fa-sink index-categories-icons',1),(4,'Limpieza de Baño','fas fa-toilet index-categories-icons',1),(5,'Desinfectantes','fas fa-pump-medical index-categories-icons',1),(6,'Accesorios limpieza','fas fa-pump-soap index-categories-icons',NULL),(7,'Limpieza piso y muebles','fas fa-broom index-categories-icons',NULL),(8,'Otros','fas fa-vial index-categories-icons',NULL);
-/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `domicilios`
@@ -118,15 +89,6 @@ CREATE TABLE `domicilios` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `domicilios`
---
-
-LOCK TABLES `domicilios` WRITE;
-/*!40000 ALTER TABLE `domicilios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `domicilios` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `imagenes`
 --
 
@@ -144,16 +106,6 @@ CREATE TABLE `imagenes` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `imagenes`
---
-
-LOCK TABLES `imagenes` WRITE;
-/*!40000 ALTER TABLE `imagenes` DISABLE KEYS */;
-INSERT  IGNORE INTO `imagenes` VALUES (1,'cocina1.webp',2),(2,'desinfect1.webp',3),(3,'otros5.webp',4),(4,'otros1.webp',5),(5,'cocina5.webp',6),(6,'banio1.webp',7),(7,'banio2.webp',8),(8,'banio3.webp',9),(9,'banio4.webp',10),(10,'banio5.webp',11);
-/*!40000 ALTER TABLE `imagenes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `metodos_pago`
 --
 
@@ -169,15 +121,6 @@ CREATE TABLE `metodos_pago` (
   CONSTRAINT `OrderID_PaymentMethod` FOREIGN KEY (`OrderID`) REFERENCES `ordenes` (`OrderID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `metodos_pago`
---
-
-LOCK TABLES `metodos_pago` WRITE;
-/*!40000 ALTER TABLE `metodos_pago` DISABLE KEYS */;
-/*!40000 ALTER TABLE `metodos_pago` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `ordenes`
@@ -200,15 +143,6 @@ CREATE TABLE `ordenes` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ordenes`
---
-
-LOCK TABLES `ordenes` WRITE;
-/*!40000 ALTER TABLE `ordenes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ordenes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `ordenes_detalle`
 --
 
@@ -229,15 +163,6 @@ CREATE TABLE `ordenes_detalle` (
   CONSTRAINT `ProductID_OrderDetail` FOREIGN KEY (`ProductID`) REFERENCES `productos` (`ProductID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ordenes_detalle`
---
-
-LOCK TABLES `ordenes_detalle` WRITE;
-/*!40000 ALTER TABLE `ordenes_detalle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ordenes_detalle` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `productos`
@@ -265,16 +190,6 @@ CREATE TABLE `productos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos`
---
-
-LOCK TABLES `productos` WRITE;
-/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT  IGNORE INTO `productos` VALUES (2,'Aerosol 250 ml','Incision of prostate',18910.00,1,12.00,50,3,7),(3,'Alcohol en Spray 1 litro','Endo emb hd/nk,bare coil',33296.00,1,0.00,50,1,6),(4,'Lavandina 250 ml','Bladder diagnos proc NEC',43210.00,0,10.00,50,6,4),(5,'Detergente 500 ml','Bact smear-ent/larynx',89548.00,0,3.00,50,1,7),(6,'Lavandina 500 ml','Insert oropharyn airway',54409.00,1,16.00,50,7,3),(7,'Suavizante 5 litros','Tetanus antitoxin admini',1289.00,0,43.00,50,5,6),(8,'Quitamanchas 250 ml','Bilateral adrenalectomy',22734.00,0,49.00,50,7,4),(9,'Jabon en Polvo 250 gr','Orthoptic training',44691.00,1,4.00,50,4,5),(10,'Quitamanchas 5 litros','Cul-de-sac operation NEC',34943.00,1,22.00,50,5,6),(11,'Jabon Líquido 3 kg','Arth/pros rem wo rep-hnd',37807.00,1,46.00,50,3,3);
-/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tipo_usuarios`
 --
 
@@ -287,16 +202,6 @@ CREATE TABLE `tipo_usuarios` (
   PRIMARY KEY (`UserTypeID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tipo_usuarios`
---
-
-LOCK TABLES `tipo_usuarios` WRITE;
-/*!40000 ALTER TABLE `tipo_usuarios` DISABLE KEYS */;
-INSERT  IGNORE INTO `tipo_usuarios` VALUES (1,'client'),(2,'admin');
-/*!40000 ALTER TABLE `tipo_usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `usuarios`
@@ -322,16 +227,6 @@ CREATE TABLE `usuarios` (
   CONSTRAINT `UserTypeID_User` FOREIGN KEY (`UserTypeID`) REFERENCES `tipo_usuarios` (`UserTypeID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuarios`
---
-
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT  IGNORE INTO `usuarios` VALUES (1,'Jordon','Kiely','jkiely0','2021-08-06','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','jkiely0@latimes.com',1,1),(2,'Port','Ubanks','pubanks1','2021-09-27','secret','pubanks1@sciencedirect.com',1,2),(3,'Whitman','Brittoner','wbrittoner2','2021-07-10','secret','wbrittoner2@phoca.cz',1,1),(4,'Tarra','Wonfar','twonfar3','2021-07-06','secret','twonfar3@networksolutions.com',1,2),(5,'Lenette','Georgius','lgeorgius4','2021-12-07','secret','lgeorgius4@1688.com',1,1),(6,'Reginauld','Mungham','rmungham5','2021-10-19','secret','rmungham5@dyndns.org',1,2),(7,'Francisco','Cruz','fcruz6','2021-07-24','secret','fcruz6@addtoany.com',1,1),(8,'Berty','MacGlory','bmacglory7','2020-12-31','secret','bmacglory7@angelfire.com',1,2);
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -342,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-30 19:01:03
+-- Dump completed on 2022-01-31 19:04:23
