@@ -4,6 +4,8 @@
     width: 100%;
     /* position: absolute; */
     z-index:10;
+    list-style: none;
+    text-decoration: none;
 }
 
 .header-maxwidth-body{
@@ -62,13 +64,17 @@
     margin-left: 0px;
     margin-right: 0px;
     position: relative;
-    width: 90%;
+    width: 100%;
+   
     display: flex;
     justify-content: center;
-    /* tocado por javier */ 
     align-items: center;
     
    
+}
+
+.header-searchbare{
+    width: 100%;
 }
 
 .header-searchbar:hover input{
@@ -85,9 +91,7 @@
     border: none;
     border-radius: 5px;
     padding-left: 10px;
-    padding-right: 25px;
-    /* border: rgba(241, 6, 6, 0.973) solid 1px; */
-   
+    padding-right: 25px; 
 }
 
 
@@ -103,8 +107,6 @@
     top: 5px;;
     margin-right: 5px;
     border-left: #808080ad solid 1px;
-    /* border: rgba(102, 22, 230, 0.973) solid 1px; */
-    
 }
 
 .lupa i{
@@ -121,17 +123,12 @@
     
 }
 
-/* menu hamburguesa  */
-.header-rightmenu{
-    display: none;
-    
-}
 
+/* menu hamburguesa  */
 .hamburgermenu{
     font-family: "Roboto", sans-serif;
-
 }
-  
+
 .hamburgermenu .barras{
     float: right;
     color: #ebebeb;
@@ -143,75 +140,86 @@
     margin: 0 7px;
 }
 
-.hamburgermenu .flecha-down{
-    padding-left: 3px;
-}
-
 .hamburgermenu .opc /*ul*/{
-/*     display:block;  
-    z-index:10;
-    bottom: -14px;
-    right: -1px;
-    position:fixed;*/
-    margin-left:100px;
-    font-size: 13px;
-    position:absolute;
-    padding: 10px;
+    position:absolute;   
+    height:0px;   
+    font-size: 14px;
+    /* transition: opacity 1s ease-in-out; */
+    overflow:hidden; 
     top: 58px;
     width:50vw;
-    height:calc(100vh - 57px);   
-    background-color: #888;
-   z-index:11;
-   /*   border: blue 1px solid; */
-    overflow-y:scroll;
-    transition: all 1s ease-in-out;
+    opacity: 0;
 }
-.hamburgermenu .opc li /*ul li*/{
+
+.opc-show{
+    z-index:11;
+    transform: translateX(-52%);
+    /* transition: opacity 1s ease-in-out !important; */
+    overflow: visible;
+    /* overflow-y:scroll; */
+    /* position: absolute; */
+    height:calc(100vh - 57px)  !important;
+    opacity: 1 !important;
+}
+
+.hamburgermenu-hide{
+    height:0px;   
+    overflow: hidden; 
+    z-index: -10;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+}
+
+.hamburgermenu a{
+    color: whitesmoke;
+    list-style: none;
+    text-decoration: none;
+    margin-left: 10px;
+
+}
+
+
+.hamburgermenu .opc .option /*ul li*/{
     display:block;
     list-style:none;
     align-items: center;
-/*     text-align:center; */
-    padding: 16px;
-/*     margin: 10px 5px; */
+    padding: 15px;
     width: 100%;
     margin:1px 0px;
-/*     border:pink 1px solid; */
-}
-.hamburgermenu .opc li a{
-    display:block;
-    color: white;
+    color: whitesmoke;
     text-decoration:none;
-    overflow-y:scroll;
+    background-color: #888;
 }
 
-.submenu-btn{
-    padding: 0px;
-    position:relative;
-   
+.hamburgermenu .opc li i{
+    padding-right: 10px;
+    color: whitesmoke;
+    padding-left: 3px;
 }
 
 .submenu-opc { 
-    transition: all 0.4s;
-    background-color: #5d5d5d;
-    height: 0;
-/*     border: white 1px solid; */
-    overflow: hidden;
- 
+    transition: all 0.4s; 
+    overflow: hidden;   
+    height: 0;   
+    margin-top: 10px;
  }
-.submenu-opc a{
-/*     border: white 1px solid; */
-    padding-left: 30px;
-    
+
+.submenu-opc li{
+    padding: 3%;
+    color: whitesmoke;
+    text-decoration:none;
+    background-color: #5d5d5d;
+    border-radius: 3px;
+    margin:1.5px 0 1.5px 20px;
+    position: relative;
+    width: 56.5%;
 }
 
-.hamburgermenu .show{
-    margin-left:-40%;
-}
-
-.submenu-btn .desplegar{
-    height: 10px;
-  /*  border: white 1px solid; */
-    overflow: visible;
+/* menu derecho session logged*/
+.pic-user{
+    width: 30px;
+    height: 30px ;
+    border-radius: 100%;
 }
 /*---------------------------------------------FOOTER---------------------------------------------*/
 
@@ -262,7 +270,10 @@
     .header-rightmenu{
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
+        width:30% ;
     }
+
 
     .header-rightmenu i{
         margin: 1rem;
@@ -273,30 +284,15 @@
     /* menu desplegable usuario */
     .menu-area, 
     .menu-area:focus{
-        width:100%;
+        /* width:10%; */
         display: flex;
         flex-direction: row;
-<<<<<<< HEAD
-        list-style: none;
-        /* tocado por javier */
-        /* padding-bottom: 10px; */
-        padding:10px;
-    }
-    /* tocado por javier */
-    .menu-area-user{
-        text-align: center;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 1.6rem;
-        text-decoration:none;
-        /* tocado por javier */
-        
-=======
         list-style: none;   
         padding-bottom: 10px;
-        /* background-color: #777; */
-        border:tomato 1px solid;
->>>>>>> f03b7aac5a2ba810feebf822dae3e113ca34af6c
+    }
+
+    .menu-area{
+        width: 20px;
     }
     
     .menu-area .menu-opc{       
@@ -304,8 +300,7 @@
         width:0%;
         overflow: hidden;
         list-style: none;    
-        border-radius: 3%; 
-       
+        border-radius: 3%;       
     }
 
     .menu-area .menu-opc ul{
@@ -318,8 +313,6 @@
         margin-right: 80px;
         background-color: #777;    
         width: 190px;    
-       
-        /* border: whitesmoke 1px solid; */
     }
     
     .menu-area .menu-opc li a:hover,
@@ -327,7 +320,6 @@
         background-color: #555;
         position:relative;   
         transition: all 0.3s ease-in-out;     
-        /* border: green 1px solid; */
     }
     
     .menu-area:hover .menu-opc a,
@@ -341,7 +333,6 @@
         font-size: 2rem;
         padding: 5px;
         position: relative;
-        /* border: red 1px solid; */
     }
 
     .menu-area .menu-opc a{
@@ -352,23 +343,37 @@
     .menu-area:hover .menu-opc,
     .menu-area:focus .menu-opc{
     
-        display:block;
+        display:inline-block;
         width: 15%;
         z-index: 5;
         background: transparent;
         position: absolute;
         right: 0px;
-        top: 75px;
-        transition: all 1s ease-in-out;
-        border: red 1px solid;
-     
-        
+        top: 2%;
+        padding-top:18px;
+        transition: all 0.8s ease-in-out;  
     }
+
+    /* menu derecho session logged*/
+    
+    .menu-area-user{
+        border-radius: 100%;
+        color:whitesmoke;
+        font-size: 12px;
+        text-align:center;
+    }
+    
+    .menu-area-user img{
+        border-radius: 100%;    
+        width: 45%;      
+          
+    }
+
 }
 
 @media (min-width: 1024px)
 {
-    .index-logo img{
+    index-logo img{
         width: 6rem;
         height: 6rem;
     }
@@ -376,4 +381,4 @@
     
 }
 
-
+/*---------------------------------------------------*/

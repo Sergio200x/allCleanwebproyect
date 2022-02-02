@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Productos por Categoría'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
+
+    <!-- Products Results -->
+    <% if (productsFilter) { %>
+        <section class="index-offers">
+            <h2 class="index-h2-offers">Resultado de la categoría: <%= selectedCategory %> </h2>
+            <% productsFilter.forEach(product => { %>
+                <% if (product.Category.Name == selectedCategory) { %>
+                    <article class="index-div-container">
+                        <a href="/products/detail/<%=product.ProductID%>">
+                            <div class="index-div-img">
+                                <img src="/images/products/<%= product.Image[0].Name %>"  alt="<%= product.Description %>" class="index-img-offers">
+                            </div>
+                            <div class="index-info-offers">
+                                <p class="index-price-offers">$<%= product.Price %></p>
+                                <% if (product.Discount > 0) { %>
+                                    <p class="index-discount-offers"><%= product.Discount %>% off</p>
+                                <% } %>
+                                <p class="index-description-offers"><%= product.Name %></p>
+                            </div> 
+                        </a>   
+                    </article>
+                <% } %>
+            <% }) %> 
+        </section>
+    <% } else{%>
+        <div class="index-offers">
+            <h2 class="index-h2-offers">Resultado de la categoría: <%= selectedCategory %> </h2>
+            <h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esta categoría buscada</h2>
+        </div>
+    <% } %> 
+    <!-- Products Results -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/index-slider.js"></script>
+    <!-- Scripts -->
+
+</body>
+</html>

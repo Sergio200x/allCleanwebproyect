@@ -51,35 +51,76 @@ const intervalo = setInterval(() => {
 
 
 /*--------------------------menu hamburguesa*/
-const btnMenu = document.querySelector(".hamburgermenu")
-const menu = document.querySelector(".opc")
-const btnSubmenu = document.querySelectorAll(".submenu-btn")
-const submenu = document.querySelector(".submenu-opc")
+/*(function(){
+    const listElements = document.querySelectorAll('.submenu-btn');
+    const menu = document.querySelector('.opc');
+    const btnMenu = document.querySelector('.hamburgermenu');
+    
+    btnMenu.addEventListener('click', function(){
+        menu.classList.toggle("hamburgermenu-hide")})
 
-btnMenu.addEventListener("click",function(){
-    menu.classList.toggle("show")})
+    const addClick = ()=>{
+        listElements.forEach(Element =>{
+            Element.addEventListener('click', ()=>{
+                let subMenu = Element.children[1]
+                let height= 0;
+                Element.classList.toggle('submenu-btn-active')
+
+                if (subMenu.clientHeight === 0){
+                    height = subMenu.scrollHeight
+                }
+
+                subMenu.style.height = `${height}px`
 
 
-// btnSubmenu.addEventListener("click",function(){
-//     submenu.classList.toggle("desplegar")})
+            })
+        })
+    }
 
-for (let i=0; i < btnSubmenu.length; i++){
-    console.log("hola")
-    btnSubmenu[i].addEventListener("click", function(){
-        if(window.innerWidth < 1024){
-            const subMenu = this.nextElementSibling;
-            const height = subMenu.scrollHeight;
-
-            if (subMenu.classList.contains("desplegar")){
-                subMenu.classList.remove("desplegar");
-                subMenu.removeAttribute("style");
-            }else{
-                subMenu.classList.add("desplegar");
-                subMenu.style.height = height + "px";
+    const deleteStyleHeight = () =>{
+        listElements.forEach(Element =>{
+            if(Element.children[1].getAttribute('style')){
+                Element.children[1].removeAttribute('style')
+                Element.classList.remove('submenu-btn-active')
             }
+        })
+    }
+
+
+    window.addEventListener('resize',()=>{
+        if(window.innerWidth > 768){
+            deleteStyleHeight()
+        }else{
+            addClick();
         }
     })
-}
+
+    if(window.innerWidth <= 768){
+        addClick();
+    }
+
+    
 
 
+})()*/
 
+(function(){
+    const menuIcon = document.getElementById("menu-icon");
+    
+
+    menuIcon.addEventListener("click", (event)=> {
+        const opc = document.getElementById("opc");
+
+        opc.classList.toggle("opc-show")
+        
+    })
+
+    const submenuBtns = document.getElementsByClassName("submenu-btn")
+
+    for (let index = 0; index < submenuBtns.length; index++) {
+        submenuBtns[index].addEventListener
+        
+    }
+
+
+})()

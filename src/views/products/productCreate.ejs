@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Creación Producto'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
+    
+    <!-- Product Create -->
+    <form action="/products/create" method="post" class="register-create-form" enctype="multipart/form-data">
+        <h2>Creación de Producto</h2>
+
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="fas fa-pump-soap"></i>
+            </div>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Nombre del Producto" 
+                class="register-control"
+                value="<%= locals.oldData ? oldData.name : "" %>"
+            >
+            <% if (locals.errors && errors.name) { %>
+            <div class="register-text-danger">
+                 <%= errors.name.msg %> 
+            </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="fab fa-discourse"></i>
+            </div>
+            <input 
+                type="text" 
+                name="description" 
+                placeholder="Descripción del producto" 
+                class="register-control" 
+                value="<%= locals.oldData ? oldData.description : "" %>"
+            >
+            <% if (locals.errors && errors.description) { %>
+                <div class="register-text-danger">
+                     <%= errors.description.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <label class="register-label-nacimiento">Categoría</label>
+            <div class="register-icon-container">
+                <i class="fab fa-leanpub"></i>
+            </div>
+
+            <select name="category" class="register-control select" style="color:gray">
+                <option hidden selected value="">Elegí una Categoría</option>
+                <% let category = [] %>                    
+                <% for (let categoria of constants.generalCategory) { %>
+                    <% category.push(categoria.name)%>
+                <% } %>
+                <% for( let oneCategory of category ) { %>
+                    <option value="<%= oneCategory %>"
+                        <%= locals.oldData && (oneCategory == oldData.category) ? 'selected' : null %> 
+                    ><%= oneCategory %></option>
+                <% } %> 
+            </select>
+
+            <% if (locals.errors && errors.category) { %>
+                <div class="register-text-danger">
+                     <%= errors.category.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <label class="register-label-nacimiento">Precio Del Producto</label>
+            <div class="register-icon-container">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <input 
+                type="number" 
+                name="price"
+                placeholder="Número sin símbolos" 
+                class="register-control"
+                value="<%= locals.oldData ? oldData.price : "" %>"
+            >
+            <% if (locals.errors && errors.price) { %>
+                <div class="register-text-danger">
+                     <%= errors.price.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <label class="register-label-nacimiento">Cantidad</label>
+            <div class="register-icon-container">
+                <i class="fas fa-sort-numeric-up-alt"></i>
+            </div>
+            <input 
+                type="number" 
+                name="quantity"
+                placeholder="Número sin símbolos" 
+                class="register-control"
+                value="<%= locals.oldData ? oldData.quantity : "" %>"
+            >
+            <% if (locals.errors && errors.quantity) { %>
+                <div class="register-text-danger">
+                     <%= errors.quantity.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-control-formulario">
+            <label class="register-label-nacimiento">¿Está en Oferta?</label>
+            <div class="login-offer-container">
+                <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()">Si</label>  
+                <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()" checked>No</label> 
+            </div>
+            
+            <div id="ifYes">
+                <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
+                <div class="register-icon-container">
+                    <i class="fas fa-percent"></i>
+                </div>
+                <input type="number" id='yes' name='discount'class="register-control" disabled="disabled"/>
+            </div> 
+            <% if (locals.errors && errors.discount) { %>
+                <div class="register-text-danger">
+                    <%= errors.discount.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="register-file">
+            <label for="file" class="subir">
+                <i class="fas fa-cloud-upload-alt"></i> Subir Imagen
+            </label>
+            <input id="file" name="photo" onchange='cambiar()' type="file" style='display: none;'/>
+            <% if (locals.errors && errors.photo) { %>
+                <div class="register-text-danger">
+                     <%= errors.photo.msg %> 
+                </div>
+            <% } %>
+        </div>    
+        <div id="info" class="register-info"></div>
+        
+        <script>
+            function cambiar(){
+            var nombreArchivo = document.getElementById('file').files[0].name;
+            document.getElementById('info').innerHTML = nombreArchivo;
+            }
+        </script>
+
+        <button type="submit" class="register-submit">Crear Producto</button>
+    </form>
+    <!-- User Register -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/register-confirmPass.js"></script>
+    <script src="/js/register-eye.js"></script>
+    <script>
+
+        function yesnoCheck() {
+            const yesCheck = document.getElementById('yesCheck')
+            const txtDiscount = document.getElementById("yes");
+            txtDiscount.disabled = yesCheck.checked ? false : true;
+                
+            if (!txtDiscount.disabled) {
+                txtDiscount.focus();
+            }else{
+                document.getElementById('yes').value = "";
+            }
+        }
+        
+    </script>
+    
+    <script src="/js/index-slider.js"></script>
+    <!-- Scripts -->
+    <!-- Product Create -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+</body>
+</html>

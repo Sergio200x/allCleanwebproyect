@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Detalle de Producto'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
+    
+    <!-- Product Detail -->
+ 
+    <main class="productDetail-main">
+        <section class="img">     
+        <img src="/images/products/<%= productfound.Image[0].Name %> " alt="Imagen de producto de limpieza" class="img-product">   
+        </section>
+    
+        <section class="productDetail-datos">
+            <div class="productDetail-titulo"> <h2><%= productfound.Name %></h2> </div>
+            <div class="productDetail-descripcionbreve"> <p><%= productfound.Description %></p></div>
+            <div class="productDetail-precio"> 
+                <p>
+                <% if (productfound.Discount!=0) {  %>
+                    <% const priceWithDiscount= (productfound.Price-productfound.Price*(productfound.Discount/100)) %> 
+                    <% const price= productfound.Price %> 
+                    <p class="normalPrice">$<%= price %></p>
+                    
+                    <div class="priceDiscountContainer">
+                        <p class="priceDiscount">$<%= priceWithDiscount %> </p>               
+                        <p class="discount"><%= productfound.Discount %>% OFF</p> 
+                    </div>
+                
+                <% } else {%>
+                    <p class="normalPriceElse">$<%= productfound.Price %></p> 
+                <% } %>
+                </p>
+            </div>
+            <div class="productDetail-pago"><i class="far fa-credit-card index-icons-footer"></i><p> Medios de pago disponibles</p></div>
+            <div class="productDetail-envio"><i class="fas fa-gift index-icons-footer"></i><p>Verifica el costo de tu envio</p></div>
+            <div class="productDetail-stock"><p>Stock Disponible</p></div>
+            <div class="contador-productDetail-botones">
+                <button onclick="decrement()" class="btn-min-productDetail" >-</button>
+                <input type=number id=demoInput min=0 max=110 class="contador-productDetail" placeholder="0">
+                <button onclick="increment()" class="btn-max-productDetail">+</button>
+            </div>
+                
+            <div class="producDetail-botones">
+                <div>
+                    <input type="submit" name="btn-comprar" class="btn-comprar-productdetail" value="Comprar">
+                </div>
+                <div>
+                    <input type="submit" name="btn-carrito" class="btn-addcarrito-productdetail" value="Agregar al carrito">
+                </div>
+            </div>       
+        </section>
+    </div>
+</main>
+
+<div class="register-productCreate-form" >
+    <a href="/products/edit/<%= productfound.ProductID %>" ><button class="btn-Editar">Editar</button></a>
+    
+    <form action="/products/delete/<%= productfound.ProductID %>?_method=DELETE" method="POST" style="display: inline-flex">
+        <button type="submit" class="btn-Eliminar">Eliminar</button>
+    </form>
+</div>
+    <!-- Product Detail -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/productDetail-slider.js"></script>
+    <script src="/js/index-slider.js"></script>
+    <!-- Scripts -->
+</body>
+</html>

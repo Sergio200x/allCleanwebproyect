@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Productos'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
+
+    <!-- All Products -->
+    <section class="index-offers">
+        <% for( let producto of productList ) { %>
+                <article class="index-div-container">
+                    <a href="/products/detail/<%=producto.ProductID%>">
+                        <div class="index-div-img">
+                            <img src="/images/products/<%= producto.Image[0].Name %>" alt="<%= producto.Name %>" class="index-img-offers">
+                        </div>
+                        <div class="index-info-offers">
+                            <p class="index-price-offers">$<%= producto.Price %></p>
+                            <% if (producto.Discount > 0) { %>
+                                <p class="index-discount-offers"><%= producto.Discount %>% off</p>
+                            <% } %>
+                            <p class="index-description-offers"><%= producto.Name %></p>
+                        </div>    
+                    </a>
+                </article>
+        <% } %>
+    </section>
+    <!-- All Products -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script defer src="/js/index-slider.js"></script>
+    <!-- Scripts -->
+
+</body>
+</html>

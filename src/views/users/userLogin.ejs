@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Login'}) %>
+
+<body class="body">
+    <!-- Include Header-->
+    <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
+
+    <!-- User Login -->
+    <form action="/users/login" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form">
+        <h2>Bienvenido</h2>
+        <h3>Ingrese sus credenciales</h3>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-envelope"></i>
+            </div>
+            <input type="email" name="email" placeholder="Ingrese su mail" class="register-control">
+                <% if(locals.errors && errors.email) { %>
+                    <div class="register-text-danger">
+                       <%= errors.email.msg %>
+                    </div>        
+                <% } %>
+        </div>
+        <div class="register-control-formulario">
+            <input type="password" name="password" id="password" placeholder="Ingrese su password" pattern=".{6,}" class="register-control">
+            <div class="register-eye-container">
+                <i id="visibilityBtn" class="register-eye"><span id="icon" class="material-icons-outlined">visibility</span></i>
+            </div>
+        
+            <div>
+                <label class="user-remember"><input type="checkbox" name="remember_user"> Recordarme</label>
+            </div>
+        </div>
+        
+        <h3 class="login-forgot-pass"><a href="#">¿Olvidaste tu contraseña?</a></h3>
+        <button type="submit" class="login-submit">Iniciar Sesión</button>
+    </form>
+    <!-- User Login -->
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->
+
+    <!-- Scripts -->
+    <script src="/js/login-pass.js"></script>
+    <script src="/js/register-confirmPass.js"></script>
+    <script src="/js/register-eye.js"></script>
+    <!-- Scripts -->
+</body>
+</html>
