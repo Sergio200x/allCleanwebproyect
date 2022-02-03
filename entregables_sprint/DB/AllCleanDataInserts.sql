@@ -40,7 +40,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'Limpieza de Cocina','fasfa-sink index-categories-icons',1),(2,'Limpieza de Baño','fasfa-toilet index-categories-icons',1),(3,'Desinfectantes','fasfa-pump-medical index-categories-icons',1),(4,'Accesorios limpieza','fasfa-pump-soap index-categories-icons',NULL),(5,'Limpieza piso y muebles','fasfa-broom index-categories-icons',NULL),(6,'Otros','fasfa-vial index-categories-icons',NULL);
+INSERT INTO `categorias` VALUES (1,'Limpieza de Cocina','fas fa-sink index-categories-icons',1),(2,'Limpieza de Baño','fas fa-toilet index-categories-icons',1),(3,'Desinfectantes','fas fa-pump-medical index-categories-icons',1),(4,'Accesorios limpieza','fas fa-pump-soap index-categories-icons',0),(5,'Limpieza piso y muebles','fas fa-broom index-categories-icons',0),(6,'Otros','fas fa-vial index-categories-icons',0);
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 

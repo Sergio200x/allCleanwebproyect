@@ -38,7 +38,8 @@
                 <% for( let categoria of categories) { %> 
                     <a href="/products/category/<%= categoria.Name %>">
                         <div class="index-main-categories">
-                            <i class="<%= categoria.Icon %> "></i>
+                            <i class="<%= categoria.Icon %>"></i>
+                            <%= console.log(categoria.Icon); %> 
                             <h2><%= categoria.Name %> </h2>
                         </div>
                     </a>
