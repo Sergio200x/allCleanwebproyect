@@ -4,7 +4,7 @@ module.exports = {
     "password": "secret",
     "database": "allclean",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mariadb"
   },
   "test": {
     "username": "root",
