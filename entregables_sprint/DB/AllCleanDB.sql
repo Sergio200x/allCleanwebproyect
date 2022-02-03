@@ -28,7 +28,7 @@ CREATE TABLE `avatares` (
   `AvatarID` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(45) NOT NULL,
   PRIMARY KEY (`AvatarID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `categorias` (
   `Icon` varchar(200) NOT NULL,
   `IsPopular` tinyint DEFAULT NULL,
   PRIMARY KEY (`CategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +102,7 @@ CREATE TABLE `imagenes` (
   PRIMARY KEY (`ImageID`),
   KEY `ProductID_Image_idx` (`ProductID`),
   CONSTRAINT `ProductID_Image` FOREIGN KEY (`ProductID`) REFERENCES `productos` (`ProductID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,7 +186,7 @@ CREATE TABLE `productos` (
   KEY `CategoryID_Product_idx` (`CategoryID`),
   CONSTRAINT `CategoryID_Product` FOREIGN KEY (`CategoryID`) REFERENCES `categorias` (`CategoryID`),
   CONSTRAINT `UserID_Product` FOREIGN KEY (`UserID`) REFERENCES `usuarios` (`UserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +200,7 @@ CREATE TABLE `tipo_usuarios` (
   `UserTypeID` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(45) NOT NULL,
   PRIMARY KEY (`UserTypeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,7 +225,7 @@ CREATE TABLE `usuarios` (
   KEY `AvatarID_User_idx` (`AvatarID`),
   CONSTRAINT `AvatarID_User` FOREIGN KEY (`AvatarID`) REFERENCES `avatares` (`AvatarID`),
   CONSTRAINT `UserTypeID_User` FOREIGN KEY (`UserTypeID`) REFERENCES `tipo_usuarios` (`UserTypeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -237,4 +237,4 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-31 19:04:23
+-- Dump completed on 2022-02-02 21:40:20
