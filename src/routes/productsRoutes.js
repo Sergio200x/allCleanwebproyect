@@ -20,12 +20,17 @@ router.get('/cart/', productsControllers.productCart)
 router.get('/create/', productsControllers.productCreate)
 router.post('/create/', upload, validations, productsControllers.processCreate)
 
-//EDIT ONE PRODUCT
-router.get('/edit/:id/', productsControllers.productEdit);
-router.put('/edit/:id/', upload , validations, productsControllers.processEdit);
+//PRODUCT OWNER
+router.get('/productowner', productsControllers.productOwner)
 
-//DELETE ONE PRODUCT 
-router.delete('/delete/:id', productsControllers.productDestroy); 
+        //EDIT ONE PRODUCT
+        router.get('/edit/:id/', productsControllers.productEdit);
+        router.put('/edit/:id/', upload , validations, productsControllers.processEdit);
+
+        //DELETE ONE PRODUCT 
+        router.delete('/delete/:id', productsControllers.productDestroy); 
+
+
 
 
 module.exports = router;

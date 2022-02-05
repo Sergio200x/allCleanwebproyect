@@ -529,5 +529,16 @@
   "password": "$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie",
   "id": 54,
   "avatar": "sr-x.jpg"
+ },
+ {
+  "userType": "admin",
+  "name": "Sergio",
+  "lastName": "Fernandez",
+  "user": "sergiof",
+  "email": "sergio_200x@hotmail.com",
+  "date": "1991-05-10",
+  "password": "$2b$10$2/0T4wYL4hu5U4ft5FLEee0panzOZU.LUXO8.Z38VHy4JAcL4Ls4.",
+  "id": 55,
+  "avatar": "Avatar-1643905120911.jpg"
  }
 ]

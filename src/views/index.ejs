@@ -18,8 +18,7 @@
                         <div class="index-slider-section">
                             <img src="<%= image.image %>" alt="<%= image.name %>" class="index-slider-img">
                         </div>
-                    <% } %>
-                    
+                    <% } %>                    
                     <div class="index-slider-circle">
                         <% for( let picInBanner of constants.bannerImages ) { %>                                                       
                                 <div>
@@ -38,8 +37,7 @@
                 <% for( let categoria of categories) { %> 
                     <a href="/products/category/<%= categoria.Name %>">
                         <div class="index-main-categories">
-                            <i class="<%= categoria.Icon %>"></i>
-                            <%= console.log(categoria.Icon); %> 
+                            <i class="<%= categoria.Icon %>"></i>                            
                             <h2><%= categoria.Name %> </h2>
                         </div>
                     </a>

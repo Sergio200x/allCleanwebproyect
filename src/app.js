@@ -31,6 +31,7 @@ app.use('/', indexRoutes);
 app.use('/users', userRoutes);
 app.use('/products', productsRoutes);
 
+
 //Port Listening
 app.listen(process.env.PORT || port, () => {
     console.log(`listening at http://localhost:${port}`)

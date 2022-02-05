@@ -5,6 +5,7 @@ const constants = require('../database/constants');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const usersControllers = require('./usersController')
 
 const Product = db.Product;
 const Category = db.Category;
@@ -137,7 +138,32 @@ const productsControllers = {
 		products.delete(IdProducto)
 
 		res.redirect('/products')
-	}
-}
+	},
+
+    productOwner: async (req, res)=>{
+        
+            const categories = await Category.findAll();
+            const userTypeloged = req.session.userLogged.UserTypeID                                
+            const userloged = req.session.userLogged.UserID
+
+         if(userloged==1)
+            {   
+                productList= await Product.findAll({where:{UserID:userloged}},
+                    {include : ["Image"],})                    
+               
+                res.render('products/productOwner',  { productList, constants, categories,userTypeloged});       
+             }
+            else
+            {
+                productList= await Product.findAll(
+                    {include : ["Image"],})                    
+               
+                res.render('products/productOwner',  { productList, constants, categories,userTypeloged})
+            }
+
+        }
+        
+    }
+
 
 module.exports= productsControllers

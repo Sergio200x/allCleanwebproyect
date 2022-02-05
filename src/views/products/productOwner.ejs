@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<%- include('../partials/head.ejs', {title: 'Productos por dueño'}) %>
+
+<body>
+    
+        <h1>Mis productos</h1>
+
+<% if (userTypeloged==2) { %>
+    
+    <% for(let i =0; i<productList.length;i++) { %>
+        <div>
+            <div><p><%- productList[i].Name %> </p></div>            
+            <div class="register-productCreate-form" >
+            <a href="/products/edit/<%= productList[i].ProductID %>" ><button class="btn-Editar">Editar</button></a>
+        
+            <form action="/products/delete/<%= productList[i].ProductID %>?_method=DELETE" method="POST" style="display: inline-flex">
+            <button type="submit" class="btn-Eliminar">Eliminar</button>
+            </form>
+        </div>
+        </div>
+       <% } %>  
+<% } else{%>
+
+    <% for(let i =0; i<productList.length;i++) { %>
+        <div>
+            <div><p><%- productList[i].Name %> </p></div>
+
+<% } %> 
+<% } %>
+<%- include('../partials/footer.ejs') %>   
+</body>
+
+</html>

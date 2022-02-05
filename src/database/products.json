@@ -10,7 +10,7 @@
   "discount": 0
  },
  {
-  "id": 2,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+  "id": 2,
   "name": "Lisoform desinfectante",
   "description": "Lysoform Aerosol Desinfectante es un aerosol de acción antimicrobiana que mata virus, bacterias y hongos en superficies duras.",
   "category": "Desinfectantes",
@@ -30,16 +30,6 @@
   "discount": 45
  },
  {
-  "id": 4,
-  "name": "Cepillo inodoro",
-  "description": "Cepillo Para Inodoro Great Value",
-  "category": "Otros",
-  "image": "otros1.webp",
-  "price": 500,
-  "isOffer": false,
-  "discount": 40
- },
- {
   "id": 5,
   "name": "Limpiador cremoso",
   "description": "Limpiador cremoso el coloso",
@@ -48,16 +38,6 @@
   "price": 90,
   "isOffer": true,
   "discount": 40
- },
- {
-  "id": 6,
-  "name": "Limpiador Líquido Cif Baño 450 ml",
-  "description": "El limpiador líquido CIF Baño Biodegradable Recarga Económica, te ayuda a limpiar tu baño en tan solo 10 segundos. ",
-  "category": "Limpieza de Baño",
-  "image": "banio1.webp",
-  "price": 150,
-  "isOffer": false,
-  "discount": 15
  },
  {
   "id": 8,
@@ -383,7 +363,7 @@
   "id": 40,
   "name": "Automático Lysoform Completo",
   "description": "Lysoform Automatico Full Aire de Montaña",
-  "category":"Desinfectantes",
+  "category": "Desinfectantes",
   "image": "desinfect3.webp",
   "price": 1650,
   "isOffer": false,
@@ -483,7 +463,7 @@
   "id": 50,
   "name": "Automático Lysoform Completo",
   "description": "Lysoform Automatico Full Aire de Montaña",
-  "category":"Desinfectantes",
+  "category": "Desinfectantes",
   "image": "desinfect3.webp",
   "price": 1650,
   "isOffer": false,
