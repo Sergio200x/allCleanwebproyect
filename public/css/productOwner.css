@@ -1,0 +1,106 @@
+.btneditanddelete
+{
+    width:10%;
+    text-align: center;  
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    
+}
+
+
+
+.btn-Editar1 , .btn-Eliminar1
+{
+    background-color: #2289dd;
+    color: whitesmoke;
+    margin: auto;
+    text-align: center;
+    padding-left: 2px;
+    
+    
+}
+
+.btn-Eliminar1
+{
+    background-color: rgb(214, 12, 12);
+    margin-left: 4px;
+}
+
+.ContenedorPrincipal
+{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    margin-left: 5%;
+    margin-right: 20%;
+    max-width: 500px;
+    
+        
+}
+
+.ContenedorID
+{
+    font-size: small;
+   
+}
+.ContenedorName
+{
+    font-size: small;
+    
+    
+}
+
+.Contenedorproductos
+{
+   display: flex;
+   width: 90%;     
+   text-align: left;
+   
+   
+}
+
+.titulo
+{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.body
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px)
+{
+    .ContenedorPrincipal
+    {
+        margin-left: 20%;
+    }
+    .btneditanddelete
+{
+    
+    margin-top: 3%;
+    
+}
+
+}
+
+@media (min-width: 1024px)
+{
+ .ContenedorPrincipal
+    {
+        margin-left: 33%;
+    }
+    .btneditanddelete
+    {
+        
+        
+        margin-top: 3%;
+        
+    }
+}

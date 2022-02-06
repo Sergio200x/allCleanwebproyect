@@ -145,20 +145,22 @@ const productsControllers = {
             const categories = await Category.findAll();
             const userTypeloged = req.session.userLogged.UserTypeID                                
             const userloged = req.session.userLogged.UserID
+            const userlogedName= req.session.userLogged.Name
 
          if(userloged && userTypeloged==1)
             {   
                 productList= await Product.findAll({where:{UserID:userloged}},
                     {include : ["Image"],})                    
                
-                res.render('products/productOwner',  { productList, constants, categories});       
+                res.render('products/productOwner',  { productList, constants, categories,userTypeloged,userlogedName});       
              }
             else if (userloged && userTypeloged==2)
             {
                 productList= await Product.findAll(
                     {include : ["Image"],})                    
                
-                res.render('products/productOwner',  { productList, constants, categories})
+                res.render('products/productOwner',  { productList, constants, categories,userTypeloged,userlogedName})
+                
             }
 
         }
