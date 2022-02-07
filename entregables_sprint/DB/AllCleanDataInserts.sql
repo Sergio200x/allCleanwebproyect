@@ -116,7 +116,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Diego','Marco','DiegoAC','2021-11-05','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','diego@allclean.com',1,2),(2,'Sergio','Fernandez','SergioAC','2021-08-12','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','segio@allclean.com',1,2),(3,'Javier','Marillan','JavierAC','2021-09-03','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','javier@allclean.com',1,2),(4,'Martina','Agüero','MartinaAC','2021-08-24','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','martina@allclean.com',1,2);
+INSERT INTO `usuarios` VALUES (1,'Diego','Marco','DiegoAC','2021-11-05','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','diego@allclean.com',1,2),(2,'Sergio','Fernandez','SergioAC','2021-08-12','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','sergio@allclean.com',1,2),(3,'Javier','Marillan','JavierAC','2021-09-03','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','javier@allclean.com',1,2),(4,'Martina','Agüero','MartinaAC','2021-08-24','$2b$10$DWFOBjuOFI9mdHOnzSz6MOaMdg.7UmEpNh29Xw.EttPtl3cvC/Gie','martina@allclean.com',1,2);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-02 21:36:41
+-- Dump completed on 2022-02-07 19:59:34
