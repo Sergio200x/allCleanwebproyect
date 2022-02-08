@@ -6,10 +6,10 @@ const validations=[
   body('userType').notEmpty().withMessage('Debes ingresar un tipo de usuario'),
   body('name')
     .notEmpty().withMessage('Debes ingresar un Nombre y Apellido').bail()
-    .isLength({ min: 6 }).withMessage('El nombre debe tener un mínimo de 6 caracteres'),
+    .isLength({ min: 3 }).withMessage('El nombre debe tener un mínimo de 3 caracteres'),
   body('user')
     .notEmpty().withMessage('Debes ingresar un Nombre de Usuario').bail()
-    .isLength({ min: 5 }).withMessage('El usuario debe tener un mínimo de 5 caracteres'),
+    .isLength({ min: 3 }).withMessage('El usuario debe tener un mínimo de 3 caracteres'),
   body('email')
     .notEmpty().withMessage('Debes ingresar un Email').bail()
     .isEmail().withMessage('Debes ingresar un Email valido'),

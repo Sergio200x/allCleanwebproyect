@@ -2,13 +2,17 @@ const { validationResult } = require("express-validator")
 const jsonTable = require('../database/jsonTable');
 const users = jsonTable('users');
 const bcryptjs=require("bcryptjs");
+const bcrypt = require ('bcrypt')
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const constants = require('../database/constants');
+const { stringify } = require("nodemon/lib/utils");
 
 const Category = db.Category;
 const User = db.User;
+const Avatar = db.Avatar;
+const UserType = db.UserType;
 
 const usersControllers = {
     userLogin: async (req, res) => {
@@ -34,7 +38,7 @@ const usersControllers = {
             //const userToLogin=users.findByField("email",req.body.email)
             if (userToLogin){
                 //let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.Password);
-                let isOkThePassword = bcryptjs.compareSync(passwordToLogin, userToLogin.Password);
+                let isOkThePassword = bcrypt.compareSync(passwordToLogin, userToLogin.Password);
                
                 if (isOkThePassword){
                     delete userToLogin.Password 
@@ -71,31 +75,58 @@ const usersControllers = {
         res.render('users/userRegister', {constants})
     },
 
-    processRegister: (req, res) => {
-        const resultvalidations = validationResult(req);
+    processRegister: async (req, res) => {
+        try{
+            const resultvalidations = validationResult(req);
         
-        let newUser = req.body
-    
-        if(!resultvalidations.isEmpty())
-        {
-            res.render('users/userRegister',{
-                errors: resultvalidations.mapped(),
-                oldData: req.body,
-                constants,
-            })}
-        else{
-            const porMail=users.findByField("email",req.body.email)
-             if(porMail){
-               return res.render('users/userRegister',{
-                    errors:{email:{msg:"Este mail ya se encuentra registrado"}},
-                    oldData: req.body,
-                    constants
+            let newUser = req.body
+        
+            if(!resultvalidations.isEmpty())
+            {
+                res.render('users/userRegister',{
+                    errors: resultvalidations.mapped(),
+                    oldData: newUser,
+                    constants,
+                })}
+            else{
+                emailToRegister = newUser.email;
+                const categories = await Category.findAll();
+                const checkEmail = await User.findOne({
+                    include : ["Avatar"],
+                    where: {
+                        Email: emailToRegister,
+                    }
                 });
-             }
-    
-        let userCreated = users.createUser(newUser, req)
-
-        res.redirect('/')
+                //const checkEmail = users.findByField("email",req.body.email)
+                if(checkEmail){
+                return res.render('users/userRegister',{
+                        errors:{email:{msg:"Este mail ya se encuentra registrado"}},
+                        oldData: newUser,
+                        constants,
+                        categories
+                    });
+                }
+                console.log(newUser);
+                //let userCreated = users.createUser(newUser, req)
+                const UserAvatar = await Avatar.create({
+                    Name: req.file ? req.file.filename : 'sr-x.jpg'
+                })     
+               await User.create({
+                    include: ["UserType", "Avatar"],
+                    Name: newUser.name,
+                    LastName: newUser.lastName,
+                    UserName:newUser.user,
+                    Email: newUser.email,
+                    BirthDate: newUser.date ? newUser.date : null,
+                    Password: bcrypt.hashSync(newUser.password , 10),
+                    AvatarID: UserAvatar.AvatarID,
+                    UserTypeID: 1
+                })
+                
+                res.redirect('/')
+            }
+        }catch (error) {
+            console.log(error);
         }
     },
 
