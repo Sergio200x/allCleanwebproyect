@@ -13,17 +13,14 @@
     <form action="/users/login" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form">
         <h2>Bienvenido</h2>
         <h3>Ingrese sus credenciales</h3>
+
         <div class="register-control-formulario">
             <div class="register-icon-container">
                 <i class="far fa-envelope"></i>
             </div>
             <input type="email" name="email" placeholder="Ingrese su mail" class="register-control">
-                <% if(locals.errors && errors.email) { %>
-                    <div class="register-text-danger">
-                       <%= errors.email.msg %>
-                    </div>        
-                <% } %>
         </div>
+
         <div class="register-control-formulario">
             <input type="password" name="password" id="password" placeholder="Ingrese su password" pattern=".{6,}" class="register-control">
             <div class="register-eye-container">
@@ -33,6 +30,12 @@
             <div>
                 <label class="user-remember"><input type="checkbox" name="remember_user"> Recordarme</label>
             </div>
+
+            <% if(locals.errors && errors.email) { %>
+                <div class="register-text-danger login-error">
+                   <%= errors.email.msg %>
+                </div>        
+            <% } %>
         </div>
         
         <h3 class="login-forgot-pass"><a href="#">¿Olvidaste tu contraseña?</a></h3>

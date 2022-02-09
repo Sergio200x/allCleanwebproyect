@@ -16,8 +16,8 @@ router.get('/register/', guestMiddleware, usersControllers.userRegister)
 router.post('/register/', upload, validations, usersControllers.processRegister)
 
 //EDIT ONE USER
-router.get('/edit/:id/', usersControllers.userEdit);
-router.put('/edit/:id/', upload , validations, usersControllers.processEdit);
+router.get('/edit/:id/', authMiddleware, usersControllers.userEdit);
+router.put('/edit/:id/', authMiddleware, upload , validations, usersControllers.processEdit);
 
 //PROFILE
 router.get('/userProfile/', authMiddleware, usersControllers.profile)

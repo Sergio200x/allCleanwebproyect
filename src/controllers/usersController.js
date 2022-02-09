@@ -45,7 +45,7 @@ const usersControllers = {
                     req.session.userLogged = userToLogin
 
                     if (req.body.remember_user){
-                        res.cookie("userEmail", emailToLogin ,{maxAge:(1000*60)*1})
+                        res.cookie("userEmail", emailToLogin ,{maxAge:((1000*60)*1)*60})
                     }
                     
                     return res.redirect('/users/userProfile')
@@ -106,7 +106,6 @@ const usersControllers = {
                         categories
                     });
                 }
-                console.log(newUser);
                 //let userCreated = users.createUser(newUser, req)
                 const UserAvatar = await Avatar.create({
                     Name: req.file ? req.file.filename : 'sr-x.jpg'
@@ -131,19 +130,35 @@ const usersControllers = {
     },
 
     
-    userEdit:(req, res) => {
+    userEdit: async (req, res) => {
         const IdUser = req.params.id;
-		const userToEdit = users.find(IdUser);
+		//const userToEdit = users.find(IdUser);
+        if(req.session.userLogged.UserID != IdUser){
+            return res.redirect('/');
+        }
+        const categories = await Category.findAll();
+        const userToEdit = await User.findByPk(IdUser, {
+            include : ["Avatar"],
+            where: {
+                UserID: IdUser,
+            }
+        });
 
-		res.render('users/userEdit', {userToEdit: userToEdit, constants})
+        res.render('users/userEdit', {userToEdit: userToEdit, constants, categories})
     },
 
-    processEdit: (req, res)=> {
+    processEdit: async (req, res)=> {
         const resultvalidations = validationResult(req);
         const IdUser = req.params.id;
-        const userToEdit = users.find(IdUser);
-		const keepImage = userToEdit.avatar
-        
+
+        const categories = await Category.findAll();
+        const userToEdit = await User.findByPk(IdUser, {
+            include : ["Avatar"],
+            where: {
+                UserID: IdUser,
+            }
+        });
+      
 		let userEdited = req.body
         
         if(!resultvalidations.isEmpty())
@@ -152,11 +167,35 @@ const usersControllers = {
                 errors: resultvalidations.mapped(),
                 oldData: req.body,
                 userToEdit : userToEdit, 
-                constants
+                constants,
+                categories
             })}
         else
         {
-            users.updateUser(userEdited, req, keepImage, IdUser)
+            let UserAvatar;
+
+            if(req.file){
+                UserAvatar = await Avatar.update({
+                    Name: req.file.filename
+                },{
+                    where: {AvatarID: userToEdit.Avatar.AvatarID}
+                })
+            }
+            
+            await User.update({
+                include: ["UserType", "Avatar"],
+                Name: userEdited.name,
+                LastName: userEdited.lastName,
+                UserName:userEdited.user,
+                Email: userEdited.email,
+                BirthDate: userEdited.date ? userEdited.date : null,
+                Password: bcrypt.hashSync(userEdited.password , 10),
+                AvatarID: UserAvatar ? UserAvatar.AvatarID : userToEdit.Avatar.AvatarID,
+                UserTypeID: 1
+            },{
+                where: {UserID: IdUser}, force: true
+            })
+            
             res.redirect('/')
         }
     },

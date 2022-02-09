@@ -10,18 +10,9 @@
     <!-- Include Header-->
 
     <!-- User Register -->
-    <form action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form action="/users/edit/<%= userToEdit.UserID %>?_method=PUT" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Edición de Usuario</h2>
-        <div class="register-actividad-container">
-            <label class="tipoActividad"><input type="radio" name="userType" value= "client" <%= userToEdit.userType == "client" ? 'checked' : "" %>> Cliente</label>  
-            <label class="tipoActividad"><input type="radio" name="userType" value="admin" <%= userToEdit.userType == "admin" ? 'checked' : "" %>> Admin</label>  
-            <% if (locals.errors && errors.userType) { %>
-                <div class="register-text-danger">
-                    <%= errors.userType.msg %> 
-                </div>
-            <% } %>
-        </div>
-
+        
         <div class="register-control-formulario">
             <div class="register-icon-container">
                 <i class="far fa-user"></i>
@@ -31,7 +22,7 @@
                 name="name" 
                 placeholder="Nombre" 
                 class="register-control"
-                value="<%= userToEdit.name %>"
+                value="<%= userToEdit.Name %>"
             >
             <% if (locals.errors && errors.name) { %>
             <div class="register-text-danger">
@@ -49,7 +40,7 @@
                 name="lastName" 
                 placeholder="Apellido" 
                 class="register-control"
-                value="<%= userToEdit.lastName %>"
+                value="<%= userToEdit.LastName %>"
             >
             <% if (locals.lastName && errors.lastName) { %>
             <div class="register-text-danger">
@@ -67,7 +58,7 @@
                 name="user" 
                 placeholder="Nombre de Usuario" 
                 class="register-control" 
-                value="<%= userToEdit.user %>"
+                value="<%= userToEdit.UserName %>"
             >
             <% if (locals.errors && errors.user) { %>
                 <div class="register-text-danger">
@@ -85,7 +76,7 @@
                 name="email" 
                 placeholder="Ingrese su mail" 
                 class="register-control"
-                value="<%= userToEdit.email %>"
+                value="<%= userToEdit.Email %>"
             >
             <% if (locals.errors && errors.email) { %>
                 <div class="register-text-danger">
@@ -96,7 +87,7 @@
 
         <div class="register-control-formulario">
             <label class="register-label-nacimiento">Fecha de Nacimiento</label>
-            <input type="date" name="date"  class="register-control register-date" value="<%= userToEdit.date %>">
+            <input type="date" name="date"  class="register-control register-date" value="<%= userToEdit.BirthDate %>">
         </div>
 
         <div class="register-control-formulario">

@@ -3,7 +3,6 @@ const { body } = require('express-validator')
 
 
 const validations=[
-  body('userType').notEmpty().withMessage('Debes ingresar un tipo de usuario'),
   body('name')
     .notEmpty().withMessage('Debes ingresar un Nombre y Apellido').bail()
     .isLength({ min: 3 }).withMessage('El nombre debe tener un mínimo de 3 caracteres'),

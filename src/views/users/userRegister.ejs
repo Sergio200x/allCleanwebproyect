@@ -12,16 +12,7 @@
     <!-- User Register -->
     <form action="/users/register" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Registro</h2>
-        <div class="register-actividad-container">
-            <label class="tipoActividad"><input type="radio" name="userType" value= "client" <%= locals.oldData && (oldData.userType == "client") ? 'checked' : "" %>> Cliente</label>  
-            <label class="tipoActividad"><input type="radio" name="userType" value="admin" <%= locals.oldData && (oldData.userType == "admin") ? 'checked' : "" %>> Admin</label>  
-            <% if (locals.errors && errors.userType) { %>
-                <div class="register-text-danger">
-                    <%= errors.userType.msg %> 
-                </div>
-            <% } %>
-        </div>
-
+        
         <div class="register-control-formulario">
             <div class="register-icon-container">
                 <i class="far fa-user"></i>
