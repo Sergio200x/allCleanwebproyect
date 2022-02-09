@@ -1,15 +1,5 @@
 [
  {
-  "id": "1",
-  "name": "Quitamanchas 1kg",
-  "description": "Sun Polvo deja tu vajilla impecable incluso sin enguaje previo con tecnología glass protect",
-  "category": "Limpieza de Cocina",
-  "image": "cocina1.webp",
-  "price": "600",
-  "isOffer": false,
-  "discount": 0
- },
- {
   "id": 2,
   "name": "Lisoform desinfectante",
   "description": "Lysoform Aerosol Desinfectante es un aerosol de acción antimicrobiana que mata virus, bacterias y hongos en superficies duras.",

@@ -73,6 +73,13 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position:relative;
+    padding-bottom: 200px;
+}
+
+.imagenes
+{
+    width: auto;
 }
 
 @media (min-width: 768px)
@@ -87,6 +94,7 @@
     margin-top: 3%;
     
 }
+
 
 }
 
@@ -103,4 +111,5 @@
         margin-top: 3%;
         
     }
+ 
 }

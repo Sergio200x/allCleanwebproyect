@@ -11,6 +11,7 @@ const Product = db.Product;
 const Category = db.Category;
 
 
+
 const productsControllers = {
     products: async (req, res) => {
         //const productList = products.all()
@@ -35,6 +36,8 @@ const productsControllers = {
                 include : ["Image"],
             })
             res.render('products/productDetail',{productfound: productfound, constants, categories});
+
+            
 
         }catch (error) {
             console.log(error);
@@ -146,20 +149,27 @@ const productsControllers = {
             const userTypeloged = req.session.userLogged.UserTypeID                                
             const userloged = req.session.userLogged.UserID
             const userlogedName= req.session.userLogged.Name
+                       
+            
 
          if(userloged && userTypeloged==1)
             {   
-                productList= await Product.findAll({where:{UserID:userloged}},
-                    {include : ["Image"],})                    
-               
-                res.render('products/productOwner',  { productList, constants, categories,userTypeloged,userlogedName});       
+               try {    
+                        productList= await Product.findAll({where:{UserID:userloged}},
+                        {include : ["Image"],})
+                       
+                        res.render('products/productOwner',  { productList, constants, categories,userTypeloged,userlogedName});
+                    } 
+                catch { console.log(error)}      
              }
             else if (userloged && userTypeloged==2)
             {
-                productList= await Product.findAll(
-                    {include : ["Image"],})                    
-               
-                res.render('products/productOwner',  { productList, constants, categories,userTypeloged,userlogedName})
+                try {
+                        productList= await Product.findAll(
+                        {include : ["Image"],})   
+                        res.render('products/productOwner',  { productList,constants, categories,userTypeloged,userlogedName})
+                    }
+                catch { console.log(error)}  
                 
             }
 

@@ -5,6 +5,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validations = require('../middlewares/userValidations');
 const upload = require('../middlewares/userAvatarStorage');
+const productsControllers = require('../controllers/productsController');
 
 //GET LOGIN PAGE 
 router.get('/login/', guestMiddleware, usersControllers.userLogin)
@@ -24,5 +25,7 @@ router.get('/logout/', authMiddleware, usersControllers.logout)
 
 //DELETE ONE USER 
 router.delete('/delete/:id', usersControllers.userDestroy);
+
+
 
 module.exports = router;
