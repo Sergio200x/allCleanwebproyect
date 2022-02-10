@@ -23,12 +23,12 @@ router.post('/create/', upload, validations, productsControllers.processCreate)
 //PRODUCT OWNER
 router.get('/productowner', productsControllers.productOwner)
 
-        //EDIT ONE PRODUCT
-        router.get('/edit/:id/', productsControllers.productEdit);
-        router.put('/edit/:id/', upload , validations, productsControllers.processEdit);
+//EDIT ONE PRODUCT
+router.get('/edit/:id/', productsControllers.productEdit);
+router.put('/edit/:id/', upload , validations, productsControllers.processEdit);
 
-        //DELETE ONE PRODUCT 
-        router.delete('/delete/:id', productsControllers.productDestroy); 
+//DELETE ONE PRODUCT 
+router.delete('/delete/:id', productsControllers.productDestroy); 
 
 
 

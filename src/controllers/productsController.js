@@ -103,11 +103,23 @@ const productsControllers = {
         }
     },
 
-    productEdit:(req, res) => {
-        const IdProduct = req.params.id;
-		const productToEdit = products.find(IdProduct);
+    productEdit: async (req, res) => {
+        try{
+            const IdProduct = req.params.id;
+            const categories = await Category.findAll(); 
+            //const productToEdit = products.find(IdProduct);
+            const productToEdit = await Product.findByPk(IdProduct, {
+            include : ["Image", "Category"],
+            where: {
+                ProductID: IdProduct,
+            }
+        })
 
-		res.render('products/productEdit', {productToEdit: productToEdit, constants})
+		res.render('products/productEdit', {productToEdit: productToEdit, constants, categories})
+        }catch (error) {
+            console.log(error);
+        }
+        
     },
 
     processEdit: (req, res)=> {

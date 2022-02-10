@@ -10,7 +10,7 @@
     <!-- Include Header-->
     
     <!-- Product Create -->
-    <form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form action="/products/edit/<%= productToEdit.ProductID %>?_method=PUT" method="post" class="register-create-form" enctype="multipart/form-data">
         <h2>Edición de Producto</h2>
 
         <div class="register-control-formulario">
@@ -22,7 +22,7 @@
                 name="name" 
                 placeholder="Nombre del Producto" 
                 class="register-control"
-                value="<%= productToEdit.name %>"
+                value="<%= productToEdit.Name %>"
             >
             <% if (locals.errors && errors.name) { %>
             <div class="register-text-danger">
@@ -40,7 +40,7 @@
                 name="description" 
                 placeholder="Descripción del producto" 
                 class="register-control" 
-                value="<%= productToEdit.description %>"
+                value="<%= productToEdit.Description %>"
             >
             <% if (locals.errors && errors.description) { %>
                 <div class="register-text-danger">
@@ -58,12 +58,12 @@
             <select name="category" class="register-control select" style="color:gray">
                 <option hidden selected value="">Elegí una Categoría</option>
                 <% let category = [] %>                    
-                <% for (let categoria of constants.generalCategory) { %>
-                    <% category.push(categoria.name)%>
+                <% for (let categoria of categories) { %>
+                    <% category.push(categoria.Name)%>
                 <% } %>
                 <% for( let oneCategory of category ) { %>
                     <option value="<%= oneCategory %>"
-                        <%= (oneCategory == productToEdit.category) ? 'selected' : null %> 
+                        <%= (oneCategory == productToEdit.Category.Name) ? 'selected' : null %> 
                     ><%= oneCategory %></option>
                 <% } %> 
             </select>
@@ -85,7 +85,7 @@
                 name="price"
                 placeholder="Número sin símbolos" 
                 class="register-control"
-                value="<%= productToEdit.price %>"
+                value="<%= productToEdit.Price %>"
             >
             <% if (locals.errors && errors.price) { %>
                 <div class="register-text-danger">
@@ -104,7 +104,7 @@
                 name="quantity"
                 placeholder="Número sin símbolos" 
                 class="register-control"
-                value="<%= productToEdit.quantity %>"
+                value="<%= productToEdit.Quantity %>"
             >
             <% if (locals.errors && errors.quantity) { %>
                 <div class="register-text-danger">
@@ -116,15 +116,15 @@
         <div class="register-control-formulario">
             <label class="register-label-nacimiento">¿Está en Oferta?</label>
             <div class="login-offer-container">
-                <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()" <%= productToEdit.isOffer == true ? 'checked' : "" %>>Si</label>  
-                <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()" <%= productToEdit.isOffer == false ? 'checked' : "" %>>No</label> 
+                <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()" <%= productToEdit.IsOffer == true ? 'checked' : "" %>>Si</label>  
+                <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()" <%= productToEdit.IsOffer == false ? 'checked' : "" %>>No</label> 
             </div>
             
             <div id="ifYes">
                 <label class="register-label-nacimiento">Descuento (en % sin símbolos):</label>
-                <input type="number" id='yes' name='discount'class="register-control" <%= productToEdit.discount == 0 ? 'disabled' : ""%> value="<%= productToEdit.discount == 0 ? "" : productToEdit.discount %>"/>
+                <input type="number" id='yes' name='discount'class="register-control" <%= productToEdit.Discount == 0 ? 'disabled' : ""%> value="<%= productToEdit.Discount == 0 ? "" : productToEdit.Discount %>"/>
             </div> 
-            <% if (locals.errors && errors.discount) { %>
+            <% if (locals.errors && errors.Discount) { %>
                 <div class="register-text-danger">
                     <%= errors.discount.msg %> 
                 </div>
