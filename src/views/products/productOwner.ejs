@@ -12,24 +12,26 @@
 
         <%} else {%>
 
-            <h2 class="titulo">Hola <%-userlogedName %>, esta es tu lista de productos.</h2>
+            <h2 class="titulo">Hola <%-userlogedName %>, esta es tu lista de productos. <p></p> </h2>
         
        <%}%> 
 
-    <% for(let product of productList) { %>
-        <div class="ContenedorPrincipal" >            
+    <%for(let product=0; product<productList.length;product++) {  %>
+        <div class="ContenedorPrincipal" >  
+                      
              <div class="Contenedorproductos"> 
-                 <div class="Imagenes"><img src="/images/products/<%=product.Image[0].Name%>" alt="<%=product.ProductID %>"></div>
-            <p class="ContenedorID"><%-product.ProductID %></p><p class="ContenedorName"> - <%-product.Name %> </p></div> 
+                 <div class="Imagenes"><img src="/images/products/<%=productList[product].Image[0].Name%>" alt="<%=productList[product].ProductID %>" class="img"></div>
+            <p class="ContenedorName">  <%-productList[product].Name %> - (ID-<%-productList[product].ProductID %>)</p></div> 
             <div class="btneditanddelete" >
-                <a href="/products/edit/<%= product.ProductID %>" ><button class="btn-Editar1">Editar</button></a>
+                <a href="/products/edit/<%=productList[product].ProductID %>" ><button class="btn-Editar1">Editar</button></a>
             
-                <form action="/products/delete/<%= product.ProductID %>?_method=DELETE" method="POST" >
+                <form action="/products/delete/<%= productList[product].ProductID %>?_method=DELETE" method="POST" >
                 <button type="submit" class="btn-Eliminar1">Eliminar</button>
                 </form>
+
             </div>
-            
         </div> 
+        
         <% } %> 
         <%- include('../partials/footer.ejs') %>         
 </body>

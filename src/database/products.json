@@ -1,15 +1,5 @@
 [
  {
-  "id": 2,
-  "name": "Lisoform desinfectante",
-  "description": "Lysoform Aerosol Desinfectante es un aerosol de acción antimicrobiana que mata virus, bacterias y hongos en superficies duras.",
-  "category": "Desinfectantes",
-  "image": "desinfect1.webp",
-  "price": 160,
-  "isOffer": false,
-  "discount": 50
- },
- {
   "id": 3,
   "name": "Suavizante 900ml",
   "description": "Suavizante para ropa Vivere Escudo Protector Clásico deja tu ropa con una fragancia natural para disfrutar durante días. ",

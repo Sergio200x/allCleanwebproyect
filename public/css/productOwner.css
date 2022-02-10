@@ -1,61 +1,68 @@
 .btneditanddelete
 {
-    width:10%;
-    text-align: center;  
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5%;
     
+    text-align: center;  
+    display: column;  
+    margin-left: -10px; 
 }
 
 
 
 .btn-Editar1 , .btn-Eliminar1
 {
-    background-color: #2289dd;
+    background-color: #286698;
     color: whitesmoke;
-    margin: auto;
-    text-align: center;
-    padding-left: 2px;
-    
+    /* margin: auto;
+    text-align: center; */
+    width: 60px;
+    font-size: small;
+    height: 30px;  
+    padding-left: 4px;
+    border: none; 
+    border-radius: 10%; 
     
 }
 
 .btn-Eliminar1
 {
-    background-color: rgb(214, 12, 12);
-    margin-left: 4px;
+    background-color: rgb(223, 78, 78);
+    height: 30px;
+    text-align: center;
+    margin: auto;
+    margin-top: 4px;
+    
 }
 
 .ContenedorPrincipal
 {
     display: flex;
     margin: auto;
-    justify-content: space-around;
-    margin-left: 5%;
-    margin-right: 20%;
+    justify-content: space-between;   
+    width: 100%;  
     max-width: 500px;
-    
+    box-shadow: 0px 5px 10px rgb(100,100,100);
+    height: 100px;
+    margin-bottom: 1.5%;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 30px;
         
 }
 
-.ContenedorID
-{
-    font-size: small;
-   
-}
+
 .ContenedorName
 {
-    font-size: small;
-    
-    
+    font-size: medium;
+    padding-left: 15px;
+    width: 65%;
+       
 }
 
 .Contenedorproductos
 {
-   display: flex;
-   width: 90%;     
+   display: flex;      
    text-align: left;
+  
    
    
 }
@@ -66,6 +73,9 @@
     text-align: center;
     margin-bottom: 3%;
     margin-top: 3%;
+    font-size: x-large;
+    color: #255983;
+    width: 90%;
 }
 
 .bodyp
@@ -77,39 +87,63 @@
     padding-bottom: 200px;
 }
 
-.imagenes
+.imagenes 
 {
-    width: auto;
+    width: 40px;
+    height: 40px;
 }
 
+.img
+{
+    width: 60px;
+    height: 60px;
+    margin-left: -10px;
+    box-shadow: 3px 5px 5px rgb(100,100,100);
+}
 @media (min-width: 768px)
 {
-    .ContenedorPrincipal
-    {
-        margin-left: 20%;
-    }
-    .btneditanddelete
+    .ContenedorName
 {
+    font-size: medium;
+    padding-left: 15px;
+    width: 100%;
     
-    margin-top: 3%;
-    
+       
 }
 
+.titulo
+{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: xx-large;
+    color: #255983;
+    width: 90%;
+}
 
 }
 
 @media (min-width: 1024px)
 {
- .ContenedorPrincipal
-    {
-        margin-left: 33%;
-    }
-    .btneditanddelete
-    {
-        
-        
-        margin-top: 3%;
-        
-    }
+ 
+    .ContenedorName
+{
+    font-size: medium;
+    padding-left: 15px;
+    width: 100%;
+       
+}
+
+.titulo
+{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: xx-large;
+    color: #255983;
+    width: 90%;
+}
  
 }
