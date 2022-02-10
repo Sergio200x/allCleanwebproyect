@@ -37,8 +37,6 @@ const productsControllers = {
             })
             res.render('products/productDetail',{productfound: productfound, constants, categories});
 
-            
-
         }catch (error) {
             console.log(error);
         }

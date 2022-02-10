@@ -132,10 +132,9 @@ const usersControllers = {
     
     userEdit: async (req, res) => {
         const IdUser = req.params.id;
+        const userSession = req.session.userLogged.UserID;
 		//const userToEdit = users.find(IdUser);
-        if(req.session.userLogged.UserID != IdUser){
-            return res.redirect('/');
-        }
+        if( userSession != IdUser) return res.redirect('/');
         const categories = await Category.findAll();
         const userToEdit = await User.findByPk(IdUser, {
             include : ["Avatar"],
@@ -200,12 +199,22 @@ const usersControllers = {
         }
     },
 
-    userDestroy: (req, res) => {
-		const Iduser = req.params.id
+    userDestroy: async (req, res) => {
+        try {
+            const Iduser = req.params.id
+            const userSession = req.session.userLogged.UserID;
+            if(userSession != Iduser) return res.redirect('/');
+            User.destroy({
+                where: {UserID: Iduser}, force: true
+            })
 
-		users.delete(Iduser)
+		    //users.delete(Iduser)
 
-		res.redirect('/')
+		    res.redirect('/')
+
+        } catch (error) {
+            console.log(error);
+        }
 	},
 
     profile: async (req,res)=>{
