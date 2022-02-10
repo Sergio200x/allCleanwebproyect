@@ -13,7 +13,7 @@ router.post('/login/', usersControllers.processLogin)
 
 //CREATE ONE USER
 router.get('/register/', guestMiddleware, usersControllers.userRegister)
-router.post('/register/', upload, validations, usersControllers.processRegister)
+router.post('/register/', upload, validations, authMiddleware, usersControllers.processRegister)
 
 //EDIT ONE USER
 router.get('/edit/:id/', authMiddleware, usersControllers.userEdit);
@@ -24,8 +24,10 @@ router.get('/userProfile/', authMiddleware, usersControllers.profile)
 router.get('/logout/', authMiddleware, usersControllers.logout)
 
 //DELETE ONE USER 
-router.delete('/delete/:id', usersControllers.userDestroy);
+router.delete('/delete/:id', authMiddleware, usersControllers.userDestroy);
 
+//GET USER PRODUCTS
+router.get('/userProducts', authMiddleware, usersControllers.userProducts);
 
 
 module.exports = router;

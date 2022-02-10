@@ -151,41 +151,9 @@ const productsControllers = {
 		products.delete(IdProducto)
 
 		res.redirect('/products')
-	},
+	}
 
-    productOwner: async (req, res)=>{
-        
-            const categories = await Category.findAll();
-            const userTypeloged = req.session.userLogged.UserTypeID                                
-            const userloged = req.session.userLogged.UserID
-            const userlogedName= req.session.userLogged.Name
-                       
-            
-
-         if(userloged && userTypeloged==1)
-            {   
-               try {    
-                        productList= await Product.findAll({where:{UserID:userloged}},
-                        {include : ["Image"],})
-                       
-                        res.render('products/productOwner',  { productList, constants, categories,userTypeloged,userlogedName});
-                    } 
-                catch { console.log(error)}      
-             }
-            else if (userloged && userTypeloged==2)
-            {
-                try {
-                        productList= await Product.findAll(
-                        {include : ["Image"],})   
-                        res.render('products/productOwner',  { productList,constants, categories,userTypeloged,userlogedName})
-                    }
-                catch { console.log(error)}  
-                
-            }
-
-        }
-        
-    }
+}
 
 
 module.exports= productsControllers
