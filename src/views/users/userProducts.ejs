@@ -7,10 +7,10 @@
 <body class="bodyp">
     <%- include('../partials/header.ejs') %>
 
-    <% if(userTypeloged==2) { %> 
-        <h2 class="titulo">Hola <%- userlogedName %>, esta es la lista de todos los productos.</h2>
+    <% if(userTypeLogged==2) { %> 
+        <h2 class="titulo">Hola <%- userLoggedName %>, esta es la lista de todos los productos.</h2>
     <%} else {%>
-        <h2 class="titulo">Hola <%-userlogedName %>, esta es tu lista de productos. <p></p> </h2>
+        <h2 class="titulo">Hola <%-userLoggedName %>, esta es tu lista de productos. <p></p> </h2>
     <%}%> 
 
     <%for(let product=0; product<productList.length;product++) {  %>

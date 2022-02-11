@@ -115,7 +115,7 @@ const usersControllers = {
                     include: ["UserType", "Avatar"],
                     Name: newUser.name,
                     LastName: newUser.lastName,
-                    UserName:newUser.user,
+                    UserName: newUser.user,
                     Email: newUser.email,
                     BirthDate: newUser.date ? newUser.date : null,
                     Password: bcrypt.hashSync(newUser.password , 10),
@@ -132,19 +132,24 @@ const usersControllers = {
 
     
     userEdit: async (req, res) => {
-        const IdUser = req.params.id;
-        const userSession = req.session.userLogged.UserID;
-		//const userToEdit = users.find(IdUser);
-        if( userSession != IdUser) return res.redirect('/');
-        const categories = await Category.findAll();
-        const userToEdit = await User.findByPk(IdUser, {
-            include : ["Avatar"],
-            where: {
-                UserID: IdUser,
-            }
-        });
+        try{
+            const IdUser = req.params.id;
+            const userSession = req.session.userLogged.UserID;
 
-        res.render('users/userEdit', {userToEdit: userToEdit, constants, categories})
+            if( userSession != IdUser) return res.redirect('/');
+            
+            const categories = await Category.findAll();
+
+            const userToEdit = await User.findByPk(IdUser, {
+                include : ["Avatar"],
+                where: {
+                    UserID: IdUser,
+                }
+            });
+            res.render('users/userEdit', {userToEdit: userToEdit, constants, categories});
+        }catch (error) {
+            console.log(error);
+        }
     },
 
     processEdit: async (req, res)=> {
@@ -236,28 +241,28 @@ const usersControllers = {
     userProducts: async (req, res)=>{
         
         const categories = await Category.findAll();
-        const userTypeloged = req.session.userLogged.UserTypeID;                                
-        const userloged = req.session.userLogged.UserID;
-        const userlogedName= req.session.userLogged.Name;
+        const userTypeLogged = req.session.userLogged.UserTypeID;                                
+        const userLogged = req.session.userLogged.UserID;
+        const userLoggedName= req.session.userLogged.Name;
                    
-        if(userloged && userTypeloged == 1){   
+        if(userLogged && userTypeLogged == 1){   
             try {    
                 productList = await Product.findAll({
-                    where:{UserID : userloged},
+                    where:{UserID : userLogged},
                     include : ["Image"]
                 })
-                res.render('users/userProducts',  { productList, constants, categories,userTypeloged,userlogedName});
+                res.render('users/userProducts',  { productList, constants, categories, userTypeLogged, userLoggedName});
             }catch (error) {
                 console.log(error);
             } 
         }
-        else if (userloged && userTypeloged == 2)
+        else if (userLogged && userTypeLogged == 2)
         {
             try {
                 productList = await Product.findAll({
                     include : ["Image"]
                 })   
-                res.render('users/userProducts',  { productList,constants, categories,userTypeloged,userlogedName});
+                res.render('users/userProducts',  { productList, constants, categories, userTypeLogged, userLoggedName});
             }catch (error) {
                 console.log(error);
             }

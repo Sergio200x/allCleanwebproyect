@@ -9,6 +9,8 @@ const usersControllers = require('./usersController')
 
 const Product = db.Product;
 const Category = db.Category;
+const User = db.User;
+const Image = db.Image;
 
 
 
@@ -84,22 +86,50 @@ const productsControllers = {
         }
     },
     
-    processCreate:(req,res)=>{
-        const resultvalidations = validationResult(req);
-        
-		let newproduct = req.body
+    processCreate: async (req,res)=>{
+        try{
+            const resultvalidations = validationResult(req);
+            const categories = await Category.findAll();
+            const userLogged = req.session.userLogged.UserID;
+            
+            const newProduct = req.body;
 
-        if(!resultvalidations.isEmpty())
-        {
-            res.render('products/productCreate',{
-                errors: resultvalidations.mapped(),
-                oldData: req.body,
-                constants
-            })}
-        else
-        {
-            products.createProduct(newproduct, req)
-            res.redirect('/products/')
+            if(!resultvalidations.isEmpty())
+            {
+                res.render('products/productCreate',{
+                    errors: resultvalidations.mapped(),
+                    oldData: req.body,
+                    constants,
+                    categories
+                })}
+            else
+            {
+               categorieFound = categories.find(category => category.Name == newProduct.category)
+
+               console.log('ENCONTRE LA CATEGORIA <<<<<<<<<<<<<<<<<<');
+               console.log(newProduct.category);
+               console.log(categorieFound);
+                   
+               const product = await Product.create({
+                    include: ["User", "Category", "Image"],
+                    Name: newProduct.name,
+                    Description: newProduct.description,
+                    Price: newProduct.price,
+                    IsOffer: newProduct.isOffer ? newProduct.isOffer == 'ofertado' ? 1 : 0 : 0,
+                    Discount: newProduct.discount ? newProduct.discount : 0,
+                    Quantity: newProduct.quantity,
+                    UserID: userLogged,
+                    CategoryID: categorieFound.CategoryID
+                })
+                await Image.create({
+                    Name: req.file ? req.file.filename : 'no-photo.jpeg',
+                    ProductID : product.ProductID
+                })  
+                
+                res.redirect('/products/')
+            }
+        }catch (error) {
+            console.log(error);
         }
     },
 
@@ -107,7 +137,22 @@ const productsControllers = {
         try{
             const IdProduct = req.params.id;
             const categories = await Category.findAll(); 
-            //const productToEdit = products.find(IdProduct);
+            const userTypeLogged = req.session.userLogged.UserTypeID;
+            const userLogged = req.session.userLogged.UserID;  
+
+            if(userTypeLogged == 1){
+                productList = await Product.findAll({
+                    where:{UserID : userLogged},
+                    include : ["Image"]
+                })
+
+                productFound = productList.find(product => product.ProductID == IdProduct);
+
+                if(!productFound){
+                    return res.redirect('/products/');
+                }
+            }
+
             const productToEdit = await Product.findByPk(IdProduct, {
             include : ["Image", "Category"],
             where: {
