@@ -20,9 +20,6 @@ router.get('/cart/', productsControllers.productCart)
 router.get('/create/', productsControllers.productCreate)
 router.post('/create/', upload, validations, productsControllers.processCreate)
 
-//PRODUCT OWNER
-router.get('/productowner', productsControllers.productOwner)
-
 //EDIT ONE PRODUCT
 router.get('/edit/:id/', productsControllers.productEdit);
 router.put('/edit/:id/', upload , validations, productsControllers.processEdit);

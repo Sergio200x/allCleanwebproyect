@@ -12,6 +12,7 @@ const { stringify } = require("nodemon/lib/utils");
 const Category = db.Category;
 const User = db.User;
 const Avatar = db.Avatar;
+const Product = db.Product;
 const UserType = db.UserType;
 
 const usersControllers = {
@@ -230,7 +231,39 @@ const usersControllers = {
         res.clearCookie("userEmail")
         req.session.destroy();
         return res.redirect('/')
+    },
+
+    userProducts: async (req, res)=>{
+        
+        const categories = await Category.findAll();
+        const userTypeloged = req.session.userLogged.UserTypeID;                                
+        const userloged = req.session.userLogged.UserID;
+        const userlogedName= req.session.userLogged.Name;
+                   
+        if(userloged && userTypeloged == 1){   
+            try {    
+                productList = await Product.findAll({
+                    where:{UserID : userloged},
+                    include : ["Image"]
+                })
+                res.render('users/userProducts',  { productList, constants, categories,userTypeloged,userlogedName});
+            }catch (error) {
+                console.log(error);
+            } 
+        }
+        else if (userloged && userTypeloged == 2)
+        {
+            try {
+                productList = await Product.findAll({
+                    include : ["Image"]
+                })   
+                res.render('users/userProducts',  { productList,constants, categories,userTypeloged,userlogedName});
+            }catch (error) {
+                console.log(error);
+            }
+        }
     }
 } 
+
 module.exports= usersControllers
 
