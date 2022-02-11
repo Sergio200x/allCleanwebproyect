@@ -388,6 +388,7 @@ width: 200px
  height: 50px;
  float: right;
  position: relative;
+
 }
 .menu-area:hover
 {
@@ -420,8 +421,8 @@ width: 200px
    text-decoration: none;
    width: 125px;
    margin: auto;
+   border-radius: 5%;
 }
-
 
 .item
 {
@@ -429,11 +430,23 @@ width: 200px
 
 }
 
+
+
 .item a
 {text-decoration: none;
     color: whitesmoke;
 
 }             
+
+.item:hover 
+{
+    background-color: whitesmoke;
+    
+}
+.item:hover a 
+{
+    color:#286698;
+}
                         
 .imagenperfil
 {
