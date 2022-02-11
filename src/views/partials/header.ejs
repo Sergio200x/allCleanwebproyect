@@ -22,6 +22,11 @@
                         <ul class="desple" > 
                             <li class="item"><a href="/users/Logout">Logout</a></li>               
                             <li class="item"><a href="/users/userProfile"> Mi cuenta</a></li>
+                            <li class="item" id="subdesple">Productos</a>
+                                <ul class="subdespleul">
+                                    <li class="item"><a href="/users/userProducts">Mis Productos</a></li>
+                                    <li class="item"><a href="/products/create">Crear Productos</a></li>                                
+                                </ul></li>                              
                         </ul>
                         <% } else { %>
                             <a href="/users/userProfile">
@@ -30,9 +35,9 @@
                                 </div>
                             
                                     </a> 
-                                    <ul class="desple" > 
+                                    <ul class="desple1" > 
                                         <li class="item"><a href="/users/Register">Registro</a></li>               
-                                        <li class="item"><a href="/users/Login">Login</a></li>                                       
+                                        <li class="item"><a href="/users/Login">Login</a></li>                                                                               
                                     </ul>
                                     <% } %>
                        
