@@ -145,8 +145,11 @@ const usersControllers = {
                 where: {
                     UserID: IdUser,
                 }
+                
             });
+            console.log(userToEdit)
             res.render('users/userEdit', {userToEdit: userToEdit, constants, categories});
+            
         }catch (error) {
             console.log(error);
         }
