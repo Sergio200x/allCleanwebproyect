@@ -272,7 +272,9 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width:30% ;
+        width:10% ;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
 
@@ -282,10 +284,10 @@
         color: #286698;
     }
 
-    /* menu desplegable usuario */
+    /* menu desplegable usuario 
     .menu-area, 
     .menu-area:focus{
-        /* width:10%; */
+        
         display: flex;
         flex-direction: row;
         list-style: none;   
@@ -355,7 +357,7 @@
         transition: all 0.8s ease-in-out;  
     }
 
-    /* menu derecho session logged*/
+    /* menu derecho session logged
     
     .menu-area-user{
         border-radius: 100%;
@@ -370,7 +372,75 @@
           
     }
 
+}*/
+
+.header-rightmenu
+{
+display: flex;
+padding-top: 5px;
+justify-content: space-around;
+width: 200px
+
 }
+.menu-area
+{
+ width: 50px;
+ height: 50px;
+ float: right;
+ position: relative;
+}
+.menu-area:hover
+{
+    display: inline-block;
+}
+
+.menu-area:hover .desple
+{
+    display: block;
+    position: absolute;
+    z-index: 2;
+
+}
+
+
+.menu-area .desple
+{
+    display: none;
+    position: absolute;
+   
+}
+
+.desple
+{
+   display: block;
+   background-color: #286698;
+   color: #000;
+   height: 100px;
+   font-size: medium; 
+   text-decoration: none;
+   width: 125px;
+   margin: auto;
+}
+
+
+.item
+{
+    padding: 15px 20px;
+
+}
+
+.item a
+{text-decoration: none;
+    color: whitesmoke;
+
+}             
+                        
+.imagenperfil
+{
+    width: 50px;
+    height: 50px;
+}
+
 
 @media (min-width: 1024px)
 {
