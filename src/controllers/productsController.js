@@ -7,6 +7,8 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const usersControllers = require('./usersController');
 const { is } = require("express/lib/request");
+const generalQueries = require('../database/generalQueries');
+const general = generalQueries('general');
 
 const Product = db.Product;
 const Category = db.Category;
@@ -15,7 +17,7 @@ const Image = db.Image;
 const productsControllers = {
     products: async (req, res) => {
         try {
-            const categories = await Category.findAll();
+            const categories = await general.findCategories();
             const productList = await Product.findAll({
                 include : ["Image"],
             })
@@ -28,7 +30,7 @@ const productsControllers = {
     productDetail: async (req, res) => {
         try{
             const IdProduct = req.params.id;
-            const categories = await Category.findAll();
+            const categories = await general.findCategories();
             const productfound = await Product.findByPk(IdProduct, {
                 include : ["Image"],
             })
@@ -42,7 +44,7 @@ const productsControllers = {
     productCategory: async (req, res) => {
         try{
             const selectedCategory = req.params.category;
-            const categories = await Category.findAll();
+            const categories = await general.findCategories();
             const productsFilter = await Product.findAll({
                 include : ["Image", "Category"],
             })       
@@ -54,7 +56,7 @@ const productsControllers = {
 
     productCart: async (req, res) => {
         try{
-            const categories = await Category.findAll();      
+            const categories = await general.findCategories();      
             res.render('products/productCart', {constants, categories})
         }catch (error) {
             console.log(error);
@@ -73,7 +75,7 @@ const productsControllers = {
     processCreate: async (req,res)=>{
         try{
             const resultvalidations = validationResult(req);
-            const categories = await Category.findAll();
+            const categories = await general.findCategories();
             const userLogged = req.session.userLogged.UserID;
             
             const newProduct = req.body;
@@ -116,7 +118,7 @@ const productsControllers = {
     productEdit: async (req, res) => {
         try{
             const IdProduct = req.params.id;
-            const categories = await Category.findAll(); 
+            const categories = await general.findCategories(); 
             const userTypeLogged = req.session.userLogged.UserTypeID;
             const userLogged = req.session.userLogged.UserID;  
 
@@ -147,7 +149,7 @@ const productsControllers = {
         try{
             const resultvalidations = validationResult(req);
             const IdProduct = req.params.id;
-            const categories = await Category.findAll();
+            const categories = await general.findCategories();
             const userLogged = req.session.userLogged.UserID;
             const productToEdit = await Product.findByPk(IdProduct, {
                 include: ["User", "Category", "Image"],

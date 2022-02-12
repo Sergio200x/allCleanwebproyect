@@ -15,7 +15,7 @@ const mainControllers = 	{
 			const productList = await Product.findAll({
 				include : ["Image"],
 			})
-			//const productList = products.all()
+			
 			res.render('index', {productList : productList, constants, categories})
 		} catch (error) {
 			console.log(error);
@@ -24,7 +24,6 @@ const mainControllers = 	{
 
     search: async (req, res) => {
 			try {
-				//productsFilter = products.all();
 				const busqueda = req.query.search
 				const categories = await Category.findAll();
 				const productsFilter = await Product.findAll({
@@ -34,16 +33,7 @@ const mainControllers = 	{
 					}
 				})
 
-				// if(busqueda){
-				// 	productsFilter = productsFilter.filter(producto =>  
-				// 		producto.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(busqueda.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
-				// 		if(!productsFilter.length){
-				// 			productsFilter = undefined;
-				// 		}
-				// }
-
 				res.render('products/productResults', {productsFilter: productsFilter, busqueda, constants, categories});
-				
 			} catch (error) {
 				console.log(error);
 			}

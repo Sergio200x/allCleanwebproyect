@@ -20,7 +20,10 @@ async function userLoggedMiddleware(req,res,next){
     }
     //if(emailInCookies){
         //let userFromCookie = users.findByField("email",emailInCookies)
-        if (userFromCookie) req.session.userLogged = userFromCookie;
+        if (userFromCookie){
+            delete userFromCookie.Password;
+            req.session.userLogged = userFromCookie;
+        } 
     
         if (req.session.userLogged){
             res.locals.isLogged = true;

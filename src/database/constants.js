@@ -52,37 +52,8 @@ const popularCategory = [
 }
 ]
 
-const bannerImages = [
-
-{ 
-    id : 1,
-    name: 'Banner Ayudin',
-    image : '/images/banner/banner-1.jpg'
-} , 
-{ 
-    id : 2,
-    name: 'Banner Skip',
-    image : '/images/banner/banner-2.jpg'
-} , 
-{ 
-    id : 3,
-    name: 'Banner Vivere',
-    image : '/images/banner/banner-3.jpg'
-},
-{ 
-    id : 4,
-    name: 'Banner Esponja',
-    image : '/images/banner/banner-4.jpg'
-},
-// { 
-//     id : 5,
-//     name: 'Banner',
-//     image : '/images/banner-2.jpg'
-// }
-]
-
 
 
 module.exports.generalCategory = generalCategory
 module.exports.popularCategory = popularCategory
-module.exports.bannerImages = bannerImages
+

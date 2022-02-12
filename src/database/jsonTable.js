@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require ('bcrypt')
 
-let model = function(tableName) {
+let algo = function(tableName) {
     return {
         filePath: path.join(__dirname, '../database/' + tableName + '.json'),
         readFile() {
@@ -118,8 +118,8 @@ let model = function(tableName) {
             let updatedRows = rows.filter(oneRow => oneRow.id != id); 
 
             this.writeFile(updatedRows);
-        }
+        },
     }
 }
 
-module.exports = model;
+module.exports = algo;
