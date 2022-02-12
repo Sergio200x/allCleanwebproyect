@@ -49,7 +49,7 @@ const usersControllers = {
                         res.cookie("userEmail", emailToLogin ,{maxAge:((1000*60)*1)*60})
                     }
                     
-                    return res.redirect('/users/userProfile')
+                    return res.redirect('/')
                 }else{
                     return res.render('users/userLogin',{
                         errors:{

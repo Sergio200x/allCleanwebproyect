@@ -65,12 +65,9 @@
     margin-right: 0px;
     position: relative;
     width: 100%;
-   
     display: flex;
     justify-content: center;
     align-items: center;
-    
-   
 }
 
 .header-searchbare{
@@ -476,6 +473,7 @@ width: 200px;
    border-radius: 5%;*/
    position: relative;
    color: whitesmoke;
+   cursor: pointer;
    
 }
 
@@ -489,17 +487,11 @@ width: 200px;
     right: 150px; 
     background-color: #286698; 
     border-radius: 5%;
-    
-    
 }
-
 .menu-area .desple #subdesple:hover
 {
     color: #286698;
 }
-
-
-
 #subdesple .subdespleul .item a
 {
     text-decoration: none;
@@ -510,7 +502,6 @@ width: 200px;
 #subdesple .subdespleul .item
 {
     width: 170px;
-    
 }
 
 #subdesple .subdespleul .item:hover
@@ -523,10 +514,6 @@ width: 200px;
     text-decoration: none;
     color: #286698;
 }
-
-
-
-
 .menu-area .desple #subdesple:hover .subdespleul
 { 
     display: block; 
@@ -534,26 +521,20 @@ width: 200px;
 .item
 {
     padding: 15px 20px;
+    cursor: pointer;
 }
-
-
-
 .item a
 {text-decoration: none;
     color: whitesmoke;
-
 }             
-
 .item:hover 
 {
     background-color: whitesmoke;
-    
 }
 .item:hover a 
 {
     color:#286698;
-}
-                        
+}              
 .imagenperfil
 {
     width: 40px;

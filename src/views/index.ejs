@@ -9,28 +9,14 @@
     <%- include('partials/header.ejs') %>
     <!-- Include Header-->
     
+    
     <!-- Index Page -->
     <main class="index-main">
-        <section class="index-cat-ban-container">
-            <section class="index-slaider-container">
-                <div class="index-slider" id="index-slider">
-                    <% for( let image of constants.bannerImages ) { %>
-                        <div class="index-slider-section">
-                            <img src="<%= image.image %>" alt="<%= image.name %>" class="index-slider-img">
-                        </div>
-                    <% } %>                    
-                    <div class="index-slider-circle">
-                        <% for( let picInBanner of constants.bannerImages ) { %>                                                       
-                                <div>
-                                    <i class="fas fa-circle" onclick="currentDiv(1)"></i>                                      
-                                </div>
-                            </a>
-                        <% } %>
-                    </div>
-                    <div class="index-slider-btn index-slider-btn-right" id="index-btn-right"><p class="index-btn-p">&#62;</p></div>
-                    <div class="index-slider-btn index-slider-btn-left" id="index-btn-left"><p class="index-btn-p">&#60;</p></div> 
-                </div>
-            </section>
+
+        <!-- Include Slider-->
+        <%- include('partials/slider.ejs') %>
+        <!-- Include Slider-->
+        <section class="index-cat-ban-container">          
 
             <h2 class="index-h2-categories">Categorias</h2>  
             <nav class="index-categories">
@@ -88,7 +74,7 @@
     <!-- Include Footer-->
 
     <!-- Scripts -->
-    <script src="/js/index-slider.js"></script>
+    <!-- <script src="/js/index-slider.js"></script> -->
     <!-- Scripts -->
 </body>
 </html>

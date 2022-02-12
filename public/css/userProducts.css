@@ -45,8 +45,7 @@
     margin-bottom: 1.5%;
     padding-left: 30px;
     padding-top: 20px;
-    padding-right: 30px;
-        
+    padding-right: 30px; 
 }
 
 
@@ -55,16 +54,12 @@
     font-size: medium;
     padding-left: 15px;
     width: 65%;
-       
 }
 
 .Contenedorproductos
 {
    display: flex;      
    text-align: left;
-  
-   
-   
 }
 
 .titulo

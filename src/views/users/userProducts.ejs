@@ -2,11 +2,14 @@
 <html lang="en">
 
 <!-- Include Head -->
-<%- include('../partials/head.ejs', {title: 'Productos por dueño'}) %>
+<%- include('../partials/head.ejs', {title: 'Productos por usuario'}) %>
 
 <body class="bodyp">
+    <!-- Include Header-->
     <%- include('../partials/header.ejs') %>
+    <!-- Include Header-->
 
+    <!-- User Products -->
     <% if(userTypeLogged==2) { %> 
         <h2 class="titulo">Hola <%- userLoggedName %>, esta es la lista de todos los productos.</h2>
     <%} else {%>
@@ -16,21 +19,25 @@
     <%for(let product=0; product<productList.length;product++) {  %>
         <div class="ContenedorPrincipal" >  
                       
-             <div class="Contenedorproductos"> 
-                 <div class="Imagenes"><img src="/images/products/<%=productList[product].Image[0].Name%>" alt="<%=productList[product].ProductID %>" class="img"></div>
-            <p class="ContenedorName">  <%-productList[product].Name %> - (ID-<%-productList[product].ProductID %>)</p></div> 
+            <div class="Contenedorproductos"> 
+                <div class="Imagenes">
+                    <img src="/images/products/<%=productList[product].Image[0].Name%>" alt="<%=productList[product].ProductID %>" class="img">
+                </div>
+                <p class="ContenedorName"><%-productList[product].Name %> - (ID-<%-productList[product].ProductID %>)</p>
+            </div> 
             <div class="btneditanddelete" >
                 <a href="/products/edit/<%=productList[product].ProductID %>" ><button class="btn-Editar1">Editar</button></a>
-            
-                <form action="/products/delete/<%= productList[product].ProductID %>?_method=DELETE" method="POST" >
-                <button type="submit" class="btn-Eliminar1">Eliminar</button>
+                <form action="/products/delete/<%= productList[product].ProductID %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn-Eliminar1">Eliminar</button>
                 </form>
-
             </div>
         </div> 
-        
-    <% } %> 
-    <%- include('../partials/footer.ejs') %>         
+    <% } %>
+    <!-- User Products --> 
+
+    <!-- Include Footer-->
+    <%- include('../partials/footer.ejs') %>
+    <!-- Include Footer-->         
 </body>
    
 
