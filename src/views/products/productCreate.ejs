@@ -81,8 +81,9 @@
                 <i class="fas fa-dollar-sign"></i>
             </div>
             <input 
-                type="number" 
+                type="text" 
                 name="price"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46"
                 placeholder="Número sin símbolos" 
                 class="register-control"
                 value="<%= locals.oldData ? oldData.price : "" %>"

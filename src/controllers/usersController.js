@@ -13,7 +13,6 @@ const Category = db.Category;
 const User = db.User;
 const Avatar = db.Avatar;
 const Product = db.Product;
-const UserType = db.UserType;
 
 const usersControllers = {
     userLogin: async (req, res) => {
@@ -36,9 +35,9 @@ const usersControllers = {
                     Email: emailToLogin,
                 }
             });
-            //const userToLogin=users.findByField("email",req.body.email)
+            
             if (userToLogin){
-                //let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.Password);
+                
                 let isOkThePassword = bcrypt.compareSync(passwordToLogin, userToLogin.Password);
                
                 if (isOkThePassword){
@@ -98,7 +97,7 @@ const usersControllers = {
                         Email: emailToRegister,
                     }
                 });
-                //const checkEmail = users.findByField("email",req.body.email)
+                
                 if(checkEmail){
                 return res.render('users/userRegister',{
                         errors:{email:{msg:"Este mail ya se encuentra registrado"}},
@@ -107,7 +106,7 @@ const usersControllers = {
                         categories
                     });
                 }
-                //let userCreated = users.createUser(newUser, req)
+                
                 const UserAvatar = await Avatar.create({
                     Name: req.file ? req.file.filename : 'sr-x.jpg'
                 })     
@@ -213,11 +212,14 @@ const usersControllers = {
             const Iduser = req.params.id
             const userSession = req.session.userLogged.UserID;
             if(userSession != Iduser) return res.redirect('/');
-            User.destroy({
+        
+            await User.destroy({
                 where: {UserID: Iduser}, force: true
             })
 
-		    //users.delete(Iduser)
+            await Avatar.destroy({
+                where: {ProductID: IdProduct}, force: true
+            })
 
 		    res.redirect('/')
 

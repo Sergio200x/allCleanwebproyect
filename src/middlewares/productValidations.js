@@ -13,8 +13,7 @@ const validations=[
     .notEmpty().withMessage('Debes elegir una categoría'),
   body('price')
     .notEmpty().withMessage('Debes ingresar un precio para el producto').bail()
-    .isNumeric().withMessage('Solo se admiten números').bail()
-    .isInt({ min:1}).withMessage('El precio debe ser mayor a cero'),
+    .isDecimal({ min:1}).withMessage('El precio debe ser mayor a cero'),
   body('quantity')
     .notEmpty().withMessage('Debes ingresar al menos 1 unidad para el producto').bail()
     .isNumeric().withMessage('Solo se admiten números').bail()

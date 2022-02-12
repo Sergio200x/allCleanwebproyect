@@ -5,18 +5,15 @@ const constants = require('../database/constants');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const usersControllers = require('./usersController')
+const usersControllers = require('./usersController');
+const { is } = require("express/lib/request");
 
 const Product = db.Product;
 const Category = db.Category;
-const User = db.User;
 const Image = db.Image;
-
-
 
 const productsControllers = {
     products: async (req, res) => {
-        //const productList = products.all()
         try {
             const categories = await Category.findAll();
             const productList = await Product.findAll({
@@ -30,11 +27,9 @@ const productsControllers = {
 
     productDetail: async (req, res) => {
         try{
-            const idproduct = req.params.id
-            //const productList = products.all()
-            //const productfound = productList.find(product => product.id == idproduct)
+            const IdProduct = req.params.id;
             const categories = await Category.findAll();
-            const productfound = await Product.findByPk(idproduct, {
+            const productfound = await Product.findByPk(IdProduct, {
                 include : ["Image"],
             })
             res.render('products/productDetail',{productfound: productfound, constants, categories});
@@ -46,18 +41,7 @@ const productsControllers = {
 
     productCategory: async (req, res) => {
         try{
-            const selectedCategory = req.params.category
-            //productsFilter = products.all();
-
-            // if(selectedCategory){
-            //     productsFilter = productsFilter.filter(producto =>  producto.category == selectedCategory)
-            //         if(!productsFilter.length){
-            //             productsFilter = undefined;
-            //         }
-            // }else{
-            //     productsFilter = undefined;
-            // }
-
+            const selectedCategory = req.params.category;
             const categories = await Category.findAll();
             const productsFilter = await Product.findAll({
                 include : ["Image", "Category"],
@@ -105,10 +89,6 @@ const productsControllers = {
             else
             {
                categorieFound = categories.find(category => category.Name == newProduct.category)
-
-               console.log('ENCONTRE LA CATEGORIA <<<<<<<<<<<<<<<<<<');
-               console.log(newProduct.category);
-               console.log(categorieFound);
                    
                const product = await Product.create({
                     include: ["User", "Category", "Image"],
@@ -154,48 +134,101 @@ const productsControllers = {
             }
 
             const productToEdit = await Product.findByPk(IdProduct, {
-            include : ["Image", "Category"],
-            where: {
-                ProductID: IdProduct,
-            }
-        })
+                include : ["Image", "Category"],
+            })
 
-		res.render('products/productEdit', {productToEdit: productToEdit, constants, categories})
+		    res.render('products/productEdit', {productToEdit: productToEdit, constants, categories})
         }catch (error) {
             console.log(error);
         }
-        
     },
 
-    processEdit: (req, res)=> {
-        const resultvalidations = validationResult(req);
-        const IdProduct = req.params.id;
-        const productToEdit = products.find(IdProduct);
-		const keepImage = productToEdit.image
-        
-		let productEdited = req.body
-        
-        if(!resultvalidations.isEmpty())
-        {
-            res.render('products/productEdit',{
-                errors: resultvalidations.mapped(),
-                oldData: req.body,
-                productToEdit : productToEdit, 
-                constants
-            })}
-        else
-        {
-            products.updateProduct(productEdited, req, keepImage, IdProduct)
-            res.redirect('/products/')
+    processEdit: async (req, res)=> {
+        try{
+            const resultvalidations = validationResult(req);
+            const IdProduct = req.params.id;
+            const categories = await Category.findAll();
+            const userLogged = req.session.userLogged.UserID;
+            const productToEdit = await Product.findByPk(IdProduct, {
+                include: ["User", "Category", "Image"],
+                where: {
+                    ProductID: IdProduct,
+                }
+            });
+            
+            let productEdited = req.body
+            
+            if(!resultvalidations.isEmpty())
+            {
+                res.render('products/productEdit',{
+                    errors: resultvalidations.mapped(),
+                    oldData: req.body,
+                    productToEdit : productToEdit, 
+                    constants,
+                    categories
+                })
+            }else
+            {
+                categorieFound = categories.find(category => category.Name == productEdited.category);
+                   
+                const product = await Product.update({
+                    include: ["User", "Category", "Image"],
+                    Name: productEdited.name,
+                    Description: productEdited.description,
+                    Price: productEdited.price,
+                    IsOffer: productEdited.isOffer ? productEdited.isOffer == 'ofertado' ? 1 : 0 : 0,
+                    Discount: productEdited.discount ? productEdited.discount : 0,
+                    Quantity: productEdited.quantity,
+                    UserID: userLogged,
+                    CategoryID: categorieFound.CategoryID
+                },{
+                    where: {ProductID: IdProduct}, force: true
+                })
+                if(req.file){
+                    await Image.update({
+                        Name: req.file.filename,
+                        ProductID : product.ProductID
+                    },{
+                        where: {ProductID: IdProduct}, force: true
+                    })
+                }
+                res.redirect('/products/')
+            }
+        }catch (error) {
+            console.log(error);
         }
     },
 
-    productDestroy: (req, res) => {
-		const IdProducto = req.params.id
+    productDestroy: async (req, res) => {
+        try {
+            const IdProduct = req.params.id;
+            const userTypeLogged = req.session.userLogged.UserTypeID;
+            const userLogged = req.session.userLogged.UserID;
 
-		products.delete(IdProducto)
+            if(userTypeLogged == 1){
+                const productfound = await Product.findByPk(IdProduct, {
+                    where:{UserID : userLogged},
+                })
 
-		res.redirect('/products')
+                if(!productfound){
+                    return res.redirect('/');
+                }
+            }
+
+            await Image.destroy({
+                where: {ProductID: IdProduct}, force: true
+            })
+            
+            await Product.destroy({
+                include : ["Image"],
+                where: {ProductID: IdProduct}, force: true
+            })
+
+            res.redirect('/products')
+
+        } catch (error) {
+            console.log(error);
+        }
 	}
 
 }
