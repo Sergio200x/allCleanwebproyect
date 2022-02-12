@@ -18,13 +18,13 @@
                 <% if(locals.isLogged) { %>
                  <a href="/users/userProfile">
                     <img src='/images/avatars/<%= locals.userLogged.Avatar.Name %>' class="imagenperfil">                        
-                        </a> 
+                        </a>  
                         <ul class="desple" > 
                             <li class="item"><a href="/users/Logout">Logout</a></li>               
                             <li class="item" id="subdesple"><a href="/users/userProfile">Mi cuenta</a>
                                 <ul class="subdespleul">
                                     <li class="item"><a href="#">Mi Perfil</a></li>
-                                    <li class="item"><a href="#">Editar Perfil</a></li>                                
+                                    <li class="item"><a href="/users/edit/<%=locals.userLogged.UserID%>">Editar Perfil</a></li>                                
                                 </ul></li>
                             <li class="item" id="subdesple">Productos</a>
                                 <ul class="subdespleul">

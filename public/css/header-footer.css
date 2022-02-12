@@ -379,7 +379,8 @@
 display: flex;
 padding-top: 5px;
 justify-content: space-around;
-width: 200px
+width: 200px;
+
 
 }
 .menu-area
@@ -388,19 +389,24 @@ width: 200px
  height: 50px;
  float: right;
  position: relative;
+ 
+
 
 }
 .menu-area:hover
 {
     display: inline-block;
+    
+    
 }
 
 .menu-area:hover .desple
 {
     display: block;
     position: absolute;
-    z-index: 2;
-
+    z-index: 2;   
+    
+    
 }
 
 
@@ -408,6 +414,7 @@ width: 200px
 {
     display: none;
     position: absolute;
+    
    
 }
 
@@ -422,6 +429,8 @@ width: 200px
    width: 150px;
    margin: auto;
    border-radius: 5%;
+   
+   
 
 }
 
@@ -430,6 +439,7 @@ width: 200px
     display: block;
     position: absolute;
     z-index: 2;
+    
 
 }
 
@@ -466,6 +476,7 @@ width: 200px
    border-radius: 5%;*/
    position: relative;
    color: whitesmoke;
+   
 }
 
 .subdespleul
@@ -478,6 +489,8 @@ width: 200px
     right: 150px; 
     background-color: #286698; 
     border-radius: 5%;
+    
+    
 }
 
 .menu-area .desple #subdesple:hover
@@ -515,18 +528,12 @@ width: 200px
 
 
 .menu-area .desple #subdesple:hover .subdespleul
-{
-    display: block;
-    
-     
+{ 
+    display: block; 
 } 
-
-
-
 .item
 {
     padding: 15px 20px;
-
 }
 
 
@@ -549,9 +556,10 @@ width: 200px
                         
 .imagenperfil
 {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 10%;
+    margin-top: 3px;
 }
 
 
@@ -560,9 +568,7 @@ width: 200px
     index-logo img{
         width: 6rem;
         height: 6rem;
-    }
-
-    
+    }    
 }
 
 /*---------------------------------------------------*/
