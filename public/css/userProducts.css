@@ -1,12 +1,9 @@
 .btneditanddelete
 {
-    
     text-align: center;  
     display: column;  
     margin-left: -10px; 
 }
-
-
 
 .btn-Editar1 , .btn-Eliminar1
 {
@@ -47,7 +44,6 @@
     padding-top: 20px;
     padding-right: 30px; 
 }
-
 
 .ContenedorName
 {
@@ -95,50 +91,53 @@
     margin-left: -10px;
     box-shadow: 3px 5px 5px rgb(100,100,100);
 }
+
+/*------------------------------------------------MEDIA QUERIES------------------------------------------------*/
+
 @media (min-width: 768px)
 {
     .ContenedorName
-{
-    font-size: medium;
-    padding-left: 15px;
-    width: 100%;
-    
-       
-}
+    {
+        font-size: medium;
+        padding-left: 15px;
+        width: 100%;
+        
+        
+    }
 
-.titulo
-{
-    margin: auto;
-    text-align: center;
-    margin-bottom: 3%;
-    margin-top: 3%;
-    font-size: xx-large;
-    color: #255983;
-    width: 90%;
-}
+    .titulo
+    {
+        margin: auto;
+        text-align: center;
+        margin-bottom: 3%;
+        margin-top: 3%;
+        font-size: xx-large;
+        color: #255983;
+        width: 90%;
+    }
 
 }
 
 @media (min-width: 1024px)
 {
- 
     .ContenedorName
-{
-    font-size: medium;
-    padding-left: 15px;
-    width: 100%;
-       
+    {
+        font-size: medium;
+        padding-left: 15px;
+        width: 100%;
+        
+    }
+
+    .titulo
+    {
+        margin: auto;
+        text-align: center;
+        margin-bottom: 3%;
+        margin-top: 3%;
+        font-size: xx-large;
+        color: #255983;
+        width: 90%;
+    }
 }
 
-.titulo
-{
-    margin: auto;
-    text-align: center;
-    margin-bottom: 3%;
-    margin-top: 3%;
-    font-size: xx-large;
-    color: #255983;
-    width: 90%;
-}
- 
-}
+/*------------------------------------------------MEDIA QUERIES------------------------------------------------*/
