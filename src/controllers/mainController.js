@@ -1,43 +1,32 @@
 const constants = require('../database/constants')
-const jsonTable = require('../database/jsonTable');
-const products = jsonTable('products');
-const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-
-const Product = db.Product;
-const Category = db.Category;
+const generalQueries = require('../database/generalQueries');
+const general = generalQueries('general');
+const productQueries = require('../database/productQueries');
+const products = productQueries('products');
 
 const mainControllers = 	{
     index: async (req, res) => {
 		try {
-			const categories = await Category.findAll();
-			const productList = await Product.findAll({
-				include : ["Image"],
-			})
+			const categories = await general.findCategories();
+			const productList = await products.findAllProducts();
 			
-			res.render('index', {productList : productList, constants, categories})
+			res.render('index', {productList, constants, categories})
 		} catch (error) {
 			console.log(error);
 		}
     },
 
     search: async (req, res) => {
-			try {
-				const busqueda = req.query.search
-				const categories = await Category.findAll();
-				const productsFilter = await Product.findAll({
-					include : ["Image"],
-					where: {
-						Name: { [Op.like]: '%' + busqueda + '%'}
-					}
-				})
-
-				res.render('products/productResults', {productsFilter: productsFilter, busqueda, constants, categories});
-			} catch (error) {
-				console.log(error);
-			}
+		try {
+			const busqueda = req.query.search
+			const categories = await general.findCategories();
+			const productsFilter = await products.findProductsByName(busqueda);
+			
+			res.render('products/productResults', {productsFilter, busqueda, constants, categories});
+		} catch (error) {
+			console.log(error);
 		}
+	}
 }
 	
 

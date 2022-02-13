@@ -16,6 +16,15 @@ let generalQueries = function(tableName) {
             const categories = await Category.findAll();
             return categories;
         },
+        async findCategorieByName(name){
+            const filterCategorie = await Category.findOne({
+                where: {
+					Name: name
+				}
+            })
+
+            return filterCategorie;
+        }
     }
 }
 

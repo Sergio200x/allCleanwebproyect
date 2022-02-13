@@ -1,20 +1,18 @@
-const { validationResult } = require("express-validator")
+const { validationResult } = require("express-validator");
 const userQueries = require('../database/userQueries');
 const users = userQueries('users');
 const generalQueries = require('../database/generalQueries');
 const general = generalQueries('general');
 const productQueries = require('../database/productQueries');
 const products = productQueries('products');
-const bcrypt = require ('bcrypt')
-const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const bcrypt = require ('bcrypt');
 const constants = require('../database/constants');
 
 const usersControllers = {
     userLogin: async (req, res) => {
         try{
             const categories = await general.findCategories();
+
             res.render('users/userLogin',{constants, categories})
         }catch (error) {
             console.log(error);
@@ -29,7 +27,6 @@ const usersControllers = {
             const userToLogin = await users.findUserByEmail(emailToLogin);
             
             if (userToLogin){
-                
                 const isPasswordOk = bcrypt.compareSync(passwordToLogin, userToLogin.Password);
                
                 if (isPasswordOk){
@@ -53,11 +50,11 @@ const usersControllers = {
             }
 
             return res.render('users/userLogin',{
-                            errors:{
-                                email:{ msg:"El email o el password son incorrectos"}
-                            },
-                            constants,
-                            categories
+                errors:{
+                    email:{ msg:"El email o el password son incorrectos"}
+                },
+                constants,
+                categories
             });
             }catch (error) {
                 console.log(error);
@@ -67,6 +64,7 @@ const usersControllers = {
     userRegister: async (req, res) => {
         try{
             const categories = await general.findCategories();
+
             res.render('users/userRegister', {constants, categories});
         }catch (error) {
             console.log(error);
@@ -75,24 +73,24 @@ const usersControllers = {
 
     processRegister: async (req, res) => {
         try{
+            const categories = await general.findCategories();
             const resultvalidations = validationResult(req);
-        
-            let newUser = req.body;
-        
+            const newUser = req.body;
+            const emailToRegister = newUser.email;
+            
             if(!resultvalidations.isEmpty()){
                 return res.render('users/userRegister',{
                     errors: resultvalidations.mapped(),
                     oldData: newUser,
+                    categories,
                     constants,
                 })
             }
                     
-            emailToRegister = newUser.email;
-            const categories = await general.findCategories();
             const checkEmail = await users.findUserByEmail(emailToRegister);
             
             if(checkEmail){
-            return res.render('users/userRegister',{
+                return res.render('users/userRegister',{
                     errors:{email:{msg:"Este mail ya se encuentra registrado"}},
                     oldData: newUser,
                     constants,
@@ -149,8 +147,8 @@ const usersControllers = {
             await users.updateUser(userEdited, req.file, IdUser, userTypeLogged);
 
             if(req.file){
-            res.clearCookie("userEmail");
-            req.session.destroy();
+                res.clearCookie("userEmail");
+                req.session.destroy();
             }
             
             res.redirect('/');
@@ -178,6 +176,7 @@ const usersControllers = {
     profile: async (req,res)=>{
         try{
             const categories = await general.findCategories();
+
             return res.render('users/userProfile', {user:req.session.userLogged, constants, categories});
         }catch (error) {
             console.log(error);
@@ -187,7 +186,8 @@ const usersControllers = {
     logout:(req,res)=>{
         res.clearCookie("userEmail");
         req.session.destroy();
-        return res.redirect('/');
+
+        res.redirect('/');
     },
 
     userProducts: async (req, res)=>{

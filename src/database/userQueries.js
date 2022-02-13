@@ -4,7 +4,6 @@ const bcrypt = require ('bcrypt');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const { log } = require('console');
 
 const Category = db.Category;
 const User = db.User;

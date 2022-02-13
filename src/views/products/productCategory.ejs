@@ -14,22 +14,20 @@
         <section class="index-offers">
             <h2 class="index-h2-offers">Resultado de la categoría: <%= selectedCategory %> </h2>
             <% productsFilter.forEach(product => { %>
-                <% if (product.Category.Name == selectedCategory) { %>
-                    <article class="index-div-container">
-                        <a href="/products/detail/<%=product.ProductID%>">
-                            <div class="index-div-img">
-                                <img src="/images/products/<%= product.Image[0].Name %>"  alt="<%= product.Description %>" class="index-img-offers">
-                            </div>
-                            <div class="index-info-offers">
-                                <p class="index-price-offers">$<%= product.Price %></p>
-                                <% if (product.Discount > 0) { %>
-                                    <p class="index-discount-offers"><%= product.Discount %>% off</p>
-                                <% } %>
-                                <p class="index-description-offers"><%= product.Name %></p>
-                            </div> 
-                        </a>   
-                    </article>
-                <% } %>
+                <article class="index-div-container">
+                    <a href="/products/detail/<%=product.ProductID%>">
+                        <div class="index-div-img">
+                            <img src="/images/products/<%= product.Image[0].Name %>"  alt="<%= product.Description %>" class="index-img-offers">
+                        </div>
+                        <div class="index-info-offers">
+                            <p class="index-price-offers">$<%= product.Price %></p>
+                            <% if (product.Discount > 0) { %>
+                                <p class="index-discount-offers"><%= product.Discount %>% off</p>
+                            <% } %>
+                            <p class="index-description-offers"><%= product.Name %></p>
+                        </div> 
+                    </a>   
+                </article>
             <% }) %> 
         </section>
     <% } else{%>

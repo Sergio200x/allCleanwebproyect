@@ -1,26 +1,16 @@
 const { validationResult } = require("express-validator");
-const jsonTable = require('../database/jsonTable');
-const products = jsonTable('products');
 const constants = require('../database/constants');
-const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const usersControllers = require('./usersController');
-const { is } = require("express/lib/request");
 const generalQueries = require('../database/generalQueries');
 const general = generalQueries('general');
-
-const Product = db.Product;
-const Category = db.Category;
-const Image = db.Image;
+const productQueries = require('../database/productQueries');
+const products = productQueries('products');
 
 const productsControllers = {
     products: async (req, res) => {
         try {
             const categories = await general.findCategories();
-            const productList = await Product.findAll({
-                include : ["Image"],
-            })
+            const productList = await products.findAllProducts();
+
             res.render('products/products',  { productList, constants, categories });
         } catch (error) {
             console.log(error);
@@ -31,11 +21,9 @@ const productsControllers = {
         try{
             const IdProduct = req.params.id;
             const categories = await general.findCategories();
-            const productfound = await Product.findByPk(IdProduct, {
-                include : ["Image"],
-            })
-            res.render('products/productDetail',{productfound: productfound, constants, categories});
-
+            const productfound = await products.findProductByPk(IdProduct);
+            
+            res.render('products/productDetail',{productfound, constants, categories});
         }catch (error) {
             console.log(error);
         }
@@ -45,10 +33,9 @@ const productsControllers = {
         try{
             const selectedCategory = req.params.category;
             const categories = await general.findCategories();
-            const productsFilter = await Product.findAll({
-                include : ["Image", "Category"],
-            })       
-            res.render('products/productCategory', {productsFilter: productsFilter, selectedCategory, constants, categories})
+            const productsFilter = await products.findProductsByCategory(selectedCategory);
+
+            res.render('products/productCategory', {productsFilter, selectedCategory, constants, categories})
         }catch (error) {
             console.log(error);
         }
@@ -56,7 +43,8 @@ const productsControllers = {
 
     productCart: async (req, res) => {
         try{
-            const categories = await general.findCategories();      
+            const categories = await general.findCategories();     
+
             res.render('products/productCart', {constants, categories})
         }catch (error) {
             console.log(error);
@@ -65,7 +53,8 @@ const productsControllers = {
 
     productCreate: async(req, res) => {
         try{
-            const categories = await Category.findAll();      
+            const categories = await general.findCategories();   
+
             res.render('products/productCreate', {constants, categories})
         }catch (error) {
             console.log(error);
@@ -75,41 +64,24 @@ const productsControllers = {
     processCreate: async (req,res)=>{
         try{
             const resultvalidations = validationResult(req);
-            const categories = await general.findCategories();
             const userLogged = req.session.userLogged.UserID;
             
             const newProduct = req.body;
 
-            if(!resultvalidations.isEmpty())
-            {
-                res.render('products/productCreate',{
+            if(!resultvalidations.isEmpty()){
+                const categories = await general.findCategories();
+
+                return res.render('products/productCreate',{
                     errors: resultvalidations.mapped(),
                     oldData: req.body,
                     constants,
                     categories
-                })}
-            else
-            {
-               categorieFound = categories.find(category => category.Name == newProduct.category)
-                   
-               const product = await Product.create({
-                    include: ["User", "Category", "Image"],
-                    Name: newProduct.name,
-                    Description: newProduct.description,
-                    Price: newProduct.price,
-                    IsOffer: newProduct.isOffer ? newProduct.isOffer == 'ofertado' ? 1 : 0 : 0,
-                    Discount: newProduct.discount ? newProduct.discount : 0,
-                    Quantity: newProduct.quantity,
-                    UserID: userLogged,
-                    CategoryID: categorieFound.CategoryID
                 })
-                await Image.create({
-                    Name: req.file ? req.file.filename : 'no-photo.jpeg',
-                    ProductID : product.ProductID
-                })  
-                
-                res.redirect('/products/')
             }
+
+            await products.createProduct(newProduct, userLogged, req.file);
+            
+            res.redirect('/products/');
         }catch (error) {
             console.log(error);
         }
@@ -123,23 +95,16 @@ const productsControllers = {
             const userLogged = req.session.userLogged.UserID;  
 
             if(userTypeLogged == 1){
-                productList = await Product.findAll({
-                    where:{UserID : userLogged},
-                    include : ["Image"]
-                })
+                const isProductBelongToUser = await products.checkProductBelongToUser(userLogged, IdProduct);
 
-                productFound = productList.find(product => product.ProductID == IdProduct);
-
-                if(!productFound){
+                if(!isProductBelongToUser){
                     return res.redirect('/products/');
                 }
             }
 
-            const productToEdit = await Product.findByPk(IdProduct, {
-                include : ["Image", "Category"],
-            })
+            const productToEdit = await products.findProductByPk(IdProduct);
 
-		    res.render('products/productEdit', {productToEdit: productToEdit, constants, categories})
+		    res.render('products/productEdit', {productToEdit, constants, categories})
         }catch (error) {
             console.log(error);
         }
@@ -149,53 +114,27 @@ const productsControllers = {
         try{
             const resultvalidations = validationResult(req);
             const IdProduct = req.params.id;
-            const categories = await general.findCategories();
             const userLogged = req.session.userLogged.UserID;
-            const productToEdit = await Product.findByPk(IdProduct, {
-                include: ["User", "Category", "Image"],
-                where: {
-                    ProductID: IdProduct,
-                }
-            });
-            
+                        
             let productEdited = req.body
             
             if(!resultvalidations.isEmpty())
             {
-                res.render('products/productEdit',{
+                const productToEdit = await products.findProductByPk(IdProduct);
+                const categories = await general.findCategories();
+
+                return res.render('products/productEdit',{
                     errors: resultvalidations.mapped(),
                     oldData: req.body,
-                    productToEdit : productToEdit, 
+                    productToEdit, 
                     constants,
                     categories
                 })
-            }else
-            {
-                categorieFound = categories.find(category => category.Name == productEdited.category);
-                   
-                const product = await Product.update({
-                    include: ["User", "Category", "Image"],
-                    Name: productEdited.name,
-                    Description: productEdited.description,
-                    Price: productEdited.price,
-                    IsOffer: productEdited.isOffer ? productEdited.isOffer == 'ofertado' ? 1 : 0 : 0,
-                    Discount: productEdited.discount ? productEdited.discount : 0,
-                    Quantity: productEdited.quantity,
-                    UserID: userLogged,
-                    CategoryID: categorieFound.CategoryID
-                },{
-                    where: {ProductID: IdProduct}, force: true
-                })
-                if(req.file){
-                    await Image.update({
-                        Name: req.file.filename,
-                        ProductID : product.ProductID
-                    },{
-                        where: {ProductID: IdProduct}, force: true
-                    })
-                }
-                res.redirect('/products/')
             }
+
+            await products.updateProduct(productEdited, userLogged, IdProduct, req.file);
+
+            res.redirect('/products/');
         }catch (error) {
             console.log(error);
         }
@@ -208,31 +147,20 @@ const productsControllers = {
             const userLogged = req.session.userLogged.UserID;
 
             if(userTypeLogged == 1){
-                const productfound = await Product.findByPk(IdProduct, {
-                    where:{UserID : userLogged},
-                })
+                const isProductBelongToUser = await products.checkProductBelongToUser(userLogged, IdProduct);
 
-                if(!productfound){
-                    return res.redirect('/');
+                if(!isProductBelongToUser){
+                    return res.redirect('/products/');
                 }
             }
 
-            await Image.destroy({
-                where: {ProductID: IdProduct}, force: true
-            })
-            
-            await Product.destroy({
-                include : ["Image"],
-                where: {ProductID: IdProduct}, force: true
-            })
+            await products.deleteProduct(IdProduct);
 
-            res.redirect('/products')
-
+            res.redirect('/products');
         } catch (error) {
             console.log(error);
         }
 	}
-
 }
 
 
