@@ -126,6 +126,8 @@
 .productDetail-pago i
 {
     font-size: 250%;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 .productDetail-pago p
 {
@@ -156,6 +158,8 @@
 {
     font-size: 280%;
     margin-top: 0;
+    
+    margin-right: 10px;
 }
 .productDetail-cont-contador
 {
@@ -223,7 +227,7 @@
     font-size: 20px;
     width: 50px;
     margin: auto;
-    padding-left: 15%;
+    padding-left: 10%;
     border: none;
 }
 .btn-min-productDetail, .btn-max-productDetail
@@ -234,6 +238,7 @@
     margin: auto;
     font-weight: bolder;
     border: none;
+    padding-left: 3%;
 }
 
 .productDetail-stock
@@ -285,6 +290,8 @@
     margin: auto;
     max-width: 1400px;
     width: 90%;
+    margin-top: 7%;
+   
 }
 .productDetail-slider-container
 {
@@ -308,9 +315,10 @@
 @media (min-width: 1024px)
 {
  
-    .productDetail-mai
+    .productDetail-maim
    { margin: auto;
        max-width: 1400px;
+       
     
     }
 

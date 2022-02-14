@@ -27,12 +27,12 @@
                     <p class="normalPrice">$<%= price %></p>
                     
                     <div class="priceDiscountContainer">
-                        <p class="priceDiscount">$<%= priceWithDiscount %> </p>               
+                        <p class="priceDiscount">$<%= priceWithDiscount.toFixed(2) %> </p>               
                         <p class="discount"><%= productfound.Discount %>% OFF</p> 
                     </div>
                 
                 <% } else {%>
-                    <p class="normalPriceElse">$<%= productfound.Price %></p> 
+                    <p class="normalPriceElse">$<%= productfound.Price.toFixed(2) %></p> 
                 <% } %>
                 </p>
             </div>
