@@ -179,6 +179,8 @@
 
 .index-popularicons-container h2{
     font-size: 16px;
+    margin: auto;
+    max-width: 80%;
 }
 
 .index-h2-popular{
