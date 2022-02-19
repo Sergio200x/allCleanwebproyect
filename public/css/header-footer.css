@@ -1,5 +1,4 @@
-.header
-{
+.header{
     background-color: #b0d4d2;
     width: 100%;
     /* position: absolute; */
@@ -12,7 +11,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 
 /* logo all clean */
@@ -71,7 +69,7 @@
     align-items: center;
 }
 
-.header-searchbare{
+.header-searchbar-container{
     width: 100%;
     max-width: 300px;
 }
@@ -114,6 +112,7 @@
     position: relative;
     font-size: 14px;
     cursor: pointer;
+    transform: translateX(40%);
 }
 
 /* menu derecho  */
@@ -444,7 +443,10 @@
 
 @media (min-width: 768px)
 {
-    
+    .header-searchbar-container{
+        margin-left: 20px;
+    }
+
     .hamburgermenu{
         display: none;
     }
@@ -557,178 +559,212 @@
 
 }*/
 
-.header-rightmenu
-{
-display: flex;
-padding-top: 5px;
-justify-content: space-around;
-width: 160px;
-max-width: 160px;
+    .header-rightmenu
+    {
+    display: flex;
+    padding-top: 5px;
+    justify-content: space-around;
+    width: 160px;
+    max-width: 160px;
+    }
+    .menu-area
+    {
+    width: 50px;
+    height: 50px;
+    float: right;
+    position: relative;
+    }
+    .menu-area:hover
+    {
+        display: inline-block;
+    }
+
+    .menu-area:hover .desple
+    {
+        display: block;
+        position: absolute;
+        z-index: 2;   
+    }
 
 
-}
-.menu-area
-{
- width: 50px;
- height: 50px;
- float: right;
- position: relative;
- 
+    .menu-area .desple
+    {
+        display: none;
+        position: absolute;
+    }
 
-
-}
-.menu-area:hover
-{
-    display: inline-block;
-    
-    
-}
-
-.menu-area:hover .desple
-{
+    .desple
+    {
     display: block;
-    position: absolute;
-    z-index: 2;   
-    
-    
-}
-
-
-.menu-area .desple
-{
-    display: none;
-    position: absolute;
-    
-   
-}
-
-.desple
-{
-   display: block;
-   background-color: #286698;
-   color: #000;
-   height: 150px;
-   font-size: medium; 
-   text-decoration: none;
-   width: 150px;
-   margin: auto;
-   border-radius: 5%;
-   
-   
-
-}
-
-.menu-area:hover .desple1
-{
-    display: block;
-    position: absolute;
-    z-index: 2;
-    
-
-}
-
-
-.menu-area .desple1
-{
-    display: none;
-    position: absolute;
-   
-}
-
-.desple1
-{
-   display: block;
-   background-color: #286698;
-   color: #000;
-   height: 100px;
-   font-size: medium; 
-   text-decoration: none;
-   width: 150px;
-   margin: auto;
-   border-radius: 5%;
-
-}
-
-#subdesple
-{
-   /*display: block;
-   background-color: #286698;
-   color: #000;   
-   font-size: medium; 
-   text-decoration: none;   
-   margin: auto;
-   border-radius: 5%;*/
-   position: relative;
-   color: whitesmoke;
-   cursor: pointer;
-   
-}
-
-.subdespleul
-{
-    display: none;
-    width: 170px;
-    margin-left: -25px; 
-    margin-top: -33px; 
-    position: absolute; 
-    right: 150px; 
-    background-color: #286698; 
+    background-color: #286698;
+    color: #000;
+    height: 150px;
+    font-size: medium; 
+    text-decoration: none;
+    width: 150px;
+    margin: auto;
     border-radius: 5%;
-}
-.menu-area .desple #subdesple:hover
-{
-    color: #286698;
-}
-#subdesple .subdespleul .item a
-{
+    }
+
+    .menu-area:hover .desple1
+    {
+        display: block;
+        position: absolute;
+        z-index: 2;
+    }
+
+
+    .menu-area .desple1
+    {
+        display: none;
+        position: absolute;
+    }
+
+    .desple1 a{
+        text-decoration: none;
+    }
+
+    .desple1 a :hover{
+        color: #286698;
+    }
+
+
+
+    .desple1
+    {
+    display: block;
+    background-color: #286698;
+    color: #000;
+    height: 100px;
+    font-size: medium; 
     text-decoration: none;
-    color:whitesmoke;
-    width: 200px;  
-}  
+    width: 150px;
+    margin: auto;
+    border-radius: 5%;
+    }
 
-#subdesple .subdespleul .item
-{
-    width: 170px;
-}
-
-#subdesple .subdespleul .item:hover
-{
-    color: #286698;
-}
-
-#subdesple .subdespleul .item:hover a
-{ 
-    text-decoration: none;
-    color: #286698;
-}
-.menu-area .desple #subdesple:hover .subdespleul
-{ 
-    display: block; 
-} 
-.item
-{
-    padding: 15px 20px;
-    cursor: pointer;
-}
-.item a
-{text-decoration: none;
+    #subdesple
+    {
+    /*display: block;
+    background-color: #286698;
+    color: #000;   
+    font-size: medium; 
+    text-decoration: none;   
+    margin: auto;
+    border-radius: 5%;*/
+    position: relative;
     color: whitesmoke;
-}             
-.item:hover 
+    cursor: pointer;
+    
+    }
+
+    .subdespleul
+    {
+        display: none;
+        width: 170px;
+        margin-left: -25px; 
+        margin-top: -33px; 
+        position: absolute; 
+        right: 150px; 
+        background-color: #286698; 
+        border-radius: 5%;
+    }
+    .menu-area .desple #subdesple:hover
+    {
+        color: #286698;
+    }
+    #subdesple .subdespleul .item a
+    {
+        text-decoration: none;
+        color:whitesmoke;
+        width: 200px;  
+    }  
+
+    #subdesple .subdespleul .item
+    {
+        width: 170px;
+    }
+
+    #subdesple .subdespleul .item:hover
+    {
+        color: #286698;
+    }
+
+    #subdesple .subdespleul .item:hover a
+    { 
+        text-decoration: none;
+        /* color: #286698; */
+    }
+    .menu-area .desple #subdesple:hover .subdespleul
+    { 
+        display: block; 
+    } 
+    .item
+    {
+        padding: 15px 20px;
+        cursor: pointer;
+        color: whitesmoke;
+    }
+    .item a
+    {
+        text-decoration: none;
+        color: #286698;
+    }             
+    .item:hover 
+    {
+        background-color: whitesmoke;
+    }
+    .item2
+    {
+        padding: 15px 20px;
+        cursor: pointer;
+        color: whitesmoke;
+    }
+    .item2:hover 
+    {
+        background-color: whitesmoke;
+    }
+    .item2:hover a
+    {
+        color:#286698;
+    }
+
+    .item:hover a 
+    {
+        color:#286698;
+    }              
+    .imagenperfil
+    {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        
+        margin-top: 4px;
+        margin-left: 10px;
+        /* margin: auto; */
+    }
+    .desple a{
+        text-decoration: none;
+    }
+    .prueba :hover{
+        color:#286698;
+    }
+    .user-default-icon{
+        margin-left: 10px;
+    }
+
+
+@media (min-width: 1024px)
 {
-    background-color: whitesmoke;
-}
-.item:hover a 
-{
-    color:#286698;
-}              
-.imagenperfil
-{
-    width: 40px;
-    height: 40px;
-    border-radius: 10%;
-    margin-top: 3px;
-}
+    .header-maxwidth-body{
+        max-width: 1600px;
+        margin: auto;
+    }
+    .lupa i{
+        left: 25%;
+        transform: translateX(-50%);
+    }  
+
 
 .header-searchbare{
     width: 100%;
