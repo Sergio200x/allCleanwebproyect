@@ -73,6 +73,7 @@
 
 .header-searchbare{
     width: 100%;
+    max-width: 300px;
 }
 
 .header-searchbar:hover input{
@@ -90,6 +91,7 @@
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 25px; 
+    
 }
 
 
@@ -125,9 +127,10 @@
 /* menu hamburguesa  */
 .hamburgermenu{
     font-family: "Roboto", sans-serif;
+    display: block;
 }
 
-.hamburgermenu .barras{
+/* .hamburgermenu .barras{
     float: right;
     color: #ebebeb;
     background-color: #286698;
@@ -136,13 +139,13 @@
     height: fit-content;
     width: fit-content;
     margin: 0 7px;
-}
+} */
 
-.hamburgermenu .opc /*ul*/{
+/*.hamburgermenu .opc {
     position:absolute;   
     height:0px;   
     font-size: 14px;
-    /* transition: opacity 1s ease-in-out; */
+     transition: opacity 1s ease-in-out; 
     overflow:hidden; 
     top: 58px;
     width:50vw;
@@ -152,32 +155,212 @@
 .opc-show{
     z-index:11;
     transform: translateX(-52%);
-    /* transition: opacity 1s ease-in-out !important; */
+    
     overflow: visible;
-    /* overflow-y:scroll; */
-    /* position: absolute; */
+    
     height:calc(100vh - 57px)  !important;
     opacity: 1 !important;
 }
-
-.hamburgermenu-hide{
+*/
+/*.hamburgermenu-hide{
     height:0px;   
     overflow: hidden; 
     z-index: -10;
     transition: all 1s ease-in-out;
     opacity: 0;
+}*/
+
+.hamburgermenuh:hover #menu-icon 
+{
+    display: none;
+    
 }
 
+#menu-icon1
+{
+    display: none;
+}
+.hamburgermenuh:hover #menu-icon1
+
+{
+    display: block;
+    font-size: 35px;
+    padding-bottom: 5px;  
+    position: relative; 
+    
+}
+
+.hamburgermenuh i
+{
+    font-size: 30px;
+    color:#286698;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.desple1H
+{
+    display: none;  
+}
+
+.despleH
+{
+    display: none;
+}
+
+.hamburgermenuh:hover .despleH
+{
+    display: block;
+    flex-direction: row;
+    position: absolute;
+    z-index: 11;
+    width: 100px;
+    right: 5px;
+    background-color: #286698;
+    color: whitesmoke;
+    margin: auto;
+    font-size: 15px; 
+}
+
+.hamburgermenuh:hover .desple1H
+{
+    display: block;
+    flex-direction: row;
+    position: absolute;
+    z-index: 11;
+    width: 100px;
+    right: 5px;
+    background-color: #286698;
+    color: whitesmoke;
+    margin: auto;
+    font-size: 15px; 
+}
+
+
+
+ .hamburgermenuh  .itemHa
+{
+    
+    text-decoration: none;
+    color: whitesmoke;
+    margin: auto;
+    
+ 
+    
+} 
+
+.itemH
+{
+    padding: 8px;
+}
+
+.itemH:hover
+{
+    background-color: whitesmoke;
+
+}
+
+.itemH:hover .itemHa
+{
+    color: #286698;    
+    padding-right: 30px;
+    text-decoration: none;
+    margin: auto;
+
+}
+
+#subdespleH
+{
+    position: relative;
+}
+
+#subdespleH:hover
+{
+    color:#286698;
+    
+}
+.subdespleulHH
+{
+    display: none;
+    position: absolute;
+    right: 100px;
+    width: 120px;
+    top: 0px;
+    
+    
+    
+}
+
+#subdespleH:hover .subdespleulHH
+{
+    display: block;    
+    background-color: #286698;    
+    
+}
+
+
+
+
+.subdespleulH
+{
+    display: none;
+    position: absolute;
+    right: 100px;
+    width: 155px;
+    top: 66px;
+    margin-left: 10px;
+    
+        
+}
+
+
+#subdespleHHH:hover .subdespleulH
+{
+    display: block;    
+    background-color: #286698;
+    
+}
+
+#subdespleHHH:hover .subdespleulH .itemHa
+{
+    color: whitesmoke;
+}
+
+#subdespleHHH .subdespleulH .itemH:hover  .itemHa
+{
+    color: #286698;
+    text-decoration: none;    
+    padding-right: 30px;
+    
+}
+
+#subdespleHHH .subdespleulH:hover
+{
+    color: #286698;
+}
+
+#subdespleHHH:hover
+{
+ color: #286698;
+}
+
+
+
+
+
+
+
+/*
 .hamburgermenu a{
     color: whitesmoke;
     list-style: none;
     text-decoration: none;
     margin-left: 10px;
 
-}
+}*/
 
 
-.hamburgermenu .opc .option /*ul li*/{
+/*.hamburgermenu .opc .option {
     display:block;
     list-style:none;
     align-items: center;
@@ -211,14 +394,14 @@
     margin:1.5px 0 1.5px 20px;
     position: relative;
     width: 56.5%;
-}
+}*/
 
 /* menu derecho session logged*/
-.pic-user{
+/*.pic-user{
     width: 30px;
     height: 30px ;
     border-radius: 100%;
-}
+}*/
 /*---------------------------------------------FOOTER---------------------------------------------*/
 
 .footer{
@@ -380,7 +563,7 @@ display: flex;
 padding-top: 5px;
 justify-content: space-around;
 width: 160px;
-    max-width: 160px;
+max-width: 160px;
 
 
 }
@@ -547,6 +730,15 @@ width: 160px;
     margin-top: 3px;
 }
 
+.header-searchbare{
+    width: 100%;
+    max-width: 2500px;
+   
+}
+
+
+}
+
 
 @media (min-width: 1024px)
 {
@@ -554,6 +746,12 @@ width: 160px;
         width: 6rem;
         height: 6rem;
     }    
+
+    .header-searchbare{
+        width: 100%;
+        max-width: 2500px;
+       
+    }
 }
 
 /*---------------------------------------------------*/

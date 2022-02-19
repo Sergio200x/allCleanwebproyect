@@ -57,35 +57,38 @@
         </div>        
         </section>
 
-        <section class="hamburgermenu"><i class="fas fa-bars barras" id="menu-icon" ></i>
-            <nav>
-                <ul class="opc" id="opc">
-                    <li class="option"><a href="/"><i class="fa-solid fa-droplet"></i>Inicio</li></a>
-                    <li class="option"><a href="/products"><i class="fa-regular fa-spray-can-sparkles"></i>Productos</li></a>
-                    <li class="option"><a href=""><i class="fa-solid fa-broom-ball"></i>Quienes somos</li></a>
-                    <li class="option"><a href=""><i class="fa-regular fa-hand-holding-droplet"></i>Servicios</li></a> 
-                    <li class="option"><a href="/products/cart"><i class="fas fa-shopping-cart" ></i>Carrito</li></a>                                                           
-                    <li class="submenu-btn option"><a href="#"><i class="fas fa-user"></i>Mi cuenta<i class="fas fa-chevron-down flecha-down"></i></a>
-                        <ul class="submenu-opc">
-                            <% if(locals.isLogged) { %> 
-                                <li><a href="/users/userProfile"><img class="pic-user" src='/images/avatars/<%= locals.userLogged.Avatar.Name %>'>Mi perfil</li></a>
-                                <li><a href="/users/Logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</li></a>
-                            <% } else { %>
-                                <li><a href="/users/Register">Registro</li></a>
-                                <li><a href="/users/Login">Login</li></a>                              
-                            <% } %>
+        <section class="hamburgermenu">
+            <div class="hamburgermenuh">
+                    <i class="fas fa-bars barras" id="menu-icon" ></i>
+                    <a href="/">  <i class="fa-solid fa-square" id="menu-icon1"></i></a>  
+                
+                    <% if(locals.isLogged) { %>
+                        
+                      
+                         <ul class="despleH" > 
+                                 <li class="itemH"><a href="/users/Logout" class="itemHa"> Logout</a></li>               
+                                    <li class="itemH" id="subdespleH">Mi cuenta
+                                         <ul class="subdespleulHH">
+                                    <li class="itemH"><a href="/users/userProfile" class="itemHa">Mi Perfil</a></li>
+                                    <li class="itemH"><a href="/users/edit/<%=locals.userLogged.UserID%>" class="itemHa">Editar Perfil</a></li>                                
+                                    </ul></li>
+                                <li class="itemH" id="subdespleHHH">Productos
+                                <ul class="subdespleulH">
+                                    <li class="itemH"><a href="/users/userProducts" class="itemHa">Mis Productos</a></li>
+                                    <li class="itemH"><a href="/products/create" class="itemHa">Crear Productos</a></li>                                
+                                </ul></li>                              
                         </ul>
-                    </li>                      
-                     <li class="submenu-btn option"><a href="#"><i class="fas fa-bars"></i>Categorias<i class="fas fa-chevron-down flecha-down"></i></a>
-                        <!-- <ul  class="submenu-opc"> -->
-                            <!-- <% //for( let categoria of constants.generalCategory ) { %> -->
-                                <!-- <li><a href="/products/category/<%= //categoria.name %>"><%= //categoria.name %></a></li> -->
-                            <!-- <% //} %> -->
-                        <!-- </ul> -->
-                    </li>   
-                                          
-                </ul>
-            </nav>
+                        <% } else { %>
+                            
+                                    <ul class="desple1H" > 
+                                        <li class="itemH"><a href="/users/userProfile" class="itemHa"> Mi Perfil</a></li>
+                                        <li class="itemH"><a href="/users/Register" class="itemHa">Registro</a></li>               
+                                        <li class="itemH"><a href="/users/Login" class="itemHa">Login</a></li>                                                                               
+                                    </ul>
+                                    <% } %> 
+                       
+            
+          </div>
         </section>
     </section>
 
