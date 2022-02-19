@@ -71,7 +71,7 @@
 
 .header-searchbar-container{
     width: 100%;
-    max-width: 300px;
+    
 }
 
 .header-searchbar:hover input{
@@ -756,21 +756,24 @@
 
 @media (min-width: 1024px)
 {
-    .header-maxwidth-body{
+    .header-maxwidth-body
+    {
         max-width: 1600px;
         margin: auto;
     }
-    .lupa i{
+    .lupa i
+    {
         left: 25%;
         transform: translateX(-50%);
     }  
 
 
-.header-searchbare{
-    width: 100%;
-    max-width: 2500px;
+    .header-searchbare
+    {
+        width: 100%;
+        max-width: 2500px;
    
-}
+    }   
 
 
 }
@@ -790,4 +793,4 @@
     }
 }
 
-/*---------------------------------------------------*/
+
