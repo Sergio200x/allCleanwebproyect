@@ -58,12 +58,13 @@
         <section class="hamburgermenu">
             <div class="hamburgermenuh">
                     <i class="fas fa-bars barras" id="menu-icon" ></i>
-                    <a href="/">  <i class="fa-solid fa-square" id="menu-icon1"></i></a>  
+                    <i class="fa-solid fa-square" id="menu-icon1"></i>  
                 
                     <% if(locals.isLogged) { %>
                         
                       
                          <ul class="Desplegable-IF" > 
+                                <li class="itemH"><a href="/" class="itemHa">Inicio</a></li>
                                  <li class="itemH"><a href="/users/Logout" class="itemHa"> Logout</a></li>               
                                     <li class="itemH" id="Desplegable-Miperfl">Mi cuenta
                                          <ul class="Desplegable-Miperfil-SUB">

@@ -262,40 +262,54 @@
 .itemH:hover .itemHa
 {
     color: #286698;    
-    padding-right: 30px;
+    padding-right: 20px;
     text-decoration: none;
     margin: auto;
 
 }
 
-#Desplegable-Miperfl
-{
-    position: relative;
-}
 
-#Desplegable-Miperfl:hover
-{
-    color:#286698;
-    
-}
 .Desplegable-Miperfil-SUB
 {
     display: none;
     position: absolute;
     right: 100px;
     width: 120px;
-    top: 0px;
-    
-    
-    
+    top:66px;   
 }
+
 
 #Desplegable-Miperfl:hover .Desplegable-Miperfil-SUB
 {
     display: block;    
-    background-color: #286698;    
+    background-color: #286698;
     
 }
+
+#Desplegable-Miperfl:hover .Desplegable-Miperfil-SUB .itemHa
+{
+    color: whitesmoke;
+}
+
+#Desplegable-Miperfl .Desplegable-Miperfil-SUB .itemH:hover  .itemHa
+{
+    color: #286698;
+    text-decoration: none;    
+    padding-right: 20px;
+    
+}
+
+#Desplegable-Miperfl .Desplegable-Miperfil-SUB:hover
+{
+    color: #286698;
+}
+
+#Desplegable-Miperfl:hover
+{
+ color: #286698;
+}
+
+
 
 
 
@@ -306,7 +320,7 @@
     position: absolute;
     right: 100px;
     width: 155px;
-    top: 66px;
+    top: 100px;
     margin-left: 10px;
     
         
