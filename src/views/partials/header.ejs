@@ -63,22 +63,22 @@
                     <% if(locals.isLogged) { %>
                         
                       
-                         <ul class="despleH" > 
+                         <ul class="Desplegable-IF" > 
                                  <li class="itemH"><a href="/users/Logout" class="itemHa"> Logout</a></li>               
-                                    <li class="itemH" id="subdespleH">Mi cuenta
-                                         <ul class="subdespleulHH">
+                                    <li class="itemH" id="Desplegable-Miperfl">Mi cuenta
+                                         <ul class="Desplegable-Miperfil-SUB">
                                     <li class="itemH"><a href="/users/userProfile" class="itemHa">Mi Perfil</a></li>
                                     <li class="itemH"><a href="/users/edit/<%=locals.userLogged.UserID%>" class="itemHa">Editar Perfil</a></li>                                
                                     </ul></li>
-                                <li class="itemH" id="subdespleHHH">Productos
-                                <ul class="subdespleulH">
+                                <li class="itemH" id="Desplegable-Productos">Productos
+                                <ul class="Desplegable-Productos-SUB">
                                     <li class="itemH"><a href="/users/userProducts" class="itemHa">Mis Productos</a></li>
                                     <li class="itemH"><a href="/products/create" class="itemHa">Crear Productos</a></li>                                
                                 </ul></li>                              
                         </ul>
                         <% } else { %>
                             
-                                    <ul class="desple1H" > 
+                                    <ul class="Desplegable-Else" > 
                                         <li class="itemH"><a href="/users/userProfile" class="itemHa"> Mi Perfil</a></li>
                                         <li class="itemH"><a href="/users/Register" class="itemHa">Registro</a></li>               
                                         <li class="itemH"><a href="/users/Login" class="itemHa">Login</a></li>                                                                               

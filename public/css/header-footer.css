@@ -197,17 +197,17 @@
     margin-right: 7px;
 }
 
-.desple1H
+.Desplegable-Else
 {
     display: none;  
 }
 
-.despleH
+.Desplegable-IF
 {
     display: none;
 }
 
-.hamburgermenuh:hover .despleH
+.hamburgermenuh:hover .Desplegable-IF
 {
     display: block;
     flex-direction: row;
@@ -221,7 +221,7 @@
     font-size: 15px; 
 }
 
-.hamburgermenuh:hover .desple1H
+.hamburgermenuh:hover .Desplegable-Else
 {
     display: block;
     flex-direction: row;
@@ -268,17 +268,17 @@
 
 }
 
-#subdespleH
+#Desplegable-Miperfl
 {
     position: relative;
 }
 
-#subdespleH:hover
+#Desplegable-Miperfl:hover
 {
     color:#286698;
     
 }
-.subdespleulHH
+.Desplegable-Miperfil-SUB
 {
     display: none;
     position: absolute;
@@ -290,7 +290,7 @@
     
 }
 
-#subdespleH:hover .subdespleulHH
+#Desplegable-Miperfl:hover .Desplegable-Miperfil-SUB
 {
     display: block;    
     background-color: #286698;    
@@ -300,7 +300,7 @@
 
 
 
-.subdespleulH
+.Desplegable-Productos-SUB
 {
     display: none;
     position: absolute;
@@ -313,19 +313,19 @@
 }
 
 
-#subdespleHHH:hover .subdespleulH
+#Desplegable-Productos:hover .Desplegable-Productos-SUB
 {
     display: block;    
     background-color: #286698;
     
 }
 
-#subdespleHHH:hover .subdespleulH .itemHa
+#Desplegable-Productos:hover .Desplegable-Productos-SUB .itemHa
 {
     color: whitesmoke;
 }
 
-#subdespleHHH .subdespleulH .itemH:hover  .itemHa
+#Desplegable-Productos .Desplegable-Productos-SUB .itemH:hover  .itemHa
 {
     color: #286698;
     text-decoration: none;    
@@ -333,12 +333,12 @@
     
 }
 
-#subdespleHHH .subdespleulH:hover
+#Desplegable-Productos .Desplegable-Productos-SUB:hover
 {
     color: #286698;
 }
 
-#subdespleHHH:hover
+#Desplegable-Productos:hover
 {
  color: #286698;
 }
