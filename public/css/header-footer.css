@@ -766,7 +766,7 @@
     .user-default-icon{
         margin-left: 10px;
     }
-
+}
 
 @media (min-width: 1024px)
 {
@@ -780,26 +780,12 @@
         left: 25%;
         transform: translateX(-50%);
     }  
-
-
     .header-searchbare
     {
         width: 100%;
         max-width: 2500px;
    
-    }   
-
-
-}
-
-
-@media (min-width: 1024px)
-{
-    index-logo img{
-        width: 6rem;
-        height: 6rem;
-    }    
-
+    }  
     .header-searchbare{
         width: 100%;
         max-width: 2500px;
