@@ -28,7 +28,8 @@
             <div class="btneditanddelete" >
                 <a href="/products/edit/<%=productList[product].ProductID %>" ><button class="btn-Editar1">Editar</button></a>
                 <form action="/products/delete/<%= productList[product].ProductID %>?_method=DELETE" method="POST">
-                    <button type="submit" class="btn-Eliminar1">Eliminar</button>
+                   
+                    <button type="submit" class="btn-Eliminar1" >Eliminar</button>
                 </form>
             </div>
         </div> 
@@ -38,7 +39,5 @@
     <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
     <!-- Include Footer-->         
-</body>
-   
-
+</body>  
 </html> 

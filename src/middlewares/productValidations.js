@@ -4,11 +4,12 @@ const path = require('path');
 const validations=[
   body('name')
     .notEmpty().withMessage('Debes ingresar un Nombre para el producto').bail()
-    .isLength({ min: 6 }).withMessage('El nombre debe tener un mínimo de 6 caracteres').bail()
+    .isLength({ min: 5 }).withMessage('El nombre debe tener un mínimo de 5 caracteres').bail()
     .isLength({ max: 30 }).withMessage('El nombre debe tener un máximo de 30 caracteres'),
   body('description')
     .notEmpty().withMessage('Debes ingresar una descripción').bail()
-    .isLength({ min: 6 }).withMessage('La descripción debe tener un mínimo de 6 caracteres'),
+    .isLength({ min: 20 }).withMessage('La descripción debe tener un mínimo de 20 caracteres').bail()
+    .isLength({ max: 45 }).withMessage('La descripción debe tener un máximo de 45 caracteres'),
   body('category')
     .notEmpty().withMessage('Debes elegir una categoría'),
   body('price')

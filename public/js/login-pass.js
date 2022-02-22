@@ -5,7 +5,7 @@ function validateForm() {
       alert("El password no puede estar vacío");
       return false;
     }else if(email == ""){
-        alert("El email no puede estar vacío");
-        return false;
+      alert("El email no puede estar vacío");
+      return false;
     }
   }

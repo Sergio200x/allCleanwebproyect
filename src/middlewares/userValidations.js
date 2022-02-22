@@ -14,10 +14,10 @@ const validations=[
     .isEmail().withMessage('Debes ingresar un Email valido'),
   body('password')
     .notEmpty().withMessage('Debes ingresar un Password').bail()
-    .isLength({ min: 6 }).withMessage('El password debe tener un mínimo de 6 caracteres'),
+    .isLength({ min: 8 }).withMessage('El password debe tener un mínimo de 8 caracteres'),
   body('validarPassword')
     .notEmpty().withMessage('Debes ingresar un Password').bail()
-    .isLength({ min: 6 }).withMessage('El password debe tener un mínimo de 5 caracteres'),
+    .isLength({ min: 8 }).withMessage('El password debe tener un mínimo de 8 caracteres'),
   body('avatar').custom((value, {req})=>{
     const file = req.file;
     const acceptedExtensions = ['.jpg', '.jpeg', '.gif', '.png'];
