@@ -18,22 +18,33 @@
             <div class="register-icon-container">
                 <i class="far fa-envelope"></i>
             </div>
-            <input type="email" name="email" placeholder="Ingrese su mail" class="register-control">
+            <%= console.log(locals.oldData) %> 
+            <input type="email" name="email" placeholder="Ingrese su mail" class="register-control" value="<%= locals.oldData ? locals.oldData : "" %>">
+            <% if (locals.errors && errors.email) { %>
+                <div class="register-text-danger">
+                     <%= errors.email.msg %> 
+                </div>
+            <% } %>
         </div>
-
+        
         <div class="register-control-formulario">
-            <input type="password" name="password" id="password" placeholder="Ingrese su password" pattern=".{6,}" class="register-control">
+            <input type="password" name="password" id="password" placeholder="Ingrese su password" class="register-control">
             <div class="register-eye-container">
                 <i id="visibilityBtn" class="register-eye"><span id="icon" class="material-icons-outlined">visibility</span></i>
             </div>
+            <% if (locals.errors && errors.password) { %>
+                <div class="register-text-danger">
+                     <%= errors.password.msg %> 
+                </div>
+            <% } %>
         
             <div>
                 <label class="user-remember"><input type="checkbox" name="remember_user"> Recordarme</label>
             </div>
 
-            <% if(locals.errors && errors.email) { %>
+            <% if(locals.errors && errors.datosInvalidos) { %>
                 <div class="register-text-danger login-error">
-                   <%= errors.email.msg %>
+                   <%= errors.datosInvalidos.msg %>
                 </div>        
             <% } %>
         </div>
@@ -48,8 +59,6 @@
     <!-- Include Footer-->
 
     <!-- Scripts -->
-    <script src="/js/login-pass.js"></script>
-    <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
     <!-- Scripts -->
 </body>

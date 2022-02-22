@@ -4,11 +4,12 @@ const usersControllers = require('../controllers/usersController');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validations = require('../middlewares/userValidations');
+const loginValidations = require('../middlewares/userLoginValidations');
 const upload = require('../middlewares/userAvatarStorage');
 
 //GET LOGIN PAGE 
 router.get('/login/', guestMiddleware, usersControllers.userLogin);
-router.post('/login/', guestMiddleware, usersControllers.processLogin);
+router.post('/login/', guestMiddleware, loginValidations, usersControllers.processLogin);
 
 //CREATE ONE USER
 router.get('/register/', guestMiddleware, usersControllers.userRegister);
