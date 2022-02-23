@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Scripts -->
+<script src="/js/front-end-validations/userLoginFrontValidations.js"></script>
+<!-- Scripts -->
+
 <!-- Include Head -->
 <%- include('../partials/head.ejs', {title: 'Login'}) %>
+<!-- Include Head -->
 
 <body class="body">
     <!-- Include Header-->
@@ -10,21 +15,23 @@
     <!-- Include Header-->
 
     <!-- User Login -->
-    <form action="/users/login" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form">
+    <form action="/users/login" method="post" class="login-create-form" onsubmit="return validateForm()" name="login-form" id="login-form">
         <h2>Bienvenido</h2>
         <h3>Ingrese sus credenciales</h3>
 
         <div class="register-control-formulario">
             <div class="register-icon-container">
                 <i class="far fa-envelope"></i>
-            </div>
-            <%= console.log(locals.oldData) %> 
-            <input type="email" name="email" placeholder="Ingrese su mail" class="register-control" value="<%= locals.oldData ? locals.oldData : "" %>">
+            </div> 
+            <input type="email" name="email" placeholder="Ingrese su mail" class="register-control" id="login-email" value="<%= locals.oldData ? locals.oldData : "" %>">
             <% if (locals.errors && errors.email) { %>
                 <div class="register-text-danger">
                      <%= errors.email.msg %> 
                 </div>
             <% } %>
+            <div class="register-text-danger">
+                <small class="errorEmail"></small> 
+            </div>
         </div>
         
         <div class="register-control-formulario">
@@ -37,6 +44,9 @@
                      <%= errors.password.msg %> 
                 </div>
             <% } %>
+            <div class="register-text-danger">
+                <small class="errorPassword"></small> 
+            </div>
         
             <div>
                 <label class="user-remember"><input type="checkbox" name="remember_user"> Recordarme</label>
@@ -50,7 +60,7 @@
         </div>
         
         <h3 class="login-forgot-pass"><a href="#">¿Olvidaste tu contraseña?</a></h3>
-        <button type="submit" class="login-submit">Iniciar Sesión</button>
+        <button type="submit" class="login-submit" id="login-submit">Iniciar Sesión</button>
     </form>
     <!-- User Login -->
 
