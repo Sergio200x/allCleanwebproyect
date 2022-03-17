@@ -26,9 +26,9 @@
                 value="<%= locals.oldData ? oldData.name : "" %>"
             >
             <% if (locals.errors && errors.name) { %>
-            <div class="register-text-danger">
-                 <%= errors.name.msg %> 
-            </div>
+                <div class="register-text-danger">
+                    <%= errors.name.msg %> 
+                </div>
             <% } %>
         </div>
 
@@ -45,9 +45,9 @@
                 value="<%= locals.oldData ? oldData.lastName : "" %>"
             >
             <% if (locals.errors && errors.lastName) { %>
-            <div class="register-text-danger">
-                 <%= errors.lastName.msg %> 
-            </div>
+                <div class="register-text-danger">
+                    <%= errors.lastName.msg %> 
+                </div>
             <% } %>
         </div>
 

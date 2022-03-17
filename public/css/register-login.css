@@ -20,6 +20,14 @@ input[type=number]
 {
     margin-top: 2rem;
 }
+.errorEmail,
+.errorPassword
+{
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
 .subir
 {
     margin:auto;
@@ -190,12 +198,13 @@ input[type=date]
     border-radius: 3px;
     padding: 0 13px 0 8px;
     color: #666;
+    background-color: white;
 }
 input[type="date"]::-webkit-calendar-picker-indicator 
 {
-cursor: pointer;
-opacity: 1;
-filter: invert(0.4);
+    cursor: pointer;
+    opacity: 1;
+    filter: invert(0.4);
 }
 
 .others {

@@ -25,6 +25,16 @@ const usersControllers = {
             const passwordToLogin = req.body.password;
             const categories = await general.findCategories();
             const userToLogin = await users.findUserByEmail(emailToLogin);
+            const resultvalidations = validationResult(req);
+            
+            if(!resultvalidations.isEmpty()){
+                return res.render('users/userLogin',{
+                    errors: resultvalidations.mapped(),
+                    oldData: emailToLogin,
+                    categories,
+                    constants,
+                })
+            }
             
             if (userToLogin){
                 const isPasswordOk = bcrypt.compareSync(passwordToLogin, userToLogin.Password);
@@ -41,7 +51,7 @@ const usersControllers = {
                 }else{
                     return res.render('users/userLogin',{
                         errors:{
-                            email:{ msg:"El email o el password son incorrectos"}
+                            datosInvalidos:{ msg:"El email o el password son incorrectos"}
                         },
                         constants,
                         categories
