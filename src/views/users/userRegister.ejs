@@ -22,6 +22,7 @@
                 name="name" 
                 placeholder="Nombre" 
                 class="register-control"
+                id="Name"
                 value="<%= locals.oldData ? oldData.name : "" %>"
             >
             <% if (locals.errors && errors.name) { %>
@@ -40,6 +41,7 @@
                 name="lastName" 
                 placeholder="Apellido" 
                 class="register-control"
+                id="LastNamee"
                 value="<%= locals.oldData ? oldData.lastName : "" %>"
             >
             <% if (locals.errors && errors.lastName) { %>
@@ -58,6 +60,7 @@
                 name="user" 
                 placeholder="Nombre de Usuario" 
                 class="register-control" 
+                id="userName"
                 value="<%= locals.oldData ? oldData.user : "" %>"
             >
             <% if (locals.errors && errors.user) { %>
@@ -76,6 +79,7 @@
                 name="email" 
                 placeholder="Ingrese su mail" 
                 class="register-control"
+                id="Mail"
                 value="<%= locals.oldData ? oldData.email : "" %>"
             >
             <% if (locals.errors && errors.email) { %>
@@ -87,7 +91,7 @@
 
         <div class="register-control-formulario">
             <label class="register-label-nacimiento">Fecha de Nacimiento</label>
-            <input type="date" name="date"  class="register-control register-date">
+            <input type="date" name="date" id="Date"  class="register-control register-date">
         </div>
 
         <div class="register-control-formulario">
@@ -143,8 +147,10 @@
     <!-- Include Footer-->
 
     <!-- Scripts -->
+    <script src="/js/userRegister.js"></script>
     <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
+    
     <!-- Scripts -->
 </body>
 </html>

@@ -26,18 +26,68 @@
                 <p class="ContenedorName"><%-productList[product].Name %> - (ID-<%-productList[product].ProductID %>)</p>
             </div> 
             <div class="btneditanddelete" >
-                <a href="/products/edit/<%=productList[product].ProductID %>" ><button class="btn-Editar1">Editar</button></a>
-                <form action="/products/delete/<%= productList[product].ProductID %>?_method=DELETE" method="POST">
-                   
-                    <button type="submit" class="btn-Eliminar1" >Eliminar</button>
+                <a href="/products/edit/<%=productList[product].ProductID %>" ><button class="btn-Editar1" >Editar</button></a>
+
+                <form action="/products/delete/<%= productList[product].ProductID %>?_method=DELETE" method="POST" id='botoneliminarFORM' >
+                            <button type="submit" class="btn-Eliminar1" onclick="boton()">Eliminar</button>
                 </form>
             </div>
         </div> 
     <% } %>
-    <!-- User Products --> 
 
+<script type="text/javascript">
+    const button =document.querySelector('.btn-Eliminar1')
+     
+    button.addEventListener('click', (e)=>{e.preventDefault()})
+    
+    let bBorrarProducto = false
+    
+    function boton (){
+        swal({
+            title: "Estas seguro/a",
+            text: "Una vez que lo borres Diego se va a enojar!!!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Listo, se borro todo!!!!", {
+                icon: "success",
+            })
+        .then(()=>{
+            const form = document.querySelector('#botoneliminarFORM')
+            form.submit();
+        })   
+        }     
+            else {
+                swal("Genial, no se borro nada", {
+                icon: "success",
+            })
+            }
+        });
+
+  
+ 
+  
+
+}
+
+    
+
+    </script>
+    <!-- User Products --> 
+        
     <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
-    <!-- Include Footer-->         
+    <!-- Include Footer-->  
+    
+    
+     
+        
+     
+    
+    
+           
 </body>  
 </html> 

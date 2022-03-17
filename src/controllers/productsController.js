@@ -156,7 +156,7 @@ const productsControllers = {
 
             await products.deleteProduct(IdProduct);
 
-            res.redirect('/products');
+            res.redirect('/users/userproducts');
         } catch (error) {
             console.log(error);
         }
