@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <script src="/js/front-end-validations/userRegister.js"></script>
 <!-- Include Head -->
 <%- include('../partials/head.ejs', {title: 'Registro'}) %>
 
@@ -10,7 +10,7 @@
     <!-- Include Header-->
 
     <!-- User Register -->
-    <form action="/users/register" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form action="/users/register" method="post" class="register-create-form" enctype="multipart/form-data" id="register-create-form">
         <h2>Registro</h2>
         
         <div class="register-control-formulario">
@@ -41,7 +41,7 @@
                 name="lastName" 
                 placeholder="Apellido" 
                 class="register-control"
-                id="LastNamee"
+                id="LastName"
                 value="<%= locals.oldData ? oldData.lastName : "" %>"
             >
             <% if (locals.errors && errors.lastName) { %>
@@ -147,7 +147,7 @@
     <!-- Include Footer-->
 
     <!-- Scripts -->
-    <script src="/js/front-end-validations/userRegister.js"></script>
+
     <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
     

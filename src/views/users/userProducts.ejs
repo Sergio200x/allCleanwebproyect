@@ -44,15 +44,15 @@
     
     function boton (){
         swal({
-            title: "Estas seguro/a",
-            text: "Una vez que lo borres Diego se va a enojar!!!",
+            title: "Estas seguro/a?",
+            text: "Una vez borrado no se puede recuperar!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
         })
         .then((willDelete) => {
             if (willDelete) {
-                swal("Listo, se borro todo!!!!", {
+                swal("Listo, se borro!", {
                 icon: "success",
             })
         .then(()=>{
@@ -61,7 +61,7 @@
         })   
         }     
             else {
-                swal("Genial, no se borro nada", {
+                swal("Genial, no se borro nada!!", {
                 icon: "success",
             })
             }
