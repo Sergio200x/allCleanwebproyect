@@ -62,6 +62,13 @@ let userQueries = function(tableName) {
 
             return userFound;
         },
+        async findAllApiUsers(){
+            const usersFound = User.findAll({
+                attributes: ['UserID','Name','LastName','Email', [sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID')), 'Detail']]
+            });
+
+            return usersFound;
+        },
         async updateUser(editedUser, newAvatar, userID, userTypeID){
             let userAvatar;
             const oldUser = await this.findUserById(userID);
