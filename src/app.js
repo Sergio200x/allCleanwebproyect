@@ -1,6 +1,7 @@
 const express = require('express');
 const methodOverride =  require('method-override');
 const app = express();
+const cors = require('cors')
 const port = 3030;
 const session=require("express-session");
 const cookie=require('cookie-parser');
@@ -11,6 +12,8 @@ const userRoutes = require('./routes/userRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 //const productsApiRoutes = require('./routes/api/productsRouter');
 const userApiRoutes = require('./routes/api/userRouter');
+
+app.use(cors())
 
 //app.use(express.static('public'));
 app.use(express.static(path.resolve(__dirname, '../public')));
