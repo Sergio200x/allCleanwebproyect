@@ -1,23 +1,127 @@
-
+<!DOCTYPE html>
 <html lang="en">
-
+    <script src="/js/front-end-validations/userRegister.js"></script>
 <!-- Include Head -->
-<%- include('../partials/head.ejs', {title: 'Login'}) %>
+<%- include('../partials/head.ejs', {title: 'Registro'}) %>
 
 <body class="body">
     <!-- Include Header-->
     <%- include('../partials/header.ejs') %>
     <!-- Include Header-->
-  <h1> Pagina de perfil en mantenimiento? </h1>
-  <i class="fa-solid fa-hammer"></i>
+
+    <!-- User Register -->
+    <form action="/users/userProfile" method="post" class="register-create-form" enctype="application/x-www-form-urlencoded" id="register-create-form">
+        <h2>Ingrese datos del Domicilio</h2>
+        
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="Street" 
+                placeholder="Street" 
+                class="register-control"
+                id="Street"
+                value="<%= locals.oldData ? oldData.Street : "" %>"
+            >
+            <% if (locals.errors && errors.Street) { %>
+                <div class="register-text-danger">
+                    <%= errors.Street.msg %> 
+                </div>
+            <% } %>
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="ZipCode" 
+                placeholder="ZipCode" 
+                class="register-control"
+                id="ZipCode"
+                value="<%= locals.oldData ? oldData.ZipCode : "" %>"
+            >
+            <% if (locals.errors && errors.ZipCode) { %>
+                <div class="register-text-danger">
+                    <%= errors.ZipCode.msg %> 
+                </div>
+            <% } %>
+        </div>
+          <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="City" 
+                placeholder="City" 
+                class="register-control"
+                id="City"
+                value="<%= locals.oldData ? oldData.City : "" %>"
+            >
+            <% if (locals.errors && errors.City) { %>
+                <div class="register-text-danger">
+                    <%= errors.City.msg %> 
+                </div>
+            <% } %>
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="Town" 
+                placeholder="Town" 
+                class="register-control"
+                id="Town"
+                value="<%= locals.oldData ? oldData.Town : "" %>"
+            >
+            <% if (locals.errors && errors.Town) { %>
+                <div class="register-text-danger">
+                    <%= errors.Town.msg %> 
+                </div>
+            <% } %>
+        </div>
+        <div class="register-control-formulario">
+            <div class="register-icon-container">
+                <i class="far fa-user"></i>
+            </div>
+            <input 
+                type="text" 
+                name="ExtraIndications" 
+                placeholder="ExtraIndications" 
+                class="register-control"
+                id="Town"
+                value="<%= locals.oldData ? oldData.ExtraIndications : "" %>"
+            >
+            <% if (locals.errors && errors.ExtraIndications) { %>
+                <div class="register-text-danger">
+                    <%= errors.ExtraIndications.msg %> 
+                </div>
+            <% } %>
+        </div>
+        
+        
+
+
+
+        
+        <button type="submit" class="register-submit">Editar Domicilio</button>
+    </form>
+    <!-- User Register -->
+
     <!-- Include Footer-->
     <%- include('../partials/footer.ejs') %>
     <!-- Include Footer-->
 
     <!-- Scripts -->
-    <script src="/js/login-pass.js"></script>
+
     <script src="/js/register-confirmPass.js"></script>
     <script src="/js/register-eye.js"></script>
+    
     <!-- Scripts -->
 </body>
 </html>
