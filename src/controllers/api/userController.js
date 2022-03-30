@@ -14,9 +14,10 @@ const userApiController = {
             const usersFound = await users.findAllApiUsers();
 
             res.json({
-                status: 200,
-                count: usersFound.length,
-                url: "api/users",
+                info:{ status: 200,
+                    count: usersFound.length,
+                    url: "api/users"},
+               
                 data: usersFound 
             })
         }catch (error) {
@@ -24,5 +25,4 @@ const userApiController = {
         }
     }
 }
-
 module.exports= userApiController
