@@ -14,15 +14,34 @@ const userApiController = {
             const usersFound = await users.findAllApiUsers();
 
             res.json({
-                info:{ status: 200,
+                info:{ 
+                    status: 200,
                     count: usersFound.length,
-                    url: "api/users"},
-               
+                    url: "api/users"
+                },
                 data: usersFound 
+            })
+        }catch (error) {
+            console.log(error);
+        }
+    },
+
+    userDetail: async (req, res) => {
+        try{
+            const userID = req.params.id;
+            const userFound = await users.findUserDetail(userID);
+            
+            res.json({
+                info:{ 
+                    status: 200,
+                    url: "api/user/" + userID
+                },
+                data: userFound 
             })
         }catch (error) {
             console.log(error);
         }
     }
 }
+
 module.exports= userApiController

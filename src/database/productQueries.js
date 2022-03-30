@@ -72,6 +72,14 @@ let productQueries = function(tableName) {
 
             return productCreated;
         },
+        async findAllApiProducts(){
+            const productsFound = await Product.findAll({
+                include: ["Category"],
+                attributes: ['ProductID','Name','Description', [sequelize.fn('CONCAT', '/api/product/', sequelize.col('ProductID')), 'Detail']]
+            });
+
+            return productsFound;
+        },
         async checkProductBelongToUser(userID, productID){
             const productFound = await Product.findOne({
                 include: ["User", "Category", "Image"],
