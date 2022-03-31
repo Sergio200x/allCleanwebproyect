@@ -192,6 +192,34 @@ const usersControllers = {
             console.log(error);
         }
     },
+    profileEdit: async (req,res)=>{
+        try{
+        console.log("iupi!!")
+        const IdUser = req.params.id
+        const categories = await general.findCategories();
+        const resultvalidations = validationResult(req);
+        const userToEdit = await users.findUserById(IdUser);
+        console.log(userToEdit+"es esto")
+        if(!resultvalidations.isEmpty()){
+            return res.render('users/userProfile',{
+                errors: resultvalidations.mapped(),
+                oldData: req.body,
+                categories,
+                constants,
+            })
+        }
+        const datos =req.body
+        console.log("datos del req body en metodo profile edit")
+        console.log(datos)
+        console.log("datos del req body en metodo profile edit")
+        const userSession = req.session.userLogged.UserID;
+        console.log(userSession)
+        await users.createDirection(datos,userSession)
+        res.redirect("/")
+        }catch(error){
+             console.log(error);
+        }
+    },
 
     logout:(req,res)=>{
         res.clearCookie("userEmail");

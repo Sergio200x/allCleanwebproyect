@@ -5,6 +5,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validations = require('../middlewares/userValidations');
 const loginValidations = require('../middlewares/userLoginValidations');
+const userProfilevalidations=require('../middlewares/userProfileValidations');
 const upload = require('../middlewares/userAvatarStorage');
 
 //GET LOGIN PAGE 
@@ -21,6 +22,7 @@ router.put('/edit/:id/', authMiddleware, upload , validations, usersControllers.
 
 //PROFILE
 router.get('/userProfile/', authMiddleware, usersControllers.profile);
+router.post('/userProfile/',authMiddleware,userProfilevalidations,usersControllers.profileEdit);
 router.get('/logout/', authMiddleware, usersControllers.logout);
 
 //DELETE ONE USER 
