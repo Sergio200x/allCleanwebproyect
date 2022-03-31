@@ -3,7 +3,7 @@ const path = require('path');
 
 const validations=[
   body('name')
-    .notEmpty().withMessage('Debes ingresar un Nombre para el producto').bail()
+    .notEmpty().withMessage('El nombre del producto no puede estar vacio').bail()
     .isLength({ min: 5 }).withMessage('El nombre debe tener un mínimo de 5 caracteres').bail()
     .isLength({ max: 30 }).withMessage('El nombre debe tener un máximo de 30 caracteres'),
   body('description')

@@ -10,20 +10,24 @@
     <!-- Include Header-->
     
     <!-- Product Create -->
-    <form action="/products/create" method="post" class="register-create-form" enctype="multipart/form-data">
+    <form 
+        action="/products/create" method="post"
+        class="register-create-form" id='product-create-form' enctype="multipart/form-data">
+
         <h2>Creación de Producto</h2>
 
         <div class="register-control-formulario">
             <div class="register-icon-container">
                 <i class="fas fa-pump-soap"></i>
             </div>
+
             <input 
                 type="text" 
-                name="name" 
+                name="name" id='name-prod'
                 placeholder="Nombre del Producto" 
                 class="register-control"
-                value="<%= locals.oldData ? oldData.name : "" %>"
-            >
+                value="<%= locals.oldData ? oldData.name : "" %>">
+
             <% if (locals.errors && errors.name) { %>
             <div class="register-text-danger">
                  <%= errors.name.msg %> 
@@ -37,7 +41,7 @@
             </div>
             <input 
                 type="text" 
-                name="description" 
+                name="description" id='description-prod'
                 placeholder="Descripción del producto" 
                 class="register-control" 
                 value="<%= locals.oldData ? oldData.description : "" %>"
@@ -55,7 +59,7 @@
                 <i class="fab fa-leanpub"></i>
             </div>
 
-            <select name="category" class="register-control select" style="color:gray">
+            <select name="category" id='category-prod' class="register-control select" style="color:gray">
                 <option hidden selected value="">Elegí una Categoría</option>
                 <% let category = [] %>                    
                 <% for (let categoria of constants.generalCategory) { %>
@@ -82,7 +86,7 @@
             </div>
             <input 
                 type="text" 
-                name="price"
+                name="price" id='price-prod'
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46"
                 placeholder="Número sin símbolos" 
                 class="register-control"
@@ -102,7 +106,7 @@
             </div>
             <input 
                 type="number" 
-                name="quantity"
+                name="quantity" id='quantity-prod'
                 placeholder="Número sin símbolos" 
                 class="register-control"
                 value="<%= locals.oldData ? oldData.quantity : "" %>"
@@ -116,7 +120,7 @@
 
         <div class="register-control-formulario">
             <label class="register-label-nacimiento">¿Está en Oferta?</label>
-            <div class="login-offer-container">
+            <div class="login-offer-container" id='offer-prod'>
                 <label class="isOffer"><input type="radio" name="isOffer" value= "ofertado" id="yesCheck" onclick="yesnoCheck()">Si</label>  
                 <label class="isOffer"><input type="radio" name="isOffer" value="noOfertado" id="noCheck" onclick="yesnoCheck()" checked>No</label> 
             </div>
@@ -183,6 +187,7 @@
     </script>
     
     <script src="/js/index-slider.js"></script>
+    <script type= 'module' src="/js/front-end-validations/productCreateValidations.js"></script>
     <!-- Scripts -->
     <!-- Product Create -->
 
