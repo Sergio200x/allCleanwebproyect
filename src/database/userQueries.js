@@ -4,11 +4,8 @@ const bcrypt = require ('bcrypt');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-<<<<<<< HEAD
 const req = require('express/lib/request');
-=======
 const { log } = require('console');
->>>>>>> 0a914e50e8aa74a819f5efdf9221a0d2416b8f94
 
 const Category = db.Category;
 const User = db.User;
@@ -76,14 +73,12 @@ let userQueries = function(tableName) {
             return usersFound;
         },
         async findUserDetail(UserID){
-            const avatar = await Avatar.findByPk(UserID,{
-                attributes: ['Name']
-            });
-
-            console.log(avatar.Name);
-
             const usersFound = await User.findByPk(UserID,{
-                attributes: ['UserID','Name','LastName','Email','BirthDate', [sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID'), '/image/', avatar.Name), 'Image']]
+                include: ['Avatar'],
+                attributes: {
+                    include : [[sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID'), '/image/', sequelize.col('Avatar.Name')), 'Image']],
+                    exclude : ['Password', 'BirthDate', 'LastName', 'AvatarID', 'UserTypeID', 'Avatar']
+                }
             });
 
             return usersFound;
