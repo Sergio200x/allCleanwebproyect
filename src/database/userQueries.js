@@ -74,7 +74,12 @@ let userQueries = function(tableName) {
         },
         async findUserDetail(UserID){
             const usersFound = await User.findByPk(UserID,{
-                include: ['Avatar'],
+                include: [{
+                    model: Avatar,
+                    as: 'Avatar',
+                    required: true,
+                    attributes: [],
+                }],
                 attributes: {
                     include : [[sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID'), '/image/', sequelize.col('Avatar.Name')), 'Image']],
                     exclude : ['Password','AvatarID', 'UserTypeID']
