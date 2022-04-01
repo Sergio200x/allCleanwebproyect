@@ -8,14 +8,19 @@ const productApiController = {
         try{
             const productsFound = await products.findAllApiProducts();
 
-            //const categories = await general.findCategorieByPk();
-
             res.json({
                 info:{ 
                     status: 200,
                     count: productsFound.length,
-                    countByCategory: {},
-                    url: "api/products"
+                    countByCategory: {
+                        "Limpieza de Cocina": await products.findProductsByCategory("Limpieza de Cocina", true),
+                        "Limpieza de Baño": await products.findProductsByCategory("Limpieza de Baño", true) ,
+                        "Desinfectantes": await products.findProductsByCategory("Desinfectantes", true) ,
+                        "Accesorios limpieza": await products.findProductsByCategory("Accesorios limpieza", true) ,
+                        "Limpieza piso y muebles": await products.findProductsByCategory("Limpieza piso y muebles", true) ,
+                        "Otros": await products.findProductsByCategory("Otros", true) ,
+                    },
+                    url: "/api/products"
                 },
                 data: productsFound 
             })
@@ -24,22 +29,22 @@ const productApiController = {
         }
     },
 
-    // userDetail: async (req, res) => {
-    //     try{
-    //         const userID = req.params.id;
-    //         const userFound = await users.findUserDetail(userID);
+    productDetail: async (req, res) => {
+        try{
+            const productID = req.params.id;
+            const productFound = await products.findProductDetail(productID);
             
-    //         res.json({
-    //             info:{ 
-    //                 status: 200,
-    //                 url: "api/user/" + userID
-    //             },
-    //             data: userFound 
-    //         })
-    //     }catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+            res.json({
+                info:{ 
+                    status: 200,
+                    url: `/api/product/${productID}`
+                },
+                data: productFound 
+            })
+        }catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports= productApiController

@@ -17,7 +17,7 @@ const userApiController = {
                 info:{ 
                     status: 200,
                     count: usersFound.length,
-                    url: "api/users"
+                    url: "/api/users"
                 },
                 data: usersFound 
             })
@@ -34,7 +34,7 @@ const userApiController = {
             res.json({
                 info:{ 
                     status: 200,
-                    url: "api/user/" + userID
+                    url: "/api/user/" + userID
                 },
                 data: userFound 
             })
