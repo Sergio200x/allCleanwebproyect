@@ -77,7 +77,7 @@ let userQueries = function(tableName) {
                 include: ['Avatar'],
                 attributes: {
                     include : [[sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID'), '/image/', sequelize.col('Avatar.Name')), 'Image']],
-                    exclude : ['Password', 'BirthDate', 'LastName', 'AvatarID', 'UserTypeID', 'Avatar']
+                    exclude : ['Password','AvatarID', 'UserTypeID']
                 }
             });
 
