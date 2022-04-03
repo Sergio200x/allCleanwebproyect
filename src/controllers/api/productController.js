@@ -7,15 +7,14 @@ const productApiController = {
     products: async (req, res) => {
         try{
             const productsFound = await products.findAllApiProducts();
-
-            //const categories = await general.findCategorieByPk();
+            const totalProductsByCategory = await products.findTotalProductsByCategory();
 
             res.json({
                 info:{ 
                     status: 200,
                     count: productsFound.length,
-                    countByCategory: {},
-                    url: "api/products"
+                    countByCategory: {totalProductsByCategory},
+                    url: "/api/products"
                 },
                 data: productsFound 
             })
@@ -24,22 +23,22 @@ const productApiController = {
         }
     },
 
-    // userDetail: async (req, res) => {
-    //     try{
-    //         const userID = req.params.id;
-    //         const userFound = await users.findUserDetail(userID);
+    productDetail: async (req, res) => {
+        try{
+            const productID = req.params.id;
+            const productFound = await products.findProductDetail(productID);
             
-    //         res.json({
-    //             info:{ 
-    //                 status: 200,
-    //                 url: "api/user/" + userID
-    //             },
-    //             data: userFound 
-    //         })
-    //     }catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+            res.json({
+                info:{ 
+                    status: 200,
+                    url: `/api/product/${productID}`
+                },
+                data: productFound 
+            })
+        }catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports= productApiController

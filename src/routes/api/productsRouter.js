@@ -6,8 +6,7 @@ const productApiController = require('../../controllers/api/productController.js
 router.get('/api/products', productApiController.products)
 
 //GET ONE PRODUCT
-//router.get('/api/user/:id', productApiController.userDetail)
-
+router.get('/api/product/:id', productApiController.productDetail)
 
 
 module.exports = router;

@@ -4,12 +4,14 @@ const bcrypt = require ('bcrypt');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const req = require('express/lib/request');
 const { log } = require('console');
 
 const Category = db.Category;
 const User = db.User;
 const Avatar = db.Avatar;
 const Product = db.Product;
+const Address=db.Address;
 
 let userQueries = function(tableName) {
     return {
@@ -71,14 +73,17 @@ let userQueries = function(tableName) {
             return usersFound;
         },
         async findUserDetail(UserID){
-            const avatar = await Avatar.findByPk(UserID,{
-                attributes: ['Name']
-            });
-
-            console.log(avatar.Name);
-
             const usersFound = await User.findByPk(UserID,{
-                attributes: ['UserID','Name','LastName','Email','BirthDate', [sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID'), '/image/', avatar.Name), 'Image']]
+                include: [{
+                    model: Avatar,
+                    as: 'Avatar',
+                    required: true,
+                    attributes: [],
+                }],
+                attributes: {
+                    include : [[sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID'), '/image/', sequelize.col('Avatar.Name')), 'Image']],
+                    exclude : ['Password','AvatarID', 'UserTypeID']
+                }
             });
 
             return usersFound;
@@ -108,6 +113,23 @@ let userQueries = function(tableName) {
 
             return userEdited;
         },
+        // creacion de domicilio en perfil de usuario
+          async createDirection(newDirection,userSession){
+            
+            const directionCreated = await Address.create({
+                // include: ["UserID"],
+                Street: newDirection.Street,
+                ZipCode: newDirection.ZipCode,
+                City: newDirection.City,
+                Town: newDirection.Town,
+                ExtraIndications: newDirection.ExtraIndications,
+                UserID: userSession
+            })
+
+            return directionCreated;
+        },
+
+
         async deleteUser(userID, avatarID){
             await User.destroy({
                 where: {UserID: userID}, force: true

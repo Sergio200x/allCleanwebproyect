@@ -66,7 +66,7 @@ form.addEventListener('submit',function(e){
     }
     else 
     {  e.preventDefault()     
-       swal("Excelente!!!", "Preciona Ok para finalizar", "success");
+       swal("Excelente!!!", "Presiona Ok para finalizar", "success");
         boton=document.querySelector('.swal-button--confirm')
 
         boton.addEventListener('click', function(){

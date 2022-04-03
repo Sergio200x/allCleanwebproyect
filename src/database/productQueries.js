@@ -6,6 +6,8 @@ const general = generalQueries('general');
 
 const Product = db.Product;
 const Image = db.Image;
+const Category = db.Category;
+const User = db.User
 
 let productQueries = function(tableName) {
     return {
@@ -33,7 +35,7 @@ let productQueries = function(tableName) {
 
             return productfound;
         },
-        async findProductsByCategory(category){
+        async findProductsByCategory(category, isApi = false){
             const filterCategorie = await general.findCategorieByName(category);
 
             const productsFilter = await Product.findAll({
@@ -43,7 +45,28 @@ let productQueries = function(tableName) {
 				}
 			})
 
-            return productsFilter;
+            if(!isApi) return productsFilter;
+
+            return productsFilter.length;
+        },
+        async findTotalProductsByCategory(category, isApi = false){
+            const totalProductsByCategory = await Product.findAll({
+                include: [{
+                    model: Category,
+                    as: 'Category',
+                    required: true,
+                    attributes: ['Name'],
+                }],
+
+                attributes: {
+                    include : [[sequelize.fn('COUNT', sequelize.col('Product.CategoryID')), 'Total'], 'Product.CategoryID'],
+                    exclude : ['Name', 'Description', 'Price', 'IsOffer', 'Discount', 'Quantity', 'UserID', 'ProductID']
+                },
+
+                group: [ 'Product.CategoryID' ],
+            });
+
+            return totalProductsByCategory;
         },
         async createImage(image, productID){
             const imageCreated = await Image.create({
@@ -92,6 +115,30 @@ let productQueries = function(tableName) {
             if(productFound) return true;
 
             return false;
+        },
+        async findProductDetail(ProductID){
+            const productFound = await Product.findByPk(ProductID,{
+                include: [{
+                    model: Image,
+                    as: 'Image',
+                    required: true,
+                    attributes: [],
+                },{
+                    model: User,
+                    as: 'User',
+                    required: true,
+                    attributes : {
+                        exclude : ['Password', 'UserTypeID']
+                    } 
+                }, "Category"],
+
+                attributes: {
+                    include : [[sequelize.fn('CONCAT', '/api/product/', sequelize.col('Product.ProductID'), '/image/', sequelize.col('Image.Name')), 'Imagen']],
+                    exclude : ['UserID', 'CategoryID']
+                },
+            });
+
+            return productFound;
         },
         async updateImage(image, productID){
             await Image.update({
