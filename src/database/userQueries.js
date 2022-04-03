@@ -65,7 +65,7 @@ let userQueries = function(tableName) {
         },
         async findAllApiUsers(){
             const usersFound = User.findAll({
-                attributes: ['UserID','Name','Email', [sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID')), 'Detail']]
+                attributes: ['UserID','Name','LastName','Email','BirthDate', [sequelize.fn('CONCAT', '/api/user/', sequelize.col('UserID')), 'Detail']]
             });
 
             return usersFound;

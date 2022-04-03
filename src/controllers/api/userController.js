@@ -34,7 +34,7 @@ const userApiController = {
             res.json({
                 info:{ 
                     status: 200,
-                    url: "api/user/" + userID
+                    url: "api/user/"+userID
                 },
                 data: userFound 
             })
@@ -43,5 +43,7 @@ const userApiController = {
         }
     }
 }
+
+
 
 module.exports= userApiController
