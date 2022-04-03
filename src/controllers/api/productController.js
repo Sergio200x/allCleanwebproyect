@@ -7,19 +7,13 @@ const productApiController = {
     products: async (req, res) => {
         try{
             const productsFound = await products.findAllApiProducts();
+            const totalProductsByCategory = await products.findTotalProductsByCategory();
 
             res.json({
                 info:{ 
                     status: 200,
                     count: productsFound.length,
-                    countByCategory: {
-                        "Limpieza de Cocina": await products.findProductsByCategory("Limpieza de Cocina", true),
-                        "Limpieza de Baño": await products.findProductsByCategory("Limpieza de Baño", true) ,
-                        "Desinfectantes": await products.findProductsByCategory("Desinfectantes", true) ,
-                        "Accesorios limpieza": await products.findProductsByCategory("Accesorios limpieza", true) ,
-                        "Limpieza piso y muebles": await products.findProductsByCategory("Limpieza piso y muebles", true) ,
-                        "Otros": await products.findProductsByCategory("Otros", true) ,
-                    },
+                    countByCategory: {totalProductsByCategory},
                     url: "/api/products"
                 },
                 data: productsFound 

@@ -49,6 +49,25 @@ let productQueries = function(tableName) {
 
             return productsFilter.length;
         },
+        async findTotalProductsByCategory(category, isApi = false){
+            const totalProductsByCategory = await Product.findAll({
+                include: [{
+                    model: Category,
+                    as: 'Category',
+                    required: true,
+                    attributes: ['Name'],
+                }],
+
+                attributes: {
+                    include : [[sequelize.fn('COUNT', sequelize.col('Product.CategoryID')), 'Total'], 'Product.CategoryID'],
+                    exclude : ['Name', 'Description', 'Price', 'IsOffer', 'Discount', 'Quantity', 'UserID', 'ProductID']
+                },
+
+                group: [ 'Product.CategoryID' ],
+            });
+
+            return totalProductsByCategory;
+        },
         async createImage(image, productID){
             const imageCreated = await Image.create({
                 Name: image ? image.filename : 'no-photo.jpeg',
