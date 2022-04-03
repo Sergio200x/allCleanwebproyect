@@ -55,12 +55,12 @@ let productQueries = function(tableName) {
                     model: Category,
                     as: 'Category',
                     required: true,
-                    attributes: ['Name'],
+                    attributes: [],
                 }],
 
                 attributes: {
-                    include : [[sequelize.fn('COUNT', sequelize.col('Product.CategoryID')), 'Total'], 'Product.CategoryID'],
-                    exclude : ['Name', 'Description', 'Price', 'IsOffer', 'Discount', 'Quantity', 'UserID', 'ProductID']
+                    include : [[sequelize.fn('COUNT', sequelize.col('Product.CategoryID')), 'Total'], 'Product.CategoryID', 'Category.Name'], 
+                    exclude : ['Description', 'Price', 'IsOffer', 'Discount', 'Quantity', 'UserID', 'ProductID']
                 },
 
                 group: [ 'Product.CategoryID' ],
