@@ -13,7 +13,7 @@ const productApiController = {
                 info:{ 
                     status: 200,
                     count: productsFound.length,
-                    countByCategory: {totalProductsByCategory},
+                    countByCategory: totalProductsByCategory,
                     url: "/api/products"
                 },
                 data: productsFound 
