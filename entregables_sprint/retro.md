@@ -103,18 +103,19 @@
 - Subestimar el tiempo que tardamos en realizar una actividad 
 ### Stop Doing:
 - No completar las tareas asignadas al fin del sprint y delegar la responsabilidad a otros compañeros
+
 # Retrospective - Sprint 8:
 ### Start Doing:
-- Continuar las mejoras visuales en la pagina
-- Subdividir de antemano las tareas de cada sprint para no modificar la misma parte del codigo y asi evitar conflictos
+- Contenido Opcional de los sprints
 ### More of:
 - Aumentar la cantidad de reuniones para poder mejorar el dinamismo 
 - Tener una mayor comunicación en lo que respecta a la división de tareas durante cada sprint
 - Asumir las responsabilidades de cumplir con la tarea asignada en el sprint
 ### Keep Doing:
-- Realizar refuerzos de contenido previo a cada clase en conjunto, cualquiera de lops miembros del equipo que este disponible se conecta
+- Realizar refuerzos de la documentacion oficial para reducir codigo y optimizar / refactorizar entidades.
+- Continuar las mejoras visuales en la pagina
 ### Less of:
-- Subestimar el tiempo que tardamos en realizar una actividad 
+- Trabajar en la misma porcion de codigo.
 ### Stop Doing:
 - No completar las tareas asignadas al fin del sprint y delegar la responsabilidad a otros compañeros
 
