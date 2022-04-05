@@ -36,4 +36,14 @@ All Clean ofrece en forma de tienda online productos de limpieza y de organizaci
 #### - Javier Marillan
 40 años, Estudiante de desarrollo Full Stack en Digital House.
 
-
+#### - Conexión y Comandos de Terminal
+- Ejecutar npm i para descargar las dependencias
+- La ejecución esta programada para hacerse con el comando npm run dev y utiliza nodemon
+- Hay que crear la DB (configurada para MySQL) y Cargar el contenido de las tabla a modo ejemplo que se encuentran en la carpeta Entregables_Sprint
+- Cualquier otra base de datos que no sea MySQL es aceptada, pero hay que instalar las dependencias correspondientes y adaptar los scripts.
+- Hay que configurar el config.js de la carpeta /database/config con la configuración de la conexión a la base de datos.
+- La página cuenta con una api, que entrega el total y detalle de los usuarios y los productos. Las rutas son:
+        - /api/products
+        - /api/products/:id
+        - /api/users/
+        - /api/users/:id
